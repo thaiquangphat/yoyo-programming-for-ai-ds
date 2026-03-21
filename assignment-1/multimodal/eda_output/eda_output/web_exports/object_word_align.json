@@ -1,0 +1,104 @@
+{
+  "items": [
+    {
+      "category": "person",
+      "image_count": 2693,
+      "caption_freq": 998
+    },
+    {
+      "category": "chair",
+      "image_count": 580,
+      "caption_freq": 182
+    },
+    {
+      "category": "car",
+      "image_count": 535,
+      "caption_freq": 218
+    },
+    {
+      "category": "dining table",
+      "image_count": 501,
+      "caption_freq": 0
+    },
+    {
+      "category": "cup",
+      "image_count": 390,
+      "caption_freq": 71
+    },
+    {
+      "category": "bottle",
+      "image_count": 379,
+      "caption_freq": 74
+    },
+    {
+      "category": "bowl",
+      "image_count": 314,
+      "caption_freq": 235
+    },
+    {
+      "category": "handbag",
+      "image_count": 292,
+      "caption_freq": 1
+    },
+    {
+      "category": "truck",
+      "image_count": 250,
+      "caption_freq": 210
+    },
+    {
+      "category": "bench",
+      "image_count": 235,
+      "caption_freq": 318
+    },
+    {
+      "category": "book",
+      "image_count": 230,
+      "caption_freq": 70
+    },
+    {
+      "category": "backpack",
+      "image_count": 228,
+      "caption_freq": 9
+    },
+    {
+      "category": "cell phone",
+      "image_count": 214,
+      "caption_freq": 0
+    },
+    {
+      "category": "tv",
+      "image_count": 207,
+      "caption_freq": 106
+    },
+    {
+      "category": "clock",
+      "image_count": 204,
+      "caption_freq": 448
+    },
+    {
+      "category": "couch",
+      "image_count": 195,
+      "caption_freq": 133
+    },
+    {
+      "category": "traffic light",
+      "image_count": 191,
+      "caption_freq": 0
+    },
+    {
+      "category": "bus",
+      "image_count": 189,
+      "caption_freq": 555
+    },
+    {
+      "category": "sink",
+      "image_count": 187,
+      "caption_freq": 237
+    },
+    {
+      "category": "cat",
+      "image_count": 184,
+      "caption_freq": 761
+    }
+  ]
+}

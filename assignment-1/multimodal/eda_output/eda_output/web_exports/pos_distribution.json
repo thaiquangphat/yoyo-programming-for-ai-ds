@@ -1,0 +1,76 @@
+{
+  "tags": [
+    {
+      "tag": "NOUN",
+      "count": 72375
+    },
+    {
+      "tag": "DET",
+      "count": 43060
+    },
+    {
+      "tag": "ADP",
+      "count": 35527
+    },
+    {
+      "tag": "VERB",
+      "count": 19460
+    },
+    {
+      "tag": "PUNCT",
+      "count": 16805
+    },
+    {
+      "tag": "ADJ",
+      "count": 14980
+    },
+    {
+      "tag": "AUX",
+      "count": 5798
+    },
+    {
+      "tag": "CCONJ",
+      "count": 4718
+    },
+    {
+      "tag": "PRON",
+      "count": 4380
+    },
+    {
+      "tag": "ADV",
+      "count": 3018
+    },
+    {
+      "tag": "NUM",
+      "count": 2544
+    },
+    {
+      "tag": "PROPN",
+      "count": 1775
+    },
+    {
+      "tag": "PART",
+      "count": 847
+    },
+    {
+      "tag": "SCONJ",
+      "count": 554
+    },
+    {
+      "tag": "SPACE",
+      "count": 241
+    },
+    {
+      "tag": "X",
+      "count": 18
+    },
+    {
+      "tag": "SYM",
+      "count": 15
+    },
+    {
+      "tag": "INTJ",
+      "count": 13
+    }
+  ]
+}

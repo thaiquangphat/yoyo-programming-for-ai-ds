@@ -1,0 +1,43 @@
+{
+  "description": "Placeholder. Copy actual brightness_by_category.json from EDA output.",
+  "outdoor": {
+    "median": 110,
+    "q1": 85,
+    "q3": 140
+  },
+  "food": {
+    "median": 130,
+    "q1": 105,
+    "q3": 160
+  },
+  "furniture": {
+    "median": 115,
+    "q1": 90,
+    "q3": 145
+  },
+  "indoor": {
+    "median": 125,
+    "q1": 100,
+    "q3": 155
+  },
+  "kitchen": {
+    "median": 135,
+    "q1": 110,
+    "q3": 165
+  },
+  "person": {
+    "median": 120,
+    "q1": 95,
+    "q3": 150
+  },
+  "animal": {
+    "median": 118,
+    "q1": 92,
+    "q3": 148
+  },
+  "vehicle": {
+    "median": 105,
+    "q1": 80,
+    "q3": 135
+  }
+}

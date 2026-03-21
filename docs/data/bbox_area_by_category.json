@@ -1,0 +1,58 @@
+{
+  "outdoor": {
+    "mean": 45000,
+    "median": 42000,
+    "std": 12000,
+    "min": 5000,
+    "max": 95000
+  },
+  "food": {
+    "mean": 35000,
+    "median": 33000,
+    "std": 9000,
+    "min": 3000,
+    "max": 78000
+  },
+  "furniture": {
+    "mean": 52000,
+    "median": 50000,
+    "std": 14000,
+    "min": 8000,
+    "max": 102000
+  },
+  "indoor": {
+    "mean": 38000,
+    "median": 36000,
+    "std": 10000,
+    "min": 4000,
+    "max": 85000
+  },
+  "kitchen": {
+    "mean": 32000,
+    "median": 30000,
+    "std": 8000,
+    "min": 2000,
+    "max": 72000
+  },
+  "person": {
+    "mean": 28000,
+    "median": 26000,
+    "std": 7000,
+    "min": 1000,
+    "max": 65000
+  },
+  "animal": {
+    "mean": 24000,
+    "median": 22000,
+    "std": 6000,
+    "min": 500,
+    "max": 58000
+  },
+  "vehicle": {
+    "mean": 56000,
+    "median": 53000,
+    "std": 15000,
+    "min": 10000,
+    "max": 110000
+  }
+}

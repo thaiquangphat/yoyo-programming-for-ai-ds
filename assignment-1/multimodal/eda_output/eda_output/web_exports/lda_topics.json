@@ -1,0 +1,535 @@
+{
+  "n_topics": 10,
+  "topics": [
+    {
+      "topic_id": 0,
+      "top_words": [
+        {
+          "word": "tennis",
+          "weight": 283.1845
+        },
+        {
+          "word": "man",
+          "weight": 201.3559
+        },
+        {
+          "word": "wooden",
+          "weight": 150.6718
+        },
+        {
+          "word": "playing",
+          "weight": 147.4144
+        },
+        {
+          "word": "tree",
+          "weight": 140.1929
+        },
+        {
+          "word": "court",
+          "weight": 136.899
+        },
+        {
+          "word": "woman",
+          "weight": 134.9404
+        },
+        {
+          "word": "wearing",
+          "weight": 123.294
+        },
+        {
+          "word": "frisbee",
+          "weight": 122.3224
+        },
+        {
+          "word": "orange",
+          "weight": 116.9374
+        },
+        {
+          "word": "ball",
+          "weight": 114.2461
+        },
+        {
+          "word": "holding",
+          "weight": 101.4254
+        }
+      ]
+    },
+    {
+      "topic_id": 1,
+      "top_words": [
+        {
+          "word": "cat",
+          "weight": 260.9255
+        },
+        {
+          "word": "room",
+          "weight": 247.8026
+        },
+        {
+          "word": "plate",
+          "weight": 237.0479
+        },
+        {
+          "word": "sitting",
+          "weight": 229.5265
+        },
+        {
+          "word": "table",
+          "weight": 224.2262
+        },
+        {
+          "word": "pizza",
+          "weight": 222.5723
+        },
+        {
+          "word": "laptop",
+          "weight": 196.9984
+        },
+        {
+          "word": "bed",
+          "weight": 190.3972
+        },
+        {
+          "word": "computer",
+          "weight": 170.5076
+        },
+        {
+          "word": "laying",
+          "weight": 156.5091
+        },
+        {
+          "word": "desk",
+          "weight": 154.797
+        },
+        {
+          "word": "living",
+          "weight": 132.8908
+        }
+      ]
+    },
+    {
+      "topic_id": 2,
+      "top_words": [
+        {
+          "word": "water",
+          "weight": 252.2588
+        },
+        {
+          "word": "kitchen",
+          "weight": 176.9724
+        },
+        {
+          "word": "clock",
+          "weight": 169.5323
+        },
+        {
+          "word": "cake",
+          "weight": 142.9404
+        },
+        {
+          "word": "hydrant",
+          "weight": 120.5148
+        },
+        {
+          "word": "large",
+          "weight": 117.5413
+        },
+        {
+          "word": "bird",
+          "weight": 112.5465
+        },
+        {
+          "word": "parking",
+          "weight": 105.0206
+        },
+        {
+          "word": "lot",
+          "weight": 104.3265
+        },
+        {
+          "word": "tower",
+          "weight": 102.5318
+        },
+        {
+          "word": "stands",
+          "weight": 98.9849
+        },
+        {
+          "word": "grassy",
+          "weight": 88.7882
+        }
+      ]
+    },
+    {
+      "topic_id": 3,
+      "top_words": [
+        {
+          "word": "sign",
+          "weight": 244.9516
+        },
+        {
+          "word": "street",
+          "weight": 222.3813
+        },
+        {
+          "word": "road",
+          "weight": 196.2562
+        },
+        {
+          "word": "walking",
+          "weight": 192.5227
+        },
+        {
+          "word": "umbrella",
+          "weight": 155.1694
+        },
+        {
+          "word": "outside",
+          "weight": 116.8604
+        },
+        {
+          "word": "stop",
+          "weight": 114.0629
+        },
+        {
+          "word": "light",
+          "weight": 105.0765
+        },
+        {
+          "word": "car",
+          "weight": 104.0987
+        },
+        {
+          "word": "elephants",
+          "weight": 98.1404
+        },
+        {
+          "word": "sidewalk",
+          "weight": 84.7833
+        },
+        {
+          "word": "airplane",
+          "weight": 83.1807
+        }
+      ]
+    },
+    {
+      "topic_id": 4,
+      "top_words": [
+        {
+          "word": "bus",
+          "weight": 245.884
+        },
+        {
+          "word": "couple",
+          "weight": 190.0224
+        },
+        {
+          "word": "red",
+          "weight": 183.1096
+        },
+        {
+          "word": "street",
+          "weight": 147.027
+        },
+        {
+          "word": "area",
+          "weight": 143.7491
+        },
+        {
+          "word": "city",
+          "weight": 131.36
+        },
+        {
+          "word": "parked",
+          "weight": 99.3333
+        },
+        {
+          "word": "player",
+          "weight": 85.0687
+        },
+        {
+          "word": "cars",
+          "weight": 83.24
+        },
+        {
+          "word": "day",
+          "weight": 73.4177
+        },
+        {
+          "word": "driving",
+          "weight": 71.4623
+        },
+        {
+          "word": "board",
+          "weight": 69.6495
+        }
+      ]
+    },
+    {
+      "topic_id": 5,
+      "top_words": [
+        {
+          "word": "beach",
+          "weight": 204.0315
+        },
+        {
+          "word": "person",
+          "weight": 168.9855
+        },
+        {
+          "word": "flying",
+          "weight": 167.732
+        },
+        {
+          "word": "snow",
+          "weight": 163.1447
+        },
+        {
+          "word": "skateboard",
+          "weight": 161.279
+        },
+        {
+          "word": "man",
+          "weight": 154.234
+        },
+        {
+          "word": "old",
+          "weight": 130.4162
+        },
+        {
+          "word": "truck",
+          "weight": 127.4968
+        },
+        {
+          "word": "elephant",
+          "weight": 121.0252
+        },
+        {
+          "word": "sky",
+          "weight": 118.2456
+        },
+        {
+          "word": "people",
+          "weight": 117.2425
+        },
+        {
+          "word": "kite",
+          "weight": 117.2184
+        }
+      ]
+    },
+    {
+      "topic_id": 6,
+      "top_words": [
+        {
+          "word": "young",
+          "weight": 189.8395
+        },
+        {
+          "word": "holding",
+          "weight": 182.7331
+        },
+        {
+          "word": "baseball",
+          "weight": 181.5303
+        },
+        {
+          "word": "man",
+          "weight": 150.7536
+        },
+        {
+          "word": "game",
+          "weight": 136.2393
+        },
+        {
+          "word": "surfboard",
+          "weight": 123.5979
+        },
+        {
+          "word": "yellow",
+          "weight": 114.9164
+        },
+        {
+          "word": "boy",
+          "weight": 110.6523
+        },
+        {
+          "word": "inside",
+          "weight": 108.7145
+        },
+        {
+          "word": "boat",
+          "weight": 105.62
+        },
+        {
+          "word": "hand",
+          "weight": 103.8159
+        },
+        {
+          "word": "bat",
+          "weight": 100.5294
+        }
+      ]
+    },
+    {
+      "topic_id": 7,
+      "top_words": [
+        {
+          "word": "bathroom",
+          "weight": 210.1189
+        },
+        {
+          "word": "food",
+          "weight": 198.4396
+        },
+        {
+          "word": "bench",
+          "weight": 185.9333
+        },
+        {
+          "word": "picture",
+          "weight": 178.8197
+        },
+        {
+          "word": "sitting",
+          "weight": 158.6872
+        },
+        {
+          "word": "toilet",
+          "weight": 147.0589
+        },
+        {
+          "word": "sink",
+          "weight": 141.234
+        },
+        {
+          "word": "phone",
+          "weight": 121.7458
+        },
+        {
+          "word": "little",
+          "weight": 118.4444
+        },
+        {
+          "word": "women",
+          "weight": 109.0429
+        },
+        {
+          "word": "giraffes",
+          "weight": 107.7029
+        },
+        {
+          "word": "woman",
+          "weight": 107.3387
+        }
+      ]
+    },
+    {
+      "topic_id": 8,
+      "top_words": [
+        {
+          "word": "group",
+          "weight": 241.4834
+        },
+        {
+          "word": "men",
+          "weight": 188.6352
+        },
+        {
+          "word": "standing",
+          "weight": 175.5284
+        },
+        {
+          "word": "field",
+          "weight": 174.2649
+        },
+        {
+          "word": "people",
+          "weight": 155.0722
+        },
+        {
+          "word": "motorcycle",
+          "weight": 145.564
+        },
+        {
+          "word": "grass",
+          "weight": 132.2379
+        },
+        {
+          "word": "giraffe",
+          "weight": 128.9035
+        },
+        {
+          "word": "trees",
+          "weight": 125.9408
+        },
+        {
+          "word": "wave",
+          "weight": 110.7427
+        },
+        {
+          "word": "riding",
+          "weight": 100.4641
+        },
+        {
+          "word": "horses",
+          "weight": 98.8461
+        }
+      ]
+    },
+    {
+      "topic_id": 9,
+      "top_words": [
+        {
+          "word": "train",
+          "weight": 206.4692
+        },
+        {
+          "word": "building",
+          "weight": 166.2726
+        },
+        {
+          "word": "bear",
+          "weight": 157.8656
+        },
+        {
+          "word": "looking",
+          "weight": 143.8713
+        },
+        {
+          "word": "wall",
+          "weight": 129.2769
+        },
+        {
+          "word": "sheep",
+          "weight": 114.0508
+        },
+        {
+          "word": "brown",
+          "weight": 113.3277
+        },
+        {
+          "word": "fence",
+          "weight": 106.8456
+        },
+        {
+          "word": "child",
+          "weight": 105.2682
+        },
+        {
+          "word": "teddy",
+          "weight": 104.0437
+        },
+        {
+          "word": "standing",
+          "weight": 99.5322
+        },
+        {
+          "word": "zebra",
+          "weight": 97.1439
+        }
+      ]
+    }
+  ]
+}

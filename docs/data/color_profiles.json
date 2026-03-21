@@ -1,0 +1,21 @@
+{
+  "description": "Placeholder. Copy actual color_profiles.json from EDA output.",
+  "rgb_scatter_sample": [
+    {
+      "r": 100,
+      "g": 120,
+      "b": 140,
+      "brightness": 120
+    },
+    {
+      "r": 150,
+      "g": 160,
+      "b": 170,
+      "brightness": 160
+    }
+  ],
+  "brightness_histogram": {
+    "bin_edges": [0, 50, 100, 150, 200, 250],
+    "counts": [120, 450, 2800, 1500, 130]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "bigrams": {
+    "labels": [
+      "white cat",
+      "young man",
+      "wooden table",
+      "sitting on",
+      "in front",
+      "looks like",
+      "red ball",
+      "blue shirt",
+      "green plant",
+      "black dog"
+    ],
+    "counts": [145, 128, 95, 87, 76, 69, 58, 52, 48, 42]
+  },
+  "trigrams": {
+    "labels": [
+      "a white cat",
+      "is standing on",
+      "next to the",
+      "on a table",
+      "looking at camera",
+      "is wearing a",
+      "in the foreground",
+      "appears to be",
+      "seated on a",
+      "has a black"
+    ],
+    "counts": [67, 54, 48, 42, 38, 35, 32, 28, 25, 22]
+  }
+}

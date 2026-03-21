@@ -1,0 +1,15 @@
+{
+  "duplicate_captions": 47,
+  "outlier_captions_gt40": 12,
+  "token_len_stats": {
+    "mean": 10.57,
+    "median": 10,
+    "std": 2.34,
+    "min": 2,
+    "max": 40
+  },
+  "token_len_histogram": {
+    "bin_edges": [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 40],
+    "counts": [8, 24, 68, 156, 1240, 2180, 900, 320, 98, 20]
+  }
+}

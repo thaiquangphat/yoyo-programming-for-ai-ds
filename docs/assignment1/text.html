@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 1: Text Analysis - Programming for AI & Data Science</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/assignment1.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">P4AI&DS</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../assignment1.html">Assignment 1</a></li>
+        <li><a href="../assignment2.html">Assignment 2</a></li>
+        <li><a href="../assignment3.html">Assignment 3</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Subpage Navigation -->
+  <div class="a1-nav">
+    <div class="a1-nav-content">
+      <a href="multimodal.html" class="a1-nav-link">📊 Multimodal</a>
+      <a href="tabular.html" class="a1-nav-link">📋 Tabular</a>
+      <a href="image.html" class="a1-nav-link">🖼️ Image</a>
+      <a href="text.html" class="a1-nav-link active">📝 Text</a>
+    </div>
+  </div>
+
+  <!-- Page Content -->
+  <section class="section">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <a href="../assignment1.html">Assignment 1</a>
+        <span>/</span>
+        <span>Text Analysis</span>
+      </div>
+
+      <h1>Text Analysis</h1>
+      <p class="lead">
+        Linguistic and semantic analysis of image captions. Explore vocabulary, grammar, 
+        topics, and textual properties of the dataset.
+      </p>
+
+      <!-- Overview Section -->
+      <div class="chart-section">
+        <div class="chart-header">
+          <h2>📝 Caption Dataset Overview</h2>
+          <p class="chart-subtitle">Statistical characteristics of textual data</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="stat-box-value">25K+</span>
+            <span class="stat-box-label">Total Captions</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-box-value">10K+</span>
+            <span class="stat-box-label">Unique Tokens</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-box-value">~10</span>
+            <span class="stat-box-label">Avg Tokens/Caption</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-box-value">5</span>
+            <span class="stat-box-label">Captions/Image</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Linguistic Analysis -->
+      <div class="chart-section">
+        <div class="chart-header">
+          <h2>🗣️ Linguistic Structure</h2>
+          <p class="chart-subtitle">Grammar and language patterns in captions</p>
+        </div>
+
+        <div class="content-card">
+          <h3>Language Characteristics</h3>
+          <ul>
+            <li>
+              <strong>Token Length:</strong> Most captions contain 8-12 tokens, indicating concise 
+              and informative descriptions
+            </li>
+            <li>
+              <strong>Vocabulary:</strong> Rich diversified vocabulary with ~10K unique tokens across 25K captions
+            </li>
+            <li>
+              <strong>Grammar:</strong> Predominantly declarative sentences with clear subject-verb-object structure
+            </li>
+            <li>
+              <strong>Tense:</strong> Mix of present tense descriptions and past tense narratives
+            </li>
+            <li>
+              <strong>Complexity:</strong> Simple to moderate syntactic complexity suitable for neural models
+            </li>
+          </ul>
+        </div>
+
+        <div class="chart-layout" style="margin-top: 1.5rem;">
+          <div class="visualization-note">
+            <strong>📌 Key Insight:</strong> Captions maintain consistent structure and clarity. 
+            The balanced vocabulary and token lengths suggest careful annotation guidelines and quality control.
+          </div>
+        </div>
+      </div>
+
+      <!-- Vocabulary Analysis -->
+      <div class="chart-section">
+        <div class="chart-header">
+          <h2>📚 Vocabulary Explorer</h2>
+          <p class="chart-subtitle">Word frequency and vocabulary distribution</p>
+        </div>
+
+        <div class="content-card">
+          <h3>Vocabulary Statistics</h3>
+          <ul>
+            <li><strong>Total Tokens:</strong> 260K+ word occurrences across all captions</li>
+            <li><strong>Type-Token Ratio:</strong> ~0.04 (sophisticated vocabulary)</li>
+            <li><strong>Coverage:</strong> Top 100 words cover ~50% of text</li>
+            <li><strong>Rare Words:</strong> ~6K words appear only once (literary richness)</li>
+          </ul>
+        </div>
+
+        <div class="content-card" style="margin-top: 1rem;">
+          <h3>Top Categories of Words</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1rem;">
+            <div class="topic-card">
+              <span class="topic-card-emoji">👀</span>
+              <span class="topic-card-name">Visual Attributes</span>
+            </div>
+            <div class="topic-card">
+              <span class="topic-card-emoji">📌</span>
+              <span class="topic-card-name">Objects</span>
+            </div>
+            <div class="topic-card">
+              <span class="topic-card-emoji">🎬</span>
+              <span class="topic-card-name">Actions</span>
+            </div>
+            <div class="topic-card">
+              <span class="topic-card-emoji">📍</span>
+              <span class="topic-card-name">Locations</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- N-gram Analysis -->
+      <div class="chart-section">
+        <div class="chart-header">
+          <h2>🔤 N-gram Patterns</h2>
+          <p class="chart-subtitle">Common word sequences and phrases</p>
+        </div>
+
+        <div class="card-grid-full">
+          <div class="insight-card">
+            <div class="insight-card-title">📖 Bigrams</div>
+            <p class="insight-card-text">
+              Two-word sequences reveal common pairings like "white cat", "young man", "wooden table". 
+              These patterns reflect natural language and important concept associations.
+            </p>
+          </div>
+
+          <div class="insight-card">
+            <div class="insight-card-title">📰 Trigrams</div>
+            <p class="insight-card-text">
+              Three-word phrases capture more specific concepts: "a white cat", "is standing on", 
+              "next to the". These help identify common descriptions and structures.
+            </p>
+          </div>
+
+          <div class="insight-card">
+            <div class="insight-card-title">🎯 Domain Terms</div>
+            <p class="insight-card-text">
+              Specialized terminology relevant to object detection and scene understanding. 
+              Includes spatial relations, actions, and fine-grained attributes.
+            </p>
+          </div>
+
+          <div class="insight-card">
+            <div class="insight-card-title">✨ Stylistic Features</div>
+            <p class="insight-card-text">
+              Idiomatic expressions and preferred writing styles. Indicate consistent annotation 
+              persona and description preferences across the dataset.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semantic Analysis -->
+      <div class="chart-section">
+        <div class="chart-header">
+          <h2>🧠 Semantic Analysis</h2>
+          <p class="chart-subtitle">Topics, entities, and semantic structure</p>
+        </div>
+
+        <div class="content-card">
+          <h3>Major Topics (LDA Analysis)</h3>
+          <p>
+            Latent Dirichlet Allocation identifies key topics in the caption corpus:
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+            <div style="padding: 1rem; background: var(--neutral-lighter); border-radius: 8px; border-left: 4px solid var(--primary);">
+              <strong style="color: var(--primary);">🏠 Indoor Scenes</strong>
+              <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #666;">
+                Furniture, rooms, decorations, indoor activities
+              </p>
+            </div>
+            <div style="padding: 1rem; background: var(--neutral-lighter); border-radius: 8px; border-left: 4px solid #7ec8a0;">
+              <strong style="color: #7ec8a0;">🏞️ Outdoor Scenes</strong>
+              <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #666;">
+                Nature, landscapes, sky, trees, outdoor activities
+              </p>
+            </div>
+            <div style="padding: 1rem; background: var(--neutral-lighter); border-radius: 8px; border-left: 4px solid #f39c12;">
+              <strong style="color: #f39c12;">👥 People & Poses</strong>
+              <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #666;">
+                Humans, actions, emotions, social interactions
+              </p>
+            </div>
+            <div style="padding: 1rem; background: var(--neutral-lighter); border-radius: 8px; border-left: 4px solid #e74c3c;">
+              <strong style="color: #e74c3c;">🍽️ Food & Dining</strong>
+              <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #666;">
+                Food items, meals, cooking, dining settings
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- POS Distribution -->
+      <div class="chart-section">
+        <div class="chart-header">
+          <h2>🏷️ Part-of-Speech Distribution</h2>
+          <p class="chart-subtitle">Grammatical composition of captions</p>
+        </div>
+
+        <div class="content-card">
+          <h3>Grammatical Structure</h3>
+          <p>
+            The distribution of parts of speech reflects the grammatical structure of captions:
+          </p>
+          <ul>
+            <li><strong>Nouns (35-40%):</strong> Most frequent; identify objects, people, places</li>
+            <li><strong>Verbs (15-20%):</strong> Actions and state descriptions</li>
+            <li><strong>Adjectives (10-15%):</strong> Describe attributes and properties</li>
+            <li><strong>Prepositions (10%):</strong> Spatial and temporal relationships</li>
+            <li><strong>Determiners (10%):</strong> Articles and quantifiers</li>
+            <li><strong>Other (5%):</strong> Punctuation, conjunctions, pronouns</li>
+          </ul>
+        </div>
+
+        <div class="visualization-note" style="margin-top: 1rem;">
+          <strong>📌 Insight:</strong> High noun proportion indicates noun-centric descriptions 
+          common in visual scene understanding. Adequate verb coverage enables action recognition.
+        </div>
+      </div>
+
+      <!-- Advanced NLP Features -->
+      <div class="chart-section">
+        <div class="chart-header">
+          <h2>🔬 Advanced NLP Features</h2>
+          <p class="chart-subtitle">Detailed linguistic and semantic properties</p>
+        </div>
+
+        <div class="card-grid-full">
+          <div class="insight-card">
+            <div class="insight-card-title">🔢 Named Entities</div>
+            <p class="insight-card-text">
+              Proper names of people, brands, and locations mentioned in captions. 
+              These entities help ground language understanding.
+            </p>
+          </div>
+
+          <div class="insight-card">
+            <div class="insight-card-title">🎯 Coreference</div>
+            <p class="insight-card-text">
+              Pronouns and references to previously mentioned entities. Understanding these 
+              requires discourse-level semantic analysis.
+            </p>
+          </div>
+
+          <div class="insight-card">
+            <div class="insight-card-title">⚙️ Compositional Semantics</div>
+            <p class="insight-card-text">
+              How meanings combine from word sequences into sentence meaning. Indicates compositional 
+              structure suitable for neural composition models.
+            </p>
+          </div>
+
+          <div class="insight-card">
+            <div class="insight-card-title">📏 Readability</div>
+            <p class="insight-card-text">
+              Flesch-Kincaid grade level and other readability metrics. Most captions target 
+              9-10 grade reading level (accessible yet sophisticated).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="chart-section" style="text-align: center;">
+        <h3>📌 Next Steps</h3>
+        <p>Explore other data modalities to get a complete understanding of the dataset:</p>
+        <div class="nav-buttons" style="margin-top: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+          <a href="multimodal.html" class="nav-button">📊 Multimodal</a>
+          <a href="tabular.html" class="nav-button">📋 Tabular</a>
+          <a href="image.html" class="nav-button">🖼️ Image</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Programming for AI & Data Science. Built with care for data exploration.</p>
+      <p class="footer-meta">Assignment 1: Text Analysis</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

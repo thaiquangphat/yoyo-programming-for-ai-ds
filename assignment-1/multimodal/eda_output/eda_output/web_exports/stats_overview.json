@@ -1,0 +1,19 @@
+{
+  "total_images": 5000,
+  "total_captions": 25014,
+  "avg_caps_per_image": 5.003,
+  "vocab_size": 10007,
+  "total_tokens": 261138,
+  "caps_per_image_dist": {
+    "labels": [
+      5,
+      6,
+      7
+    ],
+    "values": [
+      4987,
+      12,
+      1
+    ]
+  }
+}

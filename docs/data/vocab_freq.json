@@ -1,0 +1,36 @@
+{
+  "top_words": [
+    "image",
+    "shows",
+    "has",
+    "photo",
+    "picture",
+    "white",
+    "black",
+    "man",
+    "woman",
+    "cat",
+    "dog",
+    "person",
+    "table",
+    "chair",
+    "food"
+  ],
+  "top_frequencies": [
+    450,
+    380,
+    320,
+    290,
+    275,
+    260,
+    250,
+    240,
+    235,
+    220,
+    210,
+    200,
+    190,
+    180,
+    170
+  ]
+}

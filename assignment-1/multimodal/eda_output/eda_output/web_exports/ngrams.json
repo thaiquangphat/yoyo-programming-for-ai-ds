@@ -1,0 +1,166 @@
+{
+  "bigrams": [
+    {
+      "ngram": "group people",
+      "count": 430
+    },
+    {
+      "ngram": "living room",
+      "count": 308
+    },
+    {
+      "ngram": "sitting table",
+      "count": 240
+    },
+    {
+      "ngram": "black white",
+      "count": 238
+    },
+    {
+      "ngram": "man standing",
+      "count": 218
+    },
+    {
+      "ngram": "people standing",
+      "count": 210
+    },
+    {
+      "ngram": "tennis player",
+      "count": 198
+    },
+    {
+      "ngram": "tennis court",
+      "count": 197
+    },
+    {
+      "ngram": "man holding",
+      "count": 195
+    },
+    {
+      "ngram": "cell phone",
+      "count": 190
+    },
+    {
+      "ngram": "city street",
+      "count": 186
+    },
+    {
+      "ngram": "stop sign",
+      "count": 173
+    },
+    {
+      "ngram": "man riding",
+      "count": 171
+    },
+    {
+      "ngram": "cat sitting",
+      "count": 165
+    },
+    {
+      "ngram": "teddy bear",
+      "count": 164
+    },
+    {
+      "ngram": "people sitting",
+      "count": 164
+    },
+    {
+      "ngram": "young man",
+      "count": 160
+    },
+    {
+      "ngram": "baseball player",
+      "count": 160
+    },
+    {
+      "ngram": "clock tower",
+      "count": 158
+    },
+    {
+      "ngram": "man sitting",
+      "count": 151
+    }
+  ],
+  "trigrams": [
+    {
+      "ngram": "group people standing",
+      "count": 66
+    },
+    {
+      "ngram": "black white photo",
+      "count": 63
+    },
+    {
+      "ngram": "playing video game",
+      "count": 59
+    },
+    {
+      "ngram": "group people sitting",
+      "count": 53
+    },
+    {
+      "ngram": "double decker bus",
+      "count": 47
+    },
+    {
+      "ngram": "holding tennis racket",
+      "count": 46
+    },
+    {
+      "ngram": "people sitting table",
+      "count": 44
+    },
+    {
+      "ngram": "man riding skateboard",
+      "count": 41
+    },
+    {
+      "ngram": "lush green field",
+      "count": 37
+    },
+    {
+      "ngram": "teddy bear sitting",
+      "count": 36
+    },
+    {
+      "ngram": "black white cat",
+      "count": 35
+    },
+    {
+      "ngram": "standing tennis court",
+      "count": 34
+    },
+    {
+      "ngram": "holding tennis racquet",
+      "count": 34
+    },
+    {
+      "ngram": "male tennis player",
+      "count": 33
+    },
+    {
+      "ngram": "snow covered slope",
+      "count": 33
+    },
+    {
+      "ngram": "people flying kites",
+      "count": 32
+    },
+    {
+      "ngram": "man holding tennis",
+      "count": 32
+    },
+    {
+      "ngram": "man playing tennis",
+      "count": 31
+    },
+    {
+      "ngram": "hit tennis ball",
+      "count": 31
+    },
+    {
+      "ngram": "holding baseball bat",
+      "count": 31
+    }
+  ]
+}
