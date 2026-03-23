@@ -52,6 +52,10 @@
 <section id="overview">
   <h2>Dataset Overview</h2>
   <p class="desc">High-level statistics and caption length distribution showing balance and quality.</p>
+  
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Key Findings</h3>
+  <div id="key-findings" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;"></div>
+  
   <div class="chart-wrap">
     <canvas id="token-hist"></canvas>
   </div>
@@ -91,6 +95,16 @@
 <section id="colors">
   <h2>Colour Profile Analysis</h2>
   <p class="desc">Dominant colour per category and brightness/contrast characteristics.</p>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Global RGB Distribution</h3>
+  <div class="chart-wrap">
+    <canvas id="rgb-chart"></canvas>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Global Brightness Distribution</h3>
+  <div class="chart-wrap">
+    <canvas id="global-brightness-hist"></canvas>
+  </div>
 
   <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Category Colour Swatches</h3>
   <div class="chart-wrap">
@@ -235,7 +249,7 @@
 </section>
 
 <footer style="background: #1a1a2e; color: #ccc; padding: 3rem 2rem; text-align: center; margin-top: 4rem; font-size: 12px;">
-  <p>&copy; 2024 Programming for AI & Data Science — Multi-modal EDA Report</p>
+  <p>&copy; 2026 Programming for AI & Data Science — Multi-modal EDA Report</p>
 </footer>
 
 <script>
@@ -262,6 +276,22 @@ async function loadJSON(path) {
     });
     
     document.getElementById('avg-caps').textContent = stats.avg_caps_per_image.toFixed(2);
+
+    // ─ 1b. Key Findings from EDA Summary ────
+    try {
+      const edaSummary = await loadJSON('./data/eda_summary.json');
+      const findingsContainer = document.getElementById('key-findings');
+      if (edaSummary.key_findings && Array.isArray(edaSummary.key_findings)) {
+        findingsContainer.innerHTML = edaSummary.key_findings.map((finding, i) => `
+          <div style="padding: 1.5rem; background: rgba(102, 126, 234, 0.1); border-radius: 8px; border-left: 4px solid #667eea;">
+            <div style="font-weight: 600; color: #1a1a2e; margin-bottom: 0.5rem;">Finding ${i+1}</div>
+            <div style="font-size: 14px; color: #555; line-height: 1.6;">${finding}</div>
+          </div>
+        `).join('');
+      }
+    } catch (err) {
+      console.warn('EDA summary key findings error:', err);
+    }
 
     // ─ 2. Token Length Histogram ─────────────
     const dq = await loadJSON('./data/data_quality.json');
@@ -375,7 +405,91 @@ async function loadJSON(path) {
       }
     });
 
-    // ─ 6. Colour Swatches ──────────────────
+    // ─ 5b. Global RGB Distribution ─────────
+    try {
+      const colorProfiles = await loadJSON('./data/color_profiles.json');
+      const rgbValues = {
+        R: colorProfiles.channel_means.R,
+        G: colorProfiles.channel_means.G,
+        B: colorProfiles.channel_means.B
+      };
+      
+      new Chart(document.getElementById('rgb-chart'), {
+        type: 'bar',
+        data: {
+          labels: ['Red', 'Green', 'Blue'],
+          datasets: [{
+            label: 'Mean Channel Value',
+            data: [rgbValues.R, rgbValues.G, rgbValues.B],
+            backgroundColor: ['#ff6b6b', '#51cf66', '#4ecdc4'],
+            borderColor: ['#ff5252', '#40c057', '#1a9b8e'],
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            title: {
+              display: true,
+              text: 'Dataset RGB Channel Means',
+              font: { size: 14, weight: 'bold' }
+            },
+            legend: { display: true }
+          },
+          scales: {
+            y: { 
+              min: 0,
+              max: 255,
+              title: { display: true, text: 'Mean pixel value' }
+            }
+          }
+        }
+      });
+    } catch (err) {
+      console.warn('Global RGB chart error:', err);
+    }
+
+    // ─ 5c. Global Brightness Distribution ──
+    try {
+      const colorProfiles = await loadJSON('./data/color_profiles.json');
+      const brightnessHist = colorProfiles.brightness_histogram;
+      const brightLabels = brightnessHist.bin_edges.slice(0, -1).map((v, i) =>
+        ((v + brightnessHist.bin_edges[i + 1]) / 2).toFixed(0)
+      );
+
+      new Chart(document.getElementById('global-brightness-hist'), {
+        type: 'bar',
+        data: {
+          labels: brightLabels,
+          datasets: [{
+            label: 'Frequency',
+            data: brightnessHist.counts,
+            backgroundColor: '#f5c842',
+            borderColor: '#f59f00',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            title: {
+              display: true,
+              text: `Global Brightness Distribution (mean: ${colorProfiles.brightness_stats.mean.toFixed(1)})`,
+              font: { size: 14, weight: 'bold' }
+            },
+            legend: { display: false }
+          },
+          scales: {
+            x: { title: { display: true, text: 'Brightness value' } },
+            y: { title: { display: true, text: 'Count' } }
+          }
+        }
+      });
+    } catch (err) {
+      console.warn('Global brightness histogram error:', err);
+    }
+
+    // ─ 7. Colour Swatches ──────────────────
     const cats = await loadJSON('./data/category_color_profiles.json');
     const swatchContainer = document.getElementById('swatches');
     cats.categories.forEach(c => {
@@ -387,7 +501,7 @@ async function loadJSON(path) {
       swatchContainer.appendChild(div);
     });
 
-    // ─ 7. Brightness & Contrast ────────────
+    // ─ 8. Brightness & Contrast ────────────
     const bData = await loadJSON('./data/brightness_by_category.json');
     new Chart(document.getElementById('brightness-chart'), {
       type: 'bar',
@@ -421,7 +535,7 @@ async function loadJSON(path) {
       }
     });
 
-    // ─ 8. Bounding Box Area ────────────────
+    // ─ 9. Bounding Box Area ────────────────
     const bbox = await loadJSON('./data/bbox_area_by_category.json');
     const sortedBbox = [...bbox.data].sort((a, b) => b.median_area - a.median_area);
     new Chart(document.getElementById('bbox-chart'), {
@@ -449,7 +563,7 @@ async function loadJSON(path) {
       }
     });
 
-    // ─ 9. Vocabulary Bar ───────────────────
+    // ─ 10. Vocabulary Bar ───────────────────
     const vocab = await loadJSON('./data/vocab_freq.json');
     const top30 = vocab.top_200_content_words.slice(0, 30);
     new Chart(document.getElementById('vocab-bar'), {
@@ -477,7 +591,7 @@ async function loadJSON(path) {
       }
     });
 
-    // ─ 10. POS Distribution ────────────────
+    // ─ 11. POS Distribution ────────────────
     const pos = await loadJSON('./data/pos_distribution.json');
     new Chart(document.getElementById('pos-donut'), {
       type: 'doughnut',
@@ -504,7 +618,7 @@ async function loadJSON(path) {
       }
     });
 
-    // ─ 11. N-grams ────────────────────────
+    // ─ 12. N-grams ────────────────────────
     const ngrams = await loadJSON('./data/ngrams.json');
     let showBigrams = true;
     const ngramChart = new Chart(document.getElementById('ngram-chart'), {
@@ -546,7 +660,7 @@ async function loadJSON(path) {
       });
     });
 
-    // ─ 12. Jaccard Similarity ──────────────
+    // ─ 13. Jaccard Similarity ──────────────
     const jac = await loadJSON('./data/jaccard_similarity.json');
     const jacH = jac.histogram;
     const jacLabels = jacH.bin_edges.slice(0, -1).map((v, i) =>
@@ -580,7 +694,7 @@ async function loadJSON(path) {
       }
     });
 
-    // ─ 13. Object-Word Alignment ──────────
+    // ─ 14. Object-Word Alignment ──────────
     const align = await loadJSON('./data/object_word_align.json');
     new Chart(document.getElementById('align-chart'), {
       type: 'bar',
@@ -624,7 +738,7 @@ async function loadJSON(path) {
       }
     });
 
-    // ─ 14. Bias Analysis ──────────────────
+    // ─ 15. Bias Analysis ──────────────────
     const bias = await loadJSON('./data/bias.json');
     document.getElementById('gender-ratio').textContent =
       `Male-to-female word ratio: ${bias.gender.ratio_m_f.toFixed(1)}×`;
@@ -677,7 +791,7 @@ async function loadJSON(path) {
       }
     });
 
-    // ─ 15. Difficulty ────────────────────
+    // ─ 16. Difficulty ────────────────────
     const diff = await loadJSON('./data/difficulty.json');
     const diffH = diff.difficulty_histogram;
     const diffLabels = diffH.bin_edges.slice(0, -1).map((v, i) =>
@@ -711,7 +825,7 @@ async function loadJSON(path) {
       }
     });
 
-    // ─ 16. Easiest/Hardest Images ──────────
+    // ─ 17. Easiest/Hardest Images ──────────
     const manifest = await loadJSON('./data/gallery_manifest.json');
     const allImages = Object.values(manifest.images_by_cat).flat();
 
@@ -733,7 +847,7 @@ async function loadJSON(path) {
       });
     });
 
-    // ─ 17. Gallery Tabs ───────────────────
+    // ─ 18. Gallery Tabs ───────────────────
     const tabBar = document.getElementById('gallery-tabs');
     const grid = document.getElementById('gallery-grid');
 
@@ -764,7 +878,7 @@ async function loadJSON(path) {
 
     document.querySelector('#gallery-tabs .tab')?.click();
 
-    // ─ 18. Lazy-loaded: CLIP t-SNE ─────────
+    // ─ 19. Lazy-loaded: CLIP t-SNE ─────────
     const observerTsne = new IntersectionObserver(entries => {
       if (!entries[0].isIntersecting) return;
       observerTsne.disconnect();
@@ -802,7 +916,7 @@ async function loadJSON(path) {
     }, { threshold: 0.1 });
     observerTsne.observe(document.getElementById('tsne-div'));
 
-    // ─ 19. Text t-SNE ────────────────────
+    // ─ 20. Text t-SNE ────────────────────
     const observerText = new IntersectionObserver(entries => {
       if (!entries[0].isIntersecting) return;
       observerText.disconnect();
@@ -832,7 +946,7 @@ async function loadJSON(path) {
     }, { threshold: 0.1 });
     observerText.observe(document.getElementById('tsne-text-div'));
 
-    // ─ 20. Co-occurrence Heatmap ────────
+    // ─ 21. Co-occurrence Heatmap ────────
     const observerCooc = new IntersectionObserver(entries => {
       if (!entries[0].isIntersecting) return;
       observerCooc.disconnect();
@@ -852,7 +966,7 @@ async function loadJSON(path) {
     }, { threshold: 0.1 });
     observerCooc.observe(document.getElementById('cooccur-div'));
 
-    // ─ 21. LDA Topics ───────────────────
+    // ─ 22. LDA Topics ───────────────────
     const lda = await loadJSON('./data/lda_topics.json');
     const topicsGrid = document.getElementById('topics-grid');
     lda.topics.forEach(topic => {

@@ -328,7 +328,7 @@
 </section>
 
 <footer style="background: #1a1a2e; color: #ccc; padding: 3rem 2rem; text-align: center; margin-top: 4rem; font-size: 12px;">
-  <p>&copy; 2024 Programming for AI & Data Science — Tabular EDA Report (All 10 Sections)</p>
+  <p>&copy; 2026 Programming for AI & Data Science — Tabular EDA Report</p>
 </footer>
 
 <script>
@@ -636,23 +636,37 @@ async function loadJSON(path) {
     try {
       const ordBoxData = await loadJSON('./data/ordinal_boxplots.json').catch(() => ({}));
       const ordBox = ordBoxData || {};
-      const ordFeatures = Object.keys(ordBox).filter(k => ordBox[k] && typeof ordBox[k] === 'object' && ordBox[k].median !== undefined);
-      const ordSelect = document.getElementById('ordinal-select');
       
+      // Transform data: flatten all boxes from all features into a single array with feature labels
+      const allOrdinalBoxes = [];
+      Object.keys(ordBox).forEach(feature => {
+        const featureData = ordBox[feature];
+        if (featureData && featureData.boxes && Array.isArray(featureData.boxes)) {
+          featureData.boxes.forEach(box => {
+            allOrdinalBoxes.push({
+              feature: feature,
+              ...box
+            });
+          });
+        }
+      });
+      
+      const ordSelect = document.getElementById('ordinal-select');
       let ordBoxChart = null;
       
-      if (ordFeatures.length > 0) {
-        ordSelect.innerHTML = ordFeatures.map(f => `<option value="${f}">${f}</option>`).join('');
+      if (allOrdinalBoxes.length > 0) {
+        ordSelect.innerHTML = allOrdinalBoxes.map((b, i) => `<option value="${i}">${b.feature} - ${b.label || 'Box ' + (i+1)}</option>`).join('');
         
-        window.renderOrdinalBox = function(feature) {
-          const stats = ordBox[feature];
-          if (!stats || typeof stats.median === 'undefined') return;
+        window.renderOrdinalBox = function(idx) {
+          const boxIdx = parseInt(idx);
+          const stats = allOrdinalBoxes[boxIdx];
+          if (!stats) return;
           
           if (ordBoxChart) ordBoxChart.destroy();
           ordBoxChart = new Chart(document.getElementById('ordinal-box'), {
             type: 'bar',
             data: { 
-              labels: [feature], 
+              labels: [`${stats.feature} (${stats.label || 'Category'})`], 
               datasets: [
                 { label: 'Min', data: [stats.min || 0], backgroundColor: '#ccc' },
                 { label: 'Q1', data: [stats.q1 || stats.min || 0], backgroundColor: '#4f86c6' },
@@ -665,7 +679,7 @@ async function loadJSON(path) {
               indexAxis: 'y', 
               responsive: true, 
               plugins: { 
-                title: { display: true, text: `${feature} Statistics`, font: { size: 14, weight: 'bold' }}, 
+                title: { display: true, text: `${stats.feature} - ${stats.label || 'Statistics'}`, font: { size: 14, weight: 'bold' }}, 
                 legend: { display: true }
               }, 
               scales: { x: { stacked: true }}
@@ -674,7 +688,7 @@ async function loadJSON(path) {
         };
         
         ordSelect.addEventListener('change', e => window.renderOrdinalBox(e.target.value));
-        window.renderOrdinalBox(ordFeatures[0]);
+        window.renderOrdinalBox(0);
       } else {
         document.getElementById('ordinal-select').innerHTML = '<option>No data available</option>';
       }
@@ -779,19 +793,35 @@ async function loadJSON(path) {
 
     // ─ 6b. Price by Categorical ─────────────────
     try {
-      const saleByCAT = await loadJSON('./data/saleprice_by_categorical.json').catch(() => []);
+      const saleByCAT = await loadJSON('./data/saleprice_by_categorical.json').catch(() => ({}));
       const catPriceSelect = document.getElementById('catprice-select');
       
-      // Handle both array and object responses
-      const catPriceDataRaw = Array.isArray(saleByCAT) ? saleByCAT : (saleByCAT.data || saleByCAT.categories || saleByCAT.by_category || []);
-      const catPriceData = (Array.isArray(catPriceDataRaw) ? catPriceDataRaw : []).slice(0, 15);
+      // Transform data: flatten all categories from all categorical features into a single array
+      const allCategories = [];
+      if (typeof saleByCAT === 'object' && saleByCAT !== null && !Array.isArray(saleByCAT)) {
+        Object.keys(saleByCAT).forEach(featureName => {
+          const categoryArray = saleByCAT[featureName];
+          if (Array.isArray(categoryArray)) {
+            categoryArray.forEach(cat => {
+              allCategories.push({
+                feature: featureName,
+                ...cat
+              });
+            });
+          }
+        });
+      } else if (Array.isArray(saleByCAT)) {
+        allCategories.push(...saleByCAT);
+      }
+      
+      const catPriceData = allCategories.slice(0, 100); // Limit to first 100 categories
       
       if (catPriceData.length > 0) {
-        catPriceSelect.innerHTML = catPriceData.map((c, i) => `<option value="${i}">${c.category || `Category ${i+1}`}</option>`).join('');
+        catPriceSelect.innerHTML = catPriceData.map((c, i) => `<option value="${i}">${c.feature ? c.feature + ' - ' : ''}${c.category || `Category ${i+1}`}</option>`).join('');
         
         let catPriceChart = null;
         window.renderCatPrice = function(idx) {
-          const data = catPriceData[idx] || catPriceData[0];
+          const data = catPriceData[parseInt(idx)] || catPriceData[0];
           if (!data) return;
           
           if (catPriceChart) catPriceChart.destroy();
@@ -810,14 +840,14 @@ async function loadJSON(path) {
               responsive: true, 
               indexAxis: 'y', 
               plugins: { 
-                title: { display: true, text: 'Price by Category', font: { size: 14, weight: 'bold' }}, 
+                title: { display: true, text: `${data.feature || ''} - ${data.category || 'Category'} Price Distribution`, font: { size: 14, weight: 'bold' }}, 
                 legend: { display: false }
               }
             }
           });
         };
         
-        catPriceSelect.addEventListener('change', e => window.renderCatPrice(parseInt(e.target.value)));
+        catPriceSelect.addEventListener('change', e => window.renderCatPrice(e.target.value));
         window.renderCatPrice(0);
       } else {
         document.getElementById('catprice-select').innerHTML = '<option>No data available</option>';
