@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 1: Tabular EDA</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <style>
+    .schema-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 12px;
+    }
+
+    .schema-table thead {
+      background: #f0f0f0;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+    }
+
+    .schema-table th,
+    .schema-table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .schema-table tr:hover {
+      background: #f9f9f9;
+    }
+
+    .schema-search {
+      padding: 0.6rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 13px;
+      margin-bottom: 1rem;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 1.5rem 2rem;
+      min-width: 140px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .stat-card .val {
+      font-size: 2.2rem;
+      font-weight: 700;
+      display: block;
+    }
+
+    .stat-card .lbl {
+      font-size: 12px;
+      color: #bbb;
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .alert-card {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 1rem;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+      font-size: 13px;
+    }
+
+    .taxonomy-accordion {
+      margin-top: 1.5rem;
+    }
+
+    .accordion-item {
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+
+    .accordion-header {
+      padding: 1rem;
+      background: #f8f8f8;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+      user-select: none;
+    }
+
+    .accordion-header:hover {
+      background: #eee;
+    }
+
+    .accordion-content {
+      padding: 1rem;
+      display: none;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .accordion-content.active {
+      display: block;
+    }
+
+    #schema-table {
+      max-height: 600px;
+      overflow-y: auto;
+    }
+
+    .missing-legend {
+      display: flex;
+      gap: 2rem;
+      margin: 1rem 0;
+      font-size: 13px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .legend-box {
+      width: 20px;
+      height: 20px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../" style="color: #fff;">← Back</a>
+  <a href="#overview" style="color: #ccc;">Overview</a>
+  <a href="#features" style="color: #ccc;">Features</a>
+  <a href="#missing" style="color: #ccc;">Missing</a>
+  <a href="#numeric" style="color: #ccc;">Numeric</a>
+  <a href="#categorical" style="color: #ccc;">Categorical</a>
+  <a href="#target" style="color: #ccc;">Target</a>
+  <a href="#correlation" style="color: #ccc;">Correlation</a>
+  <a href="#advanced" style="color: #ccc;">Advanced</a>
+</nav>
+
+<div class="hero">
+  <h1>Tabular EDA Report</h1>
+  <p>House Prices Dataset Analysis · Comprehensive Statistical Exploration</p>
+  <div class="stats-bar">
+    <div class="stat-card">
+      <span class="val" data-stat="train_rows">—</span>
+      <span class="lbl">Training Rows</span>
+    </div>
+    <div class="stat-card">
+      <span class="val" data-stat="test_rows">—</span>
+      <span class="lbl">Test Rows</span>
+    </div>
+    <div class="stat-card">
+      <span class="val" id="total-cols">—</span>
+      <span class="lbl">Features</span>
+    </div>
+    <div class="stat-card">
+      <span class="val" id="missing-count">—</span>
+      <span class="lbl">Cols w/ Missing</span>
+    </div>
+  </div>
+</div>
+
+<!-- =======================================
+     Section 1: Dataset Overview
+     ======================================= -->
+
+<section id="overview">
+  <h2>Dataset Overview</h2>
+  <p class="desc">High-level summary of dataset dimensions, features, and data types.</p>
+  
+  <div class="chart-wrap">
+    <input type="text" class="schema-search" id="schema-search" placeholder="Search features by name…">
+    <table class="schema-table" id="schema-table">
+      <thead>
+        <tr>
+          <th>Column</th>
+          <th>Data Type</th>
+          <th>Unique Values</th>
+          <th>Missing</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- =======================================
+     Section 2: Feature Taxonomy
+     ======================================= -->
+
+<section id="features">
+  <h2>Feature Taxonomy</h2>
+  <p class="desc">Classification of features into numeric, ordinal, and nominal categories.</p>
+
+  <div class="chart-wrap">
+    <canvas id="taxonomy-donut" style="max-width: 400px; margin: 0 auto;"></canvas>
+  </div>
+
+  <div class="taxonomy-accordion" id="taxonomy-accordion"></div>
+</section>
+
+<!-- =======================================
+     Section 3: Missing Data Analysis
+     ======================================= -->
+
+<section id="missing">
+  <h2>Missing Data Analysis</h2>
+  <p class="desc">Identification and categorization of missing values. Orange indicates NaN as absence, blue indicates genuinely missing.</p>
+
+  <div class="missing-legend">
+    <div class="legend-item">
+      <div class="legend-box" style="background: #e07b39;"></div>
+      <span>NaN encodes absence (meaningful)</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-box" style="background: #4f86c6;"></div>
+      <span>Genuinely missing (needs imputation)</span>
+    </div>
+  </div>
+
+  <div class="chart-wrap">
+    <canvas id="missing-bar"></canvas>
+  </div>
+
+  <div id="near-constant-panel"></div>
+</section>
+
+<!-- =======================================
+     Section 4: Numeric Features
+     ======================================= -->
+
+<section id="numeric">
+  <h2>Numeric Features Analysis</h2>
+  <p class="desc">Statistical distributions and relationships for numeric variables.</p>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Numeric Distributions</h3>
+  <div class="chart-wrap">
+    <div id="numeric-select-wrap" style="margin-bottom: 1rem;">
+      <label for="numeric-select" style="margin-right: 1rem; font-weight: 600;">Select feature:</label>
+      <select id="numeric-select" style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+        <option>Loading...</option>
+      </select>
+    </div>
+    <canvas id="numeric-hist"></canvas>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Numeric Box Plots</h3>
+  <div class="chart-wrap">
+    <canvas id="numeric-box" style="max-height: 600px;"></canvas>
+  </div>
+</section>
+
+<!-- =======================================
+     Section 5: Categorical Features
+     ======================================= -->
+
+<section id="categorical">
+  <h2>Categorical Features Analysis</h2>
+  <p class="desc">Category distributions and frequency patterns for nominal and ordinal variables.</p>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Category Frequencies</h3>
+  <div class="chart-wrap">
+    <div id="cat-select-wrap" style="margin-bottom: 1rem;">
+      <label for="cat-select" style="margin-right: 1rem; font-weight: 600;">Select category:</label>
+      <select id="cat-select" style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+        <option>Loading...</option>
+      </select>
+    </div>
+    <canvas id="cat-bar"></canvas>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Ordinal Correlations</h3>
+  <div class="chart-wrap">
+    <p style="color: #666; margin-bottom: 1rem; font-size: 13px;">
+      Correlation of ordinal features with target variable (SalePrice).
+    </p>
+    <canvas id="ordinal-corr"></canvas>
+  </div>
+</section>
+
+<!-- =======================================
+     Section 6: Target Variable (SalePrice)
+     ======================================= -->
+
+<section id="target">
+  <h2>Target Variable: SalePrice</h2>
+  <p class="desc">Detailed analysis of the target variable distribution and its relationships.</p>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Price Distribution</h3>
+  <div class="chart-wrap">
+    <canvas id="price-hist"></canvas>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Price vs Top Features</h3>
+  <div class="chart-wrap">
+    <canvas id="price-scatter"></canvas>
+  </div>
+</section>
+
+<!-- =======================================
+     Section 7: Correlation Heatmap
+     ======================================= -->
+
+<section id="correlation">
+  <h2>Feature Correlation Analysis</h2>
+  <p class="desc">Pairwise correlations between numeric features.</p>
+
+  <div class="chart-wrap">
+    <div id="corr-heatmap" style="height: 700px; position: relative;">
+      <p style="color: #999; padding: 2rem; text-align: center;">Loading correlation heatmap…</p>
+    </div>
+  </div>
+</section>
+
+<!-- =======================================
+     Section 8: Advanced Analysis
+     ======================================= -->
+
+<section id="advanced">
+  <h2>Advanced Analysis</h2>
+  <p class="desc">Temporal patterns, distribution shifts, outliers, and engineered insights.</p>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Skewness & Rare Categories</h3>
+  <div class="chart-wrap">
+    <canvas id="skewness-bar"></canvas>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Feature Importance</h3>
+  <div class="chart-wrap">
+    <p style="color: #666; margin-bottom: 1rem; font-size: 13px;">
+      Estimated importance based on statistical relationships with target.
+    </p>
+    <canvas id="importance-bar"></canvas>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Neighborhood Price Analysis</h3>
+  <div class="chart-wrap">
+    <canvas id="neighborhood-box"></canvas>
+  </div>
+</section>
+
+<footer style="background: #1a1a2e; color: #ccc; padding: 3rem 2rem; text-align: center; margin-top: 4rem; font-size: 12px;">
+  <p>&copy; 2024 Programming for AI & Data Science — Tabular EDA Report</p>
+</footer>
+
+<script>
+async function loadJSON(path) {
+  const r = await fetch(path);
+  if (!r.ok) throw new Error(`Failed to load ${path}: ${r.status}`);
+  return r.json();
+}
+
+(async () => {
+  try {
+    // ─ 1. Dataset Overview ──────────────────────────
+    const overview = await loadJSON('./data/dataset_overview.json');
+    
+    document.querySelectorAll('[data-stat]').forEach(el => {
+      const val = overview[el.dataset.stat];
+      el.textContent = typeof val === 'number' ? val.toLocaleString() : val;
+    });
+
+    document.getElementById('total-cols').textContent = overview.train_cols;
+
+    // Schema table with search
+    const tbody = document.querySelector('#schema-table tbody');
+    const allRows = overview.schema || [];
+
+    function renderSchema(rows) {
+      tbody.innerHTML = rows.map(r =>
+        `<tr>
+          <td><strong>${r.column}</strong></td>
+          <td>${r.dtype}</td>
+          <td>${r.n_unique}</td>
+          <td style="${r.n_missing > 0 ? 'color: #dc3545; font-weight: 600;' : ''}">${r.n_missing}</td>
+        </tr>`
+      ).join('');
+    }
+
+    renderSchema(allRows);
+
+    document.getElementById('schema-search').addEventListener('input', e => {
+      const q = e.target.value.toLowerCase();
+      renderSchema(allRows.filter(r => r.column.toLowerCase().includes(q)));
+    });
+
+    // ─ 2. Feature Taxonomy ─────────────────────────
+    const tax = await loadJSON('./data/feature_taxonomy.json');
+    
+    document.getElementById('missing-count').textContent = 
+      (tax.counts.numeric + tax.counts.ordinal + tax.counts.nominal);
+
+    new Chart(document.getElementById('taxonomy-donut'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Numeric', 'Ordinal', 'Nominal'],
+        datasets: [{
+          data: [tax.counts.numeric, tax.counts.ordinal, tax.counts.nominal],
+          backgroundColor: ['#4f86c6', '#e07b39', '#7ec8a0']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Feature Type Distribution',
+            font: { size: 14, weight: 'bold' }
+          }
+        }
+      }
+    });
+
+    // Taxonomy accordion
+    const accordion = document.getElementById('taxonomy-accordion');
+    const categories = [
+      { key: 'numeric', label: 'Numeric Features', color: '#4f86c6' },
+      { key: 'ordinal', label: 'Ordinal Features', color: '#e07b39' },
+      { key: 'nominal', label: 'Nominal Features', color: '#7ec8a0' }
+    ];
+
+    categories.forEach(cat => {
+      const item = document.createElement('div');
+      item.className = 'accordion-item';
+      const header = document.createElement('div');
+      header.className = 'accordion-header';
+      header.innerHTML = `<span style="color: ${cat.color};">▸</span> ${cat.label} (${tax[cat.key].length})`;
+      header.onclick = () => content.classList.toggle('active');
+
+      const content = document.createElement('div');
+      content.className = 'accordion-content';
+      content.textContent = tax[cat.key].join(', ');
+
+      item.appendChild(header);
+      item.appendChild(content);
+      accordion.appendChild(item);
+    });
+
+    // ─ 3. Missing Values ───────────────────────────
+    const mv = await loadJSON('./data/missing_values.json');
+    const mvSorted = [...(mv.rows || [])].sort((a, b) => b.missing_pct - a.missing_pct);
+
+    new Chart(document.getElementById('missing-bar'), {
+      type: 'bar',
+      indexAxis: 'y',
+      data: {
+        labels: mvSorted.slice(0, 20).map(m => m.column),
+        datasets: [{
+          label: 'Missing %',
+          data: mvSorted.slice(0, 20).map(m => m.missing_pct),
+          backgroundColor: mvSorted.slice(0, 20).map(m => m.nan_means_absence ? '#e07b39' : '#4f86c6')
+        }]
+      },
+      options: {
+        responsive: true,
+        indexAxis: 'y',
+        plugins: {
+          title: {
+            display: true,
+            text: 'Top 20 Features with Missing Data',
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { display: false }
+        },
+        scales: {
+          x: { max: 100, title: { display: true, text: 'Missing %' } }
+        }
+      }
+    });
+
+    // Near-constant features
+    const cf = await loadJSON('./data/constant_features.json');
+    const ncPanel = document.getElementById('near-constant-panel');
+    if (cf.near_constant && cf.near_constant.length > 0) {
+      ncPanel.innerHTML = '<h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Near-Constant Features ⚠️</h3>';
+      cf.near_constant.forEach(f => {
+        const card = document.createElement('div');
+        card.className = 'alert-card';
+        card.innerHTML = `<strong>${f.column}:</strong> ${f.pct.toFixed(2)}% are "${f.dominant}" — consider dropping.`;
+        ncPanel.appendChild(card);
+      });
+    }
+
+    // ─ 4. Numeric Features ─────────────────────────
+    const numDist = await loadJSON('./data/numeric_distributions.json');
+    const numFeatures = Object.keys(numDist.distributions || {});
+
+    // Populate numeric select
+    const numSelect = document.getElementById('numeric-select');
+    numSelect.innerHTML = numFeatures.map(f => `<option value="${f}">${f}</option>`).join('');
+
+    let numHistChart = null;
+    function renderNumericHist(feature) {
+      const dist = numDist.distributions[feature];
+      if (!dist) return;
+
+      const labels = dist.bin_edges.slice(0, -1).map((v, i) =>
+        ((v + dist.bin_edges[i + 1]) / 2).toFixed(1)
+      );
+
+      if (numHistChart) numHistChart.destroy();
+      numHistChart = new Chart(document.getElementById('numeric-hist'), {
+        type: 'bar',
+        data: {
+          labels,
+          datasets: [{
+            label: 'Frequency',
+            data: dist.counts,
+            backgroundColor: '#4f86c6',
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            title: {
+              display: true,
+              text: `Distribution of ${feature}`,
+              font: { size: 14, weight: 'bold' }
+            },
+            legend: { display: false }
+          }
+        }
+      });
+    }
+
+    numSelect.addEventListener('change', e => renderNumericHist(e.target.value));
+    if (numFeatures.length > 0) renderNumericHist(numFeatures[0]);
+
+    // Numeric box plots
+    const numBox = await loadJSON('./data/numeric_boxplots.json');
+    const boxData = numBox.boxplots || [];
+    
+    new Chart(document.getElementById('numeric-box'), {
+      type: 'bar',
+      indexAxis: 'y',
+      data: {
+        labels: boxData.slice(0, 15).map(b => b.feature),
+        datasets: [{
+          label: 'Median',
+          data: boxData.slice(0, 15).map(b => b.median),
+          backgroundColor: '#4f86c6'
+        }]
+      },
+      options: {
+        responsive: true,
+        indexAxis: 'y',
+        plugins: {
+          title: {
+            display: true,
+            text: 'Top 15 Numeric Features (Median Values)',
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { display: false }
+        }
+      }
+    });
+
+    // ─ 5. Categorical Features ────────────────────
+    const catCounts = await loadJSON('./data/category_counts.json');
+    const catFeatures = Object.keys(catCounts.categories || {});
+
+    // Populate category select
+    const catSelect = document.getElementById('cat-select');
+    catSelect.innerHTML = catFeatures.map(f => `<option value="${f}">${f}</option>`).join('');
+
+    let catChart = null;
+    function renderCategoryBar(feature) {
+      const cats = catCounts.categories[feature];
+      if (!cats) return;
+      const top10 = cats.slice(0, 10);
+
+      if (catChart) catChart.destroy();
+      catChart = new Chart(document.getElementById('cat-bar'), {
+        type: 'bar',
+        data: {
+          labels: top10.map(c => c.category),
+          datasets: [{
+            label: 'Count',
+            data: top10.map(c => c.count),
+            backgroundColor: '#7ec8a0',
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            title: {
+              display: true,
+              text: `Top Categories in ${feature}`,
+              font: { size: 14, weight: 'bold' }
+            },
+            legend: { display: false }
+          }
+        }
+      });
+    }
+
+    catSelect.addEventListener('change', e => renderCategoryBar(e.target.value));
+    if (catFeatures.length > 0) renderCategoryBar(catFeatures[0]);
+
+    // Ordinal correlations
+    const ordCorr = await loadJSON('./data/ordinal_correlations.json');
+    const ordData = ordCorr.correlations || [];
+    
+    new Chart(document.getElementById('ordinal-corr'), {
+      type: 'bar',
+      indexAxis: 'y',
+      data: {
+        labels: ordData.map(o => o.feature),
+        datasets: [{
+          label: 'Correlation with Price',
+          data: ordData.map(o => o.correlation),
+          backgroundColor: ordData.map(o => o.correlation > 0 ? '#7ec8a0' : '#e07b39')
+        }]
+      },
+      options: {
+        responsive: true,
+        indexAxis: 'y',
+        plugins: {
+          title: {
+            display: true,
+            text: 'Ordinal Feature Correlations with SalePrice',
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { display: false }
+        },
+        scales: {
+          x: { min: -1, max: 1, title: { display: true, text: 'Correlation' } }
+        }
+      }
+    });
+
+    // ─ 6. Target Variable (SalePrice) ──────────────
+    const priceEDA = await loadJSON('./data/saleprice_distribution.json');
+    const priceHist = priceEDA.histogram || {};
+
+    const priceLabels = (priceHist.bin_edges || []).slice(0, -1).map((v, i) =>
+      ((v + (priceHist.bin_edges[i + 1] || 0)) / 2).toFixed(0)
+    );
+
+    new Chart(document.getElementById('price-hist'), {
+      type: 'bar',
+      data: {
+        labels: priceLabels,
+        datasets: [{
+          label: 'Count',
+          data: priceHist.counts || [],
+          backgroundColor: '#764ba2',
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'SalePrice Distribution',
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { display: false }
+        }
+      }
+    });
+
+    // Price scatter
+    const scatter = await loadJSON('./data/scatter_data.json');
+    const scatterPoints = (scatter.points || []).slice(0, 500);
+
+    new Chart(document.getElementById('price-scatter'), {
+      type: 'scatter',
+      data: {
+        datasets: [{
+          label: 'GrLivArea vs SalePrice',
+          data: scatterPoints.map(p => ({ x: p.feature_value, y: p.price })),
+          backgroundColor: 'rgba(118, 75, 162, 0.25)',
+          pointRadius: 3
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Living Area vs Price (Sample)',
+            font: { size: 14, weight: 'bold' }
+          }
+        },
+        scales: {
+          x: { title: { display: true, text: 'GrLivArea' } },
+          y: { title: { display: true, text: 'SalePrice' } }
+        }
+      }
+    });
+
+    // ─ 7. Correlation Heatmap (lazy-loaded) ────────
+    const observerCorr = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) return;
+      observerCorr.disconnect();
+      loadJSON('./data/correlations.json').then(corr => {
+        Plotly.newPlot('corr-heatmap', [{
+          type: 'heatmap',
+          z: corr.matrix || [],
+          x: corr.features || [],
+          y: corr.features || [],
+          colorscale: 'RdBu',
+          zmid: 0,
+          hovertemplate: '<b>%{y}</b> vs <b>%{x}</b><br>r = %{z:.3f}<extra></extra>'
+        }], {
+          title: 'Feature Correlation Heatmap',
+          margin: { l: 150, b: 150 }
+        }, { responsive: true });
+      });
+    }, { threshold: 0.1 });
+    observerCorr.observe(document.getElementById('corr-heatmap'));
+
+    // ─ 8. Advanced Analysis ────────────────────────
+    const skew = await loadJSON('./data/skewness_and_rare.json');
+    const skewData = (skew.skewed_features || []).slice(0, 15);
+
+    new Chart(document.getElementById('skewness-bar'), {
+      type: 'bar',
+      indexAxis: 'y',
+      data: {
+        labels: skewData.map(s => s.feature),
+        datasets: [{
+          label: 'Skewness',
+          data: skewData.map(s => s.skewness),
+          backgroundColor: skewData.map(s => Math.abs(s.skewness) > 1 ? '#e07b39' : '#7ec8a0')
+        }]
+      },
+      options: {
+        responsive: true,
+        indexAxis: 'y',
+        plugins: {
+          title: {
+            display: true,
+            text: 'Top Skewed Features (|skewness| > 0.5)',
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { display: false }
+        }
+      }
+    });
+
+    // Feature importance
+    const imp = await loadJSON('./data/feature_importance.json');
+    const impData = (imp.features || []).slice(0, 15);
+
+    new Chart(document.getElementById('importance-bar'), {
+      type: 'bar',
+      indexAxis: 'y',
+      data: {
+        labels: impData.map(i => i.feature),
+        datasets: [{
+          label: 'Importance Score',
+          data: impData.map(i => i.importance),
+          backgroundColor: '#667eea'
+        }]
+      },
+      options: {
+        responsive: true,
+        indexAxis: 'y',
+        plugins: {
+          title: {
+            display: true,
+            text: 'Top 15 Most Important Features',
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { display: false }
+        }
+      }
+    });
+
+    // Neighborhood box plots
+    const nbhd = await loadJSON('./data/neighborhood_prices.json');
+    const nbhdData = (nbhd.neighborhoods || []).slice(0, 20);
+
+    new Chart(document.getElementById('neighborhood-box'), {
+      type: 'bar',
+      indexAxis: 'y',
+      data: {
+        labels: nbhdData.map(n => n.neighborhood),
+        datasets: [{
+          label: 'Median Price',
+          data: nbhdData.map(n => n.median_price),
+          backgroundColor: '#764ba2'
+        }]
+      },
+      options: {
+        responsive: true,
+        indexAxis: 'y',
+        plugins: {
+          title: {
+            display: true,
+            text: 'Top 20 Neighborhoods by Median Price',
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { display: false }
+        }
+      }
+    });
+
+  } catch (err) {
+    console.error('Error loading tabular data:', err);
+    document.body.innerHTML += `<div style="padding: 2rem; color: red;"><strong>Error:</strong> ${err.message}</div>`;
+  }
+})();
+</script>
+
+</body>
+</html>

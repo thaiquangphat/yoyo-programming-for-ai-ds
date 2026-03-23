@@ -1,0 +1,494 @@
+{
+  "train_rows": 1460,
+  "test_rows": 1459,
+  "train_cols": 82,
+  "test_cols": 81,
+  "schema": [
+    {
+      "column": "Id",
+      "dtype": "int64",
+      "n_unique": 1460,
+      "n_missing": 0
+    },
+    {
+      "column": "MSSubClass",
+      "dtype": "object",
+      "n_unique": 15,
+      "n_missing": 0
+    },
+    {
+      "column": "MSZoning",
+      "dtype": "object",
+      "n_unique": 5,
+      "n_missing": 0
+    },
+    {
+      "column": "LotFrontage",
+      "dtype": "float64",
+      "n_unique": 110,
+      "n_missing": 259
+    },
+    {
+      "column": "LotArea",
+      "dtype": "int64",
+      "n_unique": 1073,
+      "n_missing": 0
+    },
+    {
+      "column": "Street",
+      "dtype": "object",
+      "n_unique": 2,
+      "n_missing": 0
+    },
+    {
+      "column": "Alley",
+      "dtype": "object",
+      "n_unique": 2,
+      "n_missing": 1369
+    },
+    {
+      "column": "LotShape",
+      "dtype": "object",
+      "n_unique": 4,
+      "n_missing": 0
+    },
+    {
+      "column": "LandContour",
+      "dtype": "object",
+      "n_unique": 4,
+      "n_missing": 0
+    },
+    {
+      "column": "Utilities",
+      "dtype": "object",
+      "n_unique": 2,
+      "n_missing": 0
+    },
+    {
+      "column": "LotConfig",
+      "dtype": "object",
+      "n_unique": 5,
+      "n_missing": 0
+    },
+    {
+      "column": "LandSlope",
+      "dtype": "object",
+      "n_unique": 3,
+      "n_missing": 0
+    },
+    {
+      "column": "Neighborhood",
+      "dtype": "object",
+      "n_unique": 25,
+      "n_missing": 0
+    },
+    {
+      "column": "Condition1",
+      "dtype": "object",
+      "n_unique": 9,
+      "n_missing": 0
+    },
+    {
+      "column": "Condition2",
+      "dtype": "object",
+      "n_unique": 8,
+      "n_missing": 0
+    },
+    {
+      "column": "BldgType",
+      "dtype": "object",
+      "n_unique": 5,
+      "n_missing": 0
+    },
+    {
+      "column": "HouseStyle",
+      "dtype": "object",
+      "n_unique": 8,
+      "n_missing": 0
+    },
+    {
+      "column": "OverallQual",
+      "dtype": "int64",
+      "n_unique": 10,
+      "n_missing": 0
+    },
+    {
+      "column": "OverallCond",
+      "dtype": "int64",
+      "n_unique": 9,
+      "n_missing": 0
+    },
+    {
+      "column": "YearBuilt",
+      "dtype": "int64",
+      "n_unique": 112,
+      "n_missing": 0
+    },
+    {
+      "column": "YearRemodAdd",
+      "dtype": "int64",
+      "n_unique": 61,
+      "n_missing": 0
+    },
+    {
+      "column": "RoofStyle",
+      "dtype": "object",
+      "n_unique": 6,
+      "n_missing": 0
+    },
+    {
+      "column": "RoofMatl",
+      "dtype": "object",
+      "n_unique": 8,
+      "n_missing": 0
+    },
+    {
+      "column": "Exterior1st",
+      "dtype": "object",
+      "n_unique": 15,
+      "n_missing": 0
+    },
+    {
+      "column": "Exterior2nd",
+      "dtype": "object",
+      "n_unique": 16,
+      "n_missing": 0
+    },
+    {
+      "column": "MasVnrType",
+      "dtype": "object",
+      "n_unique": 3,
+      "n_missing": 872
+    },
+    {
+      "column": "MasVnrArea",
+      "dtype": "float64",
+      "n_unique": 327,
+      "n_missing": 8
+    },
+    {
+      "column": "ExterQual",
+      "dtype": "object",
+      "n_unique": 4,
+      "n_missing": 0
+    },
+    {
+      "column": "ExterCond",
+      "dtype": "object",
+      "n_unique": 5,
+      "n_missing": 0
+    },
+    {
+      "column": "Foundation",
+      "dtype": "object",
+      "n_unique": 6,
+      "n_missing": 0
+    },
+    {
+      "column": "BsmtQual",
+      "dtype": "object",
+      "n_unique": 4,
+      "n_missing": 37
+    },
+    {
+      "column": "BsmtCond",
+      "dtype": "object",
+      "n_unique": 4,
+      "n_missing": 37
+    },
+    {
+      "column": "BsmtExposure",
+      "dtype": "object",
+      "n_unique": 4,
+      "n_missing": 38
+    },
+    {
+      "column": "BsmtFinType1",
+      "dtype": "object",
+      "n_unique": 6,
+      "n_missing": 37
+    },
+    {
+      "column": "BsmtFinSF1",
+      "dtype": "int64",
+      "n_unique": 637,
+      "n_missing": 0
+    },
+    {
+      "column": "BsmtFinType2",
+      "dtype": "object",
+      "n_unique": 6,
+      "n_missing": 38
+    },
+    {
+      "column": "BsmtFinSF2",
+      "dtype": "int64",
+      "n_unique": 144,
+      "n_missing": 0
+    },
+    {
+      "column": "BsmtUnfSF",
+      "dtype": "int64",
+      "n_unique": 780,
+      "n_missing": 0
+    },
+    {
+      "column": "TotalBsmtSF",
+      "dtype": "int64",
+      "n_unique": 721,
+      "n_missing": 0
+    },
+    {
+      "column": "Heating",
+      "dtype": "object",
+      "n_unique": 6,
+      "n_missing": 0
+    },
+    {
+      "column": "HeatingQC",
+      "dtype": "object",
+      "n_unique": 5,
+      "n_missing": 0
+    },
+    {
+      "column": "CentralAir",
+      "dtype": "object",
+      "n_unique": 2,
+      "n_missing": 0
+    },
+    {
+      "column": "Electrical",
+      "dtype": "object",
+      "n_unique": 5,
+      "n_missing": 1
+    },
+    {
+      "column": "1stFlrSF",
+      "dtype": "int64",
+      "n_unique": 753,
+      "n_missing": 0
+    },
+    {
+      "column": "2ndFlrSF",
+      "dtype": "int64",
+      "n_unique": 417,
+      "n_missing": 0
+    },
+    {
+      "column": "LowQualFinSF",
+      "dtype": "int64",
+      "n_unique": 24,
+      "n_missing": 0
+    },
+    {
+      "column": "GrLivArea",
+      "dtype": "int64",
+      "n_unique": 861,
+      "n_missing": 0
+    },
+    {
+      "column": "BsmtFullBath",
+      "dtype": "int64",
+      "n_unique": 4,
+      "n_missing": 0
+    },
+    {
+      "column": "BsmtHalfBath",
+      "dtype": "int64",
+      "n_unique": 3,
+      "n_missing": 0
+    },
+    {
+      "column": "FullBath",
+      "dtype": "int64",
+      "n_unique": 4,
+      "n_missing": 0
+    },
+    {
+      "column": "HalfBath",
+      "dtype": "int64",
+      "n_unique": 3,
+      "n_missing": 0
+    },
+    {
+      "column": "BedroomAbvGr",
+      "dtype": "int64",
+      "n_unique": 8,
+      "n_missing": 0
+    },
+    {
+      "column": "KitchenAbvGr",
+      "dtype": "int64",
+      "n_unique": 4,
+      "n_missing": 0
+    },
+    {
+      "column": "KitchenQual",
+      "dtype": "object",
+      "n_unique": 4,
+      "n_missing": 0
+    },
+    {
+      "column": "TotRmsAbvGrd",
+      "dtype": "int64",
+      "n_unique": 12,
+      "n_missing": 0
+    },
+    {
+      "column": "Functional",
+      "dtype": "object",
+      "n_unique": 7,
+      "n_missing": 0
+    },
+    {
+      "column": "Fireplaces",
+      "dtype": "int64",
+      "n_unique": 4,
+      "n_missing": 0
+    },
+    {
+      "column": "FireplaceQu",
+      "dtype": "object",
+      "n_unique": 5,
+      "n_missing": 690
+    },
+    {
+      "column": "GarageType",
+      "dtype": "object",
+      "n_unique": 6,
+      "n_missing": 81
+    },
+    {
+      "column": "GarageYrBlt",
+      "dtype": "float64",
+      "n_unique": 97,
+      "n_missing": 81
+    },
+    {
+      "column": "GarageFinish",
+      "dtype": "object",
+      "n_unique": 3,
+      "n_missing": 81
+    },
+    {
+      "column": "GarageCars",
+      "dtype": "int64",
+      "n_unique": 5,
+      "n_missing": 0
+    },
+    {
+      "column": "GarageArea",
+      "dtype": "int64",
+      "n_unique": 441,
+      "n_missing": 0
+    },
+    {
+      "column": "GarageQual",
+      "dtype": "object",
+      "n_unique": 5,
+      "n_missing": 81
+    },
+    {
+      "column": "GarageCond",
+      "dtype": "object",
+      "n_unique": 5,
+      "n_missing": 81
+    },
+    {
+      "column": "PavedDrive",
+      "dtype": "object",
+      "n_unique": 3,
+      "n_missing": 0
+    },
+    {
+      "column": "WoodDeckSF",
+      "dtype": "int64",
+      "n_unique": 274,
+      "n_missing": 0
+    },
+    {
+      "column": "OpenPorchSF",
+      "dtype": "int64",
+      "n_unique": 202,
+      "n_missing": 0
+    },
+    {
+      "column": "EnclosedPorch",
+      "dtype": "int64",
+      "n_unique": 120,
+      "n_missing": 0
+    },
+    {
+      "column": "3SsnPorch",
+      "dtype": "int64",
+      "n_unique": 20,
+      "n_missing": 0
+    },
+    {
+      "column": "ScreenPorch",
+      "dtype": "int64",
+      "n_unique": 76,
+      "n_missing": 0
+    },
+    {
+      "column": "PoolArea",
+      "dtype": "int64",
+      "n_unique": 8,
+      "n_missing": 0
+    },
+    {
+      "column": "PoolQC",
+      "dtype": "object",
+      "n_unique": 3,
+      "n_missing": 1453
+    },
+    {
+      "column": "Fence",
+      "dtype": "object",
+      "n_unique": 4,
+      "n_missing": 1179
+    },
+    {
+      "column": "MiscFeature",
+      "dtype": "object",
+      "n_unique": 4,
+      "n_missing": 1406
+    },
+    {
+      "column": "MiscVal",
+      "dtype": "int64",
+      "n_unique": 21,
+      "n_missing": 0
+    },
+    {
+      "column": "MoSold",
+      "dtype": "int64",
+      "n_unique": 12,
+      "n_missing": 0
+    },
+    {
+      "column": "YrSold",
+      "dtype": "int64",
+      "n_unique": 5,
+      "n_missing": 0
+    },
+    {
+      "column": "SaleType",
+      "dtype": "object",
+      "n_unique": 9,
+      "n_missing": 0
+    },
+    {
+      "column": "SaleCondition",
+      "dtype": "object",
+      "n_unique": 6,
+      "n_missing": 0
+    },
+    {
+      "column": "SalePrice",
+      "dtype": "int64",
+      "n_unique": 663,
+      "n_missing": 0
+    }
+  ]
+}

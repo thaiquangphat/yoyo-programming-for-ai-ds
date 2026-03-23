@@ -1,0 +1,233 @@
+{
+  "numeric": [
+    "LotFrontage",
+    "LotArea",
+    "OverallQual",
+    "OverallCond",
+    "YearBuilt",
+    "YearRemodAdd",
+    "MasVnrArea",
+    "BsmtFinSF1",
+    "BsmtFinSF2",
+    "BsmtUnfSF",
+    "TotalBsmtSF",
+    "1stFlrSF",
+    "2ndFlrSF",
+    "LowQualFinSF",
+    "GrLivArea",
+    "BsmtFullBath",
+    "BsmtHalfBath",
+    "FullBath",
+    "HalfBath",
+    "BedroomAbvGr",
+    "KitchenAbvGr",
+    "TotRmsAbvGrd",
+    "Fireplaces",
+    "GarageYrBlt",
+    "GarageCars",
+    "GarageArea",
+    "WoodDeckSF",
+    "OpenPorchSF",
+    "EnclosedPorch",
+    "3SsnPorch",
+    "ScreenPorch",
+    "PoolArea",
+    "MiscVal",
+    "MoSold",
+    "YrSold"
+  ],
+  "ordinal": [
+    "ExterQual",
+    "ExterCond",
+    "BsmtQual",
+    "BsmtCond",
+    "HeatingQC",
+    "KitchenQual",
+    "FireplaceQu",
+    "GarageQual",
+    "GarageCond",
+    "PoolQC",
+    "BsmtExposure",
+    "BsmtFinType1",
+    "BsmtFinType2",
+    "GarageFinish",
+    "Functional",
+    "Fence",
+    "LotShape",
+    "LandSlope",
+    "PavedDrive"
+  ],
+  "nominal": [
+    "MSSubClass",
+    "MSZoning",
+    "Street",
+    "Alley",
+    "LandContour",
+    "Utilities",
+    "LotConfig",
+    "Neighborhood",
+    "Condition1",
+    "Condition2",
+    "BldgType",
+    "HouseStyle",
+    "RoofStyle",
+    "RoofMatl",
+    "Exterior1st",
+    "Exterior2nd",
+    "MasVnrType",
+    "Foundation",
+    "Heating",
+    "CentralAir",
+    "Electrical",
+    "GarageType",
+    "MiscFeature",
+    "SaleType",
+    "SaleCondition"
+  ],
+  "ordinal_maps": {
+    "ExterQual": {
+      "Ex": 5,
+      "Gd": 4,
+      "TA": 3,
+      "Fa": 2,
+      "Po": 1
+    },
+    "ExterCond": {
+      "Ex": 5,
+      "Gd": 4,
+      "TA": 3,
+      "Fa": 2,
+      "Po": 1
+    },
+    "BsmtQual": {
+      "Ex": 5,
+      "Gd": 4,
+      "TA": 3,
+      "Fa": 2,
+      "Po": 1,
+      "NA": 0
+    },
+    "BsmtCond": {
+      "Ex": 5,
+      "Gd": 4,
+      "TA": 3,
+      "Fa": 2,
+      "Po": 1,
+      "NA": 0
+    },
+    "HeatingQC": {
+      "Ex": 5,
+      "Gd": 4,
+      "TA": 3,
+      "Fa": 2,
+      "Po": 1
+    },
+    "KitchenQual": {
+      "Ex": 5,
+      "Gd": 4,
+      "TA": 3,
+      "Fa": 2,
+      "Po": 1
+    },
+    "FireplaceQu": {
+      "Ex": 5,
+      "Gd": 4,
+      "TA": 3,
+      "Fa": 2,
+      "Po": 1,
+      "NA": 0
+    },
+    "GarageQual": {
+      "Ex": 5,
+      "Gd": 4,
+      "TA": 3,
+      "Fa": 2,
+      "Po": 1,
+      "NA": 0
+    },
+    "GarageCond": {
+      "Ex": 5,
+      "Gd": 4,
+      "TA": 3,
+      "Fa": 2,
+      "Po": 1,
+      "NA": 0
+    },
+    "PoolQC": {
+      "Ex": 4,
+      "Gd": 3,
+      "TA": 2,
+      "Fa": 1,
+      "NA": 0
+    },
+    "BsmtExposure": {
+      "Gd": 4,
+      "Av": 3,
+      "Mn": 2,
+      "No": 1,
+      "NA": 0
+    },
+    "BsmtFinType1": {
+      "GLQ": 6,
+      "ALQ": 5,
+      "BLQ": 4,
+      "Rec": 3,
+      "LwQ": 2,
+      "Unf": 1,
+      "NA": 0
+    },
+    "BsmtFinType2": {
+      "GLQ": 6,
+      "ALQ": 5,
+      "BLQ": 4,
+      "Rec": 3,
+      "LwQ": 2,
+      "Unf": 1,
+      "NA": 0
+    },
+    "GarageFinish": {
+      "Fin": 3,
+      "RFn": 2,
+      "Unf": 1,
+      "NA": 0
+    },
+    "Functional": {
+      "Typ": 7,
+      "Min1": 6,
+      "Min2": 5,
+      "Mod": 4,
+      "Maj1": 3,
+      "Maj2": 2,
+      "Sev": 1,
+      "Sal": 0
+    },
+    "Fence": {
+      "GdPrv": 4,
+      "MnPrv": 3,
+      "GdWo": 2,
+      "MnWw": 1,
+      "NA": 0
+    },
+    "LotShape": {
+      "Reg": 3,
+      "IR1": 2,
+      "IR2": 1,
+      "IR3": 0
+    },
+    "LandSlope": {
+      "Gtl": 2,
+      "Mod": 1,
+      "Sev": 0
+    },
+    "PavedDrive": {
+      "Y": 2,
+      "P": 1,
+      "N": 0
+    }
+  },
+  "counts": {
+    "numeric": 35,
+    "ordinal": 19,
+    "nominal": 25
+  }
+}

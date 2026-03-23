@@ -1,0 +1,321 @@
+{
+  "model": "RandomForest(n_estimators=200)",
+  "top_features": [
+    {
+      "feature": "OverallQual",
+      "importance": 0.576724
+    },
+    {
+      "feature": "GrLivArea",
+      "importance": 0.107984
+    },
+    {
+      "feature": "TotalBsmtSF",
+      "importance": 0.037647
+    },
+    {
+      "feature": "2ndFlrSF",
+      "importance": 0.033665
+    },
+    {
+      "feature": "BsmtFinSF1",
+      "importance": 0.028483
+    },
+    {
+      "feature": "1stFlrSF",
+      "importance": 0.022246
+    },
+    {
+      "feature": "GarageCars",
+      "importance": 0.020339
+    },
+    {
+      "feature": "GarageArea",
+      "importance": 0.013997
+    },
+    {
+      "feature": "LotArea",
+      "importance": 0.012771
+    },
+    {
+      "feature": "YearBuilt",
+      "importance": 0.008922
+    },
+    {
+      "feature": "FullBath",
+      "importance": 0.008201
+    },
+    {
+      "feature": "TotRmsAbvGrd",
+      "importance": 0.006984
+    },
+    {
+      "feature": "BsmtQual",
+      "importance": 0.006974
+    },
+    {
+      "feature": "LotFrontage",
+      "importance": 0.006645
+    },
+    {
+      "feature": "YearRemodAdd",
+      "importance": 0.006419
+    },
+    {
+      "feature": "Neighborhood",
+      "importance": 0.006416
+    },
+    {
+      "feature": "OpenPorchSF",
+      "importance": 0.005456
+    },
+    {
+      "feature": "MasVnrArea",
+      "importance": 0.005197
+    },
+    {
+      "feature": "WoodDeckSF",
+      "importance": 0.005072
+    },
+    {
+      "feature": "BsmtUnfSF",
+      "importance": 0.00507
+    },
+    {
+      "feature": "GarageType",
+      "importance": 0.00478
+    },
+    {
+      "feature": "GarageYrBlt",
+      "importance": 0.004565
+    },
+    {
+      "feature": "GarageFinish",
+      "importance": 0.00453
+    },
+    {
+      "feature": "OverallCond",
+      "importance": 0.004397
+    },
+    {
+      "feature": "KitchenQual",
+      "importance": 0.004331
+    },
+    {
+      "feature": "FireplaceQu",
+      "importance": 0.004265
+    },
+    {
+      "feature": "ExterQual",
+      "importance": 0.004042
+    },
+    {
+      "feature": "MoSold",
+      "importance": 0.003161
+    },
+    {
+      "feature": "BsmtExposure",
+      "importance": 0.002645
+    },
+    {
+      "feature": "BsmtFinType1",
+      "importance": 0.002557
+    },
+    {
+      "feature": "CentralAir",
+      "importance": 0.002404
+    },
+    {
+      "feature": "BedroomAbvGr",
+      "importance": 0.002043
+    },
+    {
+      "feature": "Exterior1st",
+      "importance": 0.001882
+    },
+    {
+      "feature": "MSZoning",
+      "importance": 0.001787
+    },
+    {
+      "feature": "LotShape",
+      "importance": 0.001627
+    },
+    {
+      "feature": "SaleCondition",
+      "importance": 0.001562
+    },
+    {
+      "feature": "YrSold",
+      "importance": 0.001441
+    },
+    {
+      "feature": "Fireplaces",
+      "importance": 0.001377
+    },
+    {
+      "feature": "LandContour",
+      "importance": 0.001369
+    },
+    {
+      "feature": "Exterior2nd",
+      "importance": 0.001279
+    },
+    {
+      "feature": "MasVnrType",
+      "importance": 0.001261
+    },
+    {
+      "feature": "HalfBath",
+      "importance": 0.001114
+    },
+    {
+      "feature": "ScreenPorch",
+      "importance": 0.00096
+    },
+    {
+      "feature": "BsmtFullBath",
+      "importance": 0.000918
+    },
+    {
+      "feature": "MSSubClass",
+      "importance": 0.000839
+    },
+    {
+      "feature": "RoofStyle",
+      "importance": 0.000837
+    },
+    {
+      "feature": "GarageQual",
+      "importance": 0.000818
+    },
+    {
+      "feature": "LotConfig",
+      "importance": 0.000759
+    },
+    {
+      "feature": "GarageCond",
+      "importance": 0.000739
+    },
+    {
+      "feature": "SaleType",
+      "importance": 0.000727
+    },
+    {
+      "feature": "HeatingQC",
+      "importance": 0.000688
+    },
+    {
+      "feature": "ExterCond",
+      "importance": 0.000658
+    },
+    {
+      "feature": "HouseStyle",
+      "importance": 0.000656
+    },
+    {
+      "feature": "BsmtFinSF2",
+      "importance": 0.000647
+    },
+    {
+      "feature": "EnclosedPorch",
+      "importance": 0.000626
+    },
+    {
+      "feature": "Functional",
+      "importance": 0.000579
+    },
+    {
+      "feature": "KitchenAbvGr",
+      "importance": 0.000575
+    },
+    {
+      "feature": "Condition1",
+      "importance": 0.000549
+    },
+    {
+      "feature": "LandSlope",
+      "importance": 0.000525
+    },
+    {
+      "feature": "BldgType",
+      "importance": 0.000507
+    },
+    {
+      "feature": "BsmtCond",
+      "importance": 0.000447
+    },
+    {
+      "feature": "Foundation",
+      "importance": 0.00042
+    },
+    {
+      "feature": "RoofMatl",
+      "importance": 0.000398
+    },
+    {
+      "feature": "PavedDrive",
+      "importance": 0.000346
+    },
+    {
+      "feature": "Fence",
+      "importance": 0.000291
+    },
+    {
+      "feature": "Alley",
+      "importance": 0.000269
+    },
+    {
+      "feature": "3SsnPorch",
+      "importance": 0.00025
+    },
+    {
+      "feature": "BsmtFinType2",
+      "importance": 0.000245
+    },
+    {
+      "feature": "BsmtHalfBath",
+      "importance": 0.000213
+    },
+    {
+      "feature": "PoolArea",
+      "importance": 0.000175
+    },
+    {
+      "feature": "PoolQC",
+      "importance": 0.000169
+    },
+    {
+      "feature": "Electrical",
+      "importance": 0.000139
+    },
+    {
+      "feature": "Condition2",
+      "importance": 0.000137
+    },
+    {
+      "feature": "LowQualFinSF",
+      "importance": 0.00013
+    },
+    {
+      "feature": "MiscVal",
+      "importance": 5.5e-05
+    },
+    {
+      "feature": "Heating",
+      "importance": 4.6e-05
+    },
+    {
+      "feature": "MiscFeature",
+      "importance": 2.4e-05
+    },
+    {
+      "feature": "Street",
+      "importance": 9e-06
+    },
+    {
+      "feature": "Utilities",
+      "importance": 0.0
+    }
+  ]
+}

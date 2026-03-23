@@ -1,0 +1,136 @@
+{
+  "columns_with_missing": 19,
+  "none_cols": [
+    "Alley",
+    "PoolQC",
+    "Fence",
+    "MiscFeature",
+    "FireplaceQu",
+    "GarageType",
+    "GarageFinish",
+    "GarageQual",
+    "GarageCond",
+    "BsmtQual",
+    "BsmtCond",
+    "BsmtExposure",
+    "BsmtFinType1",
+    "BsmtFinType2",
+    "MasVnrType"
+  ],
+  "rows": [
+    {
+      "column": "PoolQC",
+      "missing_count": 1453,
+      "missing_pct": 99.52,
+      "nan_means_absence": true
+    },
+    {
+      "column": "MiscFeature",
+      "missing_count": 1406,
+      "missing_pct": 96.3,
+      "nan_means_absence": true
+    },
+    {
+      "column": "Alley",
+      "missing_count": 1369,
+      "missing_pct": 93.77,
+      "nan_means_absence": true
+    },
+    {
+      "column": "Fence",
+      "missing_count": 1179,
+      "missing_pct": 80.75,
+      "nan_means_absence": true
+    },
+    {
+      "column": "MasVnrType",
+      "missing_count": 872,
+      "missing_pct": 59.73,
+      "nan_means_absence": true
+    },
+    {
+      "column": "FireplaceQu",
+      "missing_count": 690,
+      "missing_pct": 47.26,
+      "nan_means_absence": true
+    },
+    {
+      "column": "LotFrontage",
+      "missing_count": 259,
+      "missing_pct": 17.74,
+      "nan_means_absence": false
+    },
+    {
+      "column": "GarageType",
+      "missing_count": 81,
+      "missing_pct": 5.55,
+      "nan_means_absence": true
+    },
+    {
+      "column": "GarageYrBlt",
+      "missing_count": 81,
+      "missing_pct": 5.55,
+      "nan_means_absence": false
+    },
+    {
+      "column": "GarageFinish",
+      "missing_count": 81,
+      "missing_pct": 5.55,
+      "nan_means_absence": true
+    },
+    {
+      "column": "GarageQual",
+      "missing_count": 81,
+      "missing_pct": 5.55,
+      "nan_means_absence": true
+    },
+    {
+      "column": "GarageCond",
+      "missing_count": 81,
+      "missing_pct": 5.55,
+      "nan_means_absence": true
+    },
+    {
+      "column": "BsmtExposure",
+      "missing_count": 38,
+      "missing_pct": 2.6,
+      "nan_means_absence": true
+    },
+    {
+      "column": "BsmtFinType2",
+      "missing_count": 38,
+      "missing_pct": 2.6,
+      "nan_means_absence": true
+    },
+    {
+      "column": "BsmtQual",
+      "missing_count": 37,
+      "missing_pct": 2.53,
+      "nan_means_absence": true
+    },
+    {
+      "column": "BsmtCond",
+      "missing_count": 37,
+      "missing_pct": 2.53,
+      "nan_means_absence": true
+    },
+    {
+      "column": "BsmtFinType1",
+      "missing_count": 37,
+      "missing_pct": 2.53,
+      "nan_means_absence": true
+    },
+    {
+      "column": "MasVnrArea",
+      "missing_count": 8,
+      "missing_pct": 0.55,
+      "nan_means_absence": false
+    },
+    {
+      "column": "Electrical",
+      "missing_count": 1,
+      "missing_pct": 0.07,
+      "nan_means_absence": false
+    }
+  ]
+}

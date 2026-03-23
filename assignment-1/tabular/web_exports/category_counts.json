@@ -1,0 +1,1640 @@
+{
+  "focused": {
+    "Neighborhood": [
+      {
+        "category": "NAmes",
+        "count": 225,
+        "pct": 15.41
+      },
+      {
+        "category": "CollgCr",
+        "count": 150,
+        "pct": 10.27
+      },
+      {
+        "category": "OldTown",
+        "count": 113,
+        "pct": 7.74
+      },
+      {
+        "category": "Edwards",
+        "count": 100,
+        "pct": 6.85
+      },
+      {
+        "category": "Somerst",
+        "count": 86,
+        "pct": 5.89
+      },
+      {
+        "category": "Gilbert",
+        "count": 79,
+        "pct": 5.41
+      },
+      {
+        "category": "NridgHt",
+        "count": 77,
+        "pct": 5.27
+      },
+      {
+        "category": "Sawyer",
+        "count": 74,
+        "pct": 5.07
+      },
+      {
+        "category": "NWAmes",
+        "count": 73,
+        "pct": 5.0
+      },
+      {
+        "category": "SawyerW",
+        "count": 59,
+        "pct": 4.04
+      },
+      {
+        "category": "BrkSide",
+        "count": 58,
+        "pct": 3.97
+      },
+      {
+        "category": "Crawfor",
+        "count": 51,
+        "pct": 3.49
+      },
+      {
+        "category": "Mitchel",
+        "count": 49,
+        "pct": 3.36
+      },
+      {
+        "category": "NoRidge",
+        "count": 41,
+        "pct": 2.81
+      },
+      {
+        "category": "Timber",
+        "count": 38,
+        "pct": 2.6
+      },
+      {
+        "category": "IDOTRR",
+        "count": 37,
+        "pct": 2.53
+      },
+      {
+        "category": "ClearCr",
+        "count": 28,
+        "pct": 1.92
+      },
+      {
+        "category": "SWISU",
+        "count": 25,
+        "pct": 1.71
+      },
+      {
+        "category": "StoneBr",
+        "count": 25,
+        "pct": 1.71
+      },
+      {
+        "category": "Blmngtn",
+        "count": 17,
+        "pct": 1.16
+      },
+      {
+        "category": "MeadowV",
+        "count": 17,
+        "pct": 1.16
+      },
+      {
+        "category": "BrDale",
+        "count": 16,
+        "pct": 1.1
+      },
+      {
+        "category": "Veenker",
+        "count": 11,
+        "pct": 0.75
+      },
+      {
+        "category": "NPkVill",
+        "count": 9,
+        "pct": 0.62
+      },
+      {
+        "category": "Blueste",
+        "count": 2,
+        "pct": 0.14
+      }
+    ],
+    "MSZoning": [
+      {
+        "category": "RL",
+        "count": 1151,
+        "pct": 78.84
+      },
+      {
+        "category": "RM",
+        "count": 218,
+        "pct": 14.93
+      },
+      {
+        "category": "FV",
+        "count": 65,
+        "pct": 4.45
+      },
+      {
+        "category": "RH",
+        "count": 16,
+        "pct": 1.1
+      },
+      {
+        "category": "C (all)",
+        "count": 10,
+        "pct": 0.68
+      }
+    ],
+    "HouseStyle": [
+      {
+        "category": "1Story",
+        "count": 726,
+        "pct": 49.73
+      },
+      {
+        "category": "2Story",
+        "count": 445,
+        "pct": 30.48
+      },
+      {
+        "category": "1.5Fin",
+        "count": 154,
+        "pct": 10.55
+      },
+      {
+        "category": "SLvl",
+        "count": 65,
+        "pct": 4.45
+      },
+      {
+        "category": "SFoyer",
+        "count": 37,
+        "pct": 2.53
+      },
+      {
+        "category": "1.5Unf",
+        "count": 14,
+        "pct": 0.96
+      },
+      {
+        "category": "2.5Unf",
+        "count": 11,
+        "pct": 0.75
+      },
+      {
+        "category": "2.5Fin",
+        "count": 8,
+        "pct": 0.55
+      }
+    ],
+    "SaleType": [
+      {
+        "category": "WD",
+        "count": 1267,
+        "pct": 86.78
+      },
+      {
+        "category": "New",
+        "count": 122,
+        "pct": 8.36
+      },
+      {
+        "category": "COD",
+        "count": 43,
+        "pct": 2.95
+      },
+      {
+        "category": "ConLD",
+        "count": 9,
+        "pct": 0.62
+      },
+      {
+        "category": "ConLI",
+        "count": 5,
+        "pct": 0.34
+      },
+      {
+        "category": "ConLw",
+        "count": 5,
+        "pct": 0.34
+      },
+      {
+        "category": "CWD",
+        "count": 4,
+        "pct": 0.27
+      },
+      {
+        "category": "Oth",
+        "count": 3,
+        "pct": 0.21
+      },
+      {
+        "category": "Con",
+        "count": 2,
+        "pct": 0.14
+      }
+    ],
+    "SaleCondition": [
+      {
+        "category": "Normal",
+        "count": 1198,
+        "pct": 82.05
+      },
+      {
+        "category": "Partial",
+        "count": 125,
+        "pct": 8.56
+      },
+      {
+        "category": "Abnorml",
+        "count": 101,
+        "pct": 6.92
+      },
+      {
+        "category": "Family",
+        "count": 20,
+        "pct": 1.37
+      },
+      {
+        "category": "Alloca",
+        "count": 12,
+        "pct": 0.82
+      },
+      {
+        "category": "AdjLand",
+        "count": 4,
+        "pct": 0.27
+      }
+    ],
+    "BldgType": [
+      {
+        "category": "1Fam",
+        "count": 1220,
+        "pct": 83.56
+      },
+      {
+        "category": "TwnhsE",
+        "count": 114,
+        "pct": 7.81
+      },
+      {
+        "category": "Duplex",
+        "count": 52,
+        "pct": 3.56
+      },
+      {
+        "category": "Twnhs",
+        "count": 43,
+        "pct": 2.95
+      },
+      {
+        "category": "2fmCon",
+        "count": 31,
+        "pct": 2.12
+      }
+    ],
+    "Foundation": [
+      {
+        "category": "PConc",
+        "count": 647,
+        "pct": 44.32
+      },
+      {
+        "category": "CBlock",
+        "count": 634,
+        "pct": 43.42
+      },
+      {
+        "category": "BrkTil",
+        "count": 146,
+        "pct": 10.0
+      },
+      {
+        "category": "Slab",
+        "count": 24,
+        "pct": 1.64
+      },
+      {
+        "category": "Stone",
+        "count": 6,
+        "pct": 0.41
+      },
+      {
+        "category": "Wood",
+        "count": 3,
+        "pct": 0.21
+      }
+    ],
+    "GarageType": [
+      {
+        "category": "Attchd",
+        "count": 870,
+        "pct": 63.09
+      },
+      {
+        "category": "Detchd",
+        "count": 387,
+        "pct": 28.06
+      },
+      {
+        "category": "BuiltIn",
+        "count": 88,
+        "pct": 6.38
+      },
+      {
+        "category": "Basment",
+        "count": 19,
+        "pct": 1.38
+      },
+      {
+        "category": "CarPort",
+        "count": 9,
+        "pct": 0.65
+      },
+      {
+        "category": "2Types",
+        "count": 6,
+        "pct": 0.44
+      }
+    ],
+    "MSSubClass": [
+      {
+        "category": "20",
+        "count": 536,
+        "pct": 36.71
+      },
+      {
+        "category": "60",
+        "count": 299,
+        "pct": 20.48
+      },
+      {
+        "category": "50",
+        "count": 144,
+        "pct": 9.86
+      },
+      {
+        "category": "120",
+        "count": 87,
+        "pct": 5.96
+      },
+      {
+        "category": "30",
+        "count": 69,
+        "pct": 4.73
+      },
+      {
+        "category": "160",
+        "count": 63,
+        "pct": 4.32
+      },
+      {
+        "category": "70",
+        "count": 60,
+        "pct": 4.11
+      },
+      {
+        "category": "80",
+        "count": 58,
+        "pct": 3.97
+      },
+      {
+        "category": "90",
+        "count": 52,
+        "pct": 3.56
+      },
+      {
+        "category": "190",
+        "count": 30,
+        "pct": 2.05
+      },
+      {
+        "category": "85",
+        "count": 20,
+        "pct": 1.37
+      },
+      {
+        "category": "75",
+        "count": 16,
+        "pct": 1.1
+      },
+      {
+        "category": "45",
+        "count": 12,
+        "pct": 0.82
+      },
+      {
+        "category": "180",
+        "count": 10,
+        "pct": 0.68
+      },
+      {
+        "category": "40",
+        "count": 4,
+        "pct": 0.27
+      }
+    ],
+    "Exterior1st": [
+      {
+        "category": "VinylSd",
+        "count": 515,
+        "pct": 35.27
+      },
+      {
+        "category": "HdBoard",
+        "count": 222,
+        "pct": 15.21
+      },
+      {
+        "category": "MetalSd",
+        "count": 220,
+        "pct": 15.07
+      },
+      {
+        "category": "Wd Sdng",
+        "count": 206,
+        "pct": 14.11
+      },
+      {
+        "category": "Plywood",
+        "count": 108,
+        "pct": 7.4
+      },
+      {
+        "category": "CemntBd",
+        "count": 61,
+        "pct": 4.18
+      },
+      {
+        "category": "BrkFace",
+        "count": 50,
+        "pct": 3.42
+      },
+      {
+        "category": "WdShing",
+        "count": 26,
+        "pct": 1.78
+      },
+      {
+        "category": "Stucco",
+        "count": 25,
+        "pct": 1.71
+      },
+      {
+        "category": "AsbShng",
+        "count": 20,
+        "pct": 1.37
+      },
+      {
+        "category": "BrkComm",
+        "count": 2,
+        "pct": 0.14
+      },
+      {
+        "category": "Stone",
+        "count": 2,
+        "pct": 0.14
+      },
+      {
+        "category": "AsphShn",
+        "count": 1,
+        "pct": 0.07
+      },
+      {
+        "category": "ImStucc",
+        "count": 1,
+        "pct": 0.07
+      },
+      {
+        "category": "CBlock",
+        "count": 1,
+        "pct": 0.07
+      }
+    ],
+    "RoofStyle": [
+      {
+        "category": "Gable",
+        "count": 1141,
+        "pct": 78.15
+      },
+      {
+        "category": "Hip",
+        "count": 286,
+        "pct": 19.59
+      },
+      {
+        "category": "Flat",
+        "count": 13,
+        "pct": 0.89
+      },
+      {
+        "category": "Gambrel",
+        "count": 11,
+        "pct": 0.75
+      },
+      {
+        "category": "Mansard",
+        "count": 7,
+        "pct": 0.48
+      },
+      {
+        "category": "Shed",
+        "count": 2,
+        "pct": 0.14
+      }
+    ]
+  },
+  "all_nominal": {
+    "MSSubClass": [
+      {
+        "category": "20",
+        "count": 536,
+        "pct": 36.71
+      },
+      {
+        "category": "60",
+        "count": 299,
+        "pct": 20.48
+      },
+      {
+        "category": "50",
+        "count": 144,
+        "pct": 9.86
+      },
+      {
+        "category": "120",
+        "count": 87,
+        "pct": 5.96
+      },
+      {
+        "category": "30",
+        "count": 69,
+        "pct": 4.73
+      },
+      {
+        "category": "160",
+        "count": 63,
+        "pct": 4.32
+      },
+      {
+        "category": "70",
+        "count": 60,
+        "pct": 4.11
+      },
+      {
+        "category": "80",
+        "count": 58,
+        "pct": 3.97
+      },
+      {
+        "category": "90",
+        "count": 52,
+        "pct": 3.56
+      },
+      {
+        "category": "190",
+        "count": 30,
+        "pct": 2.05
+      },
+      {
+        "category": "85",
+        "count": 20,
+        "pct": 1.37
+      },
+      {
+        "category": "75",
+        "count": 16,
+        "pct": 1.1
+      },
+      {
+        "category": "45",
+        "count": 12,
+        "pct": 0.82
+      },
+      {
+        "category": "180",
+        "count": 10,
+        "pct": 0.68
+      },
+      {
+        "category": "40",
+        "count": 4,
+        "pct": 0.27
+      }
+    ],
+    "MSZoning": [
+      {
+        "category": "RL",
+        "count": 1151,
+        "pct": 78.84
+      },
+      {
+        "category": "RM",
+        "count": 218,
+        "pct": 14.93
+      },
+      {
+        "category": "FV",
+        "count": 65,
+        "pct": 4.45
+      },
+      {
+        "category": "RH",
+        "count": 16,
+        "pct": 1.1
+      },
+      {
+        "category": "C (all)",
+        "count": 10,
+        "pct": 0.68
+      }
+    ],
+    "Street": [
+      {
+        "category": "Pave",
+        "count": 1454,
+        "pct": 99.59
+      },
+      {
+        "category": "Grvl",
+        "count": 6,
+        "pct": 0.41
+      }
+    ],
+    "Alley": [
+      {
+        "category": "Grvl",
+        "count": 50,
+        "pct": 54.95
+      },
+      {
+        "category": "Pave",
+        "count": 41,
+        "pct": 45.05
+      }
+    ],
+    "LandContour": [
+      {
+        "category": "Lvl",
+        "count": 1311,
+        "pct": 89.79
+      },
+      {
+        "category": "Bnk",
+        "count": 63,
+        "pct": 4.32
+      },
+      {
+        "category": "HLS",
+        "count": 50,
+        "pct": 3.42
+      },
+      {
+        "category": "Low",
+        "count": 36,
+        "pct": 2.47
+      }
+    ],
+    "Utilities": [
+      {
+        "category": "AllPub",
+        "count": 1459,
+        "pct": 99.93
+      },
+      {
+        "category": "NoSeWa",
+        "count": 1,
+        "pct": 0.07
+      }
+    ],
+    "LotConfig": [
+      {
+        "category": "Inside",
+        "count": 1052,
+        "pct": 72.05
+      },
+      {
+        "category": "Corner",
+        "count": 263,
+        "pct": 18.01
+      },
+      {
+        "category": "CulDSac",
+        "count": 94,
+        "pct": 6.44
+      },
+      {
+        "category": "FR2",
+        "count": 47,
+        "pct": 3.22
+      },
+      {
+        "category": "FR3",
+        "count": 4,
+        "pct": 0.27
+      }
+    ],
+    "Neighborhood": [
+      {
+        "category": "NAmes",
+        "count": 225,
+        "pct": 15.41
+      },
+      {
+        "category": "CollgCr",
+        "count": 150,
+        "pct": 10.27
+      },
+      {
+        "category": "OldTown",
+        "count": 113,
+        "pct": 7.74
+      },
+      {
+        "category": "Edwards",
+        "count": 100,
+        "pct": 6.85
+      },
+      {
+        "category": "Somerst",
+        "count": 86,
+        "pct": 5.89
+      },
+      {
+        "category": "Gilbert",
+        "count": 79,
+        "pct": 5.41
+      },
+      {
+        "category": "NridgHt",
+        "count": 77,
+        "pct": 5.27
+      },
+      {
+        "category": "Sawyer",
+        "count": 74,
+        "pct": 5.07
+      },
+      {
+        "category": "NWAmes",
+        "count": 73,
+        "pct": 5.0
+      },
+      {
+        "category": "SawyerW",
+        "count": 59,
+        "pct": 4.04
+      },
+      {
+        "category": "BrkSide",
+        "count": 58,
+        "pct": 3.97
+      },
+      {
+        "category": "Crawfor",
+        "count": 51,
+        "pct": 3.49
+      },
+      {
+        "category": "Mitchel",
+        "count": 49,
+        "pct": 3.36
+      },
+      {
+        "category": "NoRidge",
+        "count": 41,
+        "pct": 2.81
+      },
+      {
+        "category": "Timber",
+        "count": 38,
+        "pct": 2.6
+      },
+      {
+        "category": "IDOTRR",
+        "count": 37,
+        "pct": 2.53
+      },
+      {
+        "category": "ClearCr",
+        "count": 28,
+        "pct": 1.92
+      },
+      {
+        "category": "SWISU",
+        "count": 25,
+        "pct": 1.71
+      },
+      {
+        "category": "StoneBr",
+        "count": 25,
+        "pct": 1.71
+      },
+      {
+        "category": "Blmngtn",
+        "count": 17,
+        "pct": 1.16
+      },
+      {
+        "category": "MeadowV",
+        "count": 17,
+        "pct": 1.16
+      },
+      {
+        "category": "BrDale",
+        "count": 16,
+        "pct": 1.1
+      },
+      {
+        "category": "Veenker",
+        "count": 11,
+        "pct": 0.75
+      },
+      {
+        "category": "NPkVill",
+        "count": 9,
+        "pct": 0.62
+      },
+      {
+        "category": "Blueste",
+        "count": 2,
+        "pct": 0.14
+      }
+    ],
+    "Condition1": [
+      {
+        "category": "Norm",
+        "count": 1260,
+        "pct": 86.3
+      },
+      {
+        "category": "Feedr",
+        "count": 81,
+        "pct": 5.55
+      },
+      {
+        "category": "Artery",
+        "count": 48,
+        "pct": 3.29
+      },
+      {
+        "category": "RRAn",
+        "count": 26,
+        "pct": 1.78
+      },
+      {
+        "category": "PosN",
+        "count": 19,
+        "pct": 1.3
+      },
+      {
+        "category": "RRAe",
+        "count": 11,
+        "pct": 0.75
+      },
+      {
+        "category": "PosA",
+        "count": 8,
+        "pct": 0.55
+      },
+      {
+        "category": "RRNn",
+        "count": 5,
+        "pct": 0.34
+      },
+      {
+        "category": "RRNe",
+        "count": 2,
+        "pct": 0.14
+      }
+    ],
+    "Condition2": [
+      {
+        "category": "Norm",
+        "count": 1445,
+        "pct": 98.97
+      },
+      {
+        "category": "Feedr",
+        "count": 6,
+        "pct": 0.41
+      },
+      {
+        "category": "Artery",
+        "count": 2,
+        "pct": 0.14
+      },
+      {
+        "category": "RRNn",
+        "count": 2,
+        "pct": 0.14
+      },
+      {
+        "category": "PosN",
+        "count": 2,
+        "pct": 0.14
+      },
+      {
+        "category": "PosA",
+        "count": 1,
+        "pct": 0.07
+      },
+      {
+        "category": "RRAn",
+        "count": 1,
+        "pct": 0.07
+      },
+      {
+        "category": "RRAe",
+        "count": 1,
+        "pct": 0.07
+      }
+    ],
+    "BldgType": [
+      {
+        "category": "1Fam",
+        "count": 1220,
+        "pct": 83.56
+      },
+      {
+        "category": "TwnhsE",
+        "count": 114,
+        "pct": 7.81
+      },
+      {
+        "category": "Duplex",
+        "count": 52,
+        "pct": 3.56
+      },
+      {
+        "category": "Twnhs",
+        "count": 43,
+        "pct": 2.95
+      },
+      {
+        "category": "2fmCon",
+        "count": 31,
+        "pct": 2.12
+      }
+    ],
+    "HouseStyle": [
+      {
+        "category": "1Story",
+        "count": 726,
+        "pct": 49.73
+      },
+      {
+        "category": "2Story",
+        "count": 445,
+        "pct": 30.48
+      },
+      {
+        "category": "1.5Fin",
+        "count": 154,
+        "pct": 10.55
+      },
+      {
+        "category": "SLvl",
+        "count": 65,
+        "pct": 4.45
+      },
+      {
+        "category": "SFoyer",
+        "count": 37,
+        "pct": 2.53
+      },
+      {
+        "category": "1.5Unf",
+        "count": 14,
+        "pct": 0.96
+      },
+      {
+        "category": "2.5Unf",
+        "count": 11,
+        "pct": 0.75
+      },
+      {
+        "category": "2.5Fin",
+        "count": 8,
+        "pct": 0.55
+      }
+    ],
+    "RoofStyle": [
+      {
+        "category": "Gable",
+        "count": 1141,
+        "pct": 78.15
+      },
+      {
+        "category": "Hip",
+        "count": 286,
+        "pct": 19.59
+      },
+      {
+        "category": "Flat",
+        "count": 13,
+        "pct": 0.89
+      },
+      {
+        "category": "Gambrel",
+        "count": 11,
+        "pct": 0.75
+      },
+      {
+        "category": "Mansard",
+        "count": 7,
+        "pct": 0.48
+      },
+      {
+        "category": "Shed",
+        "count": 2,
+        "pct": 0.14
+      }
+    ],
+    "RoofMatl": [
+      {
+        "category": "CompShg",
+        "count": 1434,
+        "pct": 98.22
+      },
+      {
+        "category": "Tar&Grv",
+        "count": 11,
+        "pct": 0.75
+      },
+      {
+        "category": "WdShngl",
+        "count": 6,
+        "pct": 0.41
+      },
+      {
+        "category": "WdShake",
+        "count": 5,
+        "pct": 0.34
+      },
+      {
+        "category": "Metal",
+        "count": 1,
+        "pct": 0.07
+      },
+      {
+        "category": "Membran",
+        "count": 1,
+        "pct": 0.07
+      },
+      {
+        "category": "Roll",
+        "count": 1,
+        "pct": 0.07
+      },
+      {
+        "category": "ClyTile",
+        "count": 1,
+        "pct": 0.07
+      }
+    ],
+    "Exterior1st": [
+      {
+        "category": "VinylSd",
+        "count": 515,
+        "pct": 35.27
+      },
+      {
+        "category": "HdBoard",
+        "count": 222,
+        "pct": 15.21
+      },
+      {
+        "category": "MetalSd",
+        "count": 220,
+        "pct": 15.07
+      },
+      {
+        "category": "Wd Sdng",
+        "count": 206,
+        "pct": 14.11
+      },
+      {
+        "category": "Plywood",
+        "count": 108,
+        "pct": 7.4
+      },
+      {
+        "category": "CemntBd",
+        "count": 61,
+        "pct": 4.18
+      },
+      {
+        "category": "BrkFace",
+        "count": 50,
+        "pct": 3.42
+      },
+      {
+        "category": "WdShing",
+        "count": 26,
+        "pct": 1.78
+      },
+      {
+        "category": "Stucco",
+        "count": 25,
+        "pct": 1.71
+      },
+      {
+        "category": "AsbShng",
+        "count": 20,
+        "pct": 1.37
+      },
+      {
+        "category": "BrkComm",
+        "count": 2,
+        "pct": 0.14
+      },
+      {
+        "category": "Stone",
+        "count": 2,
+        "pct": 0.14
+      },
+      {
+        "category": "AsphShn",
+        "count": 1,
+        "pct": 0.07
+      },
+      {
+        "category": "ImStucc",
+        "count": 1,
+        "pct": 0.07
+      },
+      {
+        "category": "CBlock",
+        "count": 1,
+        "pct": 0.07
+      }
+    ],
+    "Exterior2nd": [
+      {
+        "category": "VinylSd",
+        "count": 504,
+        "pct": 34.52
+      },
+      {
+        "category": "MetalSd",
+        "count": 214,
+        "pct": 14.66
+      },
+      {
+        "category": "HdBoard",
+        "count": 207,
+        "pct": 14.18
+      },
+      {
+        "category": "Wd Sdng",
+        "count": 197,
+        "pct": 13.49
+      },
+      {
+        "category": "Plywood",
+        "count": 142,
+        "pct": 9.73
+      },
+      {
+        "category": "CmentBd",
+        "count": 60,
+        "pct": 4.11
+      },
+      {
+        "category": "Wd Shng",
+        "count": 38,
+        "pct": 2.6
+      },
+      {
+        "category": "Stucco",
+        "count": 26,
+        "pct": 1.78
+      },
+      {
+        "category": "BrkFace",
+        "count": 25,
+        "pct": 1.71
+      },
+      {
+        "category": "AsbShng",
+        "count": 20,
+        "pct": 1.37
+      },
+      {
+        "category": "ImStucc",
+        "count": 10,
+        "pct": 0.68
+      },
+      {
+        "category": "Brk Cmn",
+        "count": 7,
+        "pct": 0.48
+      },
+      {
+        "category": "Stone",
+        "count": 5,
+        "pct": 0.34
+      },
+      {
+        "category": "AsphShn",
+        "count": 3,
+        "pct": 0.21
+      },
+      {
+        "category": "Other",
+        "count": 1,
+        "pct": 0.07
+      },
+      {
+        "category": "CBlock",
+        "count": 1,
+        "pct": 0.07
+      }
+    ],
+    "MasVnrType": [
+      {
+        "category": "BrkFace",
+        "count": 445,
+        "pct": 75.68
+      },
+      {
+        "category": "Stone",
+        "count": 128,
+        "pct": 21.77
+      },
+      {
+        "category": "BrkCmn",
+        "count": 15,
+        "pct": 2.55
+      }
+    ],
+    "Foundation": [
+      {
+        "category": "PConc",
+        "count": 647,
+        "pct": 44.32
+      },
+      {
+        "category": "CBlock",
+        "count": 634,
+        "pct": 43.42
+      },
+      {
+        "category": "BrkTil",
+        "count": 146,
+        "pct": 10.0
+      },
+      {
+        "category": "Slab",
+        "count": 24,
+        "pct": 1.64
+      },
+      {
+        "category": "Stone",
+        "count": 6,
+        "pct": 0.41
+      },
+      {
+        "category": "Wood",
+        "count": 3,
+        "pct": 0.21
+      }
+    ],
+    "Heating": [
+      {
+        "category": "GasA",
+        "count": 1428,
+        "pct": 97.81
+      },
+      {
+        "category": "GasW",
+        "count": 18,
+        "pct": 1.23
+      },
+      {
+        "category": "Grav",
+        "count": 7,
+        "pct": 0.48
+      },
+      {
+        "category": "Wall",
+        "count": 4,
+        "pct": 0.27
+      },
+      {
+        "category": "OthW",
+        "count": 2,
+        "pct": 0.14
+      },
+      {
+        "category": "Floor",
+        "count": 1,
+        "pct": 0.07
+      }
+    ],
+    "CentralAir": [
+      {
+        "category": "Y",
+        "count": 1365,
+        "pct": 93.49
+      },
+      {
+        "category": "N",
+        "count": 95,
+        "pct": 6.51
+      }
+    ],
+    "Electrical": [
+      {
+        "category": "SBrkr",
+        "count": 1334,
+        "pct": 91.43
+      },
+      {
+        "category": "FuseA",
+        "count": 94,
+        "pct": 6.44
+      },
+      {
+        "category": "FuseF",
+        "count": 27,
+        "pct": 1.85
+      },
+      {
+        "category": "FuseP",
+        "count": 3,
+        "pct": 0.21
+      },
+      {
+        "category": "Mix",
+        "count": 1,
+        "pct": 0.07
+      }
+    ],
+    "GarageType": [
+      {
+        "category": "Attchd",
+        "count": 870,
+        "pct": 63.09
+      },
+      {
+        "category": "Detchd",
+        "count": 387,
+        "pct": 28.06
+      },
+      {
+        "category": "BuiltIn",
+        "count": 88,
+        "pct": 6.38
+      },
+      {
+        "category": "Basment",
+        "count": 19,
+        "pct": 1.38
+      },
+      {
+        "category": "CarPort",
+        "count": 9,
+        "pct": 0.65
+      },
+      {
+        "category": "2Types",
+        "count": 6,
+        "pct": 0.44
+      }
+    ],
+    "MiscFeature": [
+      {
+        "category": "Shed",
+        "count": 49,
+        "pct": 90.74
+      },
+      {
+        "category": "Gar2",
+        "count": 2,
+        "pct": 3.7
+      },
+      {
+        "category": "Othr",
+        "count": 2,
+        "pct": 3.7
+      },
+      {
+        "category": "TenC",
+        "count": 1,
+        "pct": 1.85
+      }
+    ],
+    "SaleType": [
+      {
+        "category": "WD",
+        "count": 1267,
+        "pct": 86.78
+      },
+      {
+        "category": "New",
+        "count": 122,
+        "pct": 8.36
+      },
+      {
+        "category": "COD",
+        "count": 43,
+        "pct": 2.95
+      },
+      {
+        "category": "ConLD",
+        "count": 9,
+        "pct": 0.62
+      },
+      {
+        "category": "ConLI",
+        "count": 5,
+        "pct": 0.34
+      },
+      {
+        "category": "ConLw",
+        "count": 5,
+        "pct": 0.34
+      },
+      {
+        "category": "CWD",
+        "count": 4,
+        "pct": 0.27
+      },
+      {
+        "category": "Oth",
+        "count": 3,
+        "pct": 0.21
+      },
+      {
+        "category": "Con",
+        "count": 2,
+        "pct": 0.14
+      }
+    ],
+    "SaleCondition": [
+      {
+        "category": "Normal",
+        "count": 1198,
+        "pct": 82.05
+      },
+      {
+        "category": "Partial",
+        "count": 125,
+        "pct": 8.56
+      },
+      {
+        "category": "Abnorml",
+        "count": 101,
+        "pct": 6.92
+      },
+      {
+        "category": "Family",
+        "count": 20,
+        "pct": 1.37
+      },
+      {
+        "category": "Alloca",
+        "count": 12,
+        "pct": 0.82
+      },
+      {
+        "category": "AdjLand",
+        "count": 4,
+        "pct": 0.27
+      }
+    ]
+  },
+  "mssubclass_labels": {
+    "20": "1-Stor 1946+",
+    "30": "1-Stor 1945-",
+    "40": "1-Stor+Attic",
+    "45": "1.5-Stor Unf",
+    "50": "1.5-Stor Fin",
+    "60": "2-Stor 1946+",
+    "70": "2-Stor 1945-",
+    "75": "2.5-Stor",
+    "80": "Split/Multi",
+    "85": "Split Foyer",
+    "90": "Duplex",
+    "120": "1-Stor PUD",
+    "150": "1.5-Stor PUD",
+    "160": "2-Stor PUD",
+    "180": "PUD Multi",
+    "190": "2-Fam Conv"
+  },
+  "rare_categories": {
+    "MSSubClass": [
+      "45",
+      "180",
+      "40"
+    ],
+    "MSZoning": [
+      "C (all)"
+    ],
+    "Street": [
+      "Grvl"
+    ],
+    "Utilities": [
+      "NoSeWa"
+    ],
+    "LotConfig": [
+      "FR3"
+    ],
+    "Neighborhood": [
+      "Veenker",
+      "NPkVill",
+      "Blueste"
+    ],
+    "Condition1": [
+      "RRAe",
+      "PosA",
+      "RRNn",
+      "RRNe"
+    ],
+    "Condition2": [
+      "Feedr",
+      "Artery",
+      "RRNn",
+      "PosN",
+      "PosA",
+      "RRAn",
+      "RRAe"
+    ],
+    "HouseStyle": [
+      "1.5Unf",
+      "2.5Unf",
+      "2.5Fin"
+    ],
+    "RoofStyle": [
+      "Flat",
+      "Gambrel",
+      "Mansard",
+      "Shed"
+    ],
+    "RoofMatl": [
+      "Tar&Grv",
+      "WdShngl",
+      "WdShake",
+      "Metal",
+      "Membran",
+      "Roll",
+      "ClyTile"
+    ],
+    "Exterior1st": [
+      "BrkComm",
+      "Stone",
+      "AsphShn",
+      "ImStucc",
+      "CBlock"
+    ],
+    "Exterior2nd": [
+      "ImStucc",
+      "Brk Cmn",
+      "Stone",
+      "AsphShn",
+      "Other",
+      "CBlock"
+    ],
+    "Foundation": [
+      "Stone",
+      "Wood"
+    ],
+    "Heating": [
+      "Grav",
+      "Wall",
+      "OthW",
+      "Floor"
+    ],
+    "Electrical": [
+      "FuseP",
+      "Mix"
+    ],
+    "GarageType": [
+      "CarPort",
+      "2Types"
+    ],
+    "SaleType": [
+      "ConLD",
+      "ConLI",
+      "ConLw",
+      "CWD",
+      "Oth",
+      "Con"
+    ],
+    "SaleCondition": [
+      "Alloca",
+      "AdjLand"
+    ]
+  }
+}

@@ -1,0 +1,6025 @@
+{
+  "zscore_threshold": 3,
+  "zscore_outlier_count": 22,
+  "grlivarea_threshold": 4000,
+  "grlivarea_outlier_count": 4,
+  "suspicious_count": 2,
+  "saleprice_mean": 180921.0,
+  "saleprice_3std_upper": 419249.0,
+  "suspicious_rows": [
+    {
+      "Id": 524,
+      "GrLivArea": 4676,
+      "SalePrice": 184750,
+      "Neighborhood": "Edwards"
+    },
+    {
+      "Id": 1299,
+      "GrLivArea": 5642,
+      "SalePrice": 160000,
+      "Neighborhood": "Edwards"
+    }
+  ],
+  "scatter_points": [
+    {
+      "x": 1068,
+      "y": 154500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2622,
+      "y": 325000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1028,
+      "y": 115000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1664,
+      "y": 159000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1620,
+      "y": 315500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 630,
+      "y": 75500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1954,
+      "y": 311500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1456,
+      "y": 146000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 630,
+      "y": 84500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1393,
+      "y": 135500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1477,
+      "y": 145000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 874,
+      "y": 130000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 894,
+      "y": 81000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1535,
+      "y": 214000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1690,
+      "y": 181000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1008,
+      "y": 134500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1720,
+      "y": 183500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1134,
+      "y": 135000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1012,
+      "y": 118400,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1479,
+      "y": 226000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1803,
+      "y": 155000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1590,
+      "y": 210000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1476,
+      "y": 173500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 936,
+      "y": 129000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1431,
+      "y": 192000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1199,
+      "y": 153900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1340,
+      "y": 181134,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 864,
+      "y": 141000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1604,
+      "y": 181000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1352,
+      "y": 208900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1252,
+      "y": 127000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2046,
+      "y": 284000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 3086,
+      "y": 200500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 952,
+      "y": 135750,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1636,
+      "y": 255000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1136,
+      "y": 140000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1904,
+      "y": 138000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1928,
+      "y": 219500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2520,
+      "y": 310000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 882,
+      "y": 97000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1176,
+      "y": 114500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2110,
+      "y": 205000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 950,
+      "y": 119500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2042,
+      "y": 253293,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 988,
+      "y": 128500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2210,
+      "y": 117500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 912,
+      "y": 115000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 955,
+      "y": 127000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2296,
+      "y": 451950,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1524,
+      "y": 144000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 988,
+      "y": 119000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1567,
+      "y": 196000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1304,
+      "y": 115000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2898,
+      "y": 287000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 848,
+      "y": 144500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1734,
+      "y": 260000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1775,
+      "y": 213000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1126,
+      "y": 175000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1117,
+      "y": 107000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 827,
+      "y": 107500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 520,
+      "y": 68500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1246,
+      "y": 154000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2473,
+      "y": 317000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1506,
+      "y": 264132,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1776,
+      "y": 283463,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2158,
+      "y": 243000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1034,
+      "y": 109000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2262,
+      "y": 305000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 974,
+      "y": 93500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1458,
+      "y": 176000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1535,
+      "y": 118858,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1211,
+      "y": 134000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 907,
+      "y": 109008,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1040,
+      "y": 93500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2364,
+      "y": 611657,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1291,
+      "y": 173000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2392,
+      "y": 348000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2418,
+      "y": 341000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1150,
+      "y": 141000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 780,
+      "y": 124900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 987,
+      "y": 118000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1077,
+      "y": 67000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 988,
+      "y": 113000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 886,
+      "y": 91300,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1400,
+      "y": 149500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1573,
+      "y": 133000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1939,
+      "y": 266000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1453,
+      "y": 190000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 848,
+      "y": 155900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1456,
+      "y": 155835,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1559,
+      "y": 153500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1620,
+      "y": 152000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 816,
+      "y": 124500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2730,
+      "y": 301000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1768,
+      "y": 136500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1316,
+      "y": 169990,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1548,
+      "y": 205000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1452,
+      "y": 183900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1498,
+      "y": 204900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2353,
+      "y": 260000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1657,
+      "y": 163500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1768,
+      "y": 224900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2223,
+      "y": 244000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 854,
+      "y": 132000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1432,
+      "y": 194000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1478,
+      "y": 156500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1026,
+      "y": 156000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1742,
+      "y": 275000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 990,
+      "y": 145000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2080,
+      "y": 135000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 800,
+      "y": 60000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1040,
+      "y": 124000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1040,
+      "y": 127000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1513,
+      "y": 137500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1797,
+      "y": 213500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 804,
+      "y": 119000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 901,
+      "y": 107900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 872,
+      "y": 123000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1902,
+      "y": 112000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1629,
+      "y": 284000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 767,
+      "y": 133000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 848,
+      "y": 149000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1600,
+      "y": 169000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1848,
+      "y": 207000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1412,
+      "y": 175000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 935,
+      "y": 137000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2256,
+      "y": 236000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 935,
+      "y": 79500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1099,
+      "y": 144000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1664,
+      "y": 162900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1582,
+      "y": 185900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2028,
+      "y": 369900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1779,
+      "y": 197900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2229,
+      "y": 104000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 480,
+      "y": 35311,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1718,
+      "y": 337500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1702,
+      "y": 367294,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 938,
+      "y": 130250,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1654,
+      "y": 230000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 4316,
+      "y": 755000,
+      "outlier": true,
+      "suspicious": false
+    },
+    {
+      "x": 2794,
+      "y": 403000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 928,
+      "y": 132000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1732,
+      "y": 178000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1694,
+      "y": 136500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1056,
+      "y": 145000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 900,
+      "y": 123000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2057,
+      "y": 250000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1430,
+      "y": 187100,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 768,
+      "y": 133900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 864,
+      "y": 67000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1180,
+      "y": 137500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1348,
+      "y": 155000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2515,
+      "y": 200624,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2274,
+      "y": 154300,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1077,
+      "y": 91000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1792,
+      "y": 136000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1258,
+      "y": 108959,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1375,
+      "y": 140000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 605,
+      "y": 86000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1144,
+      "y": 131400,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1234,
+      "y": 179900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1056,
+      "y": 144000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1646,
+      "y": 293077,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1526,
+      "y": 144500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1216,
+      "y": 118500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1800,
+      "y": 141000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1950,
+      "y": 239000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2574,
+      "y": 276000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2868,
+      "y": 556581,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2403,
+      "y": 244400,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1944,
+      "y": 360000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 882,
+      "y": 103200,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1522,
+      "y": 102000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1556,
+      "y": 151000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2872,
+      "y": 285000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1588,
+      "y": 134432,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1487,
+      "y": 113000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1717,
+      "y": 187500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1360,
+      "y": 125500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1573,
+      "y": 177500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1265,
+      "y": 179900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1044,
+      "y": 55993,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 954,
+      "y": 132500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1389,
+      "y": 135000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1989,
+      "y": 255000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1710,
+      "y": 140000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1689,
+      "y": 271000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1500,
+      "y": 246578,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1368,
+      "y": 202500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1092,
+      "y": 75000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1365,
+      "y": 122500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1073,
+      "y": 108480,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1308,
+      "y": 160000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1118,
+      "y": 171000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1306,
+      "y": 196000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2008,
+      "y": 225000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1247,
+      "y": 197000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1317,
+      "y": 40000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1739,
+      "y": 172500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1343,
+      "y": 154900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1533,
+      "y": 280000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1446,
+      "y": 175000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1344,
+      "y": 147000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2630,
+      "y": 315000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1337,
+      "y": 185000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 980,
+      "y": 135500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2020,
+      "y": 239500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1121,
+      "y": 139000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1595,
+      "y": 140000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 892,
+      "y": 110000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2243,
+      "y": 225000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1285,
+      "y": 143500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1225,
+      "y": 128950,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1471,
+      "y": 172500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1363,
+      "y": 241500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1566,
+      "y": 262500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1402,
+      "y": 194201,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1144,
+      "y": 143000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1352,
+      "y": 130000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1734,
+      "y": 126000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 894,
+      "y": 142500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1324,
+      "y": 254000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1647,
+      "y": 217500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1131,
+      "y": 66500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1466,
+      "y": 201000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1215,
+      "y": 155000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1128,
+      "y": 68400,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 968,
+      "y": 64500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1632,
+      "y": 173000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1178,
+      "y": 102776,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 930,
+      "y": 84900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1501,
+      "y": 165600,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 864,
+      "y": 120000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1229,
+      "y": 135000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1915,
+      "y": 220000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1396,
+      "y": 153575,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1208,
+      "y": 195400,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 996,
+      "y": 147000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2062,
+      "y": 277000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 923,
+      "y": 143000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 720,
+      "y": 105900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2978,
+      "y": 242000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1744,
+      "y": 194500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2945,
+      "y": 438780,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1876,
+      "y": 185000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1347,
+      "y": 107500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1431,
+      "y": 165000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1137,
+      "y": 176000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1060,
+      "y": 129900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 789,
+      "y": 115000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1838,
+      "y": 192140,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1472,
+      "y": 160000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1505,
+      "y": 145000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 691,
+      "y": 86000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1159,
+      "y": 158000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1069,
+      "y": 127500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1224,
+      "y": 115000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1302,
+      "y": 119500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1603,
+      "y": 175900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2090,
+      "y": 240000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1973,
+      "y": 395000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1208,
+      "y": 165000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 894,
+      "y": 128200,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1644,
+      "y": 275000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1726,
+      "y": 311872,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1933,
+      "y": 214000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1337,
+      "y": 153500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 848,
+      "y": 144000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1005,
+      "y": 115000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1430,
+      "y": 180000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2076,
+      "y": 465000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1337,
+      "y": 180000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1971,
+      "y": 253000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1112,
+      "y": 85000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1224,
+      "y": 101800,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1002,
+      "y": 148500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1709,
+      "y": 137500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1869,
+      "y": 318061,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1473,
+      "y": 143000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1558,
+      "y": 140000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1776,
+      "y": 192500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 630,
+      "y": 92000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1576,
+      "y": 197000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 792,
+      "y": 109500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1718,
+      "y": 297000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1489,
+      "y": 185750,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1840,
+      "y": 230000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1131,
+      "y": 89471,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1530,
+      "y": 260000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1456,
+      "y": 189000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1510,
+      "y": 108000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 864,
+      "y": 124500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1314,
+      "y": 145000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1571,
+      "y": 178000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 796,
+      "y": 85000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1768,
+      "y": 175000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1691,
+      "y": 127000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 894,
+      "y": 149900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1560,
+      "y": 174000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1154,
+      "y": 125500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1422,
+      "y": 175500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1496,
+      "y": 225000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 913,
+      "y": 129000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1086,
+      "y": 159950,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1601,
+      "y": 157000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1986,
+      "y": 205000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1164,
+      "y": 140000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2267,
+      "y": 200000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2259,
+      "y": 217000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 825,
+      "y": 125000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1426,
+      "y": 159500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1651,
+      "y": 184000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 789,
+      "y": 96500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2634,
+      "y": 200000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1576,
+      "y": 149000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1484,
+      "y": 178900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1200,
+      "y": 184900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1250,
+      "y": 164700,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1902,
+      "y": 335000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1040,
+      "y": 87500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1502,
+      "y": 233170,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1228,
+      "y": 149350,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1268,
+      "y": 133000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 864,
+      "y": 98000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1686,
+      "y": 207500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1620,
+      "y": 150000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 858,
+      "y": 134900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1301,
+      "y": 187750,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1505,
+      "y": 149500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 864,
+      "y": 116050,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1224,
+      "y": 153337,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1383,
+      "y": 165000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 816,
+      "y": 130500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1344,
+      "y": 206300,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1392,
+      "y": 146000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1065,
+      "y": 126500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1250,
+      "y": 139000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1452,
+      "y": 113000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1096,
+      "y": 79000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1428,
+      "y": 182000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1658,
+      "y": 188000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 864,
+      "y": 129000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1928,
+      "y": 160000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1537,
+      "y": 174000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1863,
+      "y": 219210,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2007,
+      "y": 310000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1792,
+      "y": 374000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 968,
+      "y": 100000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2654,
+      "y": 250000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 960,
+      "y": 145000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2775,
+      "y": 325000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2643,
+      "y": 380000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1646,
+      "y": 275000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1298,
+      "y": 180000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1694,
+      "y": 245350,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 958,
+      "y": 151500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 999,
+      "y": 134500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1020,
+      "y": 94000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1674,
+      "y": 216000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2113,
+      "y": 350000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2030,
+      "y": 195000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1217,
+      "y": 120000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2169,
+      "y": 228500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1850,
+      "y": 248000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1144,
+      "y": 124000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1504,
+      "y": 191000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1309,
+      "y": 181000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1258,
+      "y": 105000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1422,
+      "y": 139900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1442,
+      "y": 157900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1200,
+      "y": 130500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1664,
+      "y": 172400,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1360,
+      "y": 130000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1414,
+      "y": 178000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1342,
+      "y": 161500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1118,
+      "y": 119900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2345,
+      "y": 239000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1844,
+      "y": 190000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 987,
+      "y": 85400,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1610,
+      "y": 205000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1080,
+      "y": 134000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1622,
+      "y": 168000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1511,
+      "y": 185000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1152,
+      "y": 180500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1558,
+      "y": 152000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1911,
+      "y": 215000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1306,
+      "y": 153000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2138,
+      "y": 106000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2466,
+      "y": 340000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1734,
+      "y": 159000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1158,
+      "y": 120000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1771,
+      "y": 115000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 958,
+      "y": 128000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1828,
+      "y": 314813,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1716,
+      "y": 131000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2713,
+      "y": 446261,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1367,
+      "y": 127500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1826,
+      "y": 155000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1200,
+      "y": 177500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1382,
+      "y": 128500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1456,
+      "y": 176000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2448,
+      "y": 402000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1964,
+      "y": 130000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1092,
+      "y": 145000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1113,
+      "y": 147000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 864,
+      "y": 115000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1804,
+      "y": 189000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1632,
+      "y": 143000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2614,
+      "y": 240000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1314,
+      "y": 230000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1923,
+      "y": 190000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1484,
+      "y": 213000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 708,
+      "y": 82500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1713,
+      "y": 274900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1269,
+      "y": 155000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2097,
+      "y": 423000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 864,
+      "y": 128500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2184,
+      "y": 335000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1624,
+      "y": 262000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1040,
+      "y": 129500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2035,
+      "y": 222500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1494,
+      "y": 270000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1314,
+      "y": 207500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1743,
+      "y": 175000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2127,
+      "y": 238000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1716,
+      "y": 135900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1358,
+      "y": 224000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1430,
+      "y": 170000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1221,
+      "y": 185000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2094,
+      "y": 263000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 864,
+      "y": 62383,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1053,
+      "y": 150000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1701,
+      "y": 171000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1056,
+      "y": 139000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1163,
+      "y": 126175,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1665,
+      "y": 205950,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1196,
+      "y": 110000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 3140,
+      "y": 485000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1682,
+      "y": 174000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1072,
+      "y": 145000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1547,
+      "y": 215200,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1905,
+      "y": 320000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1661,
+      "y": 212000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1350,
+      "y": 168500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1845,
+      "y": 189000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1601,
+      "y": 140000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1498,
+      "y": 187500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1947,
+      "y": 254900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1098,
+      "y": 135000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1054,
+      "y": 151000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 928,
+      "y": 112500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1820,
+      "y": 184000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 3082,
+      "y": 197000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1788,
+      "y": 161500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1022,
+      "y": 85000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1274,
+      "y": 203000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2504,
+      "y": 325000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2153,
+      "y": 313000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2031,
+      "y": 237000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1824,
+      "y": 180500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1008,
+      "y": 137000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 694,
+      "y": 90350,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1728,
+      "y": 150900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1588,
+      "y": 214000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1392,
+      "y": 121500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 4476,
+      "y": 745000,
+      "outlier": true,
+      "suspicious": false
+    },
+    {
+      "x": 1969,
+      "y": 190000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1504,
+      "y": 181000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1276,
+      "y": 60000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1800,
+      "y": 239000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 816,
+      "y": 118500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1040,
+      "y": 109500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 924,
+      "y": 110000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 832,
+      "y": 105500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1886,
+      "y": 199900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2196,
+      "y": 271900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1039,
+      "y": 131500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1271,
+      "y": 135000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1367,
+      "y": 119000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2093,
+      "y": 215000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 864,
+      "y": 133500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2447,
+      "y": 169000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1054,
+      "y": 137500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1120,
+      "y": 147000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1616,
+      "y": 232000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1073,
+      "y": 156000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1389,
+      "y": 170000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 861,
+      "y": 82500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1135,
+      "y": 155000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2828,
+      "y": 424870,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1616,
+      "y": 236500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1437,
+      "y": 218000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1630,
+      "y": 213000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1800,
+      "y": 312500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1855,
+      "y": 187000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1675,
+      "y": 181000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2084,
+      "y": 233000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1111,
+      "y": 95000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 729,
+      "y": 52000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1586,
+      "y": 181000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2234,
+      "y": 501837,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 858,
+      "y": 88000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 833,
+      "y": 112000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1283,
+      "y": 140000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1644,
+      "y": 167000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1383,
+      "y": 145250,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2073,
+      "y": 210000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1539,
+      "y": 157500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1552,
+      "y": 212900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 925,
+      "y": 117500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1414,
+      "y": 185500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1526,
+      "y": 85000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1712,
+      "y": 145000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1717,
+      "y": 255500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1750,
+      "y": 124000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1176,
+      "y": 134900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1936,
+      "y": 230500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 858,
+      "y": 110000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1919,
+      "y": 233230,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1762,
+      "y": 157000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1728,
+      "y": 142600,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1626,
+      "y": 154000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1496,
+      "y": 179665,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 790,
+      "y": 91000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1935,
+      "y": 197900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1964,
+      "y": 205000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1666,
+      "y": 161000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 985,
+      "y": 149900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1358,
+      "y": 207000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 848,
+      "y": 143000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1970,
+      "y": 281000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2046,
+      "y": 372500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1865,
+      "y": 235000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2134,
+      "y": 214500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2646,
+      "y": 260000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1236,
+      "y": 149700,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 902,
+      "y": 131000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 912,
+      "y": 144000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1656,
+      "y": 215000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1382,
+      "y": 176000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2020,
+      "y": 144000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1052,
+      "y": 155000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2531,
+      "y": 290000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1852,
+      "y": 230000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1660,
+      "y": 290000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1709,
+      "y": 328900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 912,
+      "y": 142000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1764,
+      "y": 231500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1395,
+      "y": 162000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1040,
+      "y": 133000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2392,
+      "y": 386250,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1103,
+      "y": 110500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2078,
+      "y": 339750,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 803,
+      "y": 87000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1152,
+      "y": 158500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1173,
+      "y": 170000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1092,
+      "y": 55000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1784,
+      "y": 138887,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1920,
+      "y": 170000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1670,
+      "y": 240000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1223,
+      "y": 147400,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1801,
+      "y": 289000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1656,
+      "y": 135000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1717,
+      "y": 140000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2599,
+      "y": 333168,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1644,
+      "y": 146500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2468,
+      "y": 354000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1362,
+      "y": 143000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1484,
+      "y": 265900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1200,
+      "y": 146000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1350,
+      "y": 165000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1152,
+      "y": 82000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1680,
+      "y": 213250,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1440,
+      "y": 79000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1214,
+      "y": 143000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1479,
+      "y": 130500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1801,
+      "y": 239900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1494,
+      "y": 177500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2329,
+      "y": 262280,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1588,
+      "y": 227000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1194,
+      "y": 159500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1494,
+      "y": 217000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 3238,
+      "y": 410000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 914,
+      "y": 148000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1641,
+      "y": 178000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1573,
+      "y": 162900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1472,
+      "y": 187500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1750,
+      "y": 160000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1768,
+      "y": 212000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1196,
+      "y": 139000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1126,
+      "y": 108000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 845,
+      "y": 84000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1968,
+      "y": 172000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1221,
+      "y": 104900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1368,
+      "y": 114504,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 987,
+      "y": 106000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1442,
+      "y": 179900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1220,
+      "y": 102000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1500,
+      "y": 190000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2450,
+      "y": 340000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2207,
+      "y": 180000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1208,
+      "y": 206000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1795,
+      "y": 131500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1440,
+      "y": 150000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1212,
+      "y": 186000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1111,
+      "y": 116900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2715,
+      "y": 299800,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1724,
+      "y": 188000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1328,
+      "y": 143000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1052,
+      "y": 138500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2417,
+      "y": 260000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 948,
+      "y": 119000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2019,
+      "y": 167500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 869,
+      "y": 85500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1554,
+      "y": 209500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2112,
+      "y": 206900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1416,
+      "y": 112000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1593,
+      "y": 193000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1381,
+      "y": 197500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1632,
+      "y": 139000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 954,
+      "y": 119750,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1922,
+      "y": 198500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 980,
+      "y": 135000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1786,
+      "y": 223500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1694,
+      "y": 307000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 972,
+      "y": 132000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1437,
+      "y": 168000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2263,
+      "y": 287000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1725,
+      "y": 197000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1236,
+      "y": 134450,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1040,
+      "y": 133700,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1704,
+      "y": 306000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1523,
+      "y": 180000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1489,
+      "y": 232600,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1569,
+      "y": 175900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1212,
+      "y": 178000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1573,
+      "y": 227000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1790,
+      "y": 165150,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1576,
+      "y": 223500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1728,
+      "y": 207500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1600,
+      "y": 256300,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1922,
+      "y": 377426,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1692,
+      "y": 224500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1656,
+      "y": 249700,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1047,
+      "y": 100000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2728,
+      "y": 437154,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1425,
+      "y": 180500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 952,
+      "y": 121000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 990,
+      "y": 156000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 988,
+      "y": 180000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1056,
+      "y": 107000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1746,
+      "y": 377500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1718,
+      "y": 185000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1464,
+      "y": 175000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1660,
+      "y": 195000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1752,
+      "y": 319900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2620,
+      "y": 190000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 4676,
+      "y": 184750,
+      "outlier": true,
+      "suspicious": true
+    },
+    {
+      "x": 784,
+      "y": 109500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1120,
+      "y": 129000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1382,
+      "y": 148000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1386,
+      "y": 158900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 334,
+      "y": 39300,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1200,
+      "y": 151000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1414,
+      "y": 178740,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1584,
+      "y": 124000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1517,
+      "y": 230000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1258,
+      "y": 145000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 902,
+      "y": 125500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1158,
+      "y": 158000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 964,
+      "y": 163500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2380,
+      "y": 129000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1232,
+      "y": 194500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 864,
+      "y": 127000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1982,
+      "y": 228500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1924,
+      "y": 280000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2080,
+      "y": 234000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1647,
+      "y": 175000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1617,
+      "y": 193000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1340,
+      "y": 120000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1940,
+      "y": 395192,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1855,
+      "y": 136900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 884,
+      "y": 144000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1626,
+      "y": 175500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1284,
+      "y": 110000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2290,
+      "y": 255900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 816,
+      "y": 110000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2183,
+      "y": 229000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1869,
+      "y": 124900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1646,
+      "y": 164000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1844,
+      "y": 257000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1571,
+      "y": 239000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2082,
+      "y": 200000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1959,
+      "y": 171000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2374,
+      "y": 285000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2142,
+      "y": 193500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1200,
+      "y": 144152,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1992,
+      "y": 250000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2285,
+      "y": 248000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1824,
+      "y": 302000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1850,
+      "y": 326000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1355,
+      "y": 127500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1668,
+      "y": 180000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1406,
+      "y": 89500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1888,
+      "y": 190000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1228,
+      "y": 189000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1638,
+      "y": 192000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 960,
+      "y": 94750,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1698,
+      "y": 320000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1063,
+      "y": 128000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1236,
+      "y": 135000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1535,
+      "y": 118964,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 630,
+      "y": 81000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1092,
+      "y": 88000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1652,
+      "y": 325000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1144,
+      "y": 139950,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1795,
+      "y": 147000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1541,
+      "y": 205000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1507,
+      "y": 127000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1441,
+      "y": 174000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1479,
+      "y": 191000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 987,
+      "y": 89500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 672,
+      "y": 113000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2192,
+      "y": 179500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2000,
+      "y": 305900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1125,
+      "y": 155000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1124,
+      "y": 93000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1839,
+      "y": 257500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2144,
+      "y": 277000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2260,
+      "y": 328000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1977,
+      "y": 165000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 845,
+      "y": 129500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1786,
+      "y": 204750,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2555,
+      "y": 191000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1700,
+      "y": 165500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1671,
+      "y": 173000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1376,
+      "y": 119500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1689,
+      "y": 127500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2554,
+      "y": 159500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1416,
+      "y": 153900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 816,
+      "y": 129900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1370,
+      "y": 152000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1442,
+      "y": 185000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1285,
+      "y": 127000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1474,
+      "y": 168500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2013,
+      "y": 269790,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1563,
+      "y": 245000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1663,
+      "y": 256000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1192,
+      "y": 135000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1774,
+      "y": 87000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1962,
+      "y": 239799,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1302,
+      "y": 176485,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1118,
+      "y": 116000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1766,
+      "y": 370878,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1253,
+      "y": 176000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1097,
+      "y": 152000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1078,
+      "y": 149900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1572,
+      "y": 168000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1524,
+      "y": 260000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2060,
+      "y": 214000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1344,
+      "y": 137500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1818,
+      "y": 169500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1029,
+      "y": 118500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2521,
+      "y": 151400,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1500,
+      "y": 173900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2217,
+      "y": 268000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1370,
+      "y": 202500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1262,
+      "y": 185000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1894,
+      "y": 214900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1694,
+      "y": 318000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 864,
+      "y": 97000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1709,
+      "y": 130000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1738,
+      "y": 104900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1319,
+      "y": 123000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 3222,
+      "y": 320000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1355,
+      "y": 127000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1306,
+      "y": 76500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 768,
+      "y": 133000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1077,
+      "y": 118000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1183,
+      "y": 120000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1456,
+      "y": 179540,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2291,
+      "y": 230000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 848,
+      "y": 140000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2332,
+      "y": 426000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1348,
+      "y": 117000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2108,
+      "y": 235000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1336,
+      "y": 108000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 5642,
+      "y": 160000,
+      "outlier": true,
+      "suspicious": true
+    },
+    {
+      "x": 1344,
+      "y": 144000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1935,
+      "y": 263435,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1470,
+      "y": 135000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2156,
+      "y": 262500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1728,
+      "y": 125000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1768,
+      "y": 226700,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1048,
+      "y": 135000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1728,
+      "y": 190000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2358,
+      "y": 122000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1146,
+      "y": 187500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1601,
+      "y": 272000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1920,
+      "y": 172500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1363,
+      "y": 125500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1148,
+      "y": 123500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1294,
+      "y": 193879,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1248,
+      "y": 87000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1419,
+      "y": 184100,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1440,
+      "y": 182900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1140,
+      "y": 84500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2090,
+      "y": 200000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1640,
+      "y": 183000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1679,
+      "y": 193500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1218,
+      "y": 131000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1142,
+      "y": 134000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1110,
+      "y": 165500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1164,
+      "y": 125000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1192,
+      "y": 78000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1422,
+      "y": 179600,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 894,
+      "y": 130000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1953,
+      "y": 252000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1792,
+      "y": 231500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 924,
+      "y": 80000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 752,
+      "y": 125000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1740,
+      "y": 219500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1593,
+      "y": 178000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1385,
+      "y": 166000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1266,
+      "y": 176000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2021,
+      "y": 274725,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1334,
+      "y": 167900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1252,
+      "y": 160000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2526,
+      "y": 136000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2402,
+      "y": 555000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1362,
+      "y": 128000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 3627,
+      "y": 625000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2520,
+      "y": 290000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 944,
+      "y": 82000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 912,
+      "y": 125000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1553,
+      "y": 186500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 948,
+      "y": 111000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1852,
+      "y": 252678,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1230,
+      "y": 110000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1080,
+      "y": 141000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1250,
+      "y": 116000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1611,
+      "y": 167900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1949,
+      "y": 236000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1369,
+      "y": 103600,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1482,
+      "y": 163900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1048,
+      "y": 113000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1372,
+      "y": 250580,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1296,
+      "y": 220000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 990,
+      "y": 126000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1489,
+      "y": 139500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2172,
+      "y": 280000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1266,
+      "y": 159895,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1218,
+      "y": 208300,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 932,
+      "y": 124000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1322,
+      "y": 147000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1635,
+      "y": 117000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1478,
+      "y": 157500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1184,
+      "y": 81000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1710,
+      "y": 208500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 912,
+      "y": 156000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2126,
+      "y": 185000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1394,
+      "y": 167500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 970,
+      "y": 132500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1034,
+      "y": 169900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1720,
+      "y": 196500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1387,
+      "y": 93000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1357,
+      "y": 177000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1264,
+      "y": 167500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1484,
+      "y": 174000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1767,
+      "y": 239000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 813,
+      "y": 110000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 754,
+      "y": 84500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2069,
+      "y": 242000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1509,
+      "y": 175000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1481,
+      "y": 174000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 960,
+      "y": 129000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1040,
+      "y": 109900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1040,
+      "y": 90000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1802,
+      "y": 200100,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2610,
+      "y": 303477,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1466,
+      "y": 149900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1652,
+      "y": 139000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2097,
+      "y": 228000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1625,
+      "y": 235000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2287,
+      "y": 225000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2822,
+      "y": 582933,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2054,
+      "y": 244000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1336,
+      "y": 157000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 894,
+      "y": 110000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1719,
+      "y": 324000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2127,
+      "y": 271000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1251,
+      "y": 160000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 912,
+      "y": 120000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 968,
+      "y": 37900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1829,
+      "y": 237000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1574,
+      "y": 190000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 720,
+      "y": 34900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1980,
+      "y": 315000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1621,
+      "y": 202500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1602,
+      "y": 215000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1616,
+      "y": 152000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1600,
+      "y": 207500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2119,
+      "y": 158000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1709,
+      "y": 130000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2110,
+      "y": 244000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 774,
+      "y": 79000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 796,
+      "y": 55000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1707,
+      "y": 228000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2161,
+      "y": 325624,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1716,
+      "y": 191000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1362,
+      "y": 163000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1796,
+      "y": 211000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1652,
+      "y": 392500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1482,
+      "y": 143000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1015,
+      "y": 88000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1578,
+      "y": 133000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1086,
+      "y": 144900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1218,
+      "y": 91500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 860,
+      "y": 137000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1140,
+      "y": 96500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1502,
+      "y": 149000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1165,
+      "y": 174900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1960,
+      "y": 216500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2031,
+      "y": 222500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1392,
+      "y": 161750,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1541,
+      "y": 220000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1327,
+      "y": 150750,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1324,
+      "y": 128000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1552,
+      "y": 179900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2810,
+      "y": 302000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 3608,
+      "y": 475000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1328,
+      "y": 170000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2519,
+      "y": 335000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1517,
+      "y": 115000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1057,
+      "y": 109000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2132,
+      "y": 316600,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1629,
+      "y": 270000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1188,
+      "y": 142000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1464,
+      "y": 282922,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1216,
+      "y": 164000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1634,
+      "y": 250000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 924,
+      "y": 122900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1060,
+      "y": 154000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1548,
+      "y": 155000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 438,
+      "y": 60000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 747,
+      "y": 80000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 892,
+      "y": 100000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1190,
+      "y": 132500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1394,
+      "y": 159000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1960,
+      "y": 124500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 848,
+      "y": 131500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1339,
+      "y": 180000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 784,
+      "y": 76000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 948,
+      "y": 108000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1178,
+      "y": 157000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1983,
+      "y": 225000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1728,
+      "y": 188000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 764,
+      "y": 73000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 988,
+      "y": 91000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1224,
+      "y": 173733,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 987,
+      "y": 94500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1908,
+      "y": 210000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1144,
+      "y": 129000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1032,
+      "y": 148000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2060,
+      "y": 211000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1114,
+      "y": 159000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1724,
+      "y": 197900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1218,
+      "y": 118000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 841,
+      "y": 82000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1088,
+      "y": 170000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 864,
+      "y": 136500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1826,
+      "y": 319000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1111,
+      "y": 101000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 912,
+      "y": 147000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2270,
+      "y": 290000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 923,
+      "y": 119500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 910,
+      "y": 116000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1040,
+      "y": 92900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1374,
+      "y": 105000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2121,
+      "y": 415298,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1959,
+      "y": 215000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1539,
+      "y": 141500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1268,
+      "y": 132000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 960,
+      "y": 108500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1097,
+      "y": 145000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1768,
+      "y": 163000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1668,
+      "y": 140000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1392,
+      "y": 110000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1412,
+      "y": 132500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1630,
+      "y": 295493,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1241,
+      "y": 199900,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 768,
+      "y": 129500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1640,
+      "y": 224000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1419,
+      "y": 392000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1200,
+      "y": 179000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1479,
+      "y": 184000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1414,
+      "y": 176500,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 1344,
+      "y": 98000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 2320,
+      "y": 169000,
+      "outlier": false,
+      "suspicious": false
+    },
+    {
+      "x": 788,
+      "y": 100000,
+      "outlier": false,
+      "suspicious": false
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "dataset": {
+    "train_rows": 1460,
+    "test_rows": 1459,
+    "features": 80,
+    "numeric_features": 35,
+    "ordinal_features": 19,
+    "nominal_features": 25
+  },
+  "target": {
+    "mean": 180921.2,
+    "median": 163000.0,
+    "std": 79442.5,
+    "skew_original": 1.8809,
+    "skew_log1p": 0.1212
+  },
+  "missing_values": {
+    "columns_with_missing": 19,
+    "absence_encoded_cols": [
+      "Alley",
+      "PoolQC",
+      "Fence",
+      "MiscFeature",
+      "FireplaceQu",
+      "GarageType",
+      "GarageFinish",
+      "GarageQual",
+      "GarageCond",
+      "BsmtQual",
+      "BsmtCond",
+      "BsmtExposure",
+      "BsmtFinType1",
+      "BsmtFinType2",
+      "MasVnrType"
+    ],
+    "top_missing_pct": {
+      "PoolQC": 99.52,
+      "MiscFeature": 96.3,
+      "Alley": 93.77,
+      "Fence": 80.75,
+      "MasVnrType": 59.73,
+      "FireplaceQu": 47.26,
+      "LotFrontage": 17.74,
+      "GarageType": 5.55,
+      "GarageYrBlt": 5.55,
+      "GarageFinish": 5.55
+    }
+  },
+  "top_correlated_features": {
+    "OverallQual": 0.7909816005838053,
+    "GrLivArea": 0.7086244776126515,
+    "ExterQual": 0.6826392416562586,
+    "KitchenQual": 0.6595997207286626,
+    "GarageCars": 0.6404091972583519,
+    "GarageArea": 0.6234314389183622,
+    "TotalBsmtSF": 0.6135805515591943,
+    "1stFlrSF": 0.6058521846919153,
+    "BsmtQual": 0.5852071991725194,
+    "FullBath": 0.5606637627484453
+  },
+  "top_rf_features": {
+    "OverallQual": 0.5767238109683649,
+    "GrLivArea": 0.10798434335077406,
+    "TotalBsmtSF": 0.037646766740514155,
+    "2ndFlrSF": 0.03366466399547937,
+    "BsmtFinSF1": 0.028483295289230225,
+    "1stFlrSF": 0.022246090926557317,
+    "GarageCars": 0.020338544127835978,
+    "GarageArea": 0.013996695753220677,
+    "LotArea": 0.012770735692642093,
+    "YearBuilt": 0.008921946450573376
+  },
+  "highly_skewed_features": {
+    "MiscVal": 24.4516396173223,
+    "PoolArea": 14.813134660429398,
+    "LotArea": 12.195142125084478,
+    "3SsnPorch": 10.293752357165413,
+    "LowQualFinSF": 9.002080417658552,
+    "KitchenAbvGr": 4.483784093860484,
+    "BsmtFinSF2": 4.250888017057445,
+    "ScreenPorch": 4.1179773827954875,
+    "BsmtHalfBath": 4.0991856695420035,
+    "EnclosedPorch": 3.086696471376678
+  },
+  "key_insights": [
+    "OverallQual is the strongest predictor (r~0.79) \u2014 correctly kept as integer 1-10",
+    "KitchenQual, ExterQual, BsmtQual are strong ordinal predictors \u2014 must be mapped per description, not label-encoded",
+    "MSSubClass is categorical (building-class codes) not numeric \u2014 cast to string",
+    "GarageYrBlt NaN means no garage \u2014 impute with YearBuilt, not column median",
+    "SalePrice is right-skewed (skew~1.88) \u2014 log1p transform recommended",
+    "16 columns have NaN = absence per description (fill with None/0)",
+    "GrLivArea has suspicious outliers (very large area, very low price)",
+    "Neighborhood is the most impactful nominal feature",
+    "Engineered TotalSF and TotalBathrooms correlate strongly with SalePrice",
+    "Utilities is near-constant \u2014 safe to drop"
+  ],
+  "web_exports": [
+    "dataset_overview.json",
+    "feature_taxonomy.json",
+    "missing_values.json",
+    "constant_features.json",
+    "ordinal_correlations.json",
+    "ordinal_boxplots.json",
+    "saleprice_distribution.json",
+    "numeric_distributions.json",
+    "numeric_boxplots.json",
+    "correlations.json",
+    "category_counts.json",
+    "neighborhood_prices.json",
+    "saleprice_by_categorical.json",
+    "scatter_data.json",
+    "outliers.json",
+    "temporal_analysis.json",
+    "distribution_shift.json",
+    "engineered_features.json",
+    "feature_importance.json",
+    "neighborhood_detail.json",
+    "skewness_and_rare.json",
+    "eda_summary.json"
+  ]
+}

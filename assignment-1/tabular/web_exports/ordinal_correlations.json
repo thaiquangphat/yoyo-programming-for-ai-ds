@@ -1,0 +1,80 @@
+{
+  "bars": [
+    {
+      "feature": "ExterQual",
+      "correlation": 0.6826
+    },
+    {
+      "feature": "KitchenQual",
+      "correlation": 0.6596
+    },
+    {
+      "feature": "BsmtQual",
+      "correlation": 0.5852
+    },
+    {
+      "feature": "GarageFinish",
+      "correlation": 0.5492
+    },
+    {
+      "feature": "FireplaceQu",
+      "correlation": 0.5204
+    },
+    {
+      "feature": "HeatingQC",
+      "correlation": 0.4276
+    },
+    {
+      "feature": "BsmtExposure",
+      "correlation": 0.3747
+    },
+    {
+      "feature": "BsmtFinType1",
+      "correlation": 0.3049
+    },
+    {
+      "feature": "GarageQual",
+      "correlation": 0.2738
+    },
+    {
+      "feature": "LotShape",
+      "correlation": -0.2678
+    },
+    {
+      "feature": "GarageCond",
+      "correlation": 0.2632
+    },
+    {
+      "feature": "PavedDrive",
+      "correlation": 0.2314
+    },
+    {
+      "feature": "BsmtCond",
+      "correlation": 0.2126
+    },
+    {
+      "feature": "Fence",
+      "correlation": -0.1469
+    },
+    {
+      "feature": "PoolQC",
+      "correlation": 0.1155
+    },
+    {
+      "feature": "Functional",
+      "correlation": 0.1076
+    },
+    {
+      "feature": "LandSlope",
+      "correlation": -0.0512
+    },
+    {
+      "feature": "ExterCond",
+      "correlation": 0.0189
+    },
+    {
+      "feature": "BsmtFinType2",
+      "correlation": -0.0053
+    }
+  ]
+}

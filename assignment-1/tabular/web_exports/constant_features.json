@@ -1,0 +1,21 @@
+{
+  "duplicate_rows": 0,
+  "constant_features": [],
+  "near_constant": [
+    {
+      "column": "Street",
+      "dominant": "Pave",
+      "pct": 99.59
+    },
+    {
+      "column": "Utilities",
+      "dominant": "AllPub",
+      "pct": 99.93
+    },
+    {
+      "column": "PoolArea",
+      "dominant": "0",
+      "pct": 99.52
+    }
+  ]
+}

@@ -1,0 +1,321 @@
+{
+  "skewness": [
+    {
+      "feature": "MiscVal",
+      "skew": 24.4516,
+      "abs_skew": 24.4516,
+      "high_skew": true
+    },
+    {
+      "feature": "PoolArea",
+      "skew": 14.8131,
+      "abs_skew": 14.8131,
+      "high_skew": true
+    },
+    {
+      "feature": "LotArea",
+      "skew": 12.1951,
+      "abs_skew": 12.1951,
+      "high_skew": true
+    },
+    {
+      "feature": "3SsnPorch",
+      "skew": 10.2938,
+      "abs_skew": 10.2938,
+      "high_skew": true
+    },
+    {
+      "feature": "LowQualFinSF",
+      "skew": 9.0021,
+      "abs_skew": 9.0021,
+      "high_skew": true
+    },
+    {
+      "feature": "KitchenAbvGr",
+      "skew": 4.4838,
+      "abs_skew": 4.4838,
+      "high_skew": true
+    },
+    {
+      "feature": "BsmtFinSF2",
+      "skew": 4.2509,
+      "abs_skew": 4.2509,
+      "high_skew": true
+    },
+    {
+      "feature": "ScreenPorch",
+      "skew": 4.118,
+      "abs_skew": 4.118,
+      "high_skew": true
+    },
+    {
+      "feature": "BsmtHalfBath",
+      "skew": 4.0992,
+      "abs_skew": 4.0992,
+      "high_skew": true
+    },
+    {
+      "feature": "EnclosedPorch",
+      "skew": 3.0867,
+      "abs_skew": 3.0867,
+      "high_skew": true
+    },
+    {
+      "feature": "MasVnrArea",
+      "skew": 2.6663,
+      "abs_skew": 2.6663,
+      "high_skew": true
+    },
+    {
+      "feature": "OpenPorchSF",
+      "skew": 2.3619,
+      "abs_skew": 2.3619,
+      "high_skew": true
+    },
+    {
+      "feature": "LotFrontage",
+      "skew": 2.1609,
+      "abs_skew": 2.1609,
+      "high_skew": true
+    },
+    {
+      "feature": "BsmtFinSF1",
+      "skew": 1.6838,
+      "abs_skew": 1.6838,
+      "high_skew": true
+    },
+    {
+      "feature": "WoodDeckSF",
+      "skew": 1.5398,
+      "abs_skew": 1.5398,
+      "high_skew": true
+    },
+    {
+      "feature": "TotalBsmtSF",
+      "skew": 1.5227,
+      "abs_skew": 1.5227,
+      "high_skew": true
+    },
+    {
+      "feature": "1stFlrSF",
+      "skew": 1.3753,
+      "abs_skew": 1.3753,
+      "high_skew": true
+    },
+    {
+      "feature": "GrLivArea",
+      "skew": 1.3652,
+      "abs_skew": 1.3652,
+      "high_skew": true
+    },
+    {
+      "feature": "BsmtUnfSF",
+      "skew": 0.9193,
+      "abs_skew": 0.9193,
+      "high_skew": true
+    },
+    {
+      "feature": "2ndFlrSF",
+      "skew": 0.8122,
+      "abs_skew": 0.8122,
+      "high_skew": true
+    },
+    {
+      "feature": "OverallCond",
+      "skew": 0.6924,
+      "abs_skew": 0.6924,
+      "high_skew": false
+    },
+    {
+      "feature": "TotRmsAbvGrd",
+      "skew": 0.6756,
+      "abs_skew": 0.6756,
+      "high_skew": false
+    },
+    {
+      "feature": "HalfBath",
+      "skew": 0.6752,
+      "abs_skew": 0.6752,
+      "high_skew": false
+    },
+    {
+      "feature": "Fireplaces",
+      "skew": 0.6489,
+      "abs_skew": 0.6489,
+      "high_skew": false
+    },
+    {
+      "feature": "GarageYrBlt",
+      "skew": -0.6487,
+      "abs_skew": 0.6487,
+      "high_skew": false
+    },
+    {
+      "feature": "YearBuilt",
+      "skew": -0.6128,
+      "abs_skew": 0.6128,
+      "high_skew": false
+    },
+    {
+      "feature": "BsmtFullBath",
+      "skew": 0.5955,
+      "abs_skew": 0.5955,
+      "high_skew": false
+    },
+    {
+      "feature": "YearRemodAdd",
+      "skew": -0.503,
+      "abs_skew": 0.503,
+      "high_skew": false
+    },
+    {
+      "feature": "GarageCars",
+      "skew": -0.3422,
+      "abs_skew": 0.3422,
+      "high_skew": false
+    },
+    {
+      "feature": "OverallQual",
+      "skew": 0.2167,
+      "abs_skew": 0.2167,
+      "high_skew": false
+    },
+    {
+      "feature": "MoSold",
+      "skew": 0.2118,
+      "abs_skew": 0.2118,
+      "high_skew": false
+    },
+    {
+      "feature": "BedroomAbvGr",
+      "skew": 0.2116,
+      "abs_skew": 0.2116,
+      "high_skew": false
+    },
+    {
+      "feature": "GarageArea",
+      "skew": 0.1798,
+      "abs_skew": 0.1798,
+      "high_skew": false
+    },
+    {
+      "feature": "YrSold",
+      "skew": 0.0962,
+      "abs_skew": 0.0962,
+      "high_skew": false
+    },
+    {
+      "feature": "FullBath",
+      "skew": 0.0365,
+      "abs_skew": 0.0365,
+      "high_skew": false
+    }
+  ],
+  "high_skew_threshold": 0.75,
+  "n_high_skew": 20,
+  "rare_categories": {
+    "MSSubClass": [
+      "45",
+      "180",
+      "40"
+    ],
+    "MSZoning": [
+      "C (all)"
+    ],
+    "Street": [
+      "Grvl"
+    ],
+    "Utilities": [
+      "NoSeWa"
+    ],
+    "LotConfig": [
+      "FR3"
+    ],
+    "Neighborhood": [
+      "Veenker",
+      "NPkVill",
+      "Blueste"
+    ],
+    "Condition1": [
+      "RRAe",
+      "PosA",
+      "RRNn",
+      "RRNe"
+    ],
+    "Condition2": [
+      "Feedr",
+      "Artery",
+      "RRNn",
+      "PosN",
+      "PosA",
+      "RRAn",
+      "RRAe"
+    ],
+    "HouseStyle": [
+      "1.5Unf",
+      "2.5Unf",
+      "2.5Fin"
+    ],
+    "RoofStyle": [
+      "Flat",
+      "Gambrel",
+      "Mansard",
+      "Shed"
+    ],
+    "RoofMatl": [
+      "Tar&Grv",
+      "WdShngl",
+      "WdShake",
+      "Metal",
+      "Membran",
+      "Roll",
+      "ClyTile"
+    ],
+    "Exterior1st": [
+      "BrkComm",
+      "Stone",
+      "AsphShn",
+      "ImStucc",
+      "CBlock"
+    ],
+    "Exterior2nd": [
+      "ImStucc",
+      "Brk Cmn",
+      "Stone",
+      "AsphShn",
+      "Other",
+      "CBlock"
+    ],
+    "Foundation": [
+      "Stone",
+      "Wood"
+    ],
+    "Heating": [
+      "Grav",
+      "Wall",
+      "OthW",
+      "Floor"
+    ],
+    "Electrical": [
+      "FuseP",
+      "Mix"
+    ],
+    "GarageType": [
+      "CarPort",
+      "2Types"
+    ],
+    "SaleType": [
+      "ConLD",
+      "ConLI",
+      "ConLw",
+      "CWD",
+      "Oth",
+      "Con"
+    ],
+    "SaleCondition": [
+      "Alloca",
+      "AdjLand"
+    ]
+  },
+  "rare_threshold_pct": 1.0
+}

@@ -1,0 +1,127 @@
+{
+  "by_year": [
+    {
+      "year": 2006,
+      "mean": 182549.0,
+      "median": 163995.0,
+      "count": 314
+    },
+    {
+      "year": 2007,
+      "mean": 186063.0,
+      "median": 167000.0,
+      "count": 329
+    },
+    {
+      "year": 2008,
+      "mean": 177361.0,
+      "median": 164000.0,
+      "count": 304
+    },
+    {
+      "year": 2009,
+      "mean": 179432.0,
+      "median": 162000.0,
+      "count": 338
+    },
+    {
+      "year": 2010,
+      "mean": 177394.0,
+      "median": 155000.0,
+      "count": 175
+    }
+  ],
+  "by_month": [
+    {
+      "month": 1,
+      "month_name": "Jan",
+      "mean": 183256.0,
+      "median": 151650.0,
+      "count": 58
+    },
+    {
+      "month": 2,
+      "month_name": "Feb",
+      "mean": 177882.0,
+      "median": 173250.0,
+      "count": 52
+    },
+    {
+      "month": 3,
+      "month_name": "Mar",
+      "mean": 183254.0,
+      "median": 165250.0,
+      "count": 106
+    },
+    {
+      "month": 4,
+      "month_name": "Apr",
+      "mean": 171503.0,
+      "median": 147000.0,
+      "count": 141
+    },
+    {
+      "month": 5,
+      "month_name": "May",
+      "mean": 172307.0,
+      "median": 154000.0,
+      "count": 204
+    },
+    {
+      "month": 6,
+      "month_name": "Jun",
+      "mean": 177396.0,
+      "median": 163000.0,
+      "count": 253
+    },
+    {
+      "month": 7,
+      "month_name": "Jul",
+      "mean": 186331.0,
+      "median": 165195.0,
+      "count": 234
+    },
+    {
+      "month": 8,
+      "month_name": "Aug",
+      "mean": 184652.0,
+      "median": 174450.0,
+      "count": 122
+    },
+    {
+      "month": 9,
+      "month_name": "Sep",
+      "mean": 195683.0,
+      "median": 185900.0,
+      "count": 63
+    },
+    {
+      "month": 10,
+      "month_name": "Oct",
+      "mean": 179564.0,
+      "median": 159000.0,
+      "count": 89
+    },
+    {
+      "month": 11,
+      "month_name": "Nov",
+      "mean": 192211.0,
+      "median": 173000.0,
+      "count": 79
+    },
+    {
+      "month": 12,
+      "month_name": "Dec",
+      "mean": 186519.0,
+      "median": 178000.0,
+      "count": 59
+    }
+  ],
+  "volume_by_year": {
+    "2006": 314,
+    "2007": 329,
+    "2008": 304,
+    "2009": 338,
+    "2010": 175
+  }
+}

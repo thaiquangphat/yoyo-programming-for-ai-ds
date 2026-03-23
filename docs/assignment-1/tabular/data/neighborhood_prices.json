@@ -1,0 +1,573 @@
+{
+  "box_by_neighborhood": [
+    {
+      "min": 154000.0,
+      "q1": 253293.0,
+      "median": 315000.0,
+      "q3": 374000.0,
+      "max": 555000.0,
+      "outliers": [
+        582933.0,
+        611657.0
+      ],
+      "n_outliers": 2,
+      "category": "NridgHt",
+      "n": 77,
+      "full_name": "Northridge Hts"
+    },
+    {
+      "min": 190000.0,
+      "q1": 265000.0,
+      "median": 301500.0,
+      "q3": 341000.0,
+      "max": 430000.0,
+      "outliers": [
+        755000.0,
+        625000.0,
+        745000.0,
+        466500.0
+      ],
+      "n_outliers": 4,
+      "category": "NoRidge",
+      "n": 41,
+      "full_name": "Northridge"
+    },
+    {
+      "min": 170000.0,
+      "q1": 213500.0,
+      "median": 278000.0,
+      "q3": 377426.0,
+      "max": 556581.0,
+      "outliers": [],
+      "n_outliers": 0,
+      "category": "StoneBr",
+      "n": 25,
+      "full_name": "Stone Brook"
+    },
+    {
+      "min": 137500.0,
+      "q1": 186900.0,
+      "median": 228475.0,
+      "q3": 286115.75,
+      "max": 378500.0,
+      "outliers": [],
+      "n_outliers": 0,
+      "category": "Timber",
+      "n": 38,
+      "full_name": "Timberland"
+    },
+    {
+      "min": 144152.0,
+      "q1": 177975.0,
+      "median": 225500.0,
+      "q3": 252919.5,
+      "max": 340000.0,
+      "outliers": [
+        370878.0,
+        423000.0
+      ],
+      "n_outliers": 2,
+      "category": "Somerst",
+      "n": 86,
+      "full_name": "Somerset"
+    },
+    {
+      "min": 162500.0,
+      "q1": 184250.0,
+      "median": 218000.0,
+      "q3": 282000.0,
+      "max": 385000.0,
+      "outliers": [],
+      "n_outliers": 0,
+      "category": "Veenker",
+      "n": 11,
+      "full_name": "Veenker"
+    },
+    {
+      "min": 90350.0,
+      "q1": 159250.0,
+      "median": 200624.0,
+      "q3": 239000.0,
+      "max": 335000.0,
+      "outliers": [
+        359100.0,
+        392500.0,
+        381000.0
+      ],
+      "n_outliers": 3,
+      "category": "Crawfor",
+      "n": 51,
+      "full_name": "Crawford"
+    },
+    {
+      "min": 130000.0,
+      "q1": 183750.0,
+      "median": 200250.0,
+      "q3": 242225.0,
+      "max": 328000.0,
+      "outliers": [],
+      "n_outliers": 0,
+      "category": "ClearCr",
+      "n": 28,
+      "full_name": "Clear Creek"
+    },
+    {
+      "min": 110000.0,
+      "q1": 152958.75,
+      "median": 197200.0,
+      "q3": 225725.0,
+      "max": 313000.0,
+      "outliers": [
+        383970.0,
+        424870.0
+      ],
+      "n_outliers": 2,
+      "category": "CollgCr",
+      "n": 150,
+      "full_name": "College Creek"
+    },
+    {
+      "min": 159895.0,
+      "q1": 174000.0,
+      "median": 191000.0,
+      "q3": 213490.0,
+      "max": 264561.0,
+      "outliers": [],
+      "n_outliers": 0,
+      "category": "Blmngtn",
+      "n": 17,
+      "full_name": "Bloomington Hts"
+    },
+    {
+      "min": 135000.0,
+      "q1": 165150.0,
+      "median": 182900.0,
+      "q3": 205000.0,
+      "max": 262500.0,
+      "outliers": [
+        82500.0,
+        299800.0,
+        272000.0,
+        278000.0
+      ],
+      "n_outliers": 4,
+      "category": "NWAmes",
+      "n": 73,
+      "full_name": "NW Ames"
+    },
+    {
+      "min": 141000.0,
+      "q1": 174000.0,
+      "median": 181000.0,
+      "q3": 197200.0,
+      "max": 230500.0,
+      "outliers": [
+        244000.0,
+        320000.0,
+        239900.0,
+        236000.0,
+        240000.0,
+        274725.0,
+        259000.0,
+        377500.0
+      ],
+      "n_outliers": 8,
+      "category": "Gilbert",
+      "n": 79,
+      "full_name": "Gilbert"
+    },
+    {
+      "min": 76000.0,
+      "q1": 145500.0,
+      "median": 179900.0,
+      "q3": 222500.0,
+      "max": 320000.0,
+      "outliers": [],
+      "n_outliers": 0,
+      "category": "SawyerW",
+      "n": 59,
+      "full_name": "Sawyer West"
+    },
+    {
+      "min": 84500.0,
+      "q1": 131000.0,
+      "median": 153500.0,
+      "q3": 171000.0,
+      "max": 215000.0,
+      "outliers": [
+        239686.0,
+        271000.0,
+        240000.0
+      ],
+      "n_outliers": 3,
+      "category": "Mitchel",
+      "n": 49,
+      "full_name": "Mitchell"
+    },
+    {
+      "min": 127500.0,
+      "q1": 140000.0,
+      "median": 146000.0,
+      "q3": 148500.0,
+      "max": 155000.0,
+      "outliers": [],
+      "n_outliers": 0,
+      "category": "NPkVill",
+      "n": 9,
+      "full_name": "Northpark Villa"
+    },
+    {
+      "min": 87500.0,
+      "q1": 127500.0,
+      "median": 140000.0,
+      "q3": 158000.0,
+      "max": 201800.0,
+      "outliers": [
+        207500.0,
+        244000.0,
+        226000.0,
+        215000.0,
+        235000.0,
+        242000.0,
+        205000.0,
+        345000.0,
+        268000.0,
+        242000.0,
+        244000.0,
+        206900.0,
+        237500.0
+      ],
+      "n_outliers": 13,
+      "category": "NAmes",
+      "n": 225,
+      "full_name": "NAmes"
+    },
+    {
+      "min": 91000.0,
+      "q1": 128000.0,
+      "median": 139500.0,
+      "q3": 160000.0,
+      "max": 200000.0,
+      "outliers": [
+        60000.0
+      ],
+      "n_outliers": 1,
+      "category": "SWISU",
+      "n": 25,
+      "full_name": "SW of ISU"
+    },
+    {
+      "min": 94000.0,
+      "q1": 127250.0,
+      "median": 135000.0,
+      "q3": 149462.5,
+      "max": 180000.0,
+      "outliers": [
+        90000.0,
+        62383.0,
+        80000.0,
+        190000.0
+      ],
+      "n_outliers": 4,
+      "category": "Sawyer",
+      "n": 74,
+      "full_name": "Sawyer"
+    },
+    {
+      "min": 52000.0,
+      "q1": 100500.0,
+      "median": 124300.0,
+      "q3": 141175.0,
+      "max": 184000.0,
+      "outliers": [
+        205000.0,
+        214500.0,
+        39300.0,
+        210000.0,
+        223500.0,
+        207000.0
+      ],
+      "n_outliers": 6,
+      "category": "BrkSide",
+      "n": 58,
+      "full_name": "Brookside"
+    },
+    {
+      "min": 58500.0,
+      "q1": 101500.0,
+      "median": 121750.0,
+      "q3": 145225.0,
+      "max": 198500.0,
+      "outliers": [
+        243000.0,
+        225000.0,
+        320000.0,
+        235000.0,
+        274970.0
+      ],
+      "n_outliers": 5,
+      "category": "Edwards",
+      "n": 100,
+      "full_name": "Edwards"
+    },
+    {
+      "min": 64500.0,
+      "q1": 105900.0,
+      "median": 119000.0,
+      "q3": 140000.0,
+      "max": 178000.0,
+      "outliers": [
+        200000.0,
+        475000.0,
+        295000.0,
+        325000.0,
+        265979.0,
+        37900.0,
+        256000.0,
+        52500.0
+      ],
+      "n_outliers": 8,
+      "category": "OldTown",
+      "n": 113,
+      "full_name": "Old Town"
+    },
+    {
+      "min": 83000.0,
+      "q1": 91000.0,
+      "median": 106000.0,
+      "q3": 118000.0,
+      "max": 125000.0,
+      "outliers": [],
+      "n_outliers": 0,
+      "category": "BrDale",
+      "n": 16,
+      "full_name": "Briardale"
+    },
+    {
+      "min": 34900.0,
+      "q1": 81000.0,
+      "median": 103000.0,
+      "q3": 120500.0,
+      "max": 169500.0,
+      "outliers": [],
+      "n_outliers": 0,
+      "category": "IDOTRR",
+      "n": 37,
+      "full_name": "Iowa DOT/RR"
+    },
+    {
+      "min": 75000.0,
+      "q1": 83500.0,
+      "median": 88000.0,
+      "q3": 115000.0,
+      "max": 151400.0,
+      "outliers": [],
+      "n_outliers": 0,
+      "category": "MeadowV",
+      "n": 17,
+      "full_name": "Meadow Village"
+    }
+  ],
+  "summary": [
+    {
+      "neighborhood": "CollgCr",
+      "full_name": "College Creek",
+      "count": 150,
+      "median": 197200.0,
+      "mean": 197966.0,
+      "std": 51404.0
+    },
+    {
+      "neighborhood": "Veenker",
+      "full_name": "Veenker",
+      "count": 11,
+      "median": 218000.0,
+      "mean": 238773.0,
+      "std": 72369.0
+    },
+    {
+      "neighborhood": "Crawfor",
+      "full_name": "Crawford",
+      "count": 51,
+      "median": 200624.0,
+      "mean": 210625.0,
+      "std": 68866.0
+    },
+    {
+      "neighborhood": "NoRidge",
+      "full_name": "Northridge",
+      "count": 41,
+      "median": 301500.0,
+      "mean": 335295.0,
+      "std": 121413.0
+    },
+    {
+      "neighborhood": "Mitchel",
+      "full_name": "Mitchell",
+      "count": 49,
+      "median": 153500.0,
+      "mean": 156270.0,
+      "std": 36487.0
+    },
+    {
+      "neighborhood": "Somerst",
+      "full_name": "Somerset",
+      "count": 86,
+      "median": 225500.0,
+      "mean": 225380.0,
+      "std": 56178.0
+    },
+    {
+      "neighborhood": "NWAmes",
+      "full_name": "NW Ames",
+      "count": 73,
+      "median": 182900.0,
+      "mean": 189050.0,
+      "std": 37172.0
+    },
+    {
+      "neighborhood": "OldTown",
+      "full_name": "Old Town",
+      "count": 113,
+      "median": 119000.0,
+      "mean": 128225.0,
+      "std": 52651.0
+    },
+    {
+      "neighborhood": "BrkSide",
+      "full_name": "Brookside",
+      "count": 58,
+      "median": 124300.0,
+      "mean": 124834.0,
+      "std": 40349.0
+    },
+    {
+      "neighborhood": "Sawyer",
+      "full_name": "Sawyer",
+      "count": 74,
+      "median": 135000.0,
+      "mean": 136793.0,
+      "std": 22345.0
+    },
+    {
+      "neighborhood": "NridgHt",
+      "full_name": "Northridge Hts",
+      "count": 77,
+      "median": 315000.0,
+      "mean": 316271.0,
+      "std": 96393.0
+    },
+    {
+      "neighborhood": "NAmes",
+      "full_name": "NAmes",
+      "count": 225,
+      "median": 140000.0,
+      "mean": 145847.0,
+      "std": 33075.0
+    },
+    {
+      "neighborhood": "SawyerW",
+      "full_name": "Sawyer West",
+      "count": 59,
+      "median": 179900.0,
+      "mean": 186556.0,
+      "std": 55652.0
+    },
+    {
+      "neighborhood": "IDOTRR",
+      "full_name": "Iowa DOT/RR",
+      "count": 37,
+      "median": 103000.0,
+      "mean": 100124.0,
+      "std": 33377.0
+    },
+    {
+      "neighborhood": "MeadowV",
+      "full_name": "Meadow Village",
+      "count": 17,
+      "median": 88000.0,
+      "mean": 98576.0,
+      "std": 23491.0
+    },
+    {
+      "neighborhood": "Edwards",
+      "full_name": "Edwards",
+      "count": 100,
+      "median": 121750.0,
+      "mean": 128220.0,
+      "std": 43209.0
+    },
+    {
+      "neighborhood": "Timber",
+      "full_name": "Timberland",
+      "count": 38,
+      "median": 228475.0,
+      "mean": 242247.0,
+      "std": 64846.0
+    },
+    {
+      "neighborhood": "Gilbert",
+      "full_name": "Gilbert",
+      "count": 79,
+      "median": 181000.0,
+      "mean": 192855.0,
+      "std": 35987.0
+    },
+    {
+      "neighborhood": "StoneBr",
+      "full_name": "Stone Brook",
+      "count": 25,
+      "median": 278000.0,
+      "mean": 310499.0,
+      "std": 112970.0
+    },
+    {
+      "neighborhood": "ClearCr",
+      "full_name": "Clear Creek",
+      "count": 28,
+      "median": 200250.0,
+      "mean": 212565.0,
+      "std": 50232.0
+    },
+    {
+      "neighborhood": "NPkVill",
+      "full_name": "Northpark Villa",
+      "count": 9,
+      "median": 146000.0,
+      "mean": 142694.0,
+      "std": 9377.0
+    },
+    {
+      "neighborhood": "Blmngtn",
+      "full_name": "Bloomington Hts",
+      "count": 17,
+      "median": 191000.0,
+      "mean": 194871.0,
+      "std": 30393.0
+    },
+    {
+      "neighborhood": "BrDale",
+      "full_name": "Briardale",
+      "count": 16,
+      "median": 106000.0,
+      "mean": 104494.0,
+      "std": 14330.0
+    },
+    {
+      "neighborhood": "SWISU",
+      "full_name": "SW of ISU",
+      "count": 25,
+      "median": 139500.0,
+      "mean": 142591.0,
+      "std": 32623.0
+    },
+    {
+      "neighborhood": "Blueste",
+      "full_name": "Bluestem",
+      "count": 2,
+      "median": 137500.0,
+      "mean": 137500.0,
+      "std": 19092.0
+    }
+  ]
+}
