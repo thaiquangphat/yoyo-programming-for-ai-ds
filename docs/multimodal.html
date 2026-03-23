@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Assignment 1: Multi-modal EDA</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
 </head>
 <body>
 
 <nav>
-  <a href="../">← Back</a>
+  <a href="./">← Back</a>
   <a href="#overview">Overview</a>
   <a href="#quality">Quality</a>
   <a href="#images">Images</a>
@@ -254,7 +254,7 @@ async function loadJSON(path) {
 (async () => {
   try {
     // ─ 1. Hero Stats ─────────────────────────
-    const stats = await loadJSON('../data/stats_overview.json');
+    const stats = await loadJSON('./data/stats_overview.json');
     
     document.querySelectorAll('[data-stat]').forEach(el => {
       const val = stats[el.dataset.stat];
@@ -264,7 +264,7 @@ async function loadJSON(path) {
     document.getElementById('avg-caps').textContent = stats.avg_caps_per_image.toFixed(2);
 
     // ─ 2. Token Length Histogram ─────────────
-    const dq = await loadJSON('../data/data_quality.json');
+    const dq = await loadJSON('./data/data_quality.json');
     const h = dq.token_len_histogram;
     const tokenLabels = h.bin_edges.slice(0, -1).map((v, i) => 
       ((v + h.bin_edges[i + 1]) / 2).toFixed(0)
@@ -313,7 +313,7 @@ async function loadJSON(path) {
     badges.innerHTML = badgeHTML;
 
     // ─ 4. Image Resolution Scatter ──────────
-    const imgStats = await loadJSON('../data/image_stats.json');
+    const imgStats = await loadJSON('./data/image_stats.json');
     new Chart(document.getElementById('res-scatter'), {
       type: 'scatter',
       data: {
@@ -376,7 +376,7 @@ async function loadJSON(path) {
     });
 
     // ─ 6. Colour Swatches ──────────────────
-    const cats = await loadJSON('../data/category_color_profiles.json');
+    const cats = await loadJSON('./data/category_color_profiles.json');
     const swatchContainer = document.getElementById('swatches');
     cats.categories.forEach(c => {
       const div = document.createElement('div');
@@ -388,7 +388,7 @@ async function loadJSON(path) {
     });
 
     // ─ 7. Brightness & Contrast ────────────
-    const bData = await loadJSON('../data/brightness_by_category.json');
+    const bData = await loadJSON('./data/brightness_by_category.json');
     new Chart(document.getElementById('brightness-chart'), {
       type: 'bar',
       data: {
@@ -422,7 +422,7 @@ async function loadJSON(path) {
     });
 
     // ─ 8. Bounding Box Area ────────────────
-    const bbox = await loadJSON('../data/bbox_area_by_category.json');
+    const bbox = await loadJSON('./data/bbox_area_by_category.json');
     const sortedBbox = [...bbox.data].sort((a, b) => b.median_area - a.median_area);
     new Chart(document.getElementById('bbox-chart'), {
       type: 'bar',
@@ -450,7 +450,7 @@ async function loadJSON(path) {
     });
 
     // ─ 9. Vocabulary Bar ───────────────────
-    const vocab = await loadJSON('../data/vocab_freq.json');
+    const vocab = await loadJSON('./data/vocab_freq.json');
     const top30 = vocab.top_200_content_words.slice(0, 30);
     new Chart(document.getElementById('vocab-bar'), {
       type: 'bar',
@@ -478,7 +478,7 @@ async function loadJSON(path) {
     });
 
     // ─ 10. POS Distribution ────────────────
-    const pos = await loadJSON('../data/pos_distribution.json');
+    const pos = await loadJSON('./data/pos_distribution.json');
     new Chart(document.getElementById('pos-donut'), {
       type: 'doughnut',
       data: {
@@ -505,7 +505,7 @@ async function loadJSON(path) {
     });
 
     // ─ 11. N-grams ────────────────────────
-    const ngrams = await loadJSON('../data/ngrams.json');
+    const ngrams = await loadJSON('./data/ngrams.json');
     let showBigrams = true;
     const ngramChart = new Chart(document.getElementById('ngram-chart'), {
       type: 'bar',
@@ -547,7 +547,7 @@ async function loadJSON(path) {
     });
 
     // ─ 12. Jaccard Similarity ──────────────
-    const jac = await loadJSON('../data/jaccard_similarity.json');
+    const jac = await loadJSON('./data/jaccard_similarity.json');
     const jacH = jac.histogram;
     const jacLabels = jacH.bin_edges.slice(0, -1).map((v, i) =>
       ((v + jacH.bin_edges[i + 1]) / 2).toFixed(3)
@@ -581,7 +581,7 @@ async function loadJSON(path) {
     });
 
     // ─ 13. Object-Word Alignment ──────────
-    const align = await loadJSON('../data/object_word_align.json');
+    const align = await loadJSON('./data/object_word_align.json');
     new Chart(document.getElementById('align-chart'), {
       type: 'bar',
       data: {
@@ -625,7 +625,7 @@ async function loadJSON(path) {
     });
 
     // ─ 14. Bias Analysis ──────────────────
-    const bias = await loadJSON('../data/bias.json');
+    const bias = await loadJSON('./data/bias.json');
     document.getElementById('gender-ratio').textContent =
       `Male-to-female word ratio: ${bias.gender.ratio_m_f.toFixed(1)}×`;
 
@@ -678,7 +678,7 @@ async function loadJSON(path) {
     });
 
     // ─ 15. Difficulty ────────────────────
-    const diff = await loadJSON('../data/difficulty.json');
+    const diff = await loadJSON('./data/difficulty.json');
     const diffH = diff.difficulty_histogram;
     const diffLabels = diffH.bin_edges.slice(0, -1).map((v, i) =>
       ((v + diffH.bin_edges[i + 1]) / 2).toFixed(2)
@@ -712,12 +712,12 @@ async function loadJSON(path) {
     });
 
     // ─ 16. Easiest/Hardest Images ──────────
-    const manifest = await loadJSON('../data/gallery_manifest.json');
+    const manifest = await loadJSON('./data/gallery_manifest.json');
     const allImages = Object.values(manifest.images_by_cat).flat();
 
     function findThumb(imageId) {
       const rec = allImages.find(i => i.image_id === imageId);
-      return rec ? `../data/${rec.thumb_path}` : null;
+      return rec ? `./data/${rec.thumb_path}` : null;
     }
 
     ['easiest', 'hardest'].forEach(type => {
@@ -749,7 +749,7 @@ async function loadJSON(path) {
           const card = document.createElement('div');
           card.className = 'gallery-card';
           const imgEl = document.createElement('img');
-          imgEl.src = `../data/${img.thumb_path}`;
+          imgEl.src = `./data/${img.thumb_path}`;
           imgEl.loading = 'lazy';
           imgEl.alt = img.captions[0] || '';
           const p = document.createElement('p');
@@ -768,7 +768,7 @@ async function loadJSON(path) {
     const observerTsne = new IntersectionObserver(entries => {
       if (!entries[0].isIntersecting) return;
       observerTsne.disconnect();
-      loadJSON('../data/tsne_clip.json').then(tsne => {
+      loadJSON('./data/tsne_clip.json').then(tsne => {
         const byCat = {};
         tsne.points.forEach(p => {
           if (!byCat[p.supercategory]) {
@@ -806,7 +806,7 @@ async function loadJSON(path) {
     const observerText = new IntersectionObserver(entries => {
       if (!entries[0].isIntersecting) return;
       observerText.disconnect();
-      loadJSON('../data/tsne_text.json').then(ttext => {
+      loadJSON('./data/tsne_text.json').then(ttext => {
         Plotly.newPlot('tsne-text-div', [{
           type: 'scatter',
           mode: 'markers',
@@ -836,7 +836,7 @@ async function loadJSON(path) {
     const observerCooc = new IntersectionObserver(entries => {
       if (!entries[0].isIntersecting) return;
       observerCooc.disconnect();
-      loadJSON('../data/cooccurrence.json').then(coo => {
+      loadJSON('./data/cooccurrence.json').then(coo => {
         Plotly.newPlot('cooccur-div', [{
           type: 'heatmap',
           z: coo.matrix,
@@ -853,7 +853,7 @@ async function loadJSON(path) {
     observerCooc.observe(document.getElementById('cooccur-div'));
 
     // ─ 21. LDA Topics ───────────────────
-    const lda = await loadJSON('../data/lda_topics.json');
+    const lda = await loadJSON('./data/lda_topics.json');
     const topicsGrid = document.getElementById('topics-grid');
     lda.topics.forEach(topic => {
       const top8 = topic.top_words.slice(0, 8);
