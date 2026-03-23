@@ -400,14 +400,14 @@ async function loadJSON(path) {
     const tax = await loadJSON('./data/feature_taxonomy.json');
     
     document.getElementById('missing-count').textContent = 
-      (tax.counts.numeric + tax.counts.ordinal + tax.counts.nominal);
+      (tax.numeric.length + tax.ordinal.length + tax.nominal.length);
 
     new Chart(document.getElementById('taxonomy-donut'), {
       type: 'doughnut',
       data: {
         labels: ['Numeric', 'Ordinal', 'Nominal'],
         datasets: [{
-          data: [tax.counts.numeric, tax.counts.ordinal, tax.counts.nominal],
+          data: [tax.numeric.length, tax.ordinal.length, tax.nominal.length],
           backgroundColor: ['#4f86c6', '#e07b39', '#7ec8a0']
         }]
       },
@@ -495,7 +495,7 @@ async function loadJSON(path) {
 
     // ─ 4. Numeric Features ─────────────────────────
     const numDist = await loadJSON('./data/numeric_distributions.json');
-    const numFeatures = Object.keys(numDist.distributions || {});
+    const numFeatures = Object.keys(numDist.key_features || {});
 
     // Populate numeric select
     const numSelect = document.getElementById('numeric-select');
@@ -503,8 +503,9 @@ async function loadJSON(path) {
 
     let numHistChart = null;
     function renderNumericHist(feature) {
-      const dist = numDist.distributions[feature];
-      if (!dist) return;
+      const featureData = numDist.key_features[feature];
+      if (!featureData || !featureData.histogram) return;
+      const dist = featureData.histogram;
 
       const labels = dist.bin_edges.slice(0, -1).map((v, i) =>
         ((v + dist.bin_edges[i + 1]) / 2).toFixed(1)
@@ -541,7 +542,14 @@ async function loadJSON(path) {
 
     // Numeric box plots
     const numBox = await loadJSON('./data/numeric_boxplots.json');
-    const boxData = numBox.boxplots || [];
+    const boxData = Object.entries(numBox).map(([feature, stats]) => ({
+      feature,
+      median: stats.median,
+      q1: stats.q1,
+      q3: stats.q3,
+      min: stats.min,
+      max: stats.max
+    }));
     
     new Chart(document.getElementById('numeric-box'), {
       type: 'bar',
@@ -570,7 +578,7 @@ async function loadJSON(path) {
 
     // ─ 5. Categorical Features ────────────────────
     const catCounts = await loadJSON('./data/category_counts.json');
-    const catFeatures = Object.keys(catCounts.categories || {});
+    const catFeatures = Object.keys(catCounts.all_nominal || {});
 
     // Populate category select
     const catSelect = document.getElementById('cat-select');
@@ -578,7 +586,7 @@ async function loadJSON(path) {
 
     let catChart = null;
     function renderCategoryBar(feature) {
-      const cats = catCounts.categories[feature];
+      const cats = catCounts.all_nominal[feature];
       if (!cats) return;
       const top10 = cats.slice(0, 10);
 
@@ -613,7 +621,7 @@ async function loadJSON(path) {
 
     // Ordinal correlations
     const ordCorr = await loadJSON('./data/ordinal_correlations.json');
-    const ordData = ordCorr.correlations || [];
+    const ordData = ordCorr.bars || [];
     
     new Chart(document.getElementById('ordinal-corr'), {
       type: 'bar',
@@ -645,7 +653,7 @@ async function loadJSON(path) {
 
     // ─ 6. Target Variable (SalePrice) ──────────────
     const priceEDA = await loadJSON('./data/saleprice_distribution.json');
-    const priceHist = priceEDA.histogram || {};
+    const priceHist = priceEDA.original_histogram || {};
 
     const priceLabels = (priceHist.bin_edges || []).slice(0, -1).map((v, i) =>
       ((v + (priceHist.bin_edges[i + 1] || 0)) / 2).toFixed(0)
@@ -677,14 +685,14 @@ async function loadJSON(path) {
 
     // Price scatter
     const scatter = await loadJSON('./data/scatter_data.json');
-    const scatterPoints = (scatter.points || []).slice(0, 500);
+    const scatterPoints = (scatter.GrLivArea.points || []).slice(0, 500);
 
     new Chart(document.getElementById('price-scatter'), {
       type: 'scatter',
       data: {
         datasets: [{
           label: 'GrLivArea vs SalePrice',
-          data: scatterPoints.map(p => ({ x: p.feature_value, y: p.price })),
+          data: scatterPoints.map(p => ({ x: p.x, y: p.y })),
           backgroundColor: 'rgba(118, 75, 162, 0.25)',
           pointRadius: 3
         }]
@@ -712,9 +720,9 @@ async function loadJSON(path) {
       loadJSON('./data/correlations.json').then(corr => {
         Plotly.newPlot('corr-heatmap', [{
           type: 'heatmap',
-          z: corr.matrix || [],
-          x: corr.features || [],
-          y: corr.features || [],
+          z: corr.full_matrix.values || [],
+          x: corr.full_matrix.features || [],
+          y: corr.full_matrix.features || [],
           colorscale: 'RdBu',
           zmid: 0,
           hovertemplate: '<b>%{y}</b> vs <b>%{x}</b><br>r = %{z:.3f}<extra></extra>'
@@ -728,7 +736,7 @@ async function loadJSON(path) {
 
     // ─ 8. Advanced Analysis ────────────────────────
     const skew = await loadJSON('./data/skewness_and_rare.json');
-    const skewData = (skew.skewed_features || []).slice(0, 15);
+    const skewData = (skew.skewness || []).slice(0, 15);
 
     new Chart(document.getElementById('skewness-bar'), {
       type: 'bar',
@@ -737,8 +745,8 @@ async function loadJSON(path) {
         labels: skewData.map(s => s.feature),
         datasets: [{
           label: 'Skewness',
-          data: skewData.map(s => s.skewness),
-          backgroundColor: skewData.map(s => Math.abs(s.skewness) > 1 ? '#e07b39' : '#7ec8a0')
+          data: skewData.map(s => s.skew),
+          backgroundColor: skewData.map(s => Math.abs(s.skew) > 1 ? '#e07b39' : '#7ec8a0')
         }]
       },
       options: {
@@ -757,7 +765,7 @@ async function loadJSON(path) {
 
     // Feature importance
     const imp = await loadJSON('./data/feature_importance.json');
-    const impData = (imp.features || []).slice(0, 15);
+    const impData = (imp.top_features || []).slice(0, 15);
 
     new Chart(document.getElementById('importance-bar'), {
       type: 'bar',
@@ -786,7 +794,10 @@ async function loadJSON(path) {
 
     // Neighborhood box plots
     const nbhd = await loadJSON('./data/neighborhood_prices.json');
-    const nbhdData = (nbhd.neighborhoods || []).slice(0, 20);
+    const nbhdData = (nbhd.box_by_neighborhood || []).slice(0, 20).map(n => ({
+      neighborhood: n.full_name || n.category,
+      median_price: n.median
+    }));
 
     new Chart(document.getElementById('neighborhood-box'), {
       type: 'bar',
