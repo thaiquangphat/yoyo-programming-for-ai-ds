@@ -31,7 +31,7 @@
 
     .sections {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
       margin: 2rem 0;
     }
@@ -136,13 +136,13 @@
   </p>
 
   <div class="sections">
-    <!-- Multi-modal Section -->
-    <div class="section-card active">
-      <div class="section-icon">📊</div>
-      <h3>Multi-modal</h3>
-      <p>Complete exploratory data analysis combining image and caption data. Includes embeddings, galleries, color profiles, and advanced statistical analysis.</p>
-      <a href="multimodal/" class="section-link">View Multi-modal EDA →</a>
-      <div class="badge done">✓ Complete</div>
+    <!-- Text Section -->
+    <div class="section-card">
+      <div class="section-icon">📝</div>
+      <h3>Text</h3>
+      <p>Natural language processing analysis including vocabulary, sentiment, semantic relationships, and caption quality metrics.</p>
+      <a href="#" class="section-link disabled">Coming Soon</a>
+      <div class="badge todo">⧗ Not Started</div>
     </div>
 
     <!-- Image Section -->
@@ -154,13 +154,13 @@
       <div class="badge todo">⧗ Not Started</div>
     </div>
 
-    <!-- Text Section -->
+    <!-- Multi-modal Section -->
     <div class="section-card">
-      <div class="section-icon">📝</div>
-      <h3>Text</h3>
-      <p>Natural language processing analysis including vocabulary, sentiment, semantic relationships, and caption quality metrics.</p>
-      <a href="#" class="section-link disabled">Coming Soon</a>
-      <div class="badge todo">⧗ Not Started</div>
+      <div class="section-icon">📊</div>
+      <h3>Multi-modal</h3>
+      <p>Complete exploratory data analysis combining image and caption data. Includes embeddings, galleries, color profiles, and advanced statistical analysis.</p>
+      <a href="multimodal/" class="section-link">View Multi-modal EDA →</a>
+      <div class="badge done">✓ Complete</div>
     </div>
 
     <!-- Tabular Section -->
@@ -170,6 +170,8 @@
       <p>Structured data analysis and insights. Statistical summaries and metrics in tabular format for easy reference.</p>
       <a href="tabular/" class="section-link">View Tabular EDA →</a>
       <div class="badge done">✓ Complete</div>
+    </div>
+  </div>
 
 <section style="padding: 3rem 2rem; max-width: 1100px; margin: 0 auto; background: #f8f8f8; margin-top: 2rem; border-radius: 12px; margin-left: auto; margin-right: auto;">
   <h3 style="color: #1a1a2e; margin-bottom: 1rem;">About Assignment 1</h3>

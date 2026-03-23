@@ -139,7 +139,7 @@ section p.desc {
   padding: 2rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   margin-bottom: 2rem;
-  border: 1px solid #e8e8e8;
+  border: none;
 }
 
 .chart-wrap canvas {
