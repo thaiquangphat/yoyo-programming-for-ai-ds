@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 1: Multi-modal EDA</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+</head>
+<body>
+
+<nav>
+  <a href="../">← Back</a>
+  <a href="#overview">Overview</a>
+  <a href="#quality">Quality</a>
+  <a href="#images">Images</a>
+  <a href="#colors">Colors</a>
+  <a href="#text">Text</a>
+  <a href="#tsne">t-SNE</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#bias">Bias</a>
+</nav>
+
+<div class="hero">
+  <h1>Multi-modal EDA Report</h1>
+  <p>Comprehensive Exploratory Data Analysis · Image & Caption Dataset</p>
+  <div class="stats-bar">
+    <div class="stat-box">
+      <span class="val" data-stat="total_images">—</span>
+      <span class="lbl">Images</span>
+    </div>
+    <div class="stat-box">
+      <span class="val" data-stat="total_captions">—</span>
+      <span class="lbl">Captions</span>
+    </div>
+    <div class="stat-box">
+      <span class="val" data-stat="vocab_size">—</span>
+      <span class="lbl">Unique Tokens</span>
+    </div>
+    <div class="stat-box">
+      <span class="val" id="avg-caps">—</span>
+      <span class="lbl">Avg Captions/Image</span>
+    </div>
+  </div>
+</div>
+
+<!-- =======================================
+     Section 1: Overview & Data Quality
+     ======================================= -->
+
+<section id="overview">
+  <h2>Dataset Overview</h2>
+  <p class="desc">High-level statistics and caption length distribution showing balance and quality.</p>
+  <div class="chart-wrap">
+    <canvas id="token-hist"></canvas>
+  </div>
+</section>
+
+<section id="quality">
+  <h2>Data Quality Metrics</h2>
+  <p class="desc">Assessment of duplicates, outliers, and token length statistics.</p>
+  <div class="chart-wrap">
+    <div id="quality-badges" style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;"></div>
+  </div>
+</section>
+
+<!-- =======================================
+     Section 2: Image Modality
+     ======================================= -->
+
+<section id="images">
+  <h2>Image Modality</h2>
+  <p class="desc">Resolution distribution, aspect ratios, and visual characteristics.</p>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Resolution Analysis</h3>
+  <div class="chart-wrap">
+    <canvas id="res-scatter"></canvas>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Aspect Ratio Distribution</h3>
+  <div class="chart-wrap">
+    <canvas id="aspect-hist"></canvas>
+  </div>
+</section>
+
+<!-- =======================================
+     Section 3: Colour Analysis
+     ======================================= -->
+
+<section id="colors">
+  <h2>Colour Profile Analysis</h2>
+  <p class="desc">Dominant colour per category and brightness/contrast characteristics.</p>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Category Colour Swatches</h3>
+  <div class="chart-wrap">
+    <div id="swatches"></div>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Brightness & Contrast by Category</h3>
+  <div class="chart-wrap">
+    <canvas id="brightness-chart"></canvas>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Bounding Box Area Distribution</h3>
+  <div class="chart-wrap">
+    <canvas id="bbox-chart"></canvas>
+  </div>
+</section>
+
+<!-- =======================================
+     Section 4: Text Modality
+     ======================================= -->
+
+<section id="text">
+  <h2>Text Modality</h2>
+  <p class="desc">Vocabulary, POS tags, n-grams, and caption statistics.</p>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Top Content Words</h3>
+  <div class="chart-wrap">
+    <canvas id="vocab-bar"></canvas>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">POS Tag Distribution</h3>
+  <div class="chart-wrap">
+    <canvas id="pos-donut"></canvas>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">N-grams</h3>
+  <div class="chart-wrap">
+    <div class="tab-bar">
+      <button class="tab active" data-ngram="bigrams">Bigrams</button>
+      <button class="tab" data-ngram="trigrams">Trigrams</button>
+    </div>
+    <canvas id="ngram-chart"></canvas>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Caption Similarity</h3>
+  <div class="chart-wrap">
+    <p style="color: #666; margin-bottom: 1rem; font-size: 13px;">
+      Jaccard similarity between caption pairs (per image). 
+      Low values indicate diverse annotations.
+    </p>
+    <canvas id="jaccard-hist"></canvas>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Object–Word Alignment</h3>
+  <div class="chart-wrap">
+    <p style="color: #666; margin-bottom: 1rem; font-size: 13px;">
+      Comparison between objects present in images vs. mentions in captions.
+    </p>
+    <canvas id="align-chart"></canvas>
+  </div>
+</section>
+
+<!-- =======================================
+     Section 5: t-SNE Embeddings
+     ======================================= -->
+
+<section id="tsne">
+  <h2>Embedding Spaces</h2>
+  <p class="desc">2D projections of image and caption embeddings using t-SNE.</p>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">CLIP Image Embeddings</h3>
+  <div class="chart-wrap">
+    <div id="tsne-div" style="height: 600px; position: relative;">
+      <p class="loading">Loading CLIP embeddings…</p>
+    </div>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Text Embeddings</h3>
+  <div class="chart-wrap">
+    <div id="tsne-text-div" style="height: 600px; position: relative;">
+      <p class="loading">Loading text embeddings…</p>
+    </div>
+  </div>
+</section>
+
+<!-- =======================================
+     Section 6: Category Gallery
+     ======================================= -->
+
+<section id="gallery">
+  <h2>Category Gallery</h2>
+  <p class="desc">Sample images and captions organized by category.</p>
+  <div class="tab-bar" id="gallery-tabs"></div>
+  <div id="gallery-grid"></div>
+</section>
+
+<!-- =======================================
+     Section 7: Advanced Analysis
+     ======================================= -->
+
+<section id="bias">
+  <h2>Advanced Analysis</h2>
+  <p class="desc">Gender representation, object frequency, and difficulty metrics.</p>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Gender Representation</h3>
+  <div class="chart-wrap">
+    <p id="gender-ratio" style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem;"></p>
+    <canvas id="gender-chart"></canvas>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Top Objects by Frequency</h3>
+  <div class="chart-wrap">
+    <canvas id="obj-freq-chart"></canvas>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Caption Difficulty</h3>
+  <div class="chart-wrap">
+    <canvas id="diff-hist"></canvas>
+  </div>
+  
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Difficulty Extremes</h3>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+    <div class="chart-wrap">
+      <p style="font-weight: 600; color: #1a1a2e; margin-bottom: 1rem; font-size: 14px;">Easiest Captions</p>
+      <div id="easiest-strip" style="display: flex; gap: 8px; flex-wrap: wrap;"></div>
+    </div>
+    <div class="chart-wrap">
+      <p style="font-weight: 600; color: #1a1a2e; margin-bottom: 1rem; font-size: 14px;">Hardest Captions</p>
+      <div id="hardest-strip" style="display: flex; gap: 8px; flex-wrap: wrap;"></div>
+    </div>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Category Co-occurrence</h3>
+  <div class="chart-wrap">
+    <div id="cooccur-div" style="height: 500px; position: relative;">
+      <p class="loading">Loading heatmap…</p>
+    </div>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">LDA Topics</h3>
+  <div id="topics-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem;"></div>
+</section>
+
+<footer style="background: #1a1a2e; color: #ccc; padding: 3rem 2rem; text-align: center; margin-top: 4rem; font-size: 12px;">
+  <p>&copy; 2024 Programming for AI & Data Science — Multi-modal EDA Report</p>
+</footer>
+
+<script>
+// ==========================================
+// Utility: Load JSON
+// ==========================================
+async function loadJSON(path) {
+  const r = await fetch(path);
+  if (!r.ok) throw new Error(`Failed to load ${path}: ${r.status}`);
+  return r.json();
+}
+
+// ==========================================
+// Initialize Charts
+// ==========================================
+(async () => {
+  try {
+    // ─ 1. Hero Stats ─────────────────────────
+    const stats = await loadJSON('../data/stats_overview.json');
+    
+    document.querySelectorAll('[data-stat]').forEach(el => {
+      const val = stats[el.dataset.stat];
+      el.textContent = typeof val === 'number' ? val.toLocaleString() : val;
+    });
+    
+    document.getElementById('avg-caps').textContent = stats.avg_caps_per_image.toFixed(2);
+
+    // ─ 2. Token Length Histogram ─────────────
+    const dq = await loadJSON('../data/data_quality.json');
+    const h = dq.token_len_histogram;
+    const tokenLabels = h.bin_edges.slice(0, -1).map((v, i) => 
+      ((v + h.bin_edges[i + 1]) / 2).toFixed(0)
+    );
+
+    new Chart(document.getElementById('token-hist'), {
+      type: 'bar',
+      data: {
+        labels: tokenLabels,
+        datasets: [{
+          label: 'Number of captions',
+          data: h.counts,
+          backgroundColor: '#7ec8a0',
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Caption Token Length Distribution',
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { display: true }
+        },
+        scales: {
+          x: { title: { display: true, text: 'Tokens per caption' } },
+          y: { title: { display: true, text: 'Count' } }
+        }
+      }
+    });
+
+    // ─ 3. Quality Badges ─────────────────────
+    const badges = document.getElementById('quality-badges');
+    const badgeHTML = `
+      <div style="flex: 1; min-width: 200px; padding: 1rem; background: ${dq.duplicate_captions === 0 ? '#d4edda' : '#fff3cd'}; border-radius: 8px; border-left: 4px solid ${dq.duplicate_captions === 0 ? '#28a745' : '#ffc107'};">
+        <div style="font-weight: 600; font-size: 14px;">Duplicate Captions</div>
+        <div style="font-size: 1.8rem; font-weight: 700; margin-top: 0.5rem;">${dq.duplicate_captions}</div>
+      </div>
+      <div style="flex: 1; min-width: 200px; padding: 1rem; background: ${dq.outlier_captions_gt40 === 0 ? '#d4edda' : '#f8d7da'}; border-radius: 8px; border-left: 4px solid ${dq.outlier_captions_gt40 === 0 ? '#28a745' : '#dc3545'};">
+        <div style="font-weight: 600; font-size: 14px;">Outlier Captions (>40 tokens)</div>
+        <div style="font-size: 1.8rem; font-weight: 700; margin-top: 0.5rem;">${dq.outlier_captions_gt40}</div>
+      </div>
+    `;
+    badges.innerHTML = badgeHTML;
+
+    // ─ 4. Image Resolution Scatter ──────────
+    const imgStats = await loadJSON('../data/image_stats.json');
+    new Chart(document.getElementById('res-scatter'), {
+      type: 'scatter',
+      data: {
+        datasets: [{
+          label: 'Image samples',
+          data: imgStats.scatter_sample,
+          backgroundColor: 'rgba(79, 134, 198, 0.25)',
+          pointRadius: 3,
+          pointHoverRadius: 5
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Image Width vs Height Distribution',
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { display: true }
+        },
+        scales: {
+          x: { title: { display: true, text: 'Width (pixels)' } },
+          y: { title: { display: true, text: 'Height (pixels)' } }
+        }
+      }
+    });
+
+    // ─ 5. Aspect Ratio Distribution ────────
+    const aspectH = imgStats.aspect_histogram;
+    const aspectLabels = aspectH.bin_edges.slice(0, -1).map((v, i) =>
+      ((v + aspectH.bin_edges[i + 1]) / 2).toFixed(2)
+    );
+    new Chart(document.getElementById('aspect-hist'), {
+      type: 'bar',
+      data: {
+        labels: aspectLabels,
+        datasets: [{
+          label: 'Count',
+          data: aspectH.counts,
+          backgroundColor: '#4f86c6',
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Aspect Ratio Distribution',
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { display: false }
+        },
+        scales: {
+          x: { title: { display: true, text: 'Aspect ratio (width/height)' } },
+          y: { title: { display: true, text: 'Count' } }
+        }
+      }
+    });
+
+    // ─ 6. Colour Swatches ──────────────────
+    const cats = await loadJSON('../data/category_color_profiles.json');
+    const swatchContainer = document.getElementById('swatches');
+    cats.categories.forEach(c => {
+      const div = document.createElement('div');
+      div.className = 'swatch';
+      div.style.background = c.hex;
+      div.title = `${c.name}\nR: ${c.R}, G: ${c.G}, B: ${c.B}`;
+      div.textContent = c.name;
+      swatchContainer.appendChild(div);
+    });
+
+    // ─ 7. Brightness & Contrast ────────────
+    const bData = await loadJSON('../data/brightness_by_category.json');
+    new Chart(document.getElementById('brightness-chart'), {
+      type: 'bar',
+      data: {
+        labels: bData.data.map(d => d.supercategory),
+        datasets: [
+          {
+            label: 'Brightness',
+            data: bData.data.map(d => d.brightness_mean),
+            backgroundColor: '#f5c842'
+          },
+          {
+            label: 'Contrast',
+            data: bData.data.map(d => d.contrast_mean),
+            backgroundColor: '#e07b39'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Mean Brightness & Contrast per Supercategory',
+            font: { size: 14, weight: 'bold' }
+          }
+        },
+        scales: {
+          y: { title: { display: true, text: 'Value' } }
+        }
+      }
+    });
+
+    // ─ 8. Bounding Box Area ────────────────
+    const bbox = await loadJSON('../data/bbox_area_by_category.json');
+    const sortedBbox = [...bbox.data].sort((a, b) => b.median_area - a.median_area);
+    new Chart(document.getElementById('bbox-chart'), {
+      type: 'bar',
+      indexAxis: 'y',
+      data: {
+        labels: sortedBbox.map(d => d.category),
+        datasets: [{
+          label: 'Median area (px²)',
+          data: sortedBbox.map(d => d.median_area),
+          backgroundColor: '#6c9bd2'
+        }]
+      },
+      options: {
+        responsive: true,
+        indexAxis: 'y',
+        plugins: {
+          title: {
+            display: true,
+            text: 'Bounding Box Area Distribution',
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { display: false }
+        }
+      }
+    });
+
+    // ─ 9. Vocabulary Bar ───────────────────
+    const vocab = await loadJSON('../data/vocab_freq.json');
+    const top30 = vocab.top_200_content_words.slice(0, 30);
+    new Chart(document.getElementById('vocab-bar'), {
+      type: 'bar',
+      indexAxis: 'y',
+      data: {
+        labels: top30.map(d => d.word),
+        datasets: [{
+          label: 'Frequency',
+          data: top30.map(d => d.count),
+          backgroundColor: '#5b8db8'
+        }]
+      },
+      options: {
+        responsive: true,
+        indexAxis: 'y',
+        plugins: {
+          title: {
+            display: true,
+            text: 'Top 30 Content Words',
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { display: false }
+        }
+      }
+    });
+
+    // ─ 10. POS Distribution ────────────────
+    const pos = await loadJSON('../data/pos_distribution.json');
+    new Chart(document.getElementById('pos-donut'), {
+      type: 'doughnut',
+      data: {
+        labels: pos.tags.map(d => d.tag),
+        datasets: [{
+          data: pos.tags.map(d => d.count),
+          backgroundColor: [
+            '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF',
+            '#FF9F40', '#FF6384', '#C9CBCF', '#4BC0C0', '#FF6384'
+          ]
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'POS Tag Distribution',
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { position: 'right' }
+        }
+      }
+    });
+
+    // ─ 11. N-grams ────────────────────────
+    const ngrams = await loadJSON('../data/ngrams.json');
+    let showBigrams = true;
+    const ngramChart = new Chart(document.getElementById('ngram-chart'), {
+      type: 'bar',
+      indexAxis: 'y',
+      data: {
+        labels: ngrams.bigrams.map(d => d.ngram),
+        datasets: [{
+          label: 'Count',
+          data: ngrams.bigrams.map(d => d.count),
+          backgroundColor: '#9b59b6'
+        }]
+      },
+      options: {
+        responsive: true,
+        indexAxis: 'y',
+        plugins: {
+          title: {
+            display: true,
+            text: 'Top 20 Bigrams',
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { display: false }
+        }
+      }
+    });
+
+    document.querySelectorAll('[data-ngram]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const type = btn.dataset.ngram;
+        const data = type === 'bigrams' ? ngrams.bigrams : ngrams.trigrams;
+        ngramChart.data.labels = data.map(d => d.ngram);
+        ngramChart.data.datasets[0].data = data.map(d => d.count);
+        ngramChart.options.plugins.title.text = `Top 20 ${type.charAt(0).toUpperCase() + type.slice(1)}`;
+        ngramChart.update();
+
+        document.querySelectorAll('[data-ngram]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // ─ 12. Jaccard Similarity ──────────────
+    const jac = await loadJSON('../data/jaccard_similarity.json');
+    const jacH = jac.histogram;
+    const jacLabels = jacH.bin_edges.slice(0, -1).map((v, i) =>
+      ((v + jacH.bin_edges[i + 1]) / 2).toFixed(3)
+    );
+    new Chart(document.getElementById('jaccard-hist'), {
+      type: 'bar',
+      data: {
+        labels: jacLabels,
+        datasets: [{
+          label: 'Frequency',
+          data: jacH.counts,
+          backgroundColor: '#7ec8a0',
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: `Jaccard Similarity Distribution (mean: ${jac.stats.mean.toFixed(3)})`,
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { display: false }
+        },
+        scales: {
+          x: { title: { display: true, text: 'Jaccard similarity' } },
+          y: { title: { display: true, text: 'Count' } }
+        }
+      }
+    });
+
+    // ─ 13. Object-Word Alignment ──────────
+    const align = await loadJSON('../data/object_word_align.json');
+    new Chart(document.getElementById('align-chart'), {
+      type: 'bar',
+      data: {
+        labels: align.items.map(d => d.category),
+        datasets: [
+          {
+            label: 'Images with object',
+            data: align.items.map(d => d.image_count),
+            backgroundColor: '#4f86c6',
+            yAxisID: 'y'
+          },
+          {
+            label: 'Caption mentions',
+            data: align.items.map(d => d.caption_freq),
+            backgroundColor: '#e07b39',
+            yAxisID: 'y1'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Object–Caption Alignment',
+            font: { size: 14, weight: 'bold' }
+          }
+        },
+        scales: {
+          y: {
+            position: 'left',
+            title: { display: true, text: 'Image count' }
+          },
+          y1: {
+            position: 'right',
+            title: { display: true, text: 'Caption frequency' },
+            grid: { drawOnChartArea: false }
+          }
+        }
+      }
+    });
+
+    // ─ 14. Bias Analysis ──────────────────
+    const bias = await loadJSON('../data/bias.json');
+    document.getElementById('gender-ratio').textContent =
+      `Male-to-female word ratio: ${bias.gender.ratio_m_f.toFixed(1)}×`;
+
+    new Chart(document.getElementById('gender-chart'), {
+      type: 'bar',
+      data: {
+        labels: ['Male-gendered', 'Female-gendered'],
+        datasets: [{
+          data: [bias.gender.male_count, bias.gender.female_count],
+          backgroundColor: ['#5b8db8', '#e07b8a']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Gender Word Counts',
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { display: false }
+        }
+      }
+    });
+
+    const top30obj = bias.object_frequency.slice(0, 30);
+    new Chart(document.getElementById('obj-freq-chart'), {
+      type: 'bar',
+      indexAxis: 'y',
+      data: {
+        labels: top30obj.map(d => d.category),
+        datasets: [{
+          label: 'Instance count',
+          data: top30obj.map(d => d.count),
+          backgroundColor: '#f0a500'
+        }]
+      },
+      options: {
+        responsive: true,
+        indexAxis: 'y',
+        plugins: {
+          title: {
+            display: true,
+            text: 'Top 30 Objects by Frequency',
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { display: false }
+        }
+      }
+    });
+
+    // ─ 15. Difficulty ────────────────────
+    const diff = await loadJSON('../data/difficulty.json');
+    const diffH = diff.difficulty_histogram;
+    const diffLabels = diffH.bin_edges.slice(0, -1).map((v, i) =>
+      ((v + diffH.bin_edges[i + 1]) / 2).toFixed(2)
+    );
+    new Chart(document.getElementById('diff-hist'), {
+      type: 'bar',
+      data: {
+        labels: diffLabels,
+        datasets: [{
+          label: 'Count',
+          data: diffH.counts,
+          backgroundColor: '#c0392b',
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Caption Difficulty Distribution',
+            font: { size: 14, weight: 'bold' }
+          },
+          legend: { display: false }
+        },
+        scales: {
+          x: { title: { display: true, text: 'Difficulty score' } },
+          y: { title: { display: true, text: 'Count' } }
+        }
+      }
+    });
+
+    // ─ 16. Easiest/Hardest Images ──────────
+    const manifest = await loadJSON('../data/gallery_manifest.json');
+    const allImages = Object.values(manifest.images_by_cat).flat();
+
+    function findThumb(imageId) {
+      const rec = allImages.find(i => i.image_id === imageId);
+      return rec ? `../data/${rec.thumb_path}` : null;
+    }
+
+    ['easiest', 'hardest'].forEach(type => {
+      const strip = document.getElementById(`${type}-strip`);
+      diff[`${type}_images`].slice(0, 5).forEach(img => {
+        const src = findThumb(img.image_id);
+        if (!src) return;
+        const el = document.createElement('img');
+        el.src = src;
+        el.title = `Score: ${img.score.toFixed(3)}`;
+        el.style.cssText = 'width: 80px; height: 80px; object-fit: cover; border-radius: 6px; cursor: pointer;';
+        strip.appendChild(el);
+      });
+    });
+
+    // ─ 17. Gallery Tabs ───────────────────
+    const tabBar = document.getElementById('gallery-tabs');
+    const grid = document.getElementById('gallery-grid');
+
+    manifest.categories.forEach((cat, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'tab' + (i === 0 ? ' active' : '');
+      btn.textContent = cat;
+      btn.onclick = () => {
+        document.querySelectorAll('#gallery-tabs .tab').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        grid.innerHTML = '';
+        manifest.images_by_cat[cat].forEach(img => {
+          const card = document.createElement('div');
+          card.className = 'gallery-card';
+          const imgEl = document.createElement('img');
+          imgEl.src = `../data/${img.thumb_path}`;
+          imgEl.loading = 'lazy';
+          imgEl.alt = img.captions[0] || '';
+          const p = document.createElement('p');
+          p.textContent = img.captions[0] || '';
+          card.appendChild(imgEl);
+          card.appendChild(p);
+          grid.appendChild(card);
+        });
+      };
+      tabBar.appendChild(btn);
+    });
+
+    document.querySelector('#gallery-tabs .tab')?.click();
+
+    // ─ 18. Lazy-loaded: CLIP t-SNE ─────────
+    const observerTsne = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) return;
+      observerTsne.disconnect();
+      loadJSON('../data/tsne_clip.json').then(tsne => {
+        const byCat = {};
+        tsne.points.forEach(p => {
+          if (!byCat[p.supercategory]) {
+            byCat[p.supercategory] = { x: [], y: [], text: [], imgs: [] };
+          }
+          byCat[p.supercategory].x.push(p.x);
+          byCat[p.supercategory].y.push(p.y);
+          byCat[p.supercategory].text.push(`ID: ${p.image_id}`);
+          byCat[p.supercategory].imgs.push(p.thumb || '');
+        });
+        const traces = Object.entries(byCat).map(([cat, d]) => ({
+          type: 'scatter',
+          mode: 'markers',
+          name: cat,
+          x: d.x,
+          y: d.y,
+          text: d.text,
+          customdata: d.imgs,
+          marker: { size: 6, opacity: 0.75 },
+          hovertemplate: '<b>%{text}</b><br><img src="%{customdata}" width="64"><extra>%{fullData.name}</extra>'
+        }));
+        document.getElementById('tsne-div').innerHTML = '';
+        Plotly.newPlot('tsne-div', traces, {
+          title: 'CLIP Image Embeddings — t-SNE',
+          xaxis: { showticklabels: false, zeroline: false },
+          yaxis: { showticklabels: false, zeroline: false },
+          hovermode: 'closest',
+          margin: { t: 40 }
+        }, { responsive: true });
+      });
+    }, { threshold: 0.1 });
+    observerTsne.observe(document.getElementById('tsne-div'));
+
+    // ─ 19. Text t-SNE ────────────────────
+    const observerText = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) return;
+      observerText.disconnect();
+      loadJSON('../data/tsne_text.json').then(ttext => {
+        Plotly.newPlot('tsne-text-div', [{
+          type: 'scatter',
+          mode: 'markers',
+          x: ttext.points.map(p => p.x),
+          y: ttext.points.map(p => p.y),
+          text: ttext.points.map(p => p.caption),
+          marker: {
+            size: 5,
+            color: ttext.points.map(p => p.token_len),
+            colorscale: 'Viridis',
+            showscale: true,
+            colorbar: { title: 'Token length' }
+          },
+          hovertemplate: '<i>%{text}</i><extra>%{marker.color} tokens</extra>'
+        }], {
+          title: 'Caption Embeddings — t-SNE (coloured by token length)',
+          xaxis: { showticklabels: false, zeroline: false },
+          yaxis: { showticklabels: false, zeroline: false },
+          hovermode: 'closest',
+          margin: { t: 40 }
+        }, { responsive: true });
+      });
+    }, { threshold: 0.1 });
+    observerText.observe(document.getElementById('tsne-text-div'));
+
+    // ─ 20. Co-occurrence Heatmap ────────
+    const observerCooc = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) return;
+      observerCooc.disconnect();
+      loadJSON('../data/cooccurrence.json').then(coo => {
+        Plotly.newPlot('cooccur-div', [{
+          type: 'heatmap',
+          z: coo.matrix,
+          x: coo.categories,
+          y: coo.categories,
+          colorscale: 'YlOrRd',
+          hovertemplate: '<b>%{y}</b> + <b>%{x}</b><br>%{z} images<extra></extra>'
+        }], {
+          title: 'Category Co-occurrence Heatmap',
+          margin: { l: 200, b: 200 }
+        }, { responsive: true });
+      });
+    }, { threshold: 0.1 });
+    observerCooc.observe(document.getElementById('cooccur-div'));
+
+    // ─ 21. LDA Topics ───────────────────
+    const lda = await loadJSON('../data/lda_topics.json');
+    const topicsGrid = document.getElementById('topics-grid');
+    lda.topics.forEach(topic => {
+      const top8 = topic.top_words.slice(0, 8);
+      const canvas = document.createElement('canvas');
+
+      new Chart(canvas, {
+        type: 'bar',
+        indexAxis: 'y',
+        data: {
+          labels: top8.map(w => w.word),
+          datasets: [{
+            label: 'Weight',
+            data: top8.map(w => w.weight),
+            backgroundColor: '#9b59b6'
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            x: { display: false, beginAtZero: true }
+          }
+        }
+      });
+
+      const card = document.createElement('div');
+      card.className = 'chart-wrap';
+      card.innerHTML = `<h4 style="margin-bottom: 1rem; font-size: 14px; color: #1a1a2e;">Topic ${topic.topic_id}</h4>`;
+      card.appendChild(canvas);
+      topicsGrid.appendChild(card);
+    });
+
+  } catch (err) {
+    console.error('Error loading data:', err);
+    document.body.innerHTML += `<div style="padding: 2rem; color: red;"><strong>Error:</strong> ${err.message}</div>`;
+  }
+})();
+</script>
+
+</body>
+</html>

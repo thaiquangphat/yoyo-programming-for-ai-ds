@@ -3,204 +3,196 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assignment 1 - Programming for AI & Data Science</title>
+  <title>Assignment 1</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/assignment1.css">
+  <style>
+    .breadcrumb {
+      padding: 1rem 2rem;
+      background: #f8f8f8;
+      font-size: 13px;
+      color: #777;
+    }
+
+    .breadcrumb a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .hero h1 {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .section-card {
+      background: #fff;
+      border: 2px solid #e8e8e8;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .section-card:hover {
+      transform: translateY(-6px);
+      border-color: #667eea;
+      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+    }
+
+    .section-card.active {
+      border-color: #667eea;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    }
+
+    .section-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-card h3 {
+      color: #1a1a2e;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-card p {
+      color: #777;
+      font-size: 13px;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .section-link {
+      display: inline-block;
+      background: #667eea;
+      color: #fff;
+      padding: 0.6rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      transition: all 0.2s ease;
+    }
+
+    .section-link:hover {
+      background: #764ba2;
+      transform: translateY(-2px);
+    }
+
+    .section-link.disabled {
+      background: #ccc;
+      color: #999;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    .badge.done {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .badge.todo {
+      background: #fff3cd;
+      color: #856404;
+    }
+  </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-brand">P4AI&DS</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="assignment1.html" class="active">Assignment 1</a></li>
-        <li><a href="assignment2.html">Assignment 2</a></li>
-        <li><a href="assignment3.html">Assignment 3</a></li>
-      </ul>
+
+<div class="breadcrumb">
+  <a href="index.html">← Home</a> / Assignment 1
+</div>
+
+<div class="hero" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 3rem 2rem; text-align: center;">
+  <h1 style="font-size: 2.4rem; margin-bottom: 0.5rem; -webkit-text-fill-color: unset; background: unset;">Assignment 1: Data Analysis & Visualization</h1>
+  <p style="color: #aaa; font-size: 1rem;">Multi-modal dataset exploration with comprehensive EDA reports</p>
+</div>
+
+<section style="padding: 4rem 2rem; max-width: 1100px; margin: 0 auto;">
+  <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; color: #1a1a2e;">Analysis Sections</h2>
+  <p style="text-align: center; color: #777; margin-bottom: 3rem; font-size: 14px;">
+    Explore different aspects of the dataset through our interactive visualizations and detailed statistics.
+  </p>
+
+  <div class="sections">
+    <!-- Multi-modal Section -->
+    <div class="section-card active">
+      <div class="section-icon">📊</div>
+      <h3>Multi-modal</h3>
+      <p>Complete exploratory data analysis combining image and caption data. Includes embeddings, galleries, color profiles, and advanced statistical analysis.</p>
+      <a href="multimodal.html" class="section-link">View Multi-modal EDA →</a>
+      <div class="badge done">✓ Complete</div>
     </div>
-  </nav>
 
-  <!-- Page Content -->
-  <section class="section">
-    <div class="container">
-      <!-- Breadcrumb -->
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span>/</span>
-        <span>Assignment 1</span>
-      </div>
-
-      <h1>Assignment 1: Multimodal Data Analysis</h1>
-      <p class="lead">
-        Comprehensive exploratory data analysis (EDA) across multiple data modalities. 
-        This assignment focuses on understanding complex datasets that combine images, text, 
-        structured metadata, and more.
-      </p>
-
-      <!-- Navigation to Subpages -->
-      <div class="subpage-nav">
-        <h3>Explore by Modality</h3>
-        <div class="nav-buttons">
-          <a href="assignment1/multimodal.html" class="nav-button">📊 Multimodal</a>
-          <a href="assignment1/tabular.html" class="nav-button">📋 Tabular</a>
-          <a href="assignment1/image.html" class="nav-button">🖼️ Image</a>
-          <a href="assignment1/text.html" class="nav-button">📝 Text</a>
-        </div>
-      </div>
-
-      <!-- Overview Section -->
-      <h2 class="section-title">Assignment Overview</h2>
-
-      <div class="cards-grid">
-        <div class="content-card">
-          <h3>🎯 Objective</h3>
-          <p>
-            Build an in-depth understanding of a multimodal dataset by performing exploratory 
-            data analysis on images, captions, and metadata. Visualize patterns, distributions, 
-            and relationships across modalities.
-          </p>
-        </div>
-
-        <div class="content-card">
-          <h3>📊 Data Modalities</h3>
-          <ul>
-            <li><strong>Multimodal:</strong> Combined analysis of all data types</li>
-            <li><strong>Images:</strong> Visual properties and statistics</li>
-            <li><strong>Text:</strong> Linguistic analysis of captions</li>
-            <li><strong>Structured:</strong> Tabular metadata and annotations</li>
-          </ul>
-        </div>
-
-        <div class="content-card">
-          <h3>🔍 Key Analyses</h3>
-          <ul>
-            <li>Dataset composition and size</li>
-            <li>Image resolution and aspect ratios</li>
-            <li>Color profiles and visual properties</li>
-            <li>Text statistics and vocabulary</li>
-            <li>Object detection and annotations</li>
-            <li>Quality metrics and outliers</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Modality Cards -->
-      <h2 class="section-title">Data Modalities</h2>
-
-      <div class="assignments-grid">
-        <!-- Multimodal -->
-        <a href="assignment1/multimodal.html" class="assignment-card">
-          <div class="assignment-header">
-            <h3>Multimodal Analysis</h3>
-            <span class="badge">Core Focus</span>
-          </div>
-          <p>
-            Comprehensive EDA of the entire multimodal dataset. Explore image statistics, 
-            color profiles, text analysis, and integrated visualizations.
-          </p>
-          <div class="assignment-subtopics">
-            <span class="topic">Images</span>
-            <span class="topic">Text</span>
-            <span class="topic">Metadata</span>
-          </div>
-          <div class="card-arrow">→</div>
-        </a>
-
-        <!-- Tabular -->
-        <a href="assignment1/tabular.html" class="assignment-card">
-          <div class="assignment-header">
-            <h3>Tabular Data</h3>
-            <span class="badge">Structured</span>
-          </div>
-          <p>
-            Analysis of structured data and annotations. Explore distributions, 
-            statistics, and patterns in tabular form.
-          </p>
-          <div class="assignment-subtopics">
-            <span class="topic">Tables</span>
-            <span class="topic">Statistics</span>
-            <span class="topic">Distribution</span>
-          </div>
-          <div class="card-arrow">→</div>
-        </a>
-
-        <!-- Image -->
-        <a href="assignment1/image.html" class="assignment-card">
-          <div class="assignment-header">
-            <h3>Image Analysis</h3>
-            <span class="badge">Visual</span>
-          </div>
-          <p>
-            Deep dive into image statistics. Resolution, colors, aspect ratios, 
-            and visual patterns in the image dataset.
-          </p>
-          <div class="assignment-subtopics">
-            <span class="topic">Resolution</span>
-            <span class="topic">Color</span>
-            <span class="topic">Gallery</span>
-          </div>
-          <div class="card-arrow">→</div>
-        </a>
-
-        <!-- Text -->
-        <a href="assignment1/text.html" class="assignment-card">
-          <div class="assignment-header">
-            <h3>Text Analysis</h3>
-            <span class="badge">Linguistic</span>
-          </div>
-          <p>
-            Linguistic analysis of captions. Vocabulary, n-grams, topics, 
-            POS distribution, and semantic patterns.
-          </p>
-          <div class="assignment-subtopics">
-            <span class="topic">Vocab</span>
-            <span class="topic">Topics</span>
-            <span class="topic">POS</span>
-          </div>
-          <div class="card-arrow">→</div>
-        </a>
-      </div>
-
-      <!-- Key Insights -->
-      <h2 class="section-title">Key Insights from EDA</h2>
-      <div class="content-card">
-        <h4>Dataset Composition</h4>
-        <p>
-          The multimodal dataset contains carefully curated images paired with textual captions 
-          and rich metadata. Each image typically has multiple captions describing its content 
-          from different perspectives.
-        </p>
-        
-        <h4>Visual Diversity</h4>
-        <p>
-          Images span multiple categories with varying resolutions, aspect ratios, and color profiles. 
-          The dataset demonstrates diversity in content, lighting conditions, and photographic styles.
-        </p>
-
-        <h4>Linguistic Patterns</h4>
-        <p>
-          Captions exhibit consistent token lengths and vocabulary usage. The text analysis reveals 
-          informative n-grams and topic distributions that characterize the dataset.
-        </p>
-
-        <h4>Data Quality</h4>
-        <p>
-          The dataset maintains high quality with minimal duplicates and outliers. 
-          Statistical analysis confirms consistent annotation practices and comprehensive metadata coverage.
-        </p>
-      </div>
+    <!-- Image Section -->
+    <div class="section-card">
+      <div class="section-icon">🖼️</div>
+      <h3>Image</h3>
+      <p>Detailed analysis of image properties including resolution, color distribution, and visual characteristics across the dataset.</p>
+      <a href="#" class="section-link disabled">Coming Soon</a>
+      <div class="badge todo">⧗ Not Started</div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Programming for AI & Data Science. Built with care for data exploration.</p>
-      <p class="footer-meta">Assignment 1: Multimodal Data Analysis</p>
+    <!-- Text Section -->
+    <div class="section-card">
+      <div class="section-icon">📝</div>
+      <h3>Text</h3>
+      <p>Natural language processing analysis including vocabulary, sentiment, semantic relationships, and caption quality metrics.</p>
+      <a href="#" class="section-link disabled">Coming Soon</a>
+      <div class="badge todo">⧗ Not Started</div>
     </div>
-  </footer>
 
-  <script src="assets/js/main.js"></script>
+    <!-- Tabular Section -->
+    <div class="section-card">
+      <div class="section-icon">📋</div>
+      <h3>Tabular</h3>
+      <p>Structured data analysis and insights. Statistical summaries and metrics in tabular format for easy reference.</p>
+      <a href="#" class="section-link disabled">Coming Soon</a>
+      <div class="badge todo">⧗ Not Started</div>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 3rem 2rem; max-width: 1100px; margin: 0 auto; background: #f8f8f8; margin-top: 2rem; border-radius: 12px; margin-left: auto; margin-right: auto;">
+  <h3 style="color: #1a1a2e; margin-bottom: 1rem;">About Assignment 1</h3>
+  <p style="color: #777; line-height: 1.8;">
+    This assignment explores a multi-modal dataset combining images and textual descriptions. 
+    The <strong>Multi-modal EDA report</strong> provides comprehensive analysis including:
+  </p>
+  <ul style="color: #777; margin-left: 2rem; line-height: 1.8; margin-top: 1rem;">
+    <li><strong>Dataset Overview:</strong> Summary statistics and data quality metrics</li>
+    <li><strong>Image Analysis:</strong> Resolution, aspect ratios, color profiles, and brightness</li>
+    <li><strong>Text Analysis:</strong> Vocabulary, POS tags, n-grams, and embeddings</li>
+    <li><strong>Cross-modal Analysis:</strong> Object-word alignment and category co-occurrence</li>
+    <li><strong>Advanced Insights:</strong> Bias analysis, difficulty metrics, and topic modeling</li>
+    <li><strong>Interactive Visualizations:</strong> t-SNE embeddings, category galleries, and more</li>
+  </ul>
+</section>
+
+<footer style="background: #1a1a2e; color: #ccc; padding: 3rem 2rem; text-align: center; margin-top: 4rem; font-size: 12px;">
+  <p>&copy; 2024 Programming for AI & Data Science — Assignment 1</p>
+</footer>
+
 </body>
 </html>

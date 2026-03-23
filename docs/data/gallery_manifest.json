@@ -1,0 +1,1379 @@
+{
+  "description": "Per-supercategory image thumbnails with captions",
+  "thumb_size": [
+    224,
+    224
+  ],
+  "categories": [
+    "person",
+    "animal",
+    "vehicle",
+    "furniture",
+    "kitchen",
+    "food",
+    "indoor",
+    "electronic"
+  ],
+  "images_by_cat": {
+    "person": [
+      {
+        "image_id": 145020,
+        "file_name": "000000145020.jpg",
+        "thumb_path": "category_gallery/person/145020.jpg",
+        "width": 640,
+        "height": 361,
+        "captions": [
+          "Donald Duck talking to Minney Mouse at Disney World at Christmas.",
+          "A mascot is posing next to Christmas decorations at the amusement park.",
+          "A person who is in a duck costume.",
+          "Daisy ducks stands at a Christmas decorated Disney World.",
+          "A giant Donald Duck standing in front of a Christmas Tree with lots of toys around it."
+        ]
+      },
+      {
+        "image_id": 394559,
+        "file_name": "000000394559.jpg",
+        "thumb_path": "category_gallery/person/394559.jpg",
+        "width": 426,
+        "height": 640,
+        "captions": [
+          "A woman playing tennis and holding a racquet in her hand.",
+          "A girl holding a tennis racket in her hand while on the tennis court",
+          "A young women holding a tennis racket",
+          "a woman is holding a tennis racket on a court",
+          "A young woman holding a tennis racquet on a tennis court."
+        ]
+      },
+      {
+        "image_id": 295713,
+        "file_name": "000000295713.jpg",
+        "thumb_path": "category_gallery/person/295713.jpg",
+        "width": 640,
+        "height": 427,
+        "captions": [
+          "A statue is sitting on a bench and a woman sits on a cement block.",
+          "A woman sitting on a bench next to a statue sitting on a bench.",
+          "A woman sitting looking at her phone with an iron cast woman next to her.",
+          "A beautiful woman sitting on a bench next to a bronze statue.",
+          "A woman sitting on a bench near a statue, checking her phone."
+        ]
+      },
+      {
+        "image_id": 540414,
+        "file_name": "000000540414.jpg",
+        "thumb_path": "category_gallery/person/540414.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "A group of people are sitting outside an outdoor market.",
+          "Vendors selling various fresh foods at an outdoor market",
+          "The people are sitting and standing at the event in the street.",
+          "People are gathering at an outdoor food market.",
+          "Group of people enjoying food at a market."
+        ]
+      },
+      {
+        "image_id": 568814,
+        "file_name": "000000568814.jpg",
+        "thumb_path": "category_gallery/person/568814.jpg",
+        "width": 640,
+        "height": 359,
+        "captions": [
+          "A man with a bear sitting with his arms crossed and his tie over his left shoulder.",
+          "A man with a beard in a tie sits with his arms crossed.",
+          "a man with a beard and a gray shirt and tie",
+          "A man with a tie is staring at something.",
+          "Man with beard folding arms with tie over shoulder."
+        ]
+      },
+      {
+        "image_id": 212226,
+        "file_name": "000000212226.jpg",
+        "thumb_path": "category_gallery/person/212226.jpg",
+        "width": 500,
+        "height": 335,
+        "captions": [
+          "A person in a the reflection of a truck mirror.",
+          "A reflection of a woman driving a truck.",
+          "The reflection of a women in a mirror.",
+          "A girl sitting in a truck is reflected in a mirror.",
+          "Women worker looking at rear view mirror smiling"
+        ]
+      },
+      {
+        "image_id": 216516,
+        "file_name": "000000216516.jpg",
+        "thumb_path": "category_gallery/person/216516.jpg",
+        "width": 480,
+        "height": 640,
+        "captions": [
+          "A man that is standing on ski's in the snow.",
+          "A smiling skier stands at the top of hill adjacent to trees.",
+          "A man riding skis on top of a snow covered slope.",
+          "A man standing on skis at the bottom of a snow covered hill.",
+          "The snow skier is happy to pose for a picture."
+        ]
+      },
+      {
+        "image_id": 393056,
+        "file_name": "000000393056.jpg",
+        "thumb_path": "category_gallery/person/393056.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "a man wearing a wet suit riding the wave",
+          "A person riding a wave on top of a surfboard.",
+          "A surfer rides a small wave in the ocean.",
+          "a man riding a wave on a blue ocean",
+          "A young man ridding a small wave on a surfboard."
+        ]
+      },
+      {
+        "image_id": 220858,
+        "file_name": "000000220858.jpg",
+        "thumb_path": "category_gallery/person/220858.jpg",
+        "width": 500,
+        "height": 367,
+        "captions": [
+          "A rowboat with paddles and no passengers is on the beach.",
+          "a white red and gray boat some people a bird and some water",
+          "A small white boat floating on the shore of a lake.",
+          "A boat is on the beach while two men dig in the sand in the distance.",
+          "Row boat at the beach's edge ready to go."
+        ]
+      },
+      {
+        "image_id": 121591,
+        "file_name": "000000121591.jpg",
+        "thumb_path": "category_gallery/person/121591.jpg",
+        "width": 500,
+        "height": 400,
+        "captions": [
+          "There is a man skateboard on the side of a wall.",
+          "An incredible picture of an individual in the stillness movement.",
+          "A young man is skateboarding on a wall and holding onto a bar.",
+          "a man going up a ramp on a skateboard",
+          "A man performs a skateboarding trip on a pink half-pipe."
+        ]
+      },
+      {
+        "image_id": 321214,
+        "file_name": "000000321214.jpg",
+        "thumb_path": "category_gallery/person/321214.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "A baby in plaid shirt eating a frosted cake.",
+          "The young is enjoying his cake so much its all over him.",
+          "A toddler eats cake with his hands in his high chair.",
+          "A toddler is getting messy while eating his cake.",
+          "Baby boy at the table eating cake frosting off his hand."
+        ]
+      },
+      {
+        "image_id": 398377,
+        "file_name": "000000398377.jpg",
+        "thumb_path": "category_gallery/person/398377.jpg",
+        "width": 500,
+        "height": 375,
+        "captions": [
+          "Three women sitting on a train seat on cellphones.",
+          "There are women that are talking on the cell phone",
+          "Commuters using their cell phones during a train ride",
+          "three females impatiently waiting. Two of them are on their cell phones",
+          "Group of women sitting down on a public train together."
+        ]
+      }
+    ],
+    "animal": [
+      {
+        "image_id": 359135,
+        "file_name": "000000359135.jpg",
+        "thumb_path": "category_gallery/animal/359135.jpg",
+        "width": 640,
+        "height": 427,
+        "captions": [
+          "Two elephants playing with each other and interlocking their tusks.",
+          "Two elephants touching each other with their trunks and tusks.",
+          "Two elephants with their heads close together.",
+          "Pair of elephants interacting in urban like setting.",
+          "a close up of some elephants with tusks"
+        ]
+      },
+      {
+        "image_id": 154947,
+        "file_name": "000000154947.jpg",
+        "thumb_path": "category_gallery/animal/154947.jpg",
+        "width": 640,
+        "height": 640,
+        "captions": [
+          "A sheep standing in a dry grass field.",
+          "A sheep stands idly at the edge of a field",
+          "Single sheep in a field looking back at camera.",
+          "A sheep is standing in a front some grass.",
+          "one sheep is standing in some tall grass"
+        ]
+      },
+      {
+        "image_id": 49810,
+        "file_name": "000000049810.jpg",
+        "thumb_path": "category_gallery/animal/49810.jpg",
+        "width": 640,
+        "height": 424,
+        "captions": [
+          "A little cat looking at itself in a mirror.",
+          "A white and orange cat looking at itself in front of a mirror.",
+          "a brown and white cat looking it itself in a mirror",
+          "An orange and white cat standing in front of a mirror.",
+          "A cat on a porch looking at it's reflection."
+        ]
+      },
+      {
+        "image_id": 170893,
+        "file_name": "000000170893.jpg",
+        "thumb_path": "category_gallery/animal/170893.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "A dog is standing next to a toilet playing with tissue",
+          "A dog in the bathroom reaching for the toilet paper.",
+          "A yellow dog smelling the toilet paper in a bathroom.",
+          "A dog uses its mouth to grab toilet paper off of the roll.",
+          "a dog eating toilet paper from the toilet paper holder"
+        ]
+      },
+      {
+        "image_id": 401991,
+        "file_name": "000000401991.jpg",
+        "thumb_path": "category_gallery/animal/401991.jpg",
+        "width": 640,
+        "height": 379,
+        "captions": [
+          "A white dog laying next to a cat on a bed.",
+          "two dogs laying in a bed with thick covers",
+          "Two dogs take a nap on a bed with a blanket.",
+          "Two dogs sleep on the blankets of a bed.",
+          "A cat and a dog both sleeping on a bed."
+        ]
+      },
+      {
+        "image_id": 415990,
+        "file_name": "000000415990.jpg",
+        "thumb_path": "category_gallery/animal/415990.jpg",
+        "width": 500,
+        "height": 375,
+        "captions": [
+          "A bunch of cows that are standing in the grass.",
+          "a number of cows behind a fence near one another",
+          "a bunch of cows are in a grassy field",
+          "The men are checking in on the herd of cows.",
+          "Two men are standing near the pasture of cows."
+        ]
+      },
+      {
+        "image_id": 314034,
+        "file_name": "000000314034.jpg",
+        "thumb_path": "category_gallery/animal/314034.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "A herd of cattle is feeding at the river's edge.",
+          "many cows next to a body of water in a field",
+          "A herd of cows grazes in a field near a river.",
+          "A herd of cattle standing in grassy area next to water.",
+          "A herd of cattle is near a flock of birds swimming in the water."
+        ]
+      },
+      {
+        "image_id": 460682,
+        "file_name": "000000460682.jpg",
+        "thumb_path": "category_gallery/animal/460682.jpg",
+        "width": 640,
+        "height": 189,
+        "captions": [
+          "a horse that is laying down in a field",
+          "black and white of a horse lying  down in a field",
+          "A horse laying in the grass by the water in a black and white photo",
+          "A horse that is sitting down in an open field.",
+          "A horse that is laying down in a grassy field."
+        ]
+      },
+      {
+        "image_id": 125850,
+        "file_name": "000000125850.jpg",
+        "thumb_path": "category_gallery/animal/125850.jpg",
+        "width": 640,
+        "height": 489,
+        "captions": [
+          "A cat laying in a green bowl on a wooden table.",
+          "A cat laying in a bowl asleep on the ground.",
+          "A cat is curled up and sleeping in a round tin.",
+          "A cat that has curled up in a bowl.",
+          "This gray cat has curled up into a ball"
+        ]
+      },
+      {
+        "image_id": 460927,
+        "file_name": "000000460927.jpg",
+        "thumb_path": "category_gallery/animal/460927.jpg",
+        "width": 640,
+        "height": 360,
+        "captions": [
+          "A majestic bear looks out across a grass plain.",
+          "AN ADULT BEAR IS STANDING IN THE FIELD",
+          "A black and white photo of a bear in the wilderness.",
+          "a big brown bear standing in an open field next to some rocks",
+          "A big furry bear standing in the middle of a field"
+        ]
+      },
+      {
+        "image_id": 498857,
+        "file_name": "000000498857.jpg",
+        "thumb_path": "category_gallery/animal/498857.jpg",
+        "width": 500,
+        "height": 375,
+        "captions": [
+          "A giraffe eats leaves through a wire fence.",
+          "A picture of a giraffe standing in a zoo exhibit.",
+          "a baby giraffe standing next to  a wire fence",
+          "A giraffe standing up behind a fenced in area",
+          "A giraffe eats some leaves through a fence."
+        ]
+      },
+      {
+        "image_id": 308753,
+        "file_name": "000000308753.jpg",
+        "thumb_path": "category_gallery/animal/308753.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "an animal laying down on top of some rocks.",
+          "A cave on a side of a rocky hill.",
+          "A cave located on the side of a mountain side.",
+          "A cave in a rock wall near a body of water.",
+          "A cave is situated in a rocky wall."
+        ]
+      }
+    ],
+    "vehicle": [
+      {
+        "image_id": 393226,
+        "file_name": "000000393226.jpg",
+        "thumb_path": "category_gallery/vehicle/393226.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "A man who is walking across the street.",
+          "A busy intersection with an ice cream truck driving by.",
+          "a man walks behind an ice cream truck",
+          "A man is crossing a street near an icecream truck.",
+          "The man is walking behind the concession bus."
+        ]
+      },
+      {
+        "image_id": 276720,
+        "file_name": "000000276720.jpg",
+        "thumb_path": "category_gallery/vehicle/276720.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "An empty street with brick buildings and cars.",
+          "A intersection and a narrow street lined with stone buildings.",
+          "A house lined road with red trucks on the side of the street",
+          "A small suburb area with a few parked red vans.",
+          "A stone building with a blue door on it"
+        ]
+      },
+      {
+        "image_id": 496722,
+        "file_name": "000000496722.jpg",
+        "thumb_path": "category_gallery/vehicle/496722.jpg",
+        "width": 640,
+        "height": 360,
+        "captions": [
+          "A post office box is on the side of a busy street.",
+          "Two red mail boxes along a city street.",
+          "a mail box standing in the street outside apartment buildings",
+          "Some big red metal boxes near a road.",
+          "A postbox sitting on the side of a street."
+        ]
+      },
+      {
+        "image_id": 50145,
+        "file_name": "000000050145.jpg",
+        "thumb_path": "category_gallery/vehicle/50145.jpg",
+        "width": 480,
+        "height": 320,
+        "captions": [
+          "A shirtless man walking a bike down a rural street.",
+          "a person walking pulling a bike next to him",
+          "A shirtless man walking down city street with a bike",
+          "This gentleman is shirtless, walking his bicycle down the street of an Asian city.",
+          "Shirtless man pushing his bike on a city street."
+        ]
+      },
+      {
+        "image_id": 511999,
+        "file_name": "000000511999.jpg",
+        "thumb_path": "category_gallery/vehicle/511999.jpg",
+        "width": 640,
+        "height": 446,
+        "captions": [
+          "A group of people is standing outside of a tram.",
+          "A train station with people standing on a platform beside a train.",
+          "A yellow train next to a platform with two men wearing orange jackets and another man standing next to them.",
+          "Rail workers stand on a platform where a train is waiting.",
+          "Two men in orange vests are next to a train."
+        ]
+      },
+      {
+        "image_id": 482978,
+        "file_name": "000000482978.jpg",
+        "thumb_path": "category_gallery/vehicle/482978.jpg",
+        "width": 640,
+        "height": 360,
+        "captions": [
+          "an image of a subway bus going thru the subway station",
+          "A train passing by with empty seats on it.",
+          "This is a multi colored train at this train station",
+          "A silver and orange train in a train station.",
+          "a close up of a train with a view inside"
+        ]
+      },
+      {
+        "image_id": 427649,
+        "file_name": "000000427649.jpg",
+        "thumb_path": "category_gallery/vehicle/427649.jpg",
+        "width": 480,
+        "height": 640,
+        "captions": [
+          "A small white boat sits on some calm water under a snow capped mountain.",
+          "A boat on a still lake in front of a mountain",
+          "a white boat on some water and some mountains",
+          "The boat sits in the lake below the mountain.",
+          "A lone boats sits on a lake that is adorned with mountainous reflections."
+        ]
+      },
+      {
+        "image_id": 17627,
+        "file_name": "000000017627.jpg",
+        "thumb_path": "category_gallery/vehicle/17627.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "Several cars are parked in front of a building.",
+          "A green car has parked on the curb in a parking lot",
+          "Small parking lot of cars in front of a stone building.",
+          "Cars are parked on the the street in front of the building.",
+          "Cars are parked on the street near an old building."
+        ]
+      },
+      {
+        "image_id": 22755,
+        "file_name": "000000022755.jpg",
+        "thumb_path": "category_gallery/vehicle/22755.jpg",
+        "width": 640,
+        "height": 479,
+        "captions": [
+          "A rear view mirror sitting on the side of a yellow bus.",
+          "The school bus is reflected in the rear view mirror.",
+          "The view of this round rear-view mirror is that of a school bus.",
+          "a big yellow school bus shown through the rear view of another school bus",
+          "In a rear view mirror, a school bus can be seen."
+        ]
+      },
+      {
+        "image_id": 456394,
+        "file_name": "000000456394.jpg",
+        "thumb_path": "category_gallery/vehicle/456394.jpg",
+        "width": 220,
+        "height": 176,
+        "captions": [
+          "BLUE MOTORCYCLE ON DISPLAY, SURROUNDED BY OTHER VEHICLES",
+          "A blue motorcycle is displayed in a showroom.",
+          "A motorcycle is on esplanade at the car show.",
+          "A blue motorcycle parked on display  next to other vehicles.",
+          "A show floor with a shiny blue motorcycle surrounded by bars."
+        ]
+      },
+      {
+        "image_id": 214205,
+        "file_name": "000000214205.jpg",
+        "thumb_path": "category_gallery/vehicle/214205.jpg",
+        "width": 640,
+        "height": 439,
+        "captions": [
+          "a large air plane flying thru the air",
+          "An airplane flying high with a full moon in the background.",
+          "An airplane is flying in the sky below the moon.",
+          "A airplane coming in for a landing with a full moon above it.",
+          "A large jet liner flying under the moon."
+        ]
+      },
+      {
+        "image_id": 196185,
+        "file_name": "000000196185.jpg",
+        "thumb_path": "category_gallery/vehicle/196185.jpg",
+        "width": 640,
+        "height": 427,
+        "captions": [
+          "A jetliner taking off from an airport runway.",
+          "Plane taking off the runway with it's landing gears still out.",
+          "A jet airplane taking off from a runway.",
+          "A large airplane is ascending from the runway.",
+          "A passenger jet airline taking off from the runway."
+        ]
+      }
+    ],
+    "furniture": [
+      {
+        "image_id": 93353,
+        "file_name": "000000093353.jpg",
+        "thumb_path": "category_gallery/furniture/93353.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "A piece of bread with a hot dog in the middle is shown.",
+          "Two hot dogs are sandwiched between two slices of bread",
+          "Someone holding a hot dog cut in half on some bread.",
+          "A close up of a sliced hot dogs placed in a sandwich.",
+          "A partial sliced open piece of bread with some hotdogs in the middle"
+        ]
+      },
+      {
+        "image_id": 460333,
+        "file_name": "000000460333.jpg",
+        "thumb_path": "category_gallery/furniture/460333.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "A young boy sitting on a bed in a bedroom.",
+          "a young boy sitting on a bed with a lamp on beside it",
+          "a kid is sitting on a small bed in a room",
+          "A little boy sits on a bed with a chair next to it.",
+          "The child is waiting for his parents to come in."
+        ]
+      },
+      {
+        "image_id": 290081,
+        "file_name": "000000290081.jpg",
+        "thumb_path": "category_gallery/furniture/290081.jpg",
+        "width": 612,
+        "height": 612,
+        "captions": [
+          "A bunch of oranges are sitting in a clear fruit bowl.",
+          "Closeup still life of oranges in wavy bowl",
+          "Some oranges in a glass fruit bowl on top of a wooden table.",
+          "A group of oranges are sitting in the bowl",
+          "A pile of orange sitting in a blue bowl."
+        ]
+      },
+      {
+        "image_id": 376442,
+        "file_name": "000000376442.jpg",
+        "thumb_path": "category_gallery/furniture/376442.jpg",
+        "width": 480,
+        "height": 640,
+        "captions": [
+          "A black plush toy sitting on the lid of a toilet.",
+          "A black stuffed animal sitting on top of a toilet in a bathroom stall with blue floor tile.",
+          "a toilet with a teddy bear sitting on the seat .",
+          "There is a stuffed animal sitting on the toliet.",
+          "This is a stuffed animal on a toilet seat."
+        ]
+      },
+      {
+        "image_id": 410650,
+        "file_name": "000000410650.jpg",
+        "thumb_path": "category_gallery/furniture/410650.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "A beautiful young woman swinging a tennis racquet on a tennis court.",
+          "A tennis player taking a swing at  a ball",
+          "A woman hitting a tennis ball with a tennis racket",
+          "a woman on a tennis court getting ready to serve the ball",
+          "an image of a girl getting ready to serve on the tennis court"
+        ]
+      },
+      {
+        "image_id": 32285,
+        "file_name": "000000032285.jpg",
+        "thumb_path": "category_gallery/furniture/32285.jpg",
+        "width": 640,
+        "height": 423,
+        "captions": [
+          "A white toilet sitting next to a toilet paper roller.",
+          "A small bathroom with a closet off to the side",
+          "A bathroom has yellow walls, brown floors, and a closet in it.",
+          "A bathroom with brown tile and a bare pantry.",
+          "You can see into part of a bathroom with the linen closet on the outside."
+        ]
+      },
+      {
+        "image_id": 577735,
+        "file_name": "000000577735.jpg",
+        "thumb_path": "category_gallery/furniture/577735.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "a small copper vase with some flowers in it",
+          "A single vase with white and purple lilacs.",
+          "A vase full of purple and white flowers.",
+          "A vase with flowers sitting beside a window.",
+          "Flowers in a vase sitting on a window seal."
+        ]
+      },
+      {
+        "image_id": 166166,
+        "file_name": "000000166166.jpg",
+        "thumb_path": "category_gallery/furniture/166166.jpg",
+        "width": 500,
+        "height": 375,
+        "captions": [
+          "A wooden table with a vase of flowers and a television.",
+          "A television in a living room with magazines on the coffee table.",
+          "A vase with flowers sitting on a table near a television.",
+          "A TV sitting in a living room on a hard wood floor.",
+          "A small vase of flowers sit on a wooden table near magazines."
+        ]
+      },
+      {
+        "image_id": 325347,
+        "file_name": "000000325347.jpg",
+        "thumb_path": "category_gallery/furniture/325347.jpg",
+        "width": 640,
+        "height": 359,
+        "captions": [
+          "A man on a tennis court playing tennis",
+          "The tennis player is running to meat the ball.",
+          "A man holding a tennis racquet on a tennis court.",
+          "A man crouches actively as he plays tennis.",
+          "A tennis player makes a quick shuffle to return the ball."
+        ]
+      },
+      {
+        "image_id": 530466,
+        "file_name": "000000530466.jpg",
+        "thumb_path": "category_gallery/furniture/530466.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "A passenger train that has some graffiti on it.",
+          "a blue yellow and black train car with graffiti",
+          "a train with many acts drawn on it",
+          "A train covered in blue paint and graffiti.",
+          "The passenger train has elaborate spray paint on the side."
+        ]
+      },
+      {
+        "image_id": 89045,
+        "file_name": "000000089045.jpg",
+        "thumb_path": "category_gallery/furniture/89045.jpg",
+        "width": 640,
+        "height": 425,
+        "captions": [
+          "a living room with a couch and piano",
+          "A baby grand piano sits in the corner of the living room.",
+          "a large piano in a home living room",
+          "A grand piano in a formal residential living room",
+          "Piano in living room area of residential home."
+        ]
+      },
+      {
+        "image_id": 471991,
+        "file_name": "000000471991.jpg",
+        "thumb_path": "category_gallery/furniture/471991.jpg",
+        "width": 640,
+        "height": 424,
+        "captions": [
+          "An elaborate church with tiled floors and stained glass.",
+          "A large chapel facing towards the alter with pews on either side and beautiful glass and marble adornments.",
+          "A church with pews running along the sides with a clear center isle.",
+          "A room with black and white tiled flooring.",
+          "The large room has wooden counters with chairs behind them on both sides."
+        ]
+      }
+    ],
+    "kitchen": [
+      {
+        "image_id": 89670,
+        "file_name": "000000089670.jpg",
+        "thumb_path": "category_gallery/kitchen/89670.jpg",
+        "width": 640,
+        "height": 427,
+        "captions": [
+          "A waffle with cream and strawberries sits on a plate.",
+          "a two tier cake with some frosting and strawberries in the middle",
+          "The sandwich cookie has fruit in the middle of it.",
+          "A patty, with frosting on it, in the middle.",
+          "A plate that has cake on top of it."
+        ]
+      },
+      {
+        "image_id": 473406,
+        "file_name": "000000473406.jpg",
+        "thumb_path": "category_gallery/kitchen/473406.jpg",
+        "width": 480,
+        "height": 640,
+        "captions": [
+          "A little girl sitting on a kitchen counter next to a plate of food.",
+          "A child on a counter by a plate of fires.",
+          "A little boy sitting on a kitchen counter top next to a plate of sliced apples.",
+          "A young child sitting on a kitchen counter next to some sliced apples.",
+          "A young child is sitting on top of the kitchen counter."
+        ]
+      },
+      {
+        "image_id": 243626,
+        "file_name": "000000243626.jpg",
+        "thumb_path": "category_gallery/kitchen/243626.jpg",
+        "width": 385,
+        "height": 289,
+        "captions": [
+          "A plate holding seasoned meat, string beans and one fork.",
+          "A plate with green beans and a protein and some polenta with cheese.",
+          "a steak dinner with a side of greenbeans and what looks to be an egg?",
+          "a pork chop some green beans on a white plate and a fork",
+          "A fork, a pork chop, green beans, an egg and parsley on a white plate."
+        ]
+      },
+      {
+        "image_id": 337498,
+        "file_name": "000000337498.jpg",
+        "thumb_path": "category_gallery/kitchen/337498.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "A large slice of pizza with cheese and marinara sauce on a plate.",
+          "A sliced of pizza is served on a white plate.",
+          "A large slice of pizza on a plate",
+          "A big slice of pizza on a plate next to a glass of beverage",
+          "A plate with a slice of pizza sits on a table."
+        ]
+      },
+      {
+        "image_id": 284623,
+        "file_name": "000000284623.jpg",
+        "thumb_path": "category_gallery/kitchen/284623.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "A black cat sits in a bathroom sink.",
+          "A black cat looking intently at the camera",
+          "A black cat sitting on top of a bathroom sink.",
+          "A black cat sitting inside a bathroom sink",
+          "Black cat with green eyes sitting in a bathroom sink."
+        ]
+      },
+      {
+        "image_id": 56127,
+        "file_name": "000000056127.jpg",
+        "thumb_path": "category_gallery/kitchen/56127.jpg",
+        "width": 580,
+        "height": 640,
+        "captions": [
+          "Fish eye angle view of small kitchen with fire extinguisher at far end.",
+          "A picture of a restaurant interior is taken through a fish-eye lens.",
+          "a long brown and white room with a kitchen",
+          "A room with a fire extinguisher, mugs hanging from a shelf and several lights.",
+          "A room that has a fire extinguisher in it."
+        ]
+      },
+      {
+        "image_id": 522007,
+        "file_name": "000000522007.jpg",
+        "thumb_path": "category_gallery/kitchen/522007.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "The view of a kitchen's microwave, oven, and cabinets.",
+          "A very small kitchen with small white appliances.",
+          "A compact kitchen with white appliances and shelving units for storage.",
+          "The corner of a kitchen with a hanging plant.",
+          "The kitchen has a small stove in it."
+        ]
+      },
+      {
+        "image_id": 292005,
+        "file_name": "000000292005.jpg",
+        "thumb_path": "category_gallery/kitchen/292005.jpg",
+        "width": 480,
+        "height": 640,
+        "captions": [
+          "a bathroom with a tub and a shower curtain",
+          "a bathroom with some orange walls on it",
+          "A bathroom with white spots on the wall.",
+          "A bathroom is painted in white and orange.",
+          "Bright orange bathroom with spackling on the walls."
+        ]
+      },
+      {
+        "image_id": 215644,
+        "file_name": "000000215644.jpg",
+        "thumb_path": "category_gallery/kitchen/215644.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "A kitchen is shown in midst of repairs.",
+          "A picture of an unfinished back splash in the kitchen with a microwave and other small kitchen appliances.",
+          "A metallic microwave oven sitting on top of a counter.",
+          "A microwave mounted into a wall next to unfinished cabinets without doors.",
+          "A microwave that is inside of the wall in a home."
+        ]
+      },
+      {
+        "image_id": 462576,
+        "file_name": "000000462576.jpg",
+        "thumb_path": "category_gallery/kitchen/462576.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "a plate of breakfast food sits on a table",
+          "A plate of food and a glass of orange juice.",
+          "Breakfast sits on the table, with eggs, hash brown and roll.",
+          "Two plates of breakfast food and a glass of juice.",
+          "Breakfast items including juice are on the table."
+        ]
+      },
+      {
+        "image_id": 66231,
+        "file_name": "000000066231.jpg",
+        "thumb_path": "category_gallery/kitchen/66231.jpg",
+        "width": 640,
+        "height": 427,
+        "captions": [
+          "a number of people in a kitchen preparing food",
+          "Chefs and cooks are preparing meals in a restaurant kichen",
+          "A group of people work in a kitchen together.",
+          "a bunch of people in a kitchen start to prepare some food",
+          "Chefs working in a kitchen at a restaurant"
+        ]
+      },
+      {
+        "image_id": 178028,
+        "file_name": "000000178028.jpg",
+        "thumb_path": "category_gallery/kitchen/178028.jpg",
+        "width": 375,
+        "height": 500,
+        "captions": [
+          "A bathroom vanity sink with a large mirror and hairdryer on the wall.",
+          "a bath room sink with  large mirror",
+          "A bathroom sink with a towel rack, hair dryer and a mirror.",
+          "A single basin bathroom sink with a granite vanity.",
+          "a very clean sink in a bathroom and  a towel"
+        ]
+      }
+    ],
+    "food": [
+      {
+        "image_id": 293794,
+        "file_name": "000000293794.jpg",
+        "thumb_path": "category_gallery/food/293794.jpg",
+        "width": 428,
+        "height": 640,
+        "captions": [
+          "Man at street market with table full of bananas.",
+          "Bunches of bananas are piled up at a market with some shoppers looking around.",
+          "An open market has a large table of bananas.",
+          "A man looking over a full stand of bananas.",
+          "An older businessman standing by bunches of bananas."
+        ]
+      },
+      {
+        "image_id": 386277,
+        "file_name": "000000386277.jpg",
+        "thumb_path": "category_gallery/food/386277.jpg",
+        "width": 640,
+        "height": 428,
+        "captions": [
+          "A lemon hangs from a small tree limb near several leaves.",
+          "An orange hanging alone at the end of a branch.",
+          "A closeup of an orange still on the tree.",
+          "An orange grows from a branch with leaves.",
+          "A photo of an orange growing on a tree."
+        ]
+      },
+      {
+        "image_id": 258883,
+        "file_name": "000000258883.jpg",
+        "thumb_path": "category_gallery/food/258883.jpg",
+        "width": 426,
+        "height": 640,
+        "captions": [
+          "Someone is working on grilling some food on a grill.",
+          "A person cooking some food on a grill.",
+          "Pitas on a grill get topped with vegetables.",
+          "Pizzas are cooking on the small grill outside.",
+          "Several pieces of bread sitting on a grill with a person putting vegetables on top of them."
+        ]
+      },
+      {
+        "image_id": 352900,
+        "file_name": "000000352900.jpg",
+        "thumb_path": "category_gallery/food/352900.jpg",
+        "width": 640,
+        "height": 427,
+        "captions": [
+          "A plate of noodles and broccoli are shown.",
+          "Fried noodles and broccoli dish on a round plate.",
+          "A very tasty looking dish of pasta with some broccoli.",
+          "A pasta entree with broccoli on a white plate.",
+          "A plate full of noodles and broccoli, next to a knife and fork."
+        ]
+      },
+      {
+        "image_id": 279769,
+        "file_name": "000000279769.jpg",
+        "thumb_path": "category_gallery/food/279769.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "A peeled banana on a table next to an unpeeled banana.",
+          "Banana on a paper towel behind a banana shaped paper towel.",
+          "A yellow ripe banana sitting on top of  a wooden table.",
+          "A banana resting on a paper towel atop a wooden table.",
+          "a banana some papers and a pencil on a wooden table"
+        ]
+      },
+      {
+        "image_id": 296634,
+        "file_name": "000000296634.jpg",
+        "thumb_path": "category_gallery/food/296634.jpg",
+        "width": 640,
+        "height": 453,
+        "captions": [
+          "Three white bowls of food that include soup and vegetables.",
+          "A white bowl filled with meat patties next to bowls of veggies.",
+          "Sliced sausage in a bowl with assorted vegetables",
+          "Three rectangular bowls with food; Big bowl has nine meat and sesame seed patties with brown sauce, next to it, a bowl of shredded cabbage and carrots with yogurt dollop atop, and behind that is a bowl of cut broccoli and tomatoes with seasoning.",
+          "Three white trays on a countertop containing various types of food."
+        ]
+      },
+      {
+        "image_id": 434297,
+        "file_name": "000000434297.jpg",
+        "thumb_path": "category_gallery/food/434297.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "A white plate topped with food on a counter.",
+          "A white plate containing a serving of food.",
+          "Grilled chicken on a plate with spinach, broccoli, zucchini, and carrots.",
+          "A plate of prepared food has a sandwich and vegetables.",
+          "A plate with chicken, bread, broccoli and carrots."
+        ]
+      },
+      {
+        "image_id": 334417,
+        "file_name": "000000334417.jpg",
+        "thumb_path": "category_gallery/food/334417.jpg",
+        "width": 640,
+        "height": 423,
+        "captions": [
+          "A man looks on as he finishes his meal",
+          "A men in business attire eating a piece of folded over pizza.",
+          "An individual is taken in this very picture.",
+          "A man holding a paper plate while eating food",
+          "A bearded man in a suit eating pizza."
+        ]
+      },
+      {
+        "image_id": 456143,
+        "file_name": "000000456143.jpg",
+        "thumb_path": "category_gallery/food/456143.jpg",
+        "width": 640,
+        "height": 361,
+        "captions": [
+          "A table full of different foods, such as pizza, fries, and a sandwich.",
+          "A table full of food served in baskets",
+          "A few baskets of food, including a pizza, some vegetables and dip, and a sandwich",
+          "Plates of hamburger and pizza in takeaway baskets set on a table.",
+          "veggies and dip in a red tray, a sandwich and fries in a red tray and a pizza"
+        ]
+      },
+      {
+        "image_id": 155179,
+        "file_name": "000000155179.jpg",
+        "thumb_path": "category_gallery/food/155179.jpg",
+        "width": 640,
+        "height": 468,
+        "captions": [
+          "an upclose photo of a cake with chocolate pieces",
+          "Closeup of a cake that is sitting on a white plate.",
+          "A large round cake is sitting on a plate.",
+          "A dense cake with fruit in it sitting on a blue plate.",
+          "a close up of a cake on a plate on a table"
+        ]
+      },
+      {
+        "image_id": 349480,
+        "file_name": "000000349480.jpg",
+        "thumb_path": "category_gallery/food/349480.jpg",
+        "width": 640,
+        "height": 450,
+        "captions": [
+          "A group of stuffed bears that are sitting on fake grass.",
+          "A nice setup of stuffed bears having a picnic.",
+          "A group of stuffed bears are arranged in a display.",
+          "A group of elephants on a grass surface.",
+          "some teddy bears dressed and posed for a picnic"
+        ]
+      },
+      {
+        "image_id": 581781,
+        "file_name": "000000581781.jpg",
+        "thumb_path": "category_gallery/food/581781.jpg",
+        "width": 640,
+        "height": 478,
+        "captions": [
+          "A store display filled with ripe, unripe bananas and other fruit.",
+          "A group of bananas surround a small display of kiwi.",
+          "A fruit stand with plantains, kiwis, and bananas.",
+          "A fruit stand that has bananas, papaya, and plantains.",
+          "A fruit stand display with bananas and kiwi"
+        ]
+      }
+    ],
+    "indoor": [
+      {
+        "image_id": 174018,
+        "file_name": "000000174018.jpg",
+        "thumb_path": "category_gallery/indoor/174018.jpg",
+        "width": 500,
+        "height": 351,
+        "captions": [
+          "Two teddy bears with one wearing a lrge pink shirt.",
+          "Two teddy bears a pink one, and a tan one. The tan bear is wearing a pink shirt that says the harvey girls.",
+          "There are two stuffed bears and one of them is wearing a shirt.",
+          "teddy bear dressed in pink with red ribbon around neck",
+          "Two teddy bears are laying side by side on a quilt."
+        ]
+      },
+      {
+        "image_id": 251824,
+        "file_name": "000000251824.jpg",
+        "thumb_path": "category_gallery/indoor/251824.jpg",
+        "width": 500,
+        "height": 375,
+        "captions": [
+          "A person sitting at a wooden table holding an electronic device.",
+          "A person is opening a plastic package with their hands.",
+          "A person is removing the packaging from a cordless soldering iron.",
+          "Someone is opening up a packaged product at a table.",
+          "A person is removing an object from the plastic casing."
+        ]
+      },
+      {
+        "image_id": 175251,
+        "file_name": "000000175251.jpg",
+        "thumb_path": "category_gallery/indoor/175251.jpg",
+        "width": 612,
+        "height": 612,
+        "captions": [
+          "A toddler in the bathroom brushing his teeth",
+          "a young boy brushing his teeth in the bathroom.",
+          "A little boy that has a toothbrush in his mouth.",
+          "A young child with no shirt on, in a bathroom and brushing their teeth with a green colored toothbrush.",
+          "A young child brushing his teeth in the bathroom."
+        ]
+      },
+      {
+        "image_id": 407403,
+        "file_name": "000000407403.jpg",
+        "thumb_path": "category_gallery/indoor/407403.jpg",
+        "width": 346,
+        "height": 500,
+        "captions": [
+          "A painting of a white vase holding yellow tulips.",
+          "A painting of wilting yellow flowers in a jug.",
+          "A white vase holds some pretty yellow tulips in this still life study.",
+          "A pitcher filled with yellow tulips on a black and white background.",
+          "a white vase with yellow tulips against a grey background"
+        ]
+      },
+      {
+        "image_id": 76211,
+        "file_name": "000000076211.jpg",
+        "thumb_path": "category_gallery/indoor/76211.jpg",
+        "width": 640,
+        "height": 500,
+        "captions": [
+          "A clock mounted on the side of a building next to a street.",
+          "An old and somewhat rundown building with a clock above the door.",
+          "A street scene looking at a building with a clock on the wall.",
+          "The side of the building has a large clock and several windows.",
+          "A beige older building with a window display of clothing and a large clock above the door."
+        ]
+      },
+      {
+        "image_id": 125062,
+        "file_name": "000000125062.jpg",
+        "thumb_path": "category_gallery/indoor/125062.jpg",
+        "width": 427,
+        "height": 640,
+        "captions": [
+          "A row of white teddy bears on shelf next to DVDs.",
+          "A group of teddy bears leaning against a row of movies",
+          "A row of little white teddy bears lean against a row of movies on a shelf.",
+          "Four teddy bears are lined up in a row on a shelf of books.",
+          "A line of small teddy bears are in front of several DVD cases."
+        ]
+      },
+      {
+        "image_id": 131431,
+        "file_name": "000000131431.jpg",
+        "thumb_path": "category_gallery/indoor/131431.jpg",
+        "width": 425,
+        "height": 640,
+        "captions": [
+          "A large building with a clock on the front of it",
+          "A tall clock tower with a large clock on it's face.",
+          "a clock on a building with  sky background",
+          "An image of a clock on a building.",
+          "An clock is encased in the wall of an older building."
+        ]
+      },
+      {
+        "image_id": 109313,
+        "file_name": "000000109313.jpg",
+        "thumb_path": "category_gallery/indoor/109313.jpg",
+        "width": 480,
+        "height": 640,
+        "captions": [
+          "A man holding a tv remote and wii controller.",
+          "A man holding a Wii game controller while standing in a living room.",
+          "A guy in a green shirt casually plays the Nintendo Wii.",
+          "A man is playing Nintendo Wii in a living room.",
+          "A man playing Wii in a dirty room."
+        ]
+      },
+      {
+        "image_id": 73118,
+        "file_name": "000000073118.jpg",
+        "thumb_path": "category_gallery/indoor/73118.jpg",
+        "width": 612,
+        "height": 612,
+        "captions": [
+          "Two brown teddy bears sitting side by side.",
+          "Two teddy bears sitting next to each other on a couch.",
+          "Two stuffed brown teddy bears sitting next to a wall.",
+          "Two large identical teddy bears are piled against the wall.",
+          "Two stuffed teddy bears resting next to each other"
+        ]
+      },
+      {
+        "image_id": 391648,
+        "file_name": "000000391648.jpg",
+        "thumb_path": "category_gallery/indoor/391648.jpg",
+        "width": 480,
+        "height": 640,
+        "captions": [
+          "A white clock tower next to a brown building at night.",
+          "A tower with a clock on it during the night.",
+          "A large white clock tower towering over a city.",
+          "A large clock tower lit up at night time near another building.",
+          "a clocktower standing high with lights on"
+        ]
+      },
+      {
+        "image_id": 348012,
+        "file_name": "000000348012.jpg",
+        "thumb_path": "category_gallery/indoor/348012.jpg",
+        "width": 640,
+        "height": 428,
+        "captions": [
+          "Scissors are resting on a roll of clear tape.",
+          "A pair of black scissors sitting on a role of tape.",
+          "A pair of black handled scissors rest on a roll of clear packing tape.",
+          "a pair of black scissors and a roll of tape",
+          "A pair of black handled scissors lying on a roll of tape."
+        ]
+      },
+      {
+        "image_id": 255165,
+        "file_name": "000000255165.jpg",
+        "thumb_path": "category_gallery/indoor/255165.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "a desk filled with some paperwork, a laptop and a computer with two monitors",
+          "The computer desk has two monitors and two keyboards near a laptop.",
+          "a desk with keyboards and a laptop and a pair of monitors",
+          "A desk with two computer monitor and a keyboard sitting on it.",
+          "A computer desk with two monitors and a laptop."
+        ]
+      }
+    ],
+    "electronic": [
+      {
+        "image_id": 547144,
+        "file_name": "000000547144.jpg",
+        "thumb_path": "category_gallery/electronic/547144.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "A laptop next to two computers, keyboards and some mouses.",
+          "There are two desktop computer and one laptop on the desk.",
+          "A laptop sits on a table next to desktop computers.",
+          "a long disk with several laptops and PC computers",
+          "A desk with several monitors under it and two computers and a laptop on top of the desk."
+        ]
+      },
+      {
+        "image_id": 139077,
+        "file_name": "000000139077.jpg",
+        "thumb_path": "category_gallery/electronic/139077.jpg",
+        "width": 500,
+        "height": 375,
+        "captions": [
+          "A young boy holding a Nintendo Wii game controller.",
+          "a little kid playing a game with the wii driving remote",
+          "a kid with a remote playing video game",
+          "A small child stands in front of a television playing a video game.",
+          "A boy stands in front of a TV in a living room."
+        ]
+      },
+      {
+        "image_id": 575081,
+        "file_name": "000000575081.jpg",
+        "thumb_path": "category_gallery/electronic/575081.jpg",
+        "width": 640,
+        "height": 427,
+        "captions": [
+          "A boy holding a game controller and playing a video game.",
+          "A young child standing in front of a TV holding a Wii controller.",
+          "a kid holding his arm up as he plays a video game in the living room",
+          "A small child that is playing a game on a video game console.",
+          "A young boy in his pajamas is playing a video game."
+        ]
+      },
+      {
+        "image_id": 257370,
+        "file_name": "000000257370.jpg",
+        "thumb_path": "category_gallery/electronic/257370.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "two people are playing a baseball video game",
+          "Two people playing a game on a TV.",
+          "Two kids are playing baseball in Wii Sports",
+          "Two young men playing a game on the Nintendo Wii.",
+          "Two people playing a video game on a television."
+        ]
+      },
+      {
+        "image_id": 239041,
+        "file_name": "000000239041.jpg",
+        "thumb_path": "category_gallery/electronic/239041.jpg",
+        "width": 640,
+        "height": 427,
+        "captions": [
+          "A television is reflected from a bathroom mirror.",
+          "A bathroom with the reflection of a tv in a mirror",
+          "Bathroom scene showing a television and a hair dryer.",
+          "A bathroom with a telivision in it and mirrors.",
+          "A bathroom with purple walls and two mirrors."
+        ]
+      },
+      {
+        "image_id": 285047,
+        "file_name": "000000285047.jpg",
+        "thumb_path": "category_gallery/electronic/285047.jpg",
+        "width": 427,
+        "height": 640,
+        "captions": [
+          "A person sitting at table with a cup looking at a cell phone.",
+          "A man sitting at a table viewing a mobile device.",
+          "A man sitting texting while having a drink",
+          "A young man checking his phone while enjoying a cup of tea.",
+          "A man with a cup of coffee and a cell phone."
+        ]
+      },
+      {
+        "image_id": 98839,
+        "file_name": "000000098839.jpg",
+        "thumb_path": "category_gallery/electronic/98839.jpg",
+        "width": 640,
+        "height": 480,
+        "captions": [
+          "A cat curiously looking sideways at a television.",
+          "A cat that is looking at a television screen.",
+          "A little cat is sitting on the table and watching TV.",
+          "A large black and beige cat stands near a television.",
+          "A cat sits in front of a TV and watches."
+        ]
+      },
+      {
+        "image_id": 5060,
+        "file_name": "000000005060.jpg",
+        "thumb_path": "category_gallery/electronic/5060.jpg",
+        "width": 480,
+        "height": 640,
+        "captions": [
+          "A man in green shirt with cellphone reflecting in a mirror.",
+          "a man sitting in a room taking a selfie in a mirror",
+          "A man sitting cross legged in front of a mirror on the floor taking a self portrait",
+          "The man is meditating in front of the mirror.",
+          "A man sitting on the floor taking a picture of himself in a mirror."
+        ]
+      },
+      {
+        "image_id": 234607,
+        "file_name": "000000234607.jpg",
+        "thumb_path": "category_gallery/electronic/234607.jpg",
+        "width": 375,
+        "height": 500,
+        "captions": [
+          "A man and a woman playing a game on the Nintendo Wii.",
+          "A man and a woman playing a game",
+          "A man and woman playing a video game while holding hands over their heads.",
+          "A man and a women in an odd position holding Wii remotes.",
+          "A couple fighting each other over a wii remote control"
+        ]
+      },
+      {
+        "image_id": 108026,
+        "file_name": "000000108026.jpg",
+        "thumb_path": "category_gallery/electronic/108026.jpg",
+        "width": 640,
+        "height": 428,
+        "captions": [
+          "A man holds a controller and keyboard with his hands",
+          "A computer user types one handed on a keyboard.",
+          "Person holding on to a video game remote while using a computer mouse with other hand",
+          "A person uses a black computer keyboard on a wooden desk.",
+          "A gamer holding a controller and using a keyboard"
+        ]
+      },
+      {
+        "image_id": 160556,
+        "file_name": "000000160556.jpg",
+        "thumb_path": "category_gallery/electronic/160556.jpg",
+        "width": 640,
+        "height": 428,
+        "captions": [
+          "A young girl sits in front of a computer holding a phone.",
+          "a person sitting at a desk with a monitor and keyboard",
+          "A girl talks on her cell phone next to a computer and a microwave.",
+          "Individual is doing something at the moment that is intriguing.",
+          "A peson talks on a phone while playing on a computer"
+        ]
+      },
+      {
+        "image_id": 222118,
+        "file_name": "000000222118.jpg",
+        "thumb_path": "category_gallery/electronic/222118.jpg",
+        "width": 640,
+        "height": 427,
+        "captions": [
+          "A woman talking on a cell phone while holding luggage.",
+          "A woman on a cell phone with a bag.",
+          "A woman is standing near a brick wall",
+          "A woman holding a purse and a cellphone.",
+          "Woman leaning on wall while talking on cell phone"
+        ]
+      }
+    ]
+  }
+}

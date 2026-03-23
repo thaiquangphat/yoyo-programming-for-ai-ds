@@ -1,36 +1,806 @@
 {
-  "top_words": [
-    "image",
-    "shows",
-    "has",
-    "photo",
-    "picture",
-    "white",
-    "black",
-    "man",
-    "woman",
-    "cat",
-    "dog",
-    "person",
-    "table",
-    "chair",
-    "food"
-  ],
-  "top_frequencies": [
-    450,
-    380,
-    320,
-    290,
-    275,
-    260,
-    250,
-    240,
-    235,
-    220,
-    210,
-    200,
-    190,
-    180,
-    170
+  "total_unique_tokens": 10007,
+  "rare_words_freq1": 4553,
+  "top_200_content_words": [
+    {
+      "word": "man",
+      "count": 2878
+    },
+    {
+      "word": "sitting",
+      "count": 2279
+    },
+    {
+      "word": "two",
+      "count": 2068
+    },
+    {
+      "word": "standing",
+      "count": 1809
+    },
+    {
+      "word": "people",
+      "count": 1722
+    },
+    {
+      "word": "next",
+      "count": 1657
+    },
+    {
+      "word": "white",
+      "count": 1506
+    },
+    {
+      "word": "woman",
+      "count": 1399
+    },
+    {
+      "word": "holding",
+      "count": 1137
+    },
+    {
+      "word": "large",
+      "count": 1042
+    },
+    {
+      "word": "person",
+      "count": 998
+    },
+    {
+      "word": "group",
+      "count": 951
+    },
+    {
+      "word": "tennis",
+      "count": 918
+    },
+    {
+      "word": "street",
+      "count": 916
+    },
+    {
+      "word": "top",
+      "count": 882
+    },
+    {
+      "word": "near",
+      "count": 855
+    },
+    {
+      "word": "table",
+      "count": 822
+    },
+    {
+      "word": "front",
+      "count": 806
+    },
+    {
+      "word": "black",
+      "count": 801
+    },
+    {
+      "word": "train",
+      "count": 801
+    },
+    {
+      "word": "small",
+      "count": 789
+    },
+    {
+      "word": "cat",
+      "count": 761
+    },
+    {
+      "word": "riding",
+      "count": 747
+    },
+    {
+      "word": "young",
+      "count": 687
+    },
+    {
+      "word": "red",
+      "count": 686
+    },
+    {
+      "word": "playing",
+      "count": 679
+    },
+    {
+      "word": "dog",
+      "count": 663
+    },
+    {
+      "word": "plate",
+      "count": 624
+    },
+    {
+      "word": "walking",
+      "count": 603
+    },
+    {
+      "word": "baseball",
+      "count": 592
+    },
+    {
+      "word": "it.",
+      "count": 587
+    },
+    {
+      "word": "room",
+      "count": 581
+    },
+    {
+      "word": "bus",
+      "count": 555
+    },
+    {
+      "word": "green",
+      "count": 553
+    },
+    {
+      "word": "sign",
+      "count": 543
+    },
+    {
+      "word": "blue",
+      "count": 528
+    },
+    {
+      "word": "looking",
+      "count": 528
+    },
+    {
+      "word": "parked",
+      "count": 514
+    },
+    {
+      "word": "side",
+      "count": 513
+    },
+    {
+      "word": "bathroom",
+      "count": 504
+    },
+    {
+      "word": "food",
+      "count": 488
+    },
+    {
+      "word": "three",
+      "count": 482
+    },
+    {
+      "word": "pizza",
+      "count": 467
+    },
+    {
+      "word": "field",
+      "count": 455
+    },
+    {
+      "word": "clock",
+      "count": 448
+    },
+    {
+      "word": "men",
+      "count": 440
+    },
+    {
+      "word": "couple",
+      "count": 432
+    },
+    {
+      "word": "kitchen",
+      "count": 430
+    },
+    {
+      "word": "field.",
+      "count": 423
+    },
+    {
+      "word": "boy",
+      "count": 421
+    },
+    {
+      "word": "sits",
+      "count": 420
+    },
+    {
+      "word": "city",
+      "count": 414
+    },
+    {
+      "word": "table.",
+      "count": 414
+    },
+    {
+      "word": "several",
+      "count": 410
+    },
+    {
+      "word": "flying",
+      "count": 398
+    },
+    {
+      "word": "player",
+      "count": 397
+    },
+    {
+      "word": "wearing",
+      "count": 394
+    },
+    {
+      "word": "water",
+      "count": 388
+    },
+    {
+      "word": "girl",
+      "count": 382
+    },
+    {
+      "word": "wooden",
+      "count": 374
+    },
+    {
+      "word": "toilet",
+      "count": 368
+    },
+    {
+      "word": "street.",
+      "count": 365
+    },
+    {
+      "word": "bed",
+      "count": 361
+    },
+    {
+      "word": "grass",
+      "count": 359
+    },
+    {
+      "word": "laying",
+      "count": 359
+    },
+    {
+      "word": "bear",
+      "count": 357
+    },
+    {
+      "word": "brown",
+      "count": 355
+    },
+    {
+      "word": "picture",
+      "count": 353
+    },
+    {
+      "word": "building",
+      "count": 346
+    },
+    {
+      "word": "one",
+      "count": 345
+    },
+    {
+      "word": "laptop",
+      "count": 345
+    },
+    {
+      "word": "yellow",
+      "count": 343
+    },
+    {
+      "word": "living",
+      "count": 333
+    },
+    {
+      "word": "around",
+      "count": 332
+    },
+    {
+      "word": "horse",
+      "count": 324
+    },
+    {
+      "word": "computer",
+      "count": 321
+    },
+    {
+      "word": "ball",
+      "count": 321
+    },
+    {
+      "word": "bench",
+      "count": 318
+    },
+    {
+      "word": "behind",
+      "count": 315
+    },
+    {
+      "word": "eating",
+      "count": 311
+    },
+    {
+      "word": "outside",
+      "count": 308
+    },
+    {
+      "word": "game",
+      "count": 305
+    },
+    {
+      "word": "snow",
+      "count": 299
+    },
+    {
+      "word": "old",
+      "count": 295
+    },
+    {
+      "word": "beach",
+      "count": 294
+    },
+    {
+      "word": "little",
+      "count": 293
+    },
+    {
+      "word": "covered",
+      "count": 291
+    },
+    {
+      "word": "fire",
+      "count": 286
+    },
+    {
+      "word": "many",
+      "count": 275
+    },
+    {
+      "word": "giraffe",
+      "count": 274
+    },
+    {
+      "word": "open",
+      "count": 271
+    },
+    {
+      "word": "close",
+      "count": 269
+    },
+    {
+      "word": "filled",
+      "count": 269
+    },
+    {
+      "word": "motorcycle",
+      "count": 265
+    },
+    {
+      "word": "road",
+      "count": 264
+    },
+    {
+      "word": "building.",
+      "count": 261
+    },
+    {
+      "word": "cake",
+      "count": 259
+    },
+    {
+      "word": "orange",
+      "count": 256
+    },
+    {
+      "word": "skateboard",
+      "count": 253
+    },
+    {
+      "word": "water.",
+      "count": 248
+    },
+    {
+      "word": "desk",
+      "count": 241
+    },
+    {
+      "word": "bird",
+      "count": 239
+    },
+    {
+      "word": "parking",
+      "count": 239
+    },
+    {
+      "word": "sink",
+      "count": 237
+    },
+    {
+      "word": "bowl",
+      "count": 235
+    },
+    {
+      "word": "teddy",
+      "count": 235
+    },
+    {
+      "word": "women",
+      "count": 234
+    },
+    {
+      "word": "stop",
+      "count": 233
+    },
+    {
+      "word": "phone",
+      "count": 232
+    },
+    {
+      "word": "big",
+      "count": 231
+    },
+    {
+      "word": "inside",
+      "count": 231
+    },
+    {
+      "word": "umbrella",
+      "count": 230
+    },
+    {
+      "word": "bunch",
+      "count": 228
+    },
+    {
+      "word": "area",
+      "count": 228
+    },
+    {
+      "word": "view",
+      "count": 227
+    },
+    {
+      "word": "stands",
+      "count": 226
+    },
+    {
+      "word": "elephant",
+      "count": 225
+    },
+    {
+      "word": "tall",
+      "count": 222
+    },
+    {
+      "word": "child",
+      "count": 221
+    },
+    {
+      "word": "car",
+      "count": 218
+    },
+    {
+      "word": "cell",
+      "count": 218
+    },
+    {
+      "word": "board",
+      "count": 218
+    },
+    {
+      "word": "different",
+      "count": 216
+    },
+    {
+      "word": "air",
+      "count": 214
+    },
+    {
+      "word": "cars",
+      "count": 214
+    },
+    {
+      "word": "sheep",
+      "count": 211
+    },
+    {
+      "word": "truck",
+      "count": 210
+    },
+    {
+      "word": "hydrant",
+      "count": 209
+    },
+    {
+      "word": "giraffes",
+      "count": 206
+    },
+    {
+      "word": "zebras",
+      "count": 204
+    },
+    {
+      "word": "zebra",
+      "count": 201
+    },
+    {
+      "word": "road.",
+      "count": 201
+    },
+    {
+      "word": "kite",
+      "count": 199
+    },
+    {
+      "word": "together",
+      "count": 199
+    },
+    {
+      "word": "stand",
+      "count": 199
+    },
+    {
+      "word": "tree",
+      "count": 199
+    },
+    {
+      "word": "light",
+      "count": 197
+    },
+    {
+      "word": "shirt",
+      "count": 196
+    },
+    {
+      "word": "photo",
+      "count": 194
+    },
+    {
+      "word": "traffic",
+      "count": 193
+    },
+    {
+      "word": "grassy",
+      "count": 193
+    },
+    {
+      "word": "taking",
+      "count": 191
+    },
+    {
+      "word": "along",
+      "count": 189
+    },
+    {
+      "word": "boat",
+      "count": 189
+    },
+    {
+      "word": "elephants",
+      "count": 188
+    },
+    {
+      "word": "full",
+      "count": 187
+    },
+    {
+      "word": "glass",
+      "count": 187
+    },
+    {
+      "word": "horses",
+      "count": 185
+    },
+    {
+      "word": "tower",
+      "count": 184
+    },
+    {
+      "word": "park",
+      "count": 184
+    },
+    {
+      "word": "chair",
+      "count": 182
+    },
+    {
+      "word": "skis",
+      "count": 180
+    },
+    {
+      "word": "frisbee",
+      "count": 180
+    },
+    {
+      "word": "back",
+      "count": 177
+    },
+    {
+      "word": "grass.",
+      "count": 176
+    },
+    {
+      "word": "background.",
+      "count": 175
+    },
+    {
+      "word": "wall",
+      "count": 174
+    },
+    {
+      "word": "plate.",
+      "count": 173
+    },
+    {
+      "word": "middle",
+      "count": 173
+    },
+    {
+      "word": "another",
+      "count": 173
+    },
+    {
+      "word": "beach.",
+      "count": 172
+    },
+    {
+      "word": "court",
+      "count": 170
+    },
+    {
+      "word": "bat",
+      "count": 170
+    },
+    {
+      "word": "room.",
+      "count": 169
+    },
+    {
+      "word": "baby",
+      "count": 168
+    },
+    {
+      "word": "long",
+      "count": 167
+    },
+    {
+      "word": "window",
+      "count": 166
+    },
+    {
+      "word": "surfboard",
+      "count": 166
+    },
+    {
+      "word": "ready",
+      "count": 166
+    },
+    {
+      "word": "hand",
+      "count": 159
+    },
+    {
+      "word": "sit",
+      "count": 157
+    },
+    {
+      "word": "airplane",
+      "count": 157
+    },
+    {
+      "word": "beside",
+      "count": 155
+    },
+    {
+      "word": "image",
+      "count": 154
+    },
+    {
+      "word": "herd",
+      "count": 154
+    },
+    {
+      "word": "vase",
+      "count": 154
+    },
+    {
+      "word": "lot",
+      "count": 154
+    },
+    {
+      "word": "stuffed",
+      "count": 153
+    },
+    {
+      "word": "ball.",
+      "count": 152
+    },
+    {
+      "word": "children",
+      "count": 150
+    },
+    {
+      "word": "sandwich",
+      "count": 149
+    },
+    {
+      "word": "signs",
+      "count": 148
+    },
+    {
+      "word": "plane",
+      "count": 147
+    },
+    {
+      "word": "four",
+      "count": 147
+    },
+    {
+      "word": "wave",
+      "count": 146
+    },
+    {
+      "word": "game.",
+      "count": 146
+    },
+    {
+      "word": "trees",
+      "count": 146
+    },
+    {
+      "word": "grazing",
+      "count": 146
+    },
+    {
+      "word": "video",
+      "count": 145
+    },
+    {
+      "word": "across",
+      "count": 145
+    },
+    {
+      "word": "driving",
+      "count": 144
+    },
+    {
+      "word": "snowy",
+      "count": 144
+    },
+    {
+      "word": "sky.",
+      "count": 144
+    },
+    {
+      "word": "sidewalk",
+      "count": 143
+    },
+    {
+      "word": "dirt",
+      "count": 143
+    },
+    {
+      "word": "cows",
+      "count": 141
+    },
+    {
+      "word": "racket",
+      "count": 141
+    },
+    {
+      "word": "piece",
+      "count": 140
+    },
+    {
+      "word": "bananas",
+      "count": 138
+    },
+    {
+      "word": "court.",
+      "count": 137
+    }
   ]
 }

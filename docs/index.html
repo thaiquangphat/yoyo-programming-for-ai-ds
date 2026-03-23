@@ -5,123 +5,161 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Programming for AI & Data Science</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <style>
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #fff;
+      color: #667eea;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin: 0.5rem;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .assignments {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .assignment-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+    }
+
+    .assignment-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      border-color: #667eea;
+    }
+
+    .assignment-card h3 {
+      color: #667eea;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .assignment-card p {
+      color: #777;
+      margin-bottom: 1.5rem;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .assignment-link {
+      display: inline-block;
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .assignment-link:hover {
+      border-bottom-color: #667eea;
+    }
+
+    .status {
+      display: inline-block;
+      background: #ffeaa7;
+      color: #856404;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+    .status.done {
+      background: #d4edda;
+      color: #155724;
+    }
+  </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-brand">P4AI&DS</a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="assignment1.html">Assignment 1</a></li>
-        <li><a href="assignment2.html">Assignment 2</a></li>
-        <li><a href="assignment3.html">Assignment 3</a></li>
-      </ul>
+
+<div class="hero">
+  <h1>Programming for AI & Data Science</h1>
+  <p>Interactive Assignment Analytics & Visualization</p>
+  <div>
+    <a href="#assignments" class="cta-button">View Assignments</a>
+  </div>
+</div>
+
+<nav style="background: #fff; border-bottom: 1px solid #e8e8e8;">
+  <a href="#" style="color: #667eea;">Home</a>
+  <a href="#assignments" style="color: #666;">Assignments</a>
+</nav>
+
+<section id="assignments" style="padding: 4rem 2rem; max-width: 1100px; margin: 0 auto;">
+  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 1rem; color: #1a1a2e;">Assignments</h2>
+  <p style="text-align: center; color: #777; margin-bottom: 3rem;">
+    Explore exploratory data analysis, visualizations, and insights from each assignment.
+  </p>
+
+  <div class="assignments">
+    <!-- Assignment 1 -->
+    <div class="assignment-card">
+      <h3>Assignment 1</h3>
+      <p>Multi-modal dataset exploration with image and caption analysis. Features interactive visualizations including embeddings, galleries, and detailed statistical breakdowns.</p>
+      <a href="assignment1.html" class="assignment-link">View Assignment 1 →</a>
+      <div class="status done">In Progress</div>
     </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Programming for AI & Data Science</h1>
-      <p class="subtitle">Comprehensive assignment portfolio showcasing multimodal data exploration and analysis</p>
-      <div class="hero-stats">
-        <div class="stat-card">
-          <div class="stat-number">3</div>
-          <div class="stat-label">Assignments</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">4</div>
-          <div class="stat-label">Data Modalities</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">∞</div>
-          <div class="stat-label">Insights</div>
-        </div>
-      </div>
+    <!-- Assignment 2 -->
+    <div class="assignment-card">
+      <h3>Assignment 2</h3>
+      <p>Advanced data science techniques and methodologies. Detailed analysis and comprehensive reporting of findings and insights.</p>
+      <a href="#" class="assignment-link" style="color: #ccc; cursor: not-allowed; pointer-events: none;">Coming Soon</a>
+      <div class="status">Not Started</div>
     </div>
-  </section>
 
-  <!-- Course Overview -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Course Overview</h2>
-      <div class="cards-grid">
-        <div class="info-card">
-          <h3>📊 Data Analysis</h3>
-          <p>Comprehensive exploratory data analysis (EDA) across multiple data modalities: multimodal datasets, tabular data, images, and text.</p>
-        </div>
-        <div class="info-card">
-          <h3>🔍 Deep Exploration</h3>
-          <p>Interactive visualizations reveal patterns, distributions, and relationships in complex datasets through statistical analysis and dimensionality reduction.</p>
-        </div>
-        <div class="info-card">
-          <h3>🎨 Modern Visualization</h3>
-          <p>Clean, interactive dashboards using Chart.js and Plotly.js to present analytical insights in a professional, accessible format.</p>
-        </div>
-      </div>
+    <!-- Assignment 3 -->
+    <div class="assignment-card">
+      <h3>Assignment 3</h3>
+      <p>Final project incorporating learnings from previous assignments. Integration of multiple data modalities and advanced visualizations.</p>
+      <a href="#" class="assignment-link" style="color: #ccc; cursor: not-allowed; pointer-events: none;">Coming Soon</a>
+      <div class="status">Not Started</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Assignments Overview -->
-  <section class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Assignments</h2>
-      <div class="assignments-grid">
-        <!-- Assignment 1 -->
-        <a href="assignment1.html" class="assignment-card">
-          <div class="assignment-header">
-            <h3>Assignment 1</h3>
-            <span class="badge">Multimodal Analysis</span>
-          </div>
-          <p>Deep exploration of multimodal datasets combining images, text, and metadata. Includes EDA visualizations for image statistics, color profiles, text analysis, and more.</p>
-          <div class="assignment-subtopics">
-            <span class="topic">Multimodal</span>
-            <span class="topic">Tabular</span>
-            <span class="topic">Images</span>
-            <span class="topic">Text</span>
-          </div>
-          <div class="card-arrow">→</div>
-        </a>
+<footer style="background: #1a1a2e; color: #ccc; padding: 3rem 2rem; text-align: center; margin-top: 4rem; font-size: 12px;">
+  <p>&copy; 2024 Programming for AI & Data Science</p>
+  <p>GitHub Pages &middot; Interactive EDA Reports</p>
+</footer>
 
-        <!-- Assignment 2 -->
-        <a href="assignment2.html" class="assignment-card">
-          <div class="assignment-header">
-            <h3>Assignment 2</h3>
-            <span class="badge">TBD</span>
-          </div>
-          <p>Second assignment coming soon. Check back for updates on the next data analysis challenge.</p>
-          <div class="assignment-subtopics">
-            <span class="topic-disabled">Pending</span>
-          </div>
-          <div class="card-arrow">→</div>
-        </a>
-
-        <!-- Assignment 3 -->
-        <a href="assignment3.html" class="assignment-card">
-          <div class="assignment-header">
-            <h3>Assignment 3</h3>
-            <span class="badge">TBD</span>
-          </div>
-          <p>Third assignment coming soon. Check back for updates on the next data analysis challenge.</p>
-          <div class="assignment-subtopics">
-            <span class="topic-disabled">Pending</span>
-          </div>
-          <div class="card-arrow">→</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Programming for AI & Data Science. Built with care for data exploration.</p>
-      <p class="footer-meta">GitHub Pages | Interactive Data Visualization Portfolio</p>
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
 </body>
 </html>
