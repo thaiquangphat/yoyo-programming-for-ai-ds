@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multimodal Classification - MS-COCO</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <style>
+    .breadcrumb {
+      padding: 1rem 2rem;
+      background: #f8f8f8;
+      font-size: 13px;
+      color: #777;
+    }
+
+    .breadcrumb a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .hero h1 {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 12px;
+      border: 2px solid #e8e8e8;
+    }
+
+    .section h2 {
+      color: #1a1a2e;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 0.5rem;
+    }
+
+    .section h3 {
+      color: #667eea;
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      font-size: 13px;
+    }
+
+    th {
+      background: #667eea;
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    tr:hover {
+      background: #f8f8f8;
+    }
+
+    tr.highlight td {
+      background: #fff3cd;
+      font-weight: 600;
+    }
+
+    ul, ol {
+      color: #777;
+      line-height: 1.8;
+      margin-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .model-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    .model-card h4 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .model-card .metric {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+
+    .badge.best {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .badge.fusion {
+      background: #d1ecf1;
+      color: #0c5460;
+    }
+
+    .badge.text {
+      background: #e7d4f5;
+      color: #5a1a75;
+    }
+
+    .badge.image {
+      background: #f5e7d4;
+      color: #8b4513;
+    }
+
+    code {
+      background: #f8f8f8;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 12px;
+    }
+
+    .comparison-chart {
+      background: #f8f8f8;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    .bar-chart {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .bar-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .bar-label {
+      width: 200px;
+      font-weight: 600;
+      color: #1a1a2e;
+      font-size: 13px;
+    }
+
+    .bar-bg {
+      flex: 1;
+      height: 24px;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      border-radius: 4px;
+      margin: 0 1rem;
+      position: relative;
+    }
+
+    .bar-value {
+      width: 60px;
+      text-align: right;
+      color: #777;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    footer {
+      background: #1a1a2e;
+      color: #ccc;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 4rem;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="../../">← Home</a> / <a href="../">Assignment 2</a> / Multimodal Classification
+</div>
+
+<div class="hero" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 3rem 2rem; text-align: center;">
+  <h1 style="-webkit-text-fill-color: unset; background: unset;">Multimodal Classification: MS-COCO</h1>
+  <p style="color: #aaa; font-size: 1rem;">Multi-Label Classification | Text + Image + Fusion | 8 Models | F1-Score Evaluation</p>
+</div>
+
+<div class="content">
+
+  <!-- Dataset Overview -->
+  <div class="section">
+    <h2>📊 Dataset Overview</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+      <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
+        <div style="font-size: 2rem; font-weight: bold;">5,000</div>
+        <div style="font-size: 12px; opacity: 0.9;">Total Images</div>
+      </div>
+      <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
+        <div style="font-size: 2rem; font-weight: bold;">60</div>
+        <div style="font-size: 12px; opacity: 0.9;">Top Categories</div>
+      </div>
+      <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
+        <div style="font-size: 2rem; font-weight: bold;">3.95</div>
+        <div style="font-size: 12px; opacity: 0.9;">Avg Labels/Image</div>
+      </div>
+      <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
+        <div style="font-size: 2rem; font-weight: bold;">70/15/15</div>
+        <div style="font-size: 12px; opacity: 0.9;">Train/Val/Test Split</div>
+      </div>
+    </div>
+
+    <h3>Dataset Characteristics</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Source</strong></td>
+          <td>MS-COCO 2017 Validation Split (https://cocodataset.org/)</td>
+        </tr>
+        <tr>
+          <td><strong>Task Type</strong></td>
+          <td>Multi-label classification (multiple categories per image)</td>
+        </tr>
+        <tr>
+          <td><strong>Original Categories</strong></td>
+          <td>80 object categories from COCO taxonomy</td>
+        </tr>
+        <tr>
+          <td><strong>Category Selection</strong></td>
+          <td>Top-60 most frequent categories (class imbalance reduction)</td>
+        </tr>
+        <tr>
+          <td><strong>Max Labels/Image</strong></td>
+          <td>15 categories per image</td>
+        </tr>
+        <tr>
+          <td><strong>Train/Val/Test Sizes</strong></td>
+          <td>3,570 / 770 / 770 images</td>
+        </tr>
+        <tr>
+          <td><strong>Text Feature</strong></td>
+          <td>First caption per image (avg 10-12 tokens)</td>
+        </tr>
+        <tr>
+          <td><strong>Image Input Size</strong></td>
+          <td>224×224 (ImageNet standard)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Problem Definition</h3>
+    <p><strong>Goal:</strong> Assign all relevant COCO categories to each image using text (captions) and/or visual (image) features</p>
+    <p><strong>Metrics:</strong></p>
+    <ul>
+      <li><strong>Micro-F1:</strong> Aggregate TP/FP/FN across all labels (per-sample average)</li>
+      <li><strong>Macro-F1:</strong> Average F1 per category (class-wise average)</li>
+      <li><strong>Sample-F1:</strong> F1 per image, then average (evaluates label-set accuracy)</li>
+      <li><strong>Hamming Loss:</strong> Fraction of incorrect labels (0 = perfect)</li>
+    </ul>
+
+    <h3>Dataset Visualization</h3>
+    <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+      <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+        <img src="00_label_frequency.png" alt="Label Frequency Distribution" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <p style="margin: 0.5rem 0 0 0; font-size: 13px; color: #666;"><strong>Figure 1:</strong> Category frequency distribution across all images showing top-60 COCO categories</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data Preparation -->
+  <div class="section">
+    <h2>🔧 Data Preparation & Preprocessing</h2>
+    
+    <h3>Text Preprocessing</h3>
+    <ul>
+      <li><strong>Caption Selection:</strong> First caption per image used (EDA confirmed ~5 captions/image with high semantic overlap, mean Jaccard ~0.25)</li>
+      <li><strong>TF-IDF Extraction:</strong> ngram_range=(1,2), max_features=15,000, sublinear_tf=True, stopwords='english', min_df=2</li>
+      <li><strong>Tokenization:</strong> DistilBERT tokenizer with max_length=64 (median caption ~11 tokens)</li>
+      <li><strong>Vocabulary:</strong> 15,000 features for TF-IDF; 30K wordpiece vocabulary for DistilBERT</li>
+    </ul>
+
+    <h3>Image Preprocessing</h3>
+    <ul>
+      <li><strong>Resizing:</strong> All images standardized to 224×224 (ImageNet standard)</li>
+      <li><strong>Normalization:</strong> ImageNet mean=[0.485,0.456,0.406], std=[0.229,0.224,0.225]</li>
+      <li><strong>Train Augmentations:</strong> RandomHorizontalFlip, ColorJitter(brightness=0.2, contrast=0.2, saturation=0.1)</li>
+      <li><strong>Validation/Test:</strong> No augmentation (deterministic)</li>
+      <li><strong>Resolution Variability:</strong> EDA showed wide range (EDA sec 5.1) → standardization essential</li>
+    </ul>
+
+    <h3>Label Encoding</h3>
+    <ul>
+      <li><strong>Multi-Hot Encoding:</strong> Binary vectors (60-dim) indicating presence/absence of each category</li>
+      <li><strong>Class Imbalance:</strong> Top categories 300× more frequent than rare ones; managed via pos_weight in BCEWithLogitsLoss</li>
+      <li><strong>Label Distribution:</strong> Images filtered to contain only categories in top-60 (clean multi-label sets)</li>
+    </ul>
+  </div>
+
+  <!-- Model Comparison -->
+  <div class="section">
+    <h2>🤖 All Models: Ranking & Performance</h2>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Model</th>
+          <th>Modality</th>
+          <th>Micro-F1</th>
+          <th>Macro-F1</th>
+          <th>Sample-F1</th>
+          <th>Hamming Loss</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight">
+          <td>1</td>
+          <td><strong>Learned Late Fusion (MLP)</strong></td>
+          <td><span class="badge fusion">Multimodal</span></td>
+          <td><strong>0.5412</strong> <span class="badge best">BEST</span></td>
+          <td>0.4128</td>
+          <td>0.5342</td>
+          <td>0.0312</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Late Fusion (Probability Averaging)</td>
+          <td><span class="badge fusion">Multimodal</span></td>
+          <td>0.5187</td>
+          <td>0.3892</td>
+          <td>0.5118</td>
+          <td>0.0356</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Early Fusion (Concatenation)</td>
+          <td><span class="badge fusion">Multimodal</span></td>
+          <td>0.5034</td>
+          <td>0.3745</td>
+          <td>0.4967</td>
+          <td>0.0382</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Fine-Tuned ResNet-50</td>
+          <td><span class="badge image">Image Only</span></td>
+          <td>0.4621</td>
+          <td>0.3287</td>
+          <td>0.4549</td>
+          <td>0.0434</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Fine-Tuned DistilBERT</td>
+          <td><span class="badge text">Text Only</span></td>
+          <td>0.4598</td>
+          <td>0.3312</td>
+          <td>0.4528</td>
+          <td>0.0438</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>ResNet-50 Features + LR</td>
+          <td><span class="badge image">Image Only</span></td>
+          <td>0.4287</td>
+          <td>0.3124</td>
+          <td>0.4215</td>
+          <td>0.0496</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>TF-IDF + Linear SVC</td>
+          <td><span class="badge text">Text Only</span></td>
+          <td>0.4263</td>
+          <td>0.2956</td>
+          <td>0.4201</td>
+          <td>0.0498</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>TF-IDF + Logistic Regression</td>
+          <td><span class="badge text">Text Only</span></td>
+          <td>0.4152</td>
+          <td>0.2847</td>
+          <td>0.4098</td>
+          <td>0.0512</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Performance Summary by Category</h3>
+    <div class="comparison-chart">
+      <strong>Micro-F1 Scores Comparison</strong>
+      <div class="bar-chart">
+        <div class="bar-item">
+          <div class="bar-label">Learned Fusion MLP</div>
+          <div class="bar-bg" style="width: 100%; background: linear-gradient(90deg, #d4edda 0%, #155724 100%);"></div>
+          <div class="bar-value">0.5412</div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label">Late Fusion (Avg)</div>
+          <div class="bar-bg" style="width: 95.8%; background: linear-gradient(90deg, #d1ecf1 0%, #0c5460 100%);"></div>
+          <div class="bar-value">0.5187</div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label">Early Fusion (Concat)</div>
+          <div class="bar-bg" style="width: 93.0%; background: linear-gradient(90deg, #d1ecf1 0%, #0c5460 100%);"></div>
+          <div class="bar-value">0.5034</div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label">Fine-tuned ResNet-50</div>
+          <div class="bar-bg" style="width: 85.3%; background: linear-gradient(90deg, #f5e7d4 0%, #8b4513 100%);"></div>
+          <div class="bar-value">0.4621</div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label">Fine-tuned DistilBERT</div>
+          <div class="bar-bg" style="width: 84.9%; background: linear-gradient(90deg, #e7d4f5 0%, #5a1a75 100%);"></div>
+          <div class="bar-value">0.4598</div>
+        </tr>
+      </div>
+    </div>
+  </div>
+
+  <!-- Text Models Deep Dive -->
+  <div class="section">
+    <h2>📝 Text-Only Classification</h2>
+    
+    <h3>Model Progression</h3>
+    <div class="grid">
+      <div class="model-card">
+        <h4>TF-IDF + Logistic Regression</h4>
+        <div class="metric">0.4152</div>
+        <p style="font-size: 13px; margin: 0.5rem 0;"><strong>Features:</strong> TF-IDF (15k-dim sparse)<br><strong>Why:</strong> Fast baseline, interpretable</p>
+      </div>
+      <div class="model-card">
+        <h4>TF-IDF + Linear SVC</h4>
+        <div class="metric">0.4263</div>
+        <p style="font-size: 13px; margin: 0.5rem 0;"><strong>Features:</strong> TF-IDF (15k-dim sparse)<br><strong>Why:</strong> Margin-based learning (+2.7% F1)</p>
+      </div>
+      <div class="model-card">
+        <h4>Fine-Tuned DistilBERT</h4>
+        <div class="metric">0.4598</div>
+        <p style="font-size: 13px; margin: 0.5rem 0;"><strong>Model:</strong> 6-layer transformer<br><strong>Why:</strong> Semantic understanding (+7.9% F1)</p>
+      </div>
+    </div>
+
+    <h3>Key Text Findings</h3>
+    <ul>
+      <li><strong>Transfer Learning Impact:</strong> DistilBERT (0.4598) outperforms TF-IDF + SVC (0.4263) by 8% F1 via semantic embeddings</li>
+      <li><strong>Caption Quality:</strong> EDA confirmed captions avg 10-12 tokens with high semantic overlap → sufficient for classification</li>
+      <li><strong>Fine-tuning Benefits:</strong> Domain-specific training (COCO captions) adapts pre-trained model for object recognition language</li>
+      <li><strong>Token Length:</strong> max_length=64 sufficient (median ~11 tokens) with minimal padding waste</li>
+    </ul>
+
+    <h3>Text Models Visualizations</h3>
+    
+    <div style="margin-top: 1.5rem;">
+      <h4 style="color: #667eea; font-size: 1rem; margin-bottom: 1rem;">Traditional Models (TF-IDF) Performance</h4>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="01_text_lr_per_class_f1.png" alt="TF-IDF + LR Per-Class F1" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 2A:</strong> TF-IDF + LR per-category F1</p>
+        </div>
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="02_text_svc_per_class_f1.png" alt="TF-IDF + SVC Per-Class F1" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 2B:</strong> TF-IDF + SVC per-category F1</p>
+        </div>
+      </div>
+
+      <h4 style="color: #667eea; font-size: 1rem; margin-bottom: 1rem;">Traditional vs Deep Learning</h4>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="03_text_trad_comparison.png" alt="Text Traditional Models Comparison" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 2C:</strong> Traditional models comparison (LR vs SVC)</p>
+        </div>
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="04_bert_per_class_f1.png" alt="BERT Per-Class F1" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 2D:</strong> Fine-tuned DistilBERT per-category F1</p>
+        </div>
+      </div>
+
+      <h4 style="color: #667eea; font-size: 1rem; margin-bottom: 1rem;">Text Models Summary</h4>
+      <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="05_text_summary.png" alt="Text Summary" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 2E:</strong> Text models summary metrics comparison</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Models Deep Dive -->
+  <div class="section">
+    <h2>🖼️ Image-Only Classification</h2>
+    
+    <h3>Model Progression</h3>
+    <div class="grid">
+      <div class="model-card">
+        <h4>ResNet-50 Features + LR</h4>
+        <div class="metric">0.4287</div>
+        <p style="font-size: 13px; margin: 0.5rem 0;"><strong>Features:</strong> 2048-dim frozen<br><strong>Why:</strong> Fast, pre-trained ImageNet</p>
+      </div>
+      <div class="model-card">
+        <h4>Fine-Tuned ResNet-50</h4>
+        <div class="metric">0.4621</div>
+        <p style="font-size: 13px; margin: 0.5rem 0;"><strong>Tuning:</strong> Layer3+ trainable<br><strong>Why:</strong> Domain adaptation (+7.8% F1)</p>
+      </div>
+      <div class="model-card">
+        <h4>Text vs Image Parity</h4>
+        <div style="font-size: 1.5rem; font-weight: bold; margin: 0.5rem 0;">≈ Equal</div>
+        <p style="font-size: 13px; margin: 0.5rem 0;"><strong>Finding:</strong> DistilBERT 0.4598 ≈ ResNet-50 0.4621<br><strong>Implication:</strong> Complementary modalities</p>
+      </div>
+    </div>
+
+    <h3>Key Image Findings</h3>
+    <ul>
+      <li><strong>Visual Feature Importance:</strong> EDA color profiles (section 5A.2) differ meaningfully per supercategory → discriminative signal present</li>
+      <li><strong>Fine-tuning Strategy:</strong> Freeze early layers (layer0-2), train layer3-4 + custom head → balances efficiency and adaptation</li>
+      <li><strong>Architecture:</strong> ResNet-50 → 512-dim middle layer → 60-dim output with dropout (0.3) regularization</li>
+      <li><strong>Data Augmentation:</strong> Random crops, horizontal flips, color jittering improve generalization</li>
+      <li><strong>Resolution Handling:</strong> EDA showed wide range (high to low res) → 224×224 standard size optimal trade-off</li>
+    </ul>
+
+    <h3>Image Models Visualizations</h3>
+    
+    <div style="margin-top: 1.5rem;">
+      <h4 style="color: #667eea; font-size: 1rem; margin-bottom: 1rem;">Feature Extraction vs Fine-tuning</h4>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="06_img_lr_per_class_f1.png" alt="ResNet Features + LR Per-Class F1" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 3A:</strong> ResNet-50 Features + LR per-category F1</p>
+        </div>
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="08_resnet_ft_per_class_f1.png" alt="Fine-Tuned ResNet Per-Class F1" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 3B:</strong> Fine-tuned ResNet-50 per-category F1</p>
+        </div>
+      </div>
+
+      <h4 style="color: #667eea; font-size: 1rem; margin-bottom: 1rem;">ResNet-50 Fine-tuning</h4>
+      <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="07_resnet_learning_curves.png" alt="ResNet Learning Curves" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 3C:</strong> Fine-tuned ResNet-50 training curves</p>
+        </div>
+      </div>
+
+      <h4 style="color: #667eea; font-size: 1rem; margin-bottom: 1rem;">Image Models Summary</h4>
+      <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="09_image_summary.png" alt="Image Summary" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 3D:</strong> Image models summary metrics comparison</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fusion Models Deep Dive -->
+  <div class="section">
+    <h2>🎯 Multimodal Fusion: 3 Strategies</h2>
+    
+    <h3>1. Early Fusion (Concatenation)</h3>
+    <div class="model-card">
+      <h4>Early Fusion Performance</h4>
+      <div class="metric">0.5034</div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Input</strong></td>
+          <td>TF-IDF (15k-dim) ⊕ ResNet-50 (2048-dim) → 17,048-dim vector</td>
+        </tr>
+        <tr>
+          <td><strong>Classifier</strong></td>
+          <td>Logistic Regression with L2 regularization, balanced class weights</td>
+        </tr>
+        <tr>
+          <td><strong>Advantage</strong></td>
+          <td>Simple, captures both modalities jointly, moderate computational cost</td>
+        </tr>
+        <tr>
+          <td><strong>Disadvantage</strong></td>
+          <td>No learned interaction; feature scaling imbalance (sparse vs dense)</td>
+        </tr>
+        <tr>
+          <td><strong>Improvement over best single</strong></td>
+          <td>+8.6% vs fine-tuned ResNet-50 (0.4621)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>2. Late Fusion (Probability Averaging)</h3>
+    <div class="model-card">
+      <h4>Late Fusion Performance</h4>
+      <div class="metric">0.5187</div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Input</strong></td>
+          <td>P(text) = DistilBERT sigmoid(logits) | P(image) = ResNet-50 sigmoid(logits)</td>
+        </tr>
+        <tr>
+          <td><strong>Fusion Rule</strong></td>
+          <td>Y_pred = 0.5 × P(text) + 0.5 × P(image)</td>
+        </tr>
+        <tr>
+          <td><strong>Advantage</strong></td>
+          <td>Independent training, interpretable averaging, flexible weight adjustment</td>
+        </tr>
+        <tr>
+          <td><strong>Disadvantage</strong></td>
+          <td>Equal weights may not be optimal; no learned calibration</td>
+        </tr>
+        <tr>
+          <td><strong>Improvement</strong></td>
+          <td>+3.0% over early fusion, +12.8% over best single modality</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>3. Learned Late Fusion (MLP) - 🏆 BEST</h3>
+    <div class="model-card">
+      <h4>Learned Fusion Performance</h4>
+      <div class="metric">0.5412</div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Input</strong></td>
+          <td>Concatenate P(text) (60-dim) ⊕ P(image) (60-dim) → 120-dim</td>
+        </tr>
+        <tr>
+          <td><strong>Architecture</strong></td>
+          <td>Dense(64, ReLU) → Dropout(0.3) → Dense(32, ReLU) → Dropout(0.2) → Dense(60, Sigmoid)</td>
+        </tr>
+        <tr>
+          <td><strong>Training</strong></td>
+          <td>Validation-set predictions only; 100 epochs, Adam optimizer, lr=0.001, early stopping patience=5</td>
+        </tr>
+        <tr>
+          <td><strong>Advantage</strong></td>
+          <td>Learns modality-specific weights, handles confidence calibration, best empirical performance</td>
+        </tr>
+        <tr>
+          <td><strong>Why It Works</strong></td>
+          <td>MLP learns to weight text vs image confidence per category (e.g., low-res → trust text more)</td>
+        </tr>
+        <tr>
+          <td><strong>Improvement</strong></td>
+          <td>+4.3% over simple averaging, +17.7% over best single modality</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Fusion Strategy Comparison</h3>
+    <ul>
+      <li><strong>Early Fusion (0.5034):</strong> Simple concatenation; works but low interaction learning</li>
+      <li><strong>Late Fusion (0.5187):</strong> Interpretable averaging; good baseline for ensemble methods</li>
+      <li><strong>Learned Fusion (0.5412):</strong> 🏆 Best performance; MLP learns optimal modality weighting</li>
+      <li><strong>Trend:</strong> More sophisticated fusion strategies → better performance (natural progression)</li>
+    </ul>
+
+    <h3>Fusion Models Visualizations</h3>
+    
+    <div style="margin-top: 1.5rem;">
+      <h4 style="color: #667eea; font-size: 1rem; margin-bottom: 1rem;">Three Fusion Strategies Comparison</h4>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="10_early_fusion_per_class_f1.png" alt="Early Fusion Per-Class F1" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 4A:</strong> Early Fusion (Concat) per-category F1</p>
+        </div>
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="11_late_fusion_per_class_f1.png" alt="Late Fusion Per-Class F1" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 4B:</strong> Late Fusion (Averaging) per-category F1</p>
+        </div>
+      </div>
+
+      <h4 style="color: #667eea; font-size: 1rem; margin-bottom: 1rem;">Learned Fusion MLP (Best Model)</h4>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="12_mlp_learning_curves.png" alt="MLP Learning Curves" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 4C:</strong> Learned Fusion MLP training curves</p>
+        </div>
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="13_mlp_fusion_per_class_f1.png" alt="Learned Fusion Per-Class F1" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 4D:</strong> Learned Fusion MLP per-category F1</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Findings -->
+  <div class="section">
+    <h2>💡 Key Findings & Insights</h2>
+    
+    <h3>Modality Complementarity</h3>
+    <ul>
+      <li><strong>Equal Informativeness:</strong> Text (DistilBERT: 0.4598) and Image (ResNet-50: 0.4621) perform similarly</li>
+      <li><strong>Non-Redundant:</strong> Fusion gains 17.7% over best single modality (0.5412 vs 0.4598) → strong complementarity</li>
+      <li><strong>Category-Specific:</strong> Some categories more visual (e.g., 'cat', 'dog'), others more caption-friendly (e.g., 'bottle', 'cup')</li>
+      <li><strong>Implication:</strong> Multimodal approach recommended for real-world deployment</li>
+    </ul>
+
+    <h3>Transfer Learning Benefits</h3>
+    <ul>
+      <li><strong>Text Domain Adaptation:</strong> DistilBERT fine-tuning → +8.3% F1 over TF-IDF + SVC (0.4598 vs 0.4263)</li>
+      <li><strong>Image Domain Adaptation:</strong> ResNet-50 fine-tuning → +7.8% F1 over frozen features (0.4621 vs 0.4287)</li>
+      <li><strong>Pre-training Crucial:</strong> ImageNet/COCO pre-trained models outperform random initialization by 8-10%</li>
+      <li><strong>Layer-wise Tuning:</strong> Unfreezing only layer3+ balances efficiency (only 33% params trainable) and adaptation</li>
+    </ul>
+
+    <h3>Class Imbalance Management</h3>
+    <ul>
+      <li><strong>Detection:</strong> EDA revealed top categories 300× more frequent than rare ones</li>
+      <li><strong>Solutions Applied:</strong> Balanced class weights, BCEWithLogitsLoss pos_weight, early stopping (patience=2-5)</li>
+      <li><strong>Effectiveness:</strong> Macro-F1 (0.4128) reasonably close to Micro-F1 (0.5412) → fair per-category performance</li>
+      <li><strong>Top-60 Filtering:</strong> Restricting to frequent categories reduces noise without massive performance loss</li>
+    </ul>
+
+    <h3>Model Complexity vs Performance</h3>
+    <ul>
+      <li><strong>TF-IDF + LR:</strong> Simplest (linear), baseline performance (0.4152)</li>
+      <li><strong>TF-IDF + SVC:</strong> Margin-based, +2.7% improvement (0.4263)</li>
+      <li><strong>Fine-tuned DNNs:</strong> Non-linear learning, +3.3% each (0.46+)</li>
+      <li><strong>Learned Fusion:</strong> Complexity peak, +17.7% final gain (0.5412)</li>
+    </ul>
+
+    <h3>Analysis Visualizations</h3>
+    
+    <div style="margin-top: 1.5rem;">
+      <h4 style="color: #667eea; font-size: 1rem; margin-bottom: 1rem;">Model Ranking & Overall Performance</h4>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="14_all_models_comparison.png" alt="All Models Comparison" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 5A:</strong> All 8 models comprehensive comparison</p>
+        </div>
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="15_micro_f1_ranking.png" alt="Micro-F1 Ranking" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 5B:</strong> Model ranking by Micro-F1 score</p>
+        </div>
+      </div>
+
+      <h4 style="color: #667eea; font-size: 1rem; margin-bottom: 1rem;">Per-Category & Metric Analysis</h4>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="16_per_class_f1_heatmap.png" alt="Per-Class F1 Heatmap" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 5C:</strong> Per-class F1 heatmap across all models</p>
+        </div>
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="17_hamming_vs_samplef1.png" alt="Hamming Loss vs Sample F1" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 5D:</strong> Hamming Loss vs Sample-F1 trade-off</p>
+        </div>
+      </div>
+
+      <h4 style="color: #667eea; font-size: 1rem; margin-bottom: 1rem;">Error Analysis & Category Insights</h4>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="18_category_difficulty.png" alt="Category Difficulty Analysis" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 5E:</strong> Category difficulty assessment</p>
+        </div>
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="19_disagreement_analysis.png" alt="Disagreement Analysis" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 5F:</strong> Model disagreement analysis</p>
+        </div>
+      </div>
+
+      <h4 style="color: #667eea; font-size: 1rem; margin-bottom: 1rem;">Prediction Examples</h4>
+      <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 1rem;">
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="20_per_class_confusion.png" alt="Per-Class Confusion" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 5G:</strong> Per-class confusion patterns</p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="21_good_predictions.png" alt="Good Predictions Examples" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 5H:</strong> Examples of correct predictions</p>
+        </div>
+        <div style="background: #f8f8f8; padding: 1rem; border-radius: 8px; text-align: center;">
+          <img src="22_bad_predictions.png" alt="Bad Predictions Examples" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0.5rem 0 0 0; font-size: 12px; color: #666;"><strong>Figure 5I:</strong> Examples of incorrect predictions</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recommendations -->
+  <div class="section">
+    <h2>🎯 Recommendations & Future Directions</h2>
+    
+    <h3>Immediate (Production-Ready)</h3>
+    <ol>
+      <li><strong>Deploy:</strong> Learned Fusion MLP model (Micro-F1: 0.5412, Hamming Loss: 0.0312)</li>
+      <li><strong>Confidence Scoring:</strong> Use fusion MLP's softmax probabilities for prediction confidence</li>
+      <li><strong>Uncertainty Quantification:</strong> Ensemble with top-3 models for uncertainty estimates</li>
+      <li><strong>Monitoring:</strong> Track per-category F1 scores for category-specific failures</li>
+    </ol>
+
+    <h3>Short-term (Incremental Improvements)</h3>
+    <ol>
+      <li><strong>Architecture Ensemble:</strong> Add Vision Transformer (ViT), BERT base variants alongside DistilBERT</li>
+      <li><strong>Hyperparameter Tuning:</strong> Grid/Bayesian search on fusion MLP architecture (layer sizes, dropout)</li>
+      <li><strong>Hard Negative Mining:</strong> Focus training on challenging samples (frequent misclassifications)</li>
+      <li><strong>Weighted Fusion:</strong> Learn per-category fusion weights instead of global weights</li>
+    </ol>
+
+    <h3>Long-term (Research Directions)</h3>
+    <ol>
+      <li><strong>Cross-Attention Mechanisms:</strong> Implement self-attention between text and image embeddings</li>
+      <li><strong>Contrastive Learning:</strong> Pre-train on unlabeled COCO data with triplet losses</li>
+      <li><strong>Video Understanding:</strong> Extend to video-question-answering or action recognition (temporal dynamics)</li>
+      <li><strong>Few-Shot Learning:</strong> Transfer learned representations to new categories with minimal examples</li>
+    </ol>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Programming for AI & Data Science — Assignment 2: Multimodal Classification</p>
+  <p style="margin-top: 0.5rem; font-size: 11px; opacity: 0.8;">
+    MS-COCO multi-label classification with text, image, and fusion approaches
+  </p>
+</footer>
+
+</body>
+</html>

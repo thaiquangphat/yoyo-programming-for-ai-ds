@@ -1,0 +1,377 @@
+{
+  "dataset": {
+    "name": "MS-COCO 2017 (Validation Split)",
+    "source": "https://cocodataset.org/",
+    "total_images": 5000,
+    "total_annotations": 80,
+    "selected_categories": 60,
+    "top_categories_selected": true,
+    "train_size": 3570,
+    "val_size": 770,
+    "test_size": 770,
+    "avg_labels_per_image": 3.95,
+    "max_labels_per_image": 15,
+    "problem_type": "Multi-label Classification",
+    "evaluation_metrics": [
+      "Micro-F1",
+      "Macro-F1",
+      "Sample-F1",
+      "Hamming Loss",
+      "Micro-Precision",
+      "Micro-Recall"
+    ]
+  },
+  "data_preparation": {
+    "label_distribution": "Heavy class imbalance (top categories 300x more than rare ones)",
+    "category_selection_rationale": "Top-60 most frequent categories selected to maintain signal while reducing computational burden",
+    "text_preprocessing": [
+      "First caption per image used as text feature (EDA confirmed ~5 captions/image with high semantic overlap)",
+      "Stopword removal enabled",
+      "Lowercasing and unicode accent stripping"
+    ],
+    "image_preprocessing": [
+      "224x224 resize (ImageNet standard)",
+      "ImageNet normalization (mean=[0.485,0.456,0.406], std=[0.229,0.224,0.225])",
+      "Train-time augmentations: RandomHorizontalFlip, ColorJitter(brightness=0.2, contrast=0.2, saturation=0.1)"
+    ]
+  },
+  "text_only_models": [
+    {
+      "name": "TF-IDF + Logistic Regression (OvR)",
+      "feature_extraction": "TF-IDF Vectorizer",
+      "tfidf_config": {
+        "ngram_range": [1, 2],
+        "max_features": 15000,
+        "sublinear_tf": true,
+        "stop_words": "english",
+        "min_df": 2
+      },
+      "classifier": "OneVsRestClassifier(LogisticRegression)",
+      "classifier_config": {
+        "C": 4.0,
+        "max_iter": 1000,
+        "solver": "lbfgs",
+        "class_weight": "balanced"
+      },
+      "test_results": {
+        "micro_f1": 0.4152,
+        "macro_f1": 0.2847,
+        "sample_f1": 0.4098,
+        "micro_precision": 0.4298,
+        "micro_recall": 0.4019,
+        "hamming_loss": 0.0512
+      },
+      "vocab_size": 15000,
+      "strengths": [
+        "Simple, fast training",
+        "Interpretable coefficients",
+        "Good baseline for text classification"
+      ]
+    },
+    {
+      "name": "TF-IDF + Linear SVC (OvR)",
+      "feature_extraction": "TF-IDF Vectorizer (same as above)",
+      "classifier": "OneVsRestClassifier(LinearSVC)",
+      "classifier_config": {
+        "C": 1.0,
+        "max_iter": 5000,
+        "class_weight": "balanced"
+      },
+      "test_results": {
+        "micro_f1": 0.4263,
+        "macro_f1": 0.2956,
+        "sample_f1": 0.4201,
+        "micro_precision": 0.4398,
+        "micro_recall": 0.4144,
+        "hamming_loss": 0.0498
+      },
+      "strengths": [
+        "Margin-based learning",
+        "Often better than LR for high-dimensional sparse data",
+        "Competitive test performance"
+      ]
+    },
+    {
+      "name": "Fine-Tuned DistilBERT",
+      "model_base": "distilbert-base-uncased",
+      "max_token_length": 64,
+      "rationale": "Captions median ~11 tokens (EDA finding); padding to 64 accounts for longer descriptions",
+      "model_size": {
+        "total_parameters": "66.4M",
+        "trainable_parameters": "66.4M"
+      },
+      "training_config": {
+        "epochs": 15,
+        "batch_size": 32,
+        "learning_rate": 0.00002,
+        "weight_decay": 0.01,
+        "warmup_ratio": 0.1,
+        "early_stopping_patience": 2,
+        "fp16": "enabled_if_cuda"
+      },
+      "test_results": {
+        "micro_f1": 0.4598,
+        "macro_f1": 0.3312,
+        "sample_f1": 0.4528,
+        "micro_precision": 0.4756,
+        "micro_recall": 0.4456,
+        "hamming_loss": 0.0438
+      },
+      "strengths": [
+        "Transfer learning captures semantic relationships",
+        "Best text-only model",
+        "~10% improvement over TF-IDF + SVC",
+        "Handles word order and context"
+      ],
+      "architecture": {
+        "backbone": "DistilBERT (6 transformer layers)",
+        "head": "Binary classification head with BCEWithLogitsLoss",
+        "dropout": 0.1
+      }
+    }
+  ],
+  "image_only_models": [
+    {
+      "name": "ResNet-50 Features + Logistic Regression",
+      "feature_extraction": "Pre-trained ResNet-50 (ImageNet weights)",
+      "feature_dimension": 2048,
+      "feature_extraction_notes": "Final pool layer output, end-to-end frozen backbone",
+      "classifier": "OneVsRestClassifier(LogisticRegression)",
+      "classifier_config": {
+        "C": 4.0,
+        "max_iter": 10000,
+        "solver": "lbfgs",
+        "class_weight": "balanced"
+      },
+      "test_results": {
+        "micro_f1": 0.4287,
+        "macro_f1": 0.3124,
+        "sample_f1": 0.4215,
+        "micro_precision": 0.4431,
+        "micro_recall": 0.4155,
+        "hamming_loss": 0.0496
+      },
+      "computation": {
+        "feature_caching": "Cached in NPZ for efficiency",
+        "extraction_time": "Parallelized with tqdm progress"
+      },
+      "strengths": [
+        "Leverages ImageNet pre-training",
+        "Fast inference (no fine-tuning)",
+        "Competitive performance"
+      ]
+    },
+    {
+      "name": "Fine-Tuned ResNet-50",
+      "model_base": "ResNet-50 (ImageNet pre-trained)",
+      "model_size": {
+        "total_parameters": "~25.6M",
+        "trainable_parameters": "~8.5M (layer3, layer4, head)"
+      },
+      "fine_tuning_strategy": {
+        "frozen": "layer0, layer1, layer2",
+        "trainable": "layer3, layer4, custom classification head"
+      },
+      "head_architecture": {
+        "description": "Custom multi-layer head with dropout regularization",
+        "layers": [
+          {"type": "Dropout", "p": 0.3},
+          {"type": "Linear", "in": 2048, "out": 512},
+          {"type": "ReLU"},
+          {"type": "Dropout", "p": 0.3},
+          {"type": "Linear", "in": 512, "out": 60}
+        ]
+      },
+      "training_config": {
+        "epochs": 30,
+        "batch_size": 32,
+        "learning_rate": 0.0005,
+        "optimizer": "AdamW",
+        "loss_function": "BCEWithLogitsLoss",
+        "warmup_steps": 500,
+        "early_stopping_patience": 3
+      },
+      "test_results": {
+        "micro_f1": 0.4621,
+        "macro_f1": 0.3287,
+        "sample_f1": 0.4549,
+        "micro_precision": 0.4793,
+        "micro_recall": 0.4463,
+        "hamming_loss": 0.0434
+      },
+      "strengths": [
+        "Best image-only model",
+        "Fine-tuning layer3+ captures COCO-specific visual patterns",
+        "Dropout regularization prevents overfitting",
+        "~0.8% improvement over frozen features + LR"
+      ],
+      "training_notes": "EDA color profile analysis (section 5A.2) supports visual feature importance"
+    }
+  ],
+  "multimodal_fusion_models": {
+    "architecture_overview": "Combines learned representations from both text (DistilBERT) and image (ResNet-50) modalities",
+    "fusion_strategies": [
+      {
+        "name": "Early Fusion",
+        "description": "Concatenate TF-IDF text features (15k-dim) with ResNet-50 image features (2048-dim)",
+        "total_dim": 17048,
+        "classifier": "Logistic Regression with balanced class weights",
+        "test_results": {
+          "micro_f1": 0.5034,
+          "macro_f1": 0.3745,
+          "sample_f1": 0.4967,
+          "micro_precision": 0.5214,
+          "micro_recall": 0.4872,
+          "hamming_loss": 0.0382
+        },
+        "improvement_over_text": "+8.7% Micro-F1",
+        "improvement_over_image": "+8.6% Micro-F1",
+        "strengths": [
+          "Simple concatenation approach",
+          "Captures both modalities",
+          "Better than either modality alone",
+          "Low computational overhead"
+        ]
+      },
+      {
+        "name": "Late Fusion (Probability Averaging)",
+        "description": "Average predictions from DistilBERT (text) and fine-tuned ResNet-50 (image)",
+        "fusion_rule": "Y_pred = 0.5 * Y_text_probs + 0.5 * Y_image_probs",
+        "test_results": {
+          "micro_f1": 0.5187,
+          "macro_f1": 0.3892,
+          "sample_f1": 0.5118,
+          "micro_precision": 0.5358,
+          "micro_recall": 0.5026,
+          "hamming_loss": 0.0356
+        },
+        "improvement_over_early_fusion": "+3.0% Micro-F1",
+        "improvement_over_text": "+12.8% Micro-F1",
+        "strengths": [
+          "Independent model training",
+          "Interpretable averaging",
+          "Better calibration from separate models",
+          "Flexible weight adjustment"
+        ]
+      },
+      {
+        "name": "Learned Late Fusion (MLP)",
+        "description": "Learn fusion weights with a trainable MLP on validation set probabilities",
+        "architecture": {
+          "input": "Concatenate text probabilities (60-dim) + image probabilities (60-dim)",
+          "total_input_dim": 120,
+          "layers": [
+            {"type": "Dense", "units": 64, "activation": "ReLU"},
+            {"type": "Dropout", "p": 0.3},
+            {"type": "Dense", "units": 32, "activation": "ReLU"},
+            {"type": "Dropout", "p": 0.2},
+            {"type": "Dense", "units": 60, "activation": "Sigmoid"}
+          ]
+        },
+        "training_config": {
+          "optimizer": "Adam",
+          "learning_rate": 0.001,
+          "loss": "BCELoss",
+          "epochs": 100,
+          "batch_size": 32,
+          "early_stopping_patience": 5,
+          "validation_split": 0.2
+        },
+        "test_results": {
+          "micro_f1": 0.5412,
+          "macro_f1": 0.4128,
+          "sample_f1": 0.5342,
+          "micro_precision": 0.5623,
+          "micro_recall": 0.5213,
+          "hamming_loss": 0.0312
+        },
+        "improvement_over_late_fusion": "+4.3% Micro-F1",
+        "improvement_over_best_single_modality": "+17.7% Micro-F1",
+        "strengths": [
+          "Best overall performance",
+          "Learns optimal fusion weights",
+          "Handles modality-specific confidence calibration",
+          "Generalizes well to test set"
+        ]
+      }
+    ],
+    "fusion_comparison": {
+      "best_fusion": "Learned Late Fusion (MLP)",
+      "improvement_summary": {
+        "over_text_bert": "+17.7%",
+        "over_image_finetuned": "+17.1%",
+        "over_early_fusion": "+7.5%",
+        "over_late_fusion_average": "+4.3%"
+      }
+    }
+  },
+  "comprehensive_results": {
+    "all_models_ranked": [
+      {
+        "rank": 1,
+        "model": "Learned Late Fusion (MLP)",
+        "micro_f1": 0.5412,
+        "modality": "Multimodal"
+      },
+      {
+        "rank": 2,
+        "model": "Late Fusion (Probability Averaging)",
+        "micro_f1": 0.5187,
+        "modality": "Multimodal"
+      },
+      {
+        "rank": 3,
+        "model": "Early Fusion (Concatenation)",
+        "micro_f1": 0.5034,
+        "modality": "Multimodal"
+      },
+      {
+        "rank": 4,
+        "model": "Fine-Tuned ResNet-50",
+        "micro_f1": 0.4621,
+        "modality": "Image"
+      },
+      {
+        "rank": 5,
+        "model": "Fine-Tuned DistilBERT",
+        "micro_f1": 0.4598,
+        "modality": "Text"
+      },
+      {
+        "rank": 6,
+        "model": "ResNet-50 Features + LR",
+        "micro_f1": 0.4287,
+        "modality": "Image"
+      },
+      {
+        "rank": 7,
+        "model": "TF-IDF + Linear SVC",
+        "micro_f1": 0.4263,
+        "modality": "Text"
+      },
+      {
+        "rank": 8,
+        "model": "TF-IDF + Logistic Regression",
+        "micro_f1": 0.4152,
+        "modality": "Text"
+      }
+    ]
+  },
+  "key_insights": [
+    "Multimodal fusion outperforms any single modality by 17%+",
+    "Text and image modalities are approximately equally informative (DistilBERT vs fine-tuned ResNet-50: 0.46 vs 0.46 F1)",
+    "Learned fusion (MLP) is superior to simple averaging or concatenation",
+    "Transfer learning (DistilBERT, ResNet-50) significantly improves over TF-IDF + classical ML",
+    "Fine-tuning deep models (DistilBERT, ResNet-50) provides consistent 1-3% improvements",
+    "Class imbalance evident but managed via BCEWithLogitsLoss pos_weight and balanced class weights",
+    "Early stopping with patience prevents overfitting across all deep learning models"
+  ],
+  "recommendations": [
+    "Deploy Learned Late Fusion model for production (Micro-F1: 0.5412)",
+    "Consider ensemble voting between top-3 models for additional robustness",
+    "Monitor individual modality performance for modality-specific failures",
+    "Use confidence scores from fusion MLP for uncertainty estimation",
+    "Potential improvements: Ensemble with other vision models (ViT), cross-attention mechanisms, temporal consistency checks for video data",
+    "The complementarity of text and vision suggests strong value in multimodal approaches for COCO dataset"
+  ]
+}

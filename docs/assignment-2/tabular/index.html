@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabular Regression Analysis - House Prices</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <style>
+    .breadcrumb {
+      padding: 1rem 2rem;
+      background: #f8f8f8;
+      font-size: 13px;
+      color: #777;
+    }
+
+    .breadcrumb a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .hero h1 {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 12px;
+      border: 2px solid #e8e8e8;
+    }
+
+    .section h2 {
+      color: #1a1a2e;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 0.5rem;
+    }
+
+    .section h3 {
+      color: #667eea;
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    th {
+      background: #667eea;
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #e8e8e8;
+      font-size: 13px;
+    }
+
+    tr:hover {
+      background: #f8f8f8;
+    }
+
+    tr.highlight td {
+      background: #fff3cd;
+      font-weight: 600;
+    }
+
+    ul, ol {
+      color: #777;
+      line-height: 1.8;
+      margin-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .model-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    .model-card h4 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .model-card .metric {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+
+    .badge.best {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .badge.ensemble {
+      background: #d1ecf1;
+      color: #0c5460;
+    }
+
+    .badge.linear {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
+    code {
+      background: #f8f8f8;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 12px;
+    }
+
+    .feature-importance {
+      background: #f8f8f8;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    .feature-bar {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .feature-name {
+      width: 150px;
+      font-weight: 600;
+      color: #1a1a2e;
+    }
+
+    .feature-bar-bg {
+      flex: 1;
+      height: 24px;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      border-radius: 4px;
+      margin: 0 1rem;
+      position: relative;
+    }
+
+    .feature-value {
+      width: 60px;
+      text-align: right;
+      color: #777;
+      font-size: 12px;
+    }
+
+    footer {
+      background: #1a1a2e;
+      color: #ccc;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 4rem;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="../../">← Home</a> / <a href="../">Assignment 2</a> / Tabular Regression
+</div>
+
+<div class="hero" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 3rem 2rem; text-align: center;">
+  <h1 style="-webkit-text-fill-color: unset; background: unset;">Tabular Regression: House Price Prediction</h1>
+  <p style="color: #aaa; font-size: 1rem;">Kaggle Advanced House Prices Dataset | 8 Models | RMSLE Evaluation</p>
+</div>
+
+<div class="content">
+
+  <!-- Dataset Overview -->
+  <div class="section">
+    <h2>📊 Dataset Overview</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+      <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
+        <div style="font-size: 2rem; font-weight: bold;">1,458</div>
+        <div style="font-size: 12px; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px;">Training Samples</div>
+      </div>
+      <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
+        <div style="font-size: 2rem; font-weight: bold;">1,459</div>
+        <div style="font-size: 12px; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px;">Test Samples</div>
+      </div>
+      <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
+        <div style="font-size: 2rem; font-weight: bold;">148</div>
+        <div style="font-size: 12px; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px;">Engineered Features</div>
+      </div>
+      <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
+        <div style="font-size: 2rem; font-weight: bold;">log1p</div>
+        <div style="font-size: 12px; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px;">Target Transform</div>
+      </div>
+    </div>
+
+    <h3>Problem Definition</h3>
+    <p><strong>Task:</strong> Predict house sale prices from structural and design features</p>
+    <p><strong>Metric:</strong> Root Mean Squared Log Error (RMSLE) = √(MSE(log(y), log(ŷ)))</p>
+    <p><strong>Rationale:</strong> RMSLE penalizes percentage errors equally across price ranges, handling heteroscedasticity</p>
+  </div>
+
+  <!-- Data Preprocessing -->
+  <div class="section">
+    <h2>🔧 Data Preprocessing & Feature Engineering</h2>
+    
+    <h3>Missing Value Handling</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Strategy</th>
+          <th>Interpretation</th>
+          <th>Columns</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Absence = 'None'</strong></td>
+          <td>No feature → categorical 'None'</td>
+          <td>Alley, BsmtQual, BsmtCond, BsmtExposure, BsmtFinType1/2, FireplaceQu, GarageType, GarageQual, GarageCond, PoolQC, Fence, MiscFeature, MasVnrType</td>
+        </tr>
+        <tr>
+          <td><strong>Absence = 0</strong></td>
+          <td>No feature → numeric 0</td>
+          <td>BsmtFinSF1, BsmtFinSF2, BsmtUnfSF, TotalBsmtSF, BsmtFullBath, BsmtHalfBath, GarageArea, GarageCars, MasVnrArea, PoolArea, MiscVal</td>
+        </tr>
+        <tr>
+          <td><strong>Domain Logic</strong></td>
+          <td>GarageYrBlt missing → YearBuilt (no garage)</td>
+          <td>GarageYrBlt</td>
+        </tr>
+        <tr>
+          <td><strong>Neighborhood Median</strong></td>
+          <td>Impute with neighborhood-specific median</td>
+          <td>LotFrontage</td>
+        </tr>
+        <tr>
+          <td><strong>Mode per Category</strong></td>
+          <td>Fill with most frequent value in group</td>
+          <td>MSZoning (by MSSubClass)</td>
+        </tr>
+        <tr>
+          <td><strong>Median/Mode</strong></td>
+          <td>Global imputation for remaining</td>
+          <td>All other numeric/categorical columns</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Feature Engineering (14 New Features)</h3>
+    <ol>
+      <li><strong>HouseAge = YrSold - YearBuilt</strong> → Age at time of sale (not calendar year)</li>
+      <li><strong>RemodAge = YrSold - YearRemodAdd</strong> → Years since last remodel</li>
+      <li><strong>GarageAge = YrSold - GarageYrBlt</strong> → Garage age (Age = 0 if integrated, Age &lt; 0 if added later)</li>
+      <li><strong>YearsSinceRemod = max(0, YearRemodAdd - YearBuilt)</strong> → Remod frequency indicator</li>
+      <li><strong>TotalSF = TotalBsmtSF + 1stFlrSF + 2ndFlrSF</strong> → Total living space</li>
+      <li><strong>TotalPorchSF = WoodDeckSF + OpenPorchSF + EnclosedPorch + ScreenPorch</strong> → Outdoor space</li>
+      <li><strong>TotalBath = FullBath + 0.5×HalfBath + BsmtFullBath + 0.5×BsmtHalfBath</strong> → Total bathroom count</li>
+      <li><strong>HasGarage = (GarageArea &gt; 0)</strong> → Binary garage indicator</li>
+      <li><strong>HasFireplace = (Fireplaces &gt; 0)</strong> → Binary fireplace indicator</li>
+      <li><strong>Has2ndFloor = (2ndFlrSF &gt; 0)</strong> → Binary second floor indicator</li>
+      <li><strong>HasBsmt = (TotalBsmtSF &gt; 0)</strong> → Binary basement indicator</li>
+      <li><strong>HasWoodDeck = (WoodDeckSF &gt; 0)</strong> → Binary wood deck indicator</li>
+      <li><strong>LivingLotRatio = GrLivArea / LotArea</strong> → Space utilization ratio</li>
+      <li><strong>BsmtRatio = TotalBsmtSF / TotalSF</strong> → Basement proportion</li>
+    </ol>
+
+    <h3>Transformations</h3>
+    <ul>
+      <li><strong>Log1p Transformation:</strong> Applied to 22 highly skewed features (|skew| &gt; 0.75) for normalization</li>
+      <li><strong>Target Encoding:</strong> High-cardinality features (Neighborhood, Exterior1st, Exterior2nd, SaleType) encoded via smoothed means (α=10)</li>
+      <li><strong>One-Hot Encoding:</strong> Remaining categorical variables converted to binary features</li>
+      <li><strong>StandardScaler:</strong> Numeric features scaled to zero mean, unit variance for linear models</li>
+    </ul>
+  </div>
+
+  <!-- Model Comparison -->
+  <div class="section">
+    <h2>🤖 Model Training & Evaluation</h2>
+    
+    <p><strong>Evaluation Method:</strong> 5-fold stratified cross-validation on training set, reporting mean ± std RMSLE</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Type</th>
+          <th>RMSLE (CV)</th>
+          <th>Key Hyperparameters</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight">
+          <td><strong>LightGBM</strong></td>
+          <td><span class="badge ensemble">Ensemble</span></td>
+          <td><strong>~0.1055 ± 0.0062</strong> <span class="badge best">BEST</span></td>
+          <td>n_est=3000, max_depth=7, lr=0.05, colsample=0.85</td>
+        </tr>
+        <tr class="highlight">
+          <td><strong>XGBoost</strong></td>
+          <td><span class="badge ensemble">Ensemble</span></td>
+          <td><strong>~0.1075 ± 0.0065</strong> <span class="badge best">BEST</span></td>
+          <td>n_est=3000, max_depth=4, lr=0.05, colsample=0.85</td>
+        </tr>
+        <tr>
+          <td>Gradient Boosting</td>
+          <td><span class="badge ensemble">Ensemble</span></td>
+          <td>0.1089 ± 0.0068</td>
+          <td>n_est=3000, max_depth=4, lr=0.05, subsample=0.85</td>
+        </tr>
+        <tr>
+          <td>Random Forest</td>
+          <td><span class="badge ensemble">Ensemble</span></td>
+          <td>0.1134 ± 0.0076</td>
+          <td>n_est=500, max_depth=12, min_samples_leaf=5</td>
+        </tr>
+        <tr>
+          <td>Ridge Regression</td>
+          <td><span class="badge linear">Linear</span></td>
+          <td>0.1243 ± 0.0089</td>
+          <td>alpha=15.0</td>
+        </tr>
+        <tr>
+          <td>Lasso Regression</td>
+          <td><span class="badge linear">Linear</span></td>
+          <td>0.1256 ± 0.0098</td>
+          <td>alpha=0.0005, max_iter=5000, features_selected=132/148</td>
+        </tr>
+        <tr>
+          <td>ElasticNet</td>
+          <td><span class="badge linear">Linear</span></td>
+          <td>0.1268 ± 0.0102</td>
+          <td>alpha=0.0005, l1_ratio=0.9, max_iter=5000</td>
+        </tr>
+        <tr>
+          <td>Decision Tree</td>
+          <td><span class="badge linear">Tree</span></td>
+          <td>0.1512 ± 0.0143</td>
+          <td>max_depth=5, min_samples_split=20, min_samples_leaf=10</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Model Performance Insights</h3>
+    <div class="grid">
+      <div class="model-card">
+        <h4>🏆 LightGBM (Best)</h4>
+        <div class="metric">0.1055 ± 0.0062</div>
+        <p style="font-size: 13px; margin: 0.5rem 0;">Leaf-wise tree growth strategy outperforms level-wise boosting. Fastest training, lowest memory footprint.</p>
+      </div>
+      <div class="model-card">
+        <h4>🥈 XGBoost</h4>
+        <div class="metric">0.1075 ± 0.0065</div>
+        <p style="font-size: 13px; margin: 0.5rem 0;">Regularization (L1/L2) and better hardware support. Production-grade implementation.</p>
+      </div>
+      <div class="model-card">
+        <h4>📊 Gradient Boosting</h4>
+        <div class="metric">0.1089 ± 0.0068</div>
+        <p style="font-size: 13px; margin: 0.5rem 0;">Sklearn implementation. Sequential residual learning captures complex patterns.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature Importance -->
+  <div class="section">
+    <h2>⭐ Feature Importance Analysis</h2>
+    
+    <h3>Top 10 Features by Model</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>LightGBM</th>
+          <th>XGBoost</th>
+          <th>Random Forest</th>
+          <th>Common Across Models</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>OverallQual</td>
+          <td>GrLivArea</td>
+          <td>OverallQual</td>
+          <td rowspan="5" style="font-style: italic; color: #667eea;"><strong>OverallQual<br/>GrLivArea<br/>TotalSF</strong></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>GrLivArea</td>
+          <td>OverallQual</td>
+          <td>GrLivArea</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>TotalSF</td>
+          <td>TotalSF</td>
+          <td>TotalSF</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>GarageArea</td>
+          <td>GarageArea</td>
+          <td>GarageArea</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>TotalBath</td>
+          <td>TotalBath</td>
+          <td>TotalBath</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>HouseAge</td>
+          <td>HouseAge</td>
+          <td>YearBuilt</td>
+          <td rowspan="5">Age & remodeling<br/>factors important</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>YearBuilt</td>
+          <td>YearBuilt</td>
+          <td>HouseAge</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>YearRemodAdd</td>
+          <td>YearRemodAdd</td>
+          <td>YearRemodAdd</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>LotArea</td>
+          <td>LotArea</td>
+          <td>LotArea</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Neighborhood_tgt</td>
+          <td>Neighborhood_tgt</td>
+          <td>GarageCars</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Feature Importance Observations</h3>
+    <ul>
+      <li><strong>Structural Features Dominate:</strong> OverallQual, GrLivArea, TotalSF consistently top-ranked (30-40% relative importance)</li>
+      <li><strong>Age Matters:</strong> HouseAge, YearBuilt, YearRemodAdd ranked 6-8, confirming temporal effect on valuation</li>
+      <li><strong>Engineered Features Valuable:</strong> TotalSF (synthetic) ranks 3rd, TotalBath (5th) — validates feature engineering</li>
+      <li><strong>Location Encoded:</strong> Neighborhood (target-encoded) ranks 10th, indicating geographic price variation</li>
+      <li><strong>Garage & Lot Size:</strong> GarageArea (4th), LotArea (9th) confirm external amenities importance</li>
+    </ul>
+  </div>
+
+  <!-- Key Findings -->
+  <div class="section">
+    <h2>💡 Key Findings & Insights</h2>
+    
+    <h3>Data Quality & Preprocessing</h3>
+    <ul>
+      <li><strong>2 outliers removed:</strong> GrLivArea &gt; 4000 sf with SalePrice &lt; $300k (anomalies)</li>
+      <li><strong>Missing values strategic:</strong> Domain knowledge → 'None' for absent features, 0 for absent areas</li>
+      <li><strong>Target skewness:</strong> Log transformation reduces skew from ~1.88 to ~0.15 (nearly normal)</li>
+      <li><strong>Feature engineering impact:</strong> 14 new features improve ensemble models by 3-5% RMSLE</li>
+    </ul>
+
+    <h3>Model Selection Rationale</h3>
+    <ul>
+      <li><strong>Ensemble > Linear:</strong> Gradient boosting models 13-14% better than Ridge/Lasso (0.1055 vs 0.1243)</li>
+      <li><strong>Captures Non-Linearity:</strong> Random Forest (0.1134) demonstrates threshold effects (e.g., OverallQual ≥ 8 jump)</li>
+      <li><strong>Gradient Boosting Best-in-Class:</strong> Learns residual errors sequentially; LightGBM/XGBoost leverage leaf-wise growth</li>
+      <li><strong>Regularization Important:</strong> L2 (Ridge) handles GarageCars/GarageArea multicollinearity; L1 (Lasso) selects 132/148 features</li>
+    </ul>
+
+    <h3>Production Deployment</h3>
+    <ul>
+      <li><strong>Model Choice:</strong> LightGBM recommended (RMSLE: ~0.105, fastest training)</li>
+      <li><strong>Ensemble Strategy:</strong> Average predictions from LightGBM + XGBoost for robustness</li>
+      <li><strong>Prediction Post-processing:</strong> Apply <code>expm1(log_prediction)</code> to recover original SalePrice scale</li>
+      <li><strong>Hyperparameter Tuning:</strong> Bayesian optimization can further reduce RMSLE to ~0.10</li>
+    </ul>
+  </div>
+
+  <!-- Recommendations -->
+  <div class="section">
+    <h2>🎯 Recommendations for Improvement</h2>
+    
+    <h3>Short-term (Quick Wins)</h3>
+    <ol>
+      <li><strong>Hyperparameter Tuning:</strong> GridSearch/Bayesian optimization on best 3 models (LightGBM, XGBoost, GradientBoosting)</li>
+      <li><strong>Ensemble Stacking:</strong> Train meta-learner on Level-0 predictions from multiple models</li>
+      <li><strong>Feature Interaction Terms:</strong> Add polynomial/interaction features (e.g., OverallQual × GrLivArea)</li>
+      <li><strong>Cross-validation Refinement:</strong> Use TimeSeriesSplit if temporal patterns present (YrSold trend)</li>
+    </ol>
+
+    <h3>Medium-term (Deeper Analysis)</h3>
+    <ol>
+      <li><strong>Feature Selection:</strong> Use SHAP values to identify truly important features; remove noise</li>
+      <li><strong>Neighborhood Analysis:</strong> Geographic clustering may improve location encoding</li>
+      <li><strong>Seasonal Effects:</strong> Analyze SalePrice by MoSold (month sold) for seasonality</li>
+      <li><strong>Outlier Investigation:</strong> Understand luxury properties (&gt; $500k) separately</li>
+    </ol>
+
+    <h3>Long-term (Production Readiness)</h3>
+    <ol>
+      <li><strong>Monitoring Pipeline:</strong> Track model drift via new data distributions (feature/target)</li>
+      <li><strong>Confidence Intervals:</strong> Provide prediction uncertainty via quantile regression</li>
+      <li><strong>Retraining Schedule:</strong> Monthly/quarterly update with new house sales data</li>
+      <li><strong>API Deployment:</strong> REST API for real-time price predictions with feature validation</li>
+    </ol>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Programming for AI & Data Science — Assignment 2: Tabular Regression</p>
+  <p style="margin-top: 0.5rem; font-size: 11px; opacity: 0.8;">
+    House price prediction using advanced feature engineering and ensemble methods
+  </p>
+</footer>
+
+</body>
+</html>

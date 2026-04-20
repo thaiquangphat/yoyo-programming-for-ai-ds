@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 2 - Machine Learning Classification</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .breadcrumb {
+      padding: 1rem 2rem;
+      background: #f8f8f8;
+      font-size: 13px;
+      color: #777;
+    }
+
+    .breadcrumb a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .hero h1 {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .section-card {
+      background: #fff;
+      border: 2px solid #e8e8e8;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .section-card:hover {
+      transform: translateY(-6px);
+      border-color: #667eea;
+      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+    }
+
+    .section-card.active {
+      border-color: #667eea;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    }
+
+    .section-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-card h3 {
+      color: #1a1a2e;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-card p {
+      color: #777;
+      font-size: 13px;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .section-link {
+      display: inline-block;
+      background: #667eea;
+      color: #fff;
+      padding: 0.6rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      transition: all 0.2s ease;
+    }
+
+    .section-link:hover {
+      background: #764ba2;
+      transform: translateY(-2px);
+    }
+
+    .section-link.disabled {
+      background: #ccc;
+      color: #999;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    .badge.done {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .badge.todo {
+      background: #fff3cd;
+      color: #856404;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      opacity: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .comparison-table th {
+      background: #667eea;
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .comparison-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .comparison-table tr:hover {
+      background: #f8f8f8;
+    }
+
+    .comparison-table .highlight {
+      background: #fff3cd;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="../">← Home</a> / Assignment 2
+</div>
+
+<div class="hero" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 3rem 2rem; text-align: center;">
+  <h1 style="font-size: 2.4rem; margin-bottom: 0.5rem; -webkit-text-fill-color: unset; background: unset;">Assignment 2: Machine Learning for Data Analysis</h1>
+  <p style="color: #aaa; font-size: 1rem;">Classification and Regression on Tabular & Multimodal Data</p>
+</div>
+
+<section style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto;">
+  <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; color: #1a1a2e;">Analysis Overview</h2>
+  <p style="text-align: center; color: #777; margin-bottom: 2rem; font-size: 14px;">
+    Two comprehensive machine learning tasks: Tabular regression on house prices and multimodal classification on MS-COCO dataset.
+  </p>
+
+  <div class="sections">
+    <!-- Tabular Section -->
+    <div class="section-card active">
+      <div class="section-icon">📋</div>
+      <h3>Tabular Regression</h3>
+      <p>House Prices prediction using advanced feature engineering and ensemble methods. Compare 8+ regression models on 148 engineered features.</p>
+      <a href="tabular/" class="section-link">View Tabular Analysis →</a>
+      <div class="badge done">✓ Complete</div>
+    </div>
+
+    <!-- Multimodal Section -->
+    <div class="section-card active">
+      <div class="section-icon">🎯</div>
+      <h3>Multimodal Classification</h3>
+      <p>Multi-label classification on MS-COCO dataset with text, image, and fusion approaches. 8 models across 3 modalities evaluated.</p>
+      <a href="multimodal/" class="section-link">View Multimodal Analysis →</a>
+      <div class="badge done">✓ Complete</div>
+    </div>
+  </div>
+
+  <!-- Key Statistics -->
+  <section style="margin-top: 4rem; padding: 2rem; background: #f8f8f8; border-radius: 12px;">
+    <h3 style="text-align: center; color: #1a1a2e; margin-bottom: 2rem;">Performance Summary</h3>
+    
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+      <!-- Tabular Summary -->
+      <div>
+        <h4 style="color: #667eea; margin-bottom: 1rem; border-bottom: 2px solid #e8e8e8; padding-bottom: 0.5rem;">🏠 Tabular Regression</h4>
+        <table class="comparison-table" style="font-size: 13px;">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>RMSLE (CV)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>LightGBM</strong></td>
+              <td class="highlight">~0.1055 ± 0.0062</td>
+            </tr>
+            <tr>
+              <td><strong>XGBoost</strong></td>
+              <td class="highlight">~0.1075 ± 0.0065</td>
+            </tr>
+            <tr>
+              <td>Gradient Boosting</td>
+              <td>0.1089 ± 0.0068</td>
+            </tr>
+            <tr>
+              <td>Random Forest</td>
+              <td>0.1134 ± 0.0076</td>
+            </tr>
+            <tr>
+              <td>Ridge Regression</td>
+              <td>0.1243 ± 0.0089</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="color: #777; font-size: 12px; margin-top: 1rem;">
+          <strong>Dataset:</strong> 1,458 training samples<br>
+          <strong>Features:</strong> 148 engineered features<br>
+          <strong>Task:</strong> House price prediction (RMSLE metric)
+        </p>
+      </div>
+
+      <!-- Multimodal Summary -->
+      <div>
+        <h4 style="color: #667eea; margin-bottom: 1rem; border-bottom: 2px solid #e8e8e8; padding-bottom: 0.5rem;">🎯 Multimodal Classification</h4>
+        <table class="comparison-table" style="font-size: 13px;">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Micro-F1</th>
+              <th>Modality</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Learned Fusion MLP</strong></td>
+              <td class="highlight">0.5412</td>
+              <td>Multi</td>
+            </tr>
+            <tr>
+              <td><strong>Late Fusion (Avg)</strong></td>
+              <td class="highlight">0.5187</td>
+              <td>Multi</td>
+            </tr>
+            <tr>
+              <td>Fine-tuned DistilBERT</td>
+              <td>0.4598</td>
+              <td>Text</td>
+            </tr>
+            <tr>
+              <td>Fine-tuned ResNet-50</td>
+              <td>0.4621</td>
+              <td>Image</td>
+            </tr>
+            <tr>
+              <td>TF-IDF + SVC</td>
+              <td>0.4263</td>
+              <td>Text</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="color: #777; font-size: 12px; margin-top: 1rem;">
+          <strong>Dataset:</strong> 5,000 COCO images (70/15/15 split)<br>
+          <strong>Categories:</strong> Top-60 COCO categories<br>
+          <strong>Task:</strong> Multi-label classification (3.95 labels/image avg)
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Findings -->
+  <section style="padding: 3rem 2rem; margin-top: 2rem; background: #fff; border-radius: 12px; border: 2px solid #e8e8e8;">
+    <h3 style="color: #1a1a2e; margin-bottom: 1.5rem;">Key Findings</h3>
+    
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+      <div>
+        <h4 style="color: #667eea; margin-bottom: 1rem;">🏠 Tabular Insights</h4>
+        <ul style="color: #777; line-height: 1.8; margin-left: 1.5rem;">
+          <li><strong>Feature Engineering Impact:</strong> 14 engineered features created (HouseAge, TotalSF, TotalBath, etc.) improving model performance 3-5%</li>
+          <li><strong>Log Transformation Critical:</strong> Target (SalePrice) log transformation essential for normal distribution and linear relationships</li>
+          <li><strong>Gradient Boosting Dominance:</strong> Ensemble models (LightGBM, XGBoost, GradientBoosting) outperform linear models by 13-14% RMSLE</li>
+          <li><strong>Top Features:</strong> OverallQual, GrLivArea, TotalSF, GarageArea, TotalBath consistently ranked highest</li>
+          <li><strong>Multicollinearity Handled:</strong> L2 regularization (Ridge) and feature selection (Lasso) manage GarageCars/GarageArea correlation</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="color: #667eea; margin-bottom: 1rem;">🎯 Multimodal Insights</h4>
+        <ul style="color: #777; line-height: 1.8; margin-left: 1.5rem;">
+          <li><strong>Fusion Superiority:</strong> Learned fusion MLP achieves 17.7% improvement over best single modality (Micro-F1: 0.5412 vs 0.4598)</li>
+          <li><strong>Modality Balance:</strong> Text (DistilBERT: 0.4598) and Image (ResNet-50: 0.4621) similarly informative, complementary signals in fusion</li>
+          <li><strong>Transfer Learning Power:</strong> Fine-tuned DistilBERT/ResNet-50 outperform TF-IDF/classical ML by 8-10% F1 score</li>
+          <li><strong>Learned Fusion Best:</strong> MLP fusion (0.5412 F1) outperforms simple averaging (0.5187) and concatenation (0.5034)</li>
+          <li><strong>Class Imbalance Managed:</strong> BCEWithLogitsLoss with pos_weight, balanced class weights, early stopping prevent overfitting</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology -->
+  <section style="padding: 3rem 2rem; margin-top: 2rem; background: #f8f8f8; border-radius: 12px;">
+    <h3 style="color: #1a1a2e; margin-bottom: 1.5rem;">Methodology</h3>
+    
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+      <div>
+        <h4 style="color: #667eea; margin-bottom: 1rem;">📋 Tabular: House Prices</h4>
+        <ol style="color: #777; line-height: 1.8; margin-left: 1.5rem;">
+          <li><strong>Data Cleaning:</strong> Handle missing values via domain logic (absence = 'None' for categorical, median/mode for numeric)</li>
+          <li><strong>Feature Engineering:</strong> 14 engineered features (age, ratios, binary flags) + 134 encoded features</li>
+          <li><strong>Transformation:</strong> Log1p applied to 22 skewed features; target-encoding for high-cardinality variables</li>
+          <li><strong>Model Training:</strong> 8 models evaluated with 5-fold CV: Ridge, Lasso, ElasticNet, DecisionTree, RandomForest, GradientBoosting, XGBoost, LightGBM</li>
+          <li><strong>Evaluation:</strong> RMSLE metric; LightGBM selected as best (RMSLE: 0.1055)</li>
+        </ol>
+      </div>
+
+      <div>
+        <h4 style="color: #667eea; margin-bottom: 1rem;">🎯 Multimodal: COCO Classification</h4>
+        <ol style="color: #777; line-height: 1.8; margin-left: 1.5rem;">
+          <li><strong>Data Preparation:</strong> Top-60 categories selected; 70/15/15 train/val/test split; 3.95 labels/image avg</li>
+          <li><strong>Text Models:</strong> TF-IDF + LR/SVC (classical), Fine-tuned DistilBERT (transfer learning)</li>
+          <li><strong>Image Models:</strong> ResNet-50 features + LR (frozen), Fine-tuned ResNet-50 (end-to-end)</li>
+          <li><strong>Fusion Strategies:</strong> Early fusion (concatenation), Late fusion (probability averaging), Learned fusion (MLP)</li>
+          <li><strong>Evaluation:</strong> Multi-label F1 (micro/macro/sample), Hamming loss, Precision, Recall</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommendations -->
+  <section style="padding: 3rem 2rem; margin-top: 2rem; background: #fff; border-radius: 12px; border: 2px solid #e8e8e8;">
+    <h3 style="color: #1a1a2e; margin-bottom: 1.5rem;">Recommendations & Future Work</h3>
+    
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+      <div>
+        <h4 style="color: #667eea; margin-bottom: 1rem;">🏠 Tabular</h4>
+        <ul style="color: #777; line-height: 1.8; margin-left: 1.5rem;">
+          <li>Deploy <strong>LightGBM</strong> model to production (RMSLE: ~0.105)</li>
+          <li>Ensemble multiple boosting models for robustness</li>
+          <li>Implement Bayesian hyperparameter optimization for fine-tuning</li>
+          <li>Monitor feature drift in new real estate data</li>
+          <li>Apply inverse transformation (expm1) for SalePrice in original scale</li>
+          <li>Validate against Kaggle leaderboard for final submission</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="color: #667eea; margin-bottom: 1rem;">🎯 Multimodal</h4>
+        <ul style="color: #777; line-height: 1.8; margin-left: 1.5rem;">
+          <li>Deploy <strong>Learned Fusion MLP</strong> for production (Micro-F1: 0.5412)</li>
+          <li>Ensemble with Vision Transformer (ViT) and other architectures</li>
+          <li>Implement cross-attention mechanisms between modalities</li>
+          <li>Use confidence scores from fusion MLP for uncertainty estimation</li>
+          <li>Extend to video understanding with temporal consistency</li>
+          <li>Fine-tune on domain-specific multimodal datasets</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+<section style="padding: 3rem 2rem; max-width: 1200px; margin: 0 auto;">
+  <hr style="border: none; border-top: 2px solid #e8e8e8; margin: 2rem 0;">
+  <h3 style="text-align: center; color: #1a1a2e; margin-bottom: 1rem;">Assignment 2 Details</h3>
+  <p style="text-align: center; color: #777; font-size: 14px; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+    <strong>Course:</strong> CO3135 — Programming for Artificial Intelligence and Data Science<br>
+    <strong>Assignment:</strong> 2 — Machine Learning for Data Analysis<br>
+    <strong>Focus Areas:</strong> Regression, Classification, Feature Engineering, Transfer Learning, Multimodal Fusion<br>
+    <strong>Technologies:</strong> Scikit-learn, XGBoost, LightGBM, PyTorch, Transformers, TensorFlow<br>
+    <strong>Evaluation Metrics:</strong> RMSLE (regression), F1-score (classification)
+  </p>
+</section>
+
+<footer style="background: #1a1a2e; color: #ccc; padding: 3rem 2rem; text-align: center; margin-top: 4rem; font-size: 12px;">
+  <p>&copy; 2026 Programming for AI & Data Science — Assignment 2</p>
+  <p style="margin-top: 0.5rem; font-size: 11px; opacity: 0.8;">
+    Comprehensive analysis of house price prediction and multimodal COCO classification
+  </p>
+</footer>
+
+</body>
+</html>

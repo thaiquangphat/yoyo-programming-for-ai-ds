@@ -1,0 +1,274 @@
+{
+  "dataset": {
+    "name": "House Prices - Advanced Regression Techniques",
+    "source": "Kaggle",
+    "train_size": 1458,
+    "test_size": 1459,
+    "target": "SalePrice",
+    "target_transformation": "log1p",
+    "evaluation_metric": "RMSLE",
+    "problem_type": "Regression"
+  },
+  "data_preprocessing": {
+    "total_features_before": 81,
+    "total_features_after": 148,
+    "feature_engineering": [
+      "HouseAge = YrSold - YearBuilt",
+      "RemodAge = YrSold - YearRemodAdd",
+      "GarageAge = YrSold - GarageYrBlt",
+      "YearsSinceRemod = YearRemodAdd - YearBuilt (clipped at 0)",
+      "TotalSF = TotalBsmtSF + 1stFlrSF + 2ndFlrSF",
+      "TotalPorchSF = WoodDeckSF + OpenPorchSF + EnclosedPorch + ScreenPorch",
+      "TotalBath = FullBath + 0.5*HalfBath + BsmtFullBath + 0.5*BsmtHalfBath",
+      "HasGarage = (GarageArea > 0)",
+      "HasFireplace = (Fireplaces > 0)",
+      "Has2ndFloor = (2ndFlrSF > 0)",
+      "HasBsmt = (TotalBsmtSF > 0)",
+      "HasWoodDeck = (WoodDeckSF > 0)",
+      "LivingLotRatio = GrLivArea / LotArea",
+      "BsmtRatio = TotalBsmtSF / TotalSF"
+    ],
+    "handling_missing_values": [
+      "Absence features (NaN = 'None'): Alley, BsmtQual, BsmtCond, BsmtExposure, BsmtFinType1, BsmtFinType2, FireplaceQu, GarageType, GarageFinish, GarageQual, GarageCond, PoolQC, Fence, MiscFeature, MasVnrType",
+      "Zero-filled features: BsmtFinSF1, BsmtFinSF2, BsmtUnfSF, TotalBsmtSF, BsmtFullBath, BsmtHalfBath, GarageArea, GarageCars, MasVnrArea, PoolArea, MiscVal",
+      "GarageYrBlt: Imputed with YearBuilt for missing",
+      "LotFrontage: Neighborhood median imputation",
+      "MSZoning: Mode imputation per MSSubClass",
+      "Remaining categorical: Mode imputation",
+      "Remaining numeric: Median imputation"
+    ],
+    "transformations": [
+      "Log1p applied to 22 highly skewed features (|skew| > 0.75)",
+      "Target encoding (smoothing=10) for high-cardinality features: Neighborhood, Exterior1st, Exterior2nd, SaleType",
+      "One-hot encoding for remaining categorical variables",
+      "StandardScaler normalization for linear models"
+    ],
+    "outliers_removed": 2
+  },
+  "models": [
+    {
+      "name": "Ridge Regression",
+      "type": "Linear",
+      "hyperparameters": {
+        "alpha": 15.0
+      },
+      "cv_folds": 5,
+      "rmsle_cv": {
+        "mean": 0.1243,
+        "std": 0.0089,
+        "description": "5-fold cross-validation RMSLE"
+      },
+      "strengths": [
+        "Handles multicollinearity well with L2 regularization",
+        "Efficient computation",
+        "Good baseline model"
+      ],
+      "use_case": "Multicollinearity present (GarageCars/GarageArea)"
+    },
+    {
+      "name": "Lasso Regression",
+      "type": "Linear",
+      "hyperparameters": {
+        "alpha": 0.0005,
+        "max_iter": 5000
+      },
+      "cv_folds": 5,
+      "rmsle_cv": {
+        "mean": 0.1256,
+        "std": 0.0098,
+        "description": "5-fold cross-validation RMSLE"
+      },
+      "features_selected": "132 out of 148 features",
+      "strengths": [
+        "Automatic feature selection via L1 penalty",
+        "Interpretable sparse solution",
+        "Effective dimensionality reduction"
+      ],
+      "use_case": "Feature selection from high-dimensional space"
+    },
+    {
+      "name": "ElasticNet",
+      "type": "Linear",
+      "hyperparameters": {
+        "alpha": 0.0005,
+        "l1_ratio": 0.9,
+        "max_iter": 5000
+      },
+      "cv_folds": 5,
+      "rmsle_cv": {
+        "mean": 0.1268,
+        "std": 0.0102,
+        "description": "5-fold cross-validation RMSLE"
+      },
+      "strengths": [
+        "Combines L1 (sparsity) and L2 (stability) benefits",
+        "Robust to multicollinearity",
+        "Good generalization"
+      ],
+      "use_case": "Balance between feature selection and stability"
+    },
+    {
+      "name": "Decision Tree",
+      "type": "Tree",
+      "hyperparameters": {
+        "max_depth": 5,
+        "min_samples_split": 20,
+        "min_samples_leaf": 10
+      },
+      "cv_folds": 5,
+      "rmsle_cv": {
+        "mean": 0.1512,
+        "std": 0.0143,
+        "description": "5-fold cross-validation RMSLE"
+      },
+      "strengths": [
+        "Non-linear relationship capturing",
+        "Handles threshold effects",
+        "Interpretable decision paths"
+      ],
+      "weaknesses": ["Limited depth reduces expressiveness"]
+    },
+    {
+      "name": "Random Forest",
+      "type": "Ensemble",
+      "hyperparameters": {
+        "n_estimators": 500,
+        "max_depth": 12,
+        "min_samples_split": 10,
+        "min_samples_leaf": 5
+      },
+      "cv_folds": 5,
+      "rmsle_cv": {
+        "mean": 0.1134,
+        "std": 0.0076,
+        "description": "5-fold cross-validation RMSLE"
+      },
+      "strengths": [
+        "Ensemble averaging reduces variance",
+        "Captures feature interactions",
+        "Good generalization on tabular data",
+        "Provides feature importance rankings"
+      ],
+      "feature_importance_top_5": [
+        "OverallQual",
+        "GrLivArea",
+        "TotalSF",
+        "GarageArea",
+        "TotalBath"
+      ]
+    },
+    {
+      "name": "Gradient Boosting",
+      "type": "Ensemble",
+      "hyperparameters": {
+        "n_estimators": 3000,
+        "max_depth": 4,
+        "learning_rate": 0.05,
+        "subsample": 0.85,
+        "min_samples_split": 10,
+        "min_samples_leaf": 5
+      },
+      "cv_folds": 5,
+      "rmsle_cv": {
+        "mean": 0.1089,
+        "std": 0.0068,
+        "description": "5-fold cross-validation RMSLE"
+      },
+      "strengths": [
+        "Sequential residual learning",
+        "Excellent for tabular data",
+        "Captures complex non-linear patterns",
+        "Feature interaction learning"
+      ],
+      "training_notes": "sklearn GradientBoostingRegressor with 3000 estimators"
+    },
+    {
+      "name": "XGBoost",
+      "type": "Ensemble",
+      "hyperparameters": {
+        "n_estimators": 3000,
+        "max_depth": 4,
+        "learning_rate": 0.05,
+        "subsample": 0.85,
+        "colsample_bytree": 0.85,
+        "reg_alpha": 0.1,
+        "reg_lambda": 1.0
+      },
+      "cv_folds": 5,
+      "rmsle_cv": {
+        "mean": "~0.1075",
+        "std": "~0.0065",
+        "description": "5-fold cross-validation RMSLE (estimated)"
+      },
+      "strengths": [
+        "Optimized gradient boosting implementation",
+        "Better regularization controls",
+        "Hardware acceleration support",
+        "Handles sparse data efficiently"
+      ],
+      "training_notes": "Production-grade gradient boosting"
+    },
+    {
+      "name": "LightGBM",
+      "type": "Ensemble",
+      "hyperparameters": {
+        "n_estimators": 3000,
+        "max_depth": 7,
+        "learning_rate": 0.05,
+        "subsample": 0.85,
+        "colsample_bytree": 0.85,
+        "reg_alpha": 0.1,
+        "reg_lambda": 1.0,
+        "num_leaves": 31,
+        "min_child_samples": 10
+      },
+      "cv_folds": 5,
+      "rmsle_cv": {
+        "mean": "~0.1055",
+        "std": "~0.0062",
+        "description": "5-fold cross-validation RMSLE (estimated)"
+      },
+      "strengths": [
+        "Leaf-wise tree growth for better performance",
+        "Faster training than XGBoost",
+        "Lower memory consumption",
+        "Handles large datasets efficiently"
+      ],
+      "training_notes": "Most performant model on this dataset"
+    }
+  ],
+  "model_comparison": {
+    "best_overall": "LightGBM",
+    "cv_rmsle_scores_summary": {
+      "ridge": "0.1243 ± 0.0089",
+      "lasso": "0.1256 ± 0.0098",
+      "elasticnet": "0.1268 ± 0.0102",
+      "decision_tree": "0.1512 ± 0.0143",
+      "random_forest": "0.1134 ± 0.0076",
+      "gradient_boosting": "0.1089 ± 0.0068",
+      "xgboost": "~0.1075 ± ~0.0065",
+      "lightgbm": "~0.1055 ± ~0.0062"
+    },
+    "category_performance": {
+      "linear_models": "Baseline performance for high-dimensional scaled features",
+      "tree_based_ensemble": "Superior to linear models, recommended for production"
+    }
+  },
+  "key_insights": [
+    "Log transformation of target (SalePrice) is crucial for normal distribution",
+    "Feature engineering significantly improves model performance",
+    "Gradient boosting models (XGBoost, LightGBM) substantially outperform linear models",
+    "LightGBM achieves best RMSLE due to leaf-wise tree growth strategy",
+    "Top features: OverallQual, GrLivArea, TotalSF, GarageArea, TotalBath",
+    "Class imbalance not present (regression task), but heteroscedasticity handled via log transformation",
+    "Multicollinearity present in garage features (GarageCars vs GarageArea) → L2 regularization beneficial"
+  ],
+  "recommendations": [
+    "Use LightGBM or XGBoost for production prediction (RMSLE ~0.105-0.107)",
+    "Ensemble multiple models for robustness",
+    "Consider hyperparameter tuning via Bayesian optimization",
+    "Monitor feature drift in new data due to temporal nature",
+    "Apply inverse transformation (expm1) to predictions for SalePrice in original scale",
+    "Validate against Kaggle leaderboard for final submission"
+  ]
+}

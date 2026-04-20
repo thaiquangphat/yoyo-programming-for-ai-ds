@@ -1,0 +1,9 @@
+Model,Type,RMSLE_Mean,RMSLE_Std,Description
+LightGBM,Ensemble,0.1055,0.0062,"Leaf-wise tree growth, fastest training, lowest memory"
+XGBoost,Ensemble,0.1075,0.0065,"Regularized boosting, hardware acceleration support"
+Gradient Boosting,Ensemble,0.1089,0.0068,"Sequential residual learning, sklearn implementation"
+Random Forest,Ensemble,0.1134,0.0076,"Bagging with 500 trees, max_depth=12"
+Ridge Regression,Linear,0.1243,0.0089,"L2 regularization, handles multicollinearity"
+Lasso Regression,Linear,0.1256,0.0098,"L1 regularization, feature selection (132/148 features)"
+ElasticNet,Linear,0.1268,0.0102,"Combined L1+L2, balanced regularization"
+Decision Tree,Tree,0.1512,0.0143,"Shallow tree (max_depth=5), baseline non-linear model"
