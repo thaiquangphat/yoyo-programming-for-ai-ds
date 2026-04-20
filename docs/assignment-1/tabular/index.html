@@ -44,13 +44,13 @@
   <a href="#categorical">Categorical</a>
   <a href="#target">Target</a>
   <a href="#correlation">Correlation</a>
-  <a href="#outliers">Outliers</a>
-  <a href="#temporal">Temporal</a>
+  <!-- <a href="#outliers">Outliers</a>
+  <a href="#temporal">Temporal</a> -->
   <a href="#advanced">Advanced</a>
 </nav>
 
 <div class="hero">
-  <h1>Tabular EDA Report</h1>
+  <h1>House Price EDA Report</h1>
   <p>House Prices Dataset Analysis · Comprehensive Statistical Exploration</p>
   <div class="stats-bar">
     <div class="stat-card">
@@ -135,6 +135,12 @@
     <canvas id="missing-bar"></canvas>
   </div>
 
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Missing Data Visualization</h3>
+  <div class="chart-wrap">
+    <img src="./figures/missingno_matrix.png" alt="Missing Data Matrix" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Visual representation of missing values across all features and rows.</p>
+  </div>
+
   <div id="near-constant-panel"></div>
 </section>
 
@@ -187,6 +193,12 @@
     <canvas id="ordinal-corr"></canvas>
   </div>
 
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Ordinal vs SalePrice</h3>
+  <div class="chart-wrap">
+    <img src="./figures/ordinal_vs_saleprice.png" alt="Ordinal vs SalePrice" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Detailed relationship between ordinal features and the target variable.</p>
+  </div>
+
   <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Ordinal Feature Box Plots</h3>
   <div class="chart-wrap">
     <div style="margin-bottom: 1rem;">
@@ -217,6 +229,12 @@
     <canvas id="price-scatter"></canvas>
   </div>
 
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Scatter Plot Analysis</h3>
+  <div class="chart-wrap">
+    <img src="./figures/scatter_plots.png" alt="Scatter Plots" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Scatter plots showing relationships between selected features and price.</p>
+  </div>
+
   <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Price by Categorical</h3>
   <div class="chart-wrap">
     <div style="margin-bottom: 1rem;">
@@ -233,7 +251,7 @@
      Section 7: Outlier Analysis
      ======================================= -->
 
-<section id="outliers">
+<!-- <section id="outliers">
   <h2>Outlier Analysis</h2>
   <p class="desc">Detection and visualization of outliers and suspicious data points.</p>
   <div class="chart-wrap">
@@ -244,13 +262,13 @@
     </table>
     <canvas id="outlier-scatter"></canvas>
   </div>
-</section>
+</section> -->
 
 <!-- =======================================
      Section 8: Temporal Analysis
      ======================================= -->
 
-<section id="temporal">
+<!-- <section id="temporal">
   <h2>Temporal Analysis</h2>
   <p class="desc">Sales trends by year and month of sale.</p>
 
@@ -274,7 +292,7 @@
     </div>
     <canvas id="shift-overlay"></canvas>
   </div>
-</section>
+</section> -->
 
 <!-- =======================================
      Section 9: Correlation Heatmap
@@ -284,10 +302,23 @@
   <h2>Feature Correlation Analysis</h2>
   <p class="desc">Pairwise correlations between numeric features.</p>
 
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Interactive Correlation Heatmap</h3>
   <div class="chart-wrap">
     <div id="corr-heatmap" style="height: 700px; position: relative;">
       <p style="color: #999; padding: 2rem; text-align: center;">Loading correlation heatmap…</p>
     </div>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Full Correlation Matrix</h3>
+  <div class="chart-wrap">
+    <img src="./figures/correlation_full.png" alt="Full Correlation Matrix" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Complete pairwise correlation heatmap for all numeric features.</p>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Top 15 Correlations with Price</h3>
+  <div class="chart-wrap">
+    <img src="./figures/correlation_top15.png" alt="Top 15 Correlations" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">The 15 features most strongly correlated with the target variable (SalePrice).</p>
   </div>
 </section>
 
@@ -314,6 +345,18 @@
     <canvas id="skewness-bar"></canvas>
   </div>
 
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Pairwise Feature Relationships</h3>
+  <div class="chart-wrap">
+    <img src="./figures/pairplot.png" alt="Pairplot of Key Features" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Pairwise scatter plots showing relationships between key numeric features.</p>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Neighborhood Price Distribution</h3>
+  <div class="chart-wrap">
+    <img src="./figures/neighborhood_prices.png" alt="Neighborhood Prices" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Price distributions across different neighborhoods.</p>
+  </div>
+
   <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Detailed Neighborhood Analysis</h3>
   <div class="chart-wrap">
     <div style="margin-bottom: 1rem;">
@@ -324,6 +367,12 @@
     </div>
     <div id="nbhd-detail" style="margin-top: 1rem; font-size: 13px;"></div>
     <canvas id="nbhd-detail-box"></canvas>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Sales by Neighborhood Summary</h3>
+  <div class="chart-wrap">
+    <img src="./figures/saleprice_by_neighborhood.png" alt="Sales by Neighborhood" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Sale price breakdown showing statistical summary for each neighborhood.</p>
   </div>
 </section>
 
@@ -858,76 +907,76 @@ async function loadJSON(path) {
     }
 
     // ─ 7. Outlier Analysis ──────────────────────
-    const outliers = await loadJSON('./data/outliers.json');
-    const outlierStats = document.getElementById('outlier-stats');
-    outlierStats.innerHTML = `
-      <strong>Outlier Detection Summary:</strong><br>
-      Z-score (σ > 3): ${outliers.zscore_outlier_count || 0} points<br>
-      GrLivArea > 4000 sqft: ${outliers.grlivarea_outlier_count || 0} points<br>
-      Suspicious (high area, low price): ${outliers.suspicious_count || 0} points
-    `;
+    // const outliers = await loadJSON('./data/outliers.json');
+    // const outlierStats = document.getElementById('outlier-stats');
+    // outlierStats.innerHTML = `
+    //   <strong>Outlier Detection Summary:</strong><br>
+    //   Z-score (σ > 3): ${outliers.zscore_outlier_count || 0} points<br>
+    //   GrLivArea > 4000 sqft: ${outliers.grlivarea_outlier_count || 0} points<br>
+    //   Suspicious (high area, low price): ${outliers.suspicious_count || 0} points
+    // `;
 
-    const outlierTable = document.getElementById('outlier-table');
-    if (outliers.suspicious_rows && outliers.suspicious_rows.length > 0) {
-      outlierTable.style.display = 'table';
-      outlierTable.querySelector('tbody').innerHTML = outliers.suspicious_rows.map(r =>
-        `<tr><td>${r.Id}</td><td>${r.GrLivArea}</td><td>$${r.SalePrice.toLocaleString()}</td><td>${r.Neighborhood}</td><td>⚠ Suspicious</td></tr>`
-      ).join('');
-    }
+    // const outlierTable = document.getElementById('outlier-table');
+    // if (outliers.suspicious_rows && outliers.suspicious_rows.length > 0) {
+    //   outlierTable.style.display = 'table';
+    //   outlierTable.querySelector('tbody').innerHTML = outliers.suspicious_rows.map(r =>
+    //     `<tr><td>${r.Id}</td><td>${r.GrLivArea}</td><td>$${r.SalePrice.toLocaleString()}</td><td>${r.Neighborhood}</td><td>⚠ Suspicious</td></tr>`
+    //   ).join('');
+    // }
 
-    const outlierScatter = outliers.scatter_points || [];
-    new Chart(document.getElementById('outlier-scatter'), {
-      type: 'scatter',
-      data: { datasets: [
-        { label: 'Normal', data: outlierScatter.filter(p => !p.outlier && !p.suspicious).slice(0, 100).map(p => ({ x: p.x, y: p.y })), backgroundColor: 'rgba(79, 134, 198, 0.3)', pointRadius: 2 },
-        { label: 'Outlier', data: outlierScatter.filter(p => p.outlier).map(p => ({ x: p.x, y: p.y })), backgroundColor: '#dc3545', pointRadius: 5 },
-        { label: 'Suspicious', data: outlierScatter.filter(p => p.suspicious).map(p => ({ x: p.x, y: p.y })), backgroundColor: '#ffc107', pointRadius: 6, pointStyle: 'triangle' }
-      ]},
-      options: { responsive: true, plugins: { title: { display: true, text: 'Outlier Scatter (GrLivArea vs SalePrice)', font: { size: 14, weight: 'bold' }}}, scales: { x: { title: { display: true, text: 'GrLivArea' }}, y: { title: { display: true, text: 'SalePrice' }}}}
-    });
+    // const outlierScatter = outliers.scatter_points || [];
+    // new Chart(document.getElementById('outlier-scatter'), {
+    //   type: 'scatter',
+    //   data: { datasets: [
+    //     { label: 'Normal', data: outlierScatter.filter(p => !p.outlier && !p.suspicious).slice(0, 100).map(p => ({ x: p.x, y: p.y })), backgroundColor: 'rgba(79, 134, 198, 0.3)', pointRadius: 2 },
+    //     { label: 'Outlier', data: outlierScatter.filter(p => p.outlier).map(p => ({ x: p.x, y: p.y })), backgroundColor: '#dc3545', pointRadius: 5 },
+    //     { label: 'Suspicious', data: outlierScatter.filter(p => p.suspicious).map(p => ({ x: p.x, y: p.y })), backgroundColor: '#ffc107', pointRadius: 6, pointStyle: 'triangle' }
+    //   ]},
+    //   options: { responsive: true, plugins: { title: { display: true, text: 'Outlier Scatter (GrLivArea vs SalePrice)', font: { size: 14, weight: 'bold' }}}, scales: { x: { title: { display: true, text: 'GrLivArea' }}, y: { title: { display: true, text: 'SalePrice' }}}}
+    // });
 
     // ─ 8. Temporal Analysis ───────────────────────
-    const temporal = await loadJSON('./data/temporal_analysis.json');
+    // const temporal = await loadJSON('./data/temporal_analysis.json');
 
-    new Chart(document.getElementById('temporal-year'), {
-      type: 'line',
-      data: { labels: (temporal.by_year || []).map(y => y.year), datasets: [
-        { label: 'Mean Price', data: (temporal.by_year || []).map(y => y.mean), borderColor: '#667eea', backgroundColor: 'rgba(102, 126, 234, 0.1)', tension: 0.3 },
-        { label: 'Median Price', data: (temporal.by_year || []).map(y => y.median), borderColor: '#764ba2', backgroundColor: 'rgba(118, 75, 162, 0.1)', tension: 0.3 }
-      ]},
-      options: { responsive: true, plugins: { title: { display: true, text: 'Price Trends by Year', font: { size: 14, weight: 'bold' }}}, scales: { y: { title: { display: true, text: 'Price ($)' }}}}
-    });
+    // new Chart(document.getElementById('temporal-year'), {
+    //   type: 'line',
+    //   data: { labels: (temporal.by_year || []).map(y => y.year), datasets: [
+    //     { label: 'Mean Price', data: (temporal.by_year || []).map(y => y.mean), borderColor: '#667eea', backgroundColor: 'rgba(102, 126, 234, 0.1)', tension: 0.3 },
+    //     { label: 'Median Price', data: (temporal.by_year || []).map(y => y.median), borderColor: '#764ba2', backgroundColor: 'rgba(118, 75, 162, 0.1)', tension: 0.3 }
+    //   ]},
+    //   options: { responsive: true, plugins: { title: { display: true, text: 'Price Trends by Year', font: { size: 14, weight: 'bold' }}}, scales: { y: { title: { display: true, text: 'Price ($)' }}}}
+    // });
 
-    new Chart(document.getElementById('temporal-month'), {
-      type: 'bar',
-      data: { labels: (temporal.by_month || []).map(m => m.month_name), datasets: [{ label: 'Mean Price', data: (temporal.by_month || []).map(m => m.mean), backgroundColor: '#4f86c6' }]},
-      options: { responsive: true, plugins: { title: { display: true, text: 'Sales Activity by Month', font: { size: 14, weight: 'bold' }}, legend: { display: false }}}
-    });
+    // new Chart(document.getElementById('temporal-month'), {
+    //   type: 'bar',
+    //   data: { labels: (temporal.by_month || []).map(m => m.month_name), datasets: [{ label: 'Mean Price', data: (temporal.by_month || []).map(m => m.mean), backgroundColor: '#4f86c6' }]},
+    //   options: { responsive: true, plugins: { title: { display: true, text: 'Sales Activity by Month', font: { size: 14, weight: 'bold' }}, legend: { display: false }}}
+    // });
 
-    // ─ 8b. Distribution Shift ────────────────── 
-    const shift = await loadJSON('./data/distribution_shift.json');
-    const shiftFeatures = Object.keys(shift.features || {}).slice(0, 10);
-    const shiftSelect = document.getElementById('shift-select');
-    shiftSelect.innerHTML = shiftFeatures.map(f => `<option value="${f}">${f}</option>`).join('');
+    // // ─ 8b. Distribution Shift ────────────────── 
+    // const shift = await loadJSON('./data/distribution_shift.json');
+    // const shiftFeatures = Object.keys(shift.features || {}).slice(0, 10);
+    // const shiftSelect = document.getElementById('shift-select');
+    // shiftSelect.innerHTML = shiftFeatures.map(f => `<option value="${f}">${f}</option>`).join('');
 
-    let shiftChart = null;
-    function renderShift(feature) {
-      const featureShift = shift.features[feature];
-      if (!featureShift || !featureShift.train_hist) return;
-      const edges = featureShift.train_hist.bin_edges;
-      const labels = edges.slice(0, -1).map((v, i) => ((v + edges[i + 1]) / 2).toFixed(1));
-      if (shiftChart) shiftChart.destroy();
-      shiftChart = new Chart(document.getElementById('shift-overlay'), {
-        type: 'bar',
-        data: { labels, datasets: [
-          { label: 'Train', data: featureShift.train_hist.counts, backgroundColor: 'rgba(79, 134, 198, 0.5)' },
-          { label: 'Test', data: featureShift.test_hist.counts, backgroundColor: 'rgba(118, 75, 162, 0.5)' }
-        ]},
-        options: { responsive: true, plugins: { title: { display: true, text: `${feature}: Train vs Test`, font: { size: 14, weight: 'bold' }}}}
-      });
-    }
-    shiftSelect.addEventListener('change', e => renderShift(e.target.value));
-    if (shiftFeatures.length) renderShift(shiftFeatures[0]);
+    // let shiftChart = null;
+    // function renderShift(feature) {
+    //   const featureShift = shift.features[feature];
+    //   if (!featureShift || !featureShift.train_hist) return;
+    //   const edges = featureShift.train_hist.bin_edges;
+    //   const labels = edges.slice(0, -1).map((v, i) => ((v + edges[i + 1]) / 2).toFixed(1));
+    //   if (shiftChart) shiftChart.destroy();
+    //   shiftChart = new Chart(document.getElementById('shift-overlay'), {
+    //     type: 'bar',
+    //     data: { labels, datasets: [
+    //       { label: 'Train', data: featureShift.train_hist.counts, backgroundColor: 'rgba(79, 134, 198, 0.5)' },
+    //       { label: 'Test', data: featureShift.test_hist.counts, backgroundColor: 'rgba(118, 75, 162, 0.5)' }
+    //     ]},
+    //     options: { responsive: true, plugins: { title: { display: true, text: `${feature}: Train vs Test`, font: { size: 14, weight: 'bold' }}}}
+    //   });
+    // }
+    // shiftSelect.addEventListener('change', e => renderShift(e.target.value));
+    // if (shiftFeatures.length) renderShift(shiftFeatures[0]);
 
     // ─ 9. Correlation Heatmap (lazy-loaded) ─────
     const observerCorr = new IntersectionObserver(entries => {

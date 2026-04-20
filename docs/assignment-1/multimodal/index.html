@@ -23,7 +23,7 @@
 </nav>
 
 <div class="hero">
-  <h1>Multi-modal EDA Report</h1>
+  <h1>COCO Dataset EDA Report</h1>
   <p>Comprehensive Exploratory Data Analysis · Image & Caption Dataset</p>
   <div class="stats-bar">
     <div class="stat-box">
@@ -56,9 +56,18 @@
   <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Key Findings</h3>
   <div id="key-findings" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;"></div>
   
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Caption Length Distribution</h3>
   <div class="chart-wrap">
     <canvas id="token-hist"></canvas>
   </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Captions Per Image Analysis</h3>
+  <div class="chart-wrap">
+    <img src="./figures/01_caps_per_image.png" alt="Captions Per Image" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Distribution of caption count per image in the dataset.</p>
+  </div>
+
+
 </section>
 
 <section id="quality">
@@ -86,6 +95,18 @@
   <div class="chart-wrap">
     <canvas id="aspect-hist"></canvas>
   </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Image Clustering Analysis</h3>
+  <div class="chart-wrap">
+    <img src="./figures/05_image_clusters.png" alt="Image Clusters" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Clustering of images based on visual features.</p>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">PCA Image Clusters</h3>
+  <div class="chart-wrap">
+    <img src="./figures/06_image_pca_clusters.png" alt="Image PCA Clusters" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Principal Component Analysis visualization of image clusters.</p>
+  </div>
 </section>
 
 <!-- =======================================
@@ -95,6 +116,12 @@
 <section id="colors">
   <h2>Colour Profile Analysis</h2>
   <p class="desc">Dominant colour per category and brightness/contrast characteristics.</p>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Color Statistics</h3>
+  <div class="chart-wrap">
+    <img src="./figures/04_color_stats.png" alt="Color Statistics" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Overview of color distribution statistics in the dataset.</p>
+  </div>
 
   <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Global RGB Distribution</h3>
   <div class="chart-wrap">
@@ -111,6 +138,18 @@
     <div id="swatches"></div>
   </div>
 
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Category RGB Profiles</h3>
+  <div class="chart-wrap">
+    <img src="./figures/22_category_rgb_profiles.png" alt="Category RGB Profiles" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">RGB color profiles for each category in the dataset.</p>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Category Color Distribution</h3>
+  <div class="chart-wrap">
+    <img src="./figures/23_category_color_swatches.png" alt="Color Swatches" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Visual representation of dominant colors by category.</p>
+  </div>
+
   <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Brightness & Contrast by Category</h3>
   <div class="chart-wrap">
     <canvas id="brightness-chart"></canvas>
@@ -120,6 +159,7 @@
   <div class="chart-wrap">
     <canvas id="bbox-chart"></canvas>
   </div>
+
 </section>
 
 <!-- =======================================
@@ -133,6 +173,12 @@
   <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Top Content Words</h3>
   <div class="chart-wrap">
     <canvas id="vocab-bar"></canvas>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Word Cloud</h3>
+  <div class="chart-wrap">
+    <img src="./figures/08_wordcloud.png" alt="Word Cloud" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Visual word cloud representing word frequency in captions.</p>
   </div>
 
   <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">POS Tag Distribution</h3>
@@ -165,6 +211,12 @@
     </p>
     <canvas id="align-chart"></canvas>
   </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Sentence Complexity</h3>
+  <div class="chart-wrap">
+    <img src="./figures/15_sentence_complexity.png" alt="Sentence Complexity" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Analysis of caption complexity metrics and linguistic patterns.</p>
+  </div>
 </section>
 
 <!-- =======================================
@@ -182,11 +234,35 @@
     </div>
   </div>
 
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">CLIP Image Similarity</h3>
+  <div class="chart-wrap">
+    <img src="./figures/13_clip_similarity.png" alt="CLIP Similarity" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Similarity matrix and relationships between images using CLIP embeddings.</p>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">CLIP t-SNE by Supercategory</h3>
+  <div class="chart-wrap">
+    <img src="./figures/26_clip_tsne_by_supercategory.png" alt="CLIP t-SNE" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">t-SNE projection of CLIP image embeddings colored by supercategory.</p>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">CLIP UMAP by Supercategory</h3>
+  <div class="chart-wrap">
+    <img src="./figures/27_clip_umap_by_supercategory.png" alt="CLIP UMAP" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">UMAP projection of CLIP embeddings showing supercategory separation.</p>
+  </div>
+
   <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Text Embeddings</h3>
   <div class="chart-wrap">
     <div id="tsne-text-div" style="height: 600px; position: relative;">
       <p class="loading">Loading text embeddings…</p>
     </div>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Caption UMAP Projection</h3>
+  <div class="chart-wrap">
+    <img src="./figures/19_umap_captions.png" alt="Caption UMAP" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">UMAP projection showing caption embedding clusters.</p>
   </div>
 </section>
 
@@ -199,6 +275,36 @@
   <p class="desc">Sample images and captions organized by category.</p>
   <div class="tab-bar" id="gallery-tabs"></div>
   <div id="gallery-grid"></div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Category Image Grid</h3>
+  <div class="chart-wrap">
+    <img src="./figures/21_category_image_grid.png" alt="Category Grid" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Grid of representative images from each category.</p>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Representative Images Per Cluster</h3>
+  <div class="chart-wrap">
+    <img src="./figures/28_representative_images_per_cluster.png" alt="Representative Images" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Representative images selected from each identified cluster.</p>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Dataset Mosaic</h3>
+  <div class="chart-wrap">
+    <img src="./figures/29_dataset_mosaic.png" alt="Dataset Mosaic" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Mosaic view showcasing diversity of images in the dataset.</p>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Caption Length by Supercategory</h3>
+  <div class="chart-wrap">
+    <img src="./figures/30_caption_length_by_supercategory.png" alt="Caption Length" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Analysis of caption lengths across supercategories.</p>
+  </div>
+
+  <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Annotated Strip Per Supercategory</h3>
+  <div class="chart-wrap">
+    <img src="./figures/32_annotated_strip_per_supercategory.png" alt="Annotated Strip" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px;">
+    <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Annotated image strips showing examples from each supercategory.</p>
+  </div>
 </section>
 
 <!-- =======================================
@@ -224,6 +330,7 @@
   <div class="chart-wrap">
     <canvas id="diff-hist"></canvas>
   </div>
+
   
   <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">Difficulty Extremes</h3>
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
@@ -246,6 +353,8 @@
 
   <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #1a1a2e;">LDA Topics</h3>
   <div id="topics-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem;"></div>
+
+
 </section>
 
 <footer style="background: #1a1a2e; color: #ccc; padding: 3rem 2rem; text-align: center; margin-top: 4rem; font-size: 12px;">
