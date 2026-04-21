@@ -153,6 +153,11 @@
       color: #721c24;
     }
 
+    .badge.tree {
+      background: #fff3cd;
+      color: #856404;
+    }
+
     code {
       background: #f8f8f8;
       padding: 0.2rem 0.4rem;
@@ -204,9 +209,23 @@
       margin-top: 4rem;
       font-size: 12px;
     }
+
+    /* Loading / error states */
+    #loading-overlay {
+      position: fixed; inset: 0;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #667eea;
+      z-index: 9999;
+    }
   </style>
 </head>
 <body>
+
+<div id="loading-overlay">Loading data…</div>
 
 <div class="breadcrumb">
   <a href="../../">← Home</a> / <a href="../">Assignment 2</a> / Tabular Regression
@@ -214,7 +233,11 @@
 
 <div class="hero" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 3rem 2rem; text-align: center;">
   <h1 style="-webkit-text-fill-color: unset; background: unset;">Tabular Regression: House Price Prediction</h1>
-  <p style="color: #aaa; font-size: 1rem;">Kaggle Advanced House Prices Dataset | 8 Models | RMSLE Evaluation</p>
+  <p style="color: #aaa; font-size: 1rem;">
+    <span id="hero-source">Kaggle</span> Advanced House Prices Dataset |
+    <span id="hero-model-count">8</span> Models |
+    <span id="hero-metric">RMSLE</span> Evaluation
+  </p>
 </div>
 
 <div class="content">
@@ -222,22 +245,22 @@
   <!-- Dataset Overview -->
   <div class="section">
     <h2>📊 Dataset Overview</h2>
-    
+
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
       <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
-        <div style="font-size: 2rem; font-weight: bold;">1,458</div>
+        <div id="stat-train" style="font-size: 2rem; font-weight: bold;">—</div>
         <div style="font-size: 12px; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px;">Training Samples</div>
       </div>
       <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
-        <div style="font-size: 2rem; font-weight: bold;">1,459</div>
+        <div id="stat-test" style="font-size: 2rem; font-weight: bold;">—</div>
         <div style="font-size: 12px; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px;">Test Samples</div>
       </div>
       <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
-        <div style="font-size: 2rem; font-weight: bold;">148</div>
+        <div id="stat-features" style="font-size: 2rem; font-weight: bold;">—</div>
         <div style="font-size: 12px; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px;">Engineered Features</div>
       </div>
       <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
-        <div style="font-size: 2rem; font-weight: bold;">log1p</div>
+        <div id="stat-transform" style="font-size: 2rem; font-weight: bold;">—</div>
         <div style="font-size: 12px; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px;">Target Transform</div>
       </div>
     </div>
@@ -251,7 +274,7 @@
   <!-- Data Preprocessing -->
   <div class="section">
     <h2>🔧 Data Preprocessing & Feature Engineering</h2>
-    
+
     <h3>Missing Value Handling</h3>
     <table>
       <thead>
@@ -261,72 +284,27 @@
           <th>Columns</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td><strong>Absence = 'None'</strong></td>
-          <td>No feature → categorical 'None'</td>
-          <td>Alley, BsmtQual, BsmtCond, BsmtExposure, BsmtFinType1/2, FireplaceQu, GarageType, GarageQual, GarageCond, PoolQC, Fence, MiscFeature, MasVnrType</td>
-        </tr>
-        <tr>
-          <td><strong>Absence = 0</strong></td>
-          <td>No feature → numeric 0</td>
-          <td>BsmtFinSF1, BsmtFinSF2, BsmtUnfSF, TotalBsmtSF, BsmtFullBath, BsmtHalfBath, GarageArea, GarageCars, MasVnrArea, PoolArea, MiscVal</td>
-        </tr>
-        <tr>
-          <td><strong>Domain Logic</strong></td>
-          <td>GarageYrBlt missing → YearBuilt (no garage)</td>
-          <td>GarageYrBlt</td>
-        </tr>
-        <tr>
-          <td><strong>Neighborhood Median</strong></td>
-          <td>Impute with neighborhood-specific median</td>
-          <td>LotFrontage</td>
-        </tr>
-        <tr>
-          <td><strong>Mode per Category</strong></td>
-          <td>Fill with most frequent value in group</td>
-          <td>MSZoning (by MSSubClass)</td>
-        </tr>
-        <tr>
-          <td><strong>Median/Mode</strong></td>
-          <td>Global imputation for remaining</td>
-          <td>All other numeric/categorical columns</td>
-        </tr>
+      <tbody id="missing-value-table">
+        <!-- filled by JS -->
       </tbody>
     </table>
 
-    <h3>Feature Engineering (14 New Features)</h3>
-    <ol>
-      <li><strong>HouseAge = YrSold - YearBuilt</strong> → Age at time of sale (not calendar year)</li>
-      <li><strong>RemodAge = YrSold - YearRemodAdd</strong> → Years since last remodel</li>
-      <li><strong>GarageAge = YrSold - GarageYrBlt</strong> → Garage age (Age = 0 if integrated, Age &lt; 0 if added later)</li>
-      <li><strong>YearsSinceRemod = max(0, YearRemodAdd - YearBuilt)</strong> → Remod frequency indicator</li>
-      <li><strong>TotalSF = TotalBsmtSF + 1stFlrSF + 2ndFlrSF</strong> → Total living space</li>
-      <li><strong>TotalPorchSF = WoodDeckSF + OpenPorchSF + EnclosedPorch + ScreenPorch</strong> → Outdoor space</li>
-      <li><strong>TotalBath = FullBath + 0.5×HalfBath + BsmtFullBath + 0.5×BsmtHalfBath</strong> → Total bathroom count</li>
-      <li><strong>HasGarage = (GarageArea &gt; 0)</strong> → Binary garage indicator</li>
-      <li><strong>HasFireplace = (Fireplaces &gt; 0)</strong> → Binary fireplace indicator</li>
-      <li><strong>Has2ndFloor = (2ndFlrSF &gt; 0)</strong> → Binary second floor indicator</li>
-      <li><strong>HasBsmt = (TotalBsmtSF &gt; 0)</strong> → Binary basement indicator</li>
-      <li><strong>HasWoodDeck = (WoodDeckSF &gt; 0)</strong> → Binary wood deck indicator</li>
-      <li><strong>LivingLotRatio = GrLivArea / LotArea</strong> → Space utilization ratio</li>
-      <li><strong>BsmtRatio = TotalBsmtSF / TotalSF</strong> → Basement proportion</li>
+    <h3 id="fe-heading">Feature Engineering</h3>
+    <ol id="feature-engineering-list">
+      <!-- filled by JS -->
     </ol>
 
     <h3>Transformations</h3>
-    <ul>
-      <li><strong>Log1p Transformation:</strong> Applied to 22 highly skewed features (|skew| &gt; 0.75) for normalization</li>
-      <li><strong>Target Encoding:</strong> High-cardinality features (Neighborhood, Exterior1st, Exterior2nd, SaleType) encoded via smoothed means (α=10)</li>
-      <li><strong>One-Hot Encoding:</strong> Remaining categorical variables converted to binary features</li>
-      <li><strong>StandardScaler:</strong> Numeric features scaled to zero mean, unit variance for linear models</li>
+    <ul id="transformations-list">
+      <!-- filled by JS -->
     </ul>
   </div>
 
   <!-- Model Comparison -->
   <div class="section">
     <h2>🤖 Model Training & Evaluation</h2>
-    
-    <p><strong>Evaluation Method:</strong> 5-fold stratified cross-validation on training set, reporting mean ± std RMSLE</p>
+
+    <p><strong>Evaluation Method:</strong> 5-fold cross-validation on training set, reporting mean ± std RMSLE</p>
 
     <table>
       <thead>
@@ -337,205 +315,72 @@
           <th>Key Hyperparameters</th>
         </tr>
       </thead>
-      <tbody>
-        <tr class="highlight">
-          <td><strong>LightGBM</strong></td>
-          <td><span class="badge ensemble">Ensemble</span></td>
-          <td><strong>~0.1055 ± 0.0062</strong> <span class="badge best">BEST</span></td>
-          <td>n_est=3000, max_depth=7, lr=0.05, colsample=0.85</td>
-        </tr>
-        <tr class="highlight">
-          <td><strong>XGBoost</strong></td>
-          <td><span class="badge ensemble">Ensemble</span></td>
-          <td><strong>~0.1075 ± 0.0065</strong> <span class="badge best">BEST</span></td>
-          <td>n_est=3000, max_depth=4, lr=0.05, colsample=0.85</td>
-        </tr>
-        <tr>
-          <td>Gradient Boosting</td>
-          <td><span class="badge ensemble">Ensemble</span></td>
-          <td>0.1089 ± 0.0068</td>
-          <td>n_est=3000, max_depth=4, lr=0.05, subsample=0.85</td>
-        </tr>
-        <tr>
-          <td>Random Forest</td>
-          <td><span class="badge ensemble">Ensemble</span></td>
-          <td>0.1134 ± 0.0076</td>
-          <td>n_est=500, max_depth=12, min_samples_leaf=5</td>
-        </tr>
-        <tr>
-          <td>Ridge Regression</td>
-          <td><span class="badge linear">Linear</span></td>
-          <td>0.1243 ± 0.0089</td>
-          <td>alpha=15.0</td>
-        </tr>
-        <tr>
-          <td>Lasso Regression</td>
-          <td><span class="badge linear">Linear</span></td>
-          <td>0.1256 ± 0.0098</td>
-          <td>alpha=0.0005, max_iter=5000, features_selected=132/148</td>
-        </tr>
-        <tr>
-          <td>ElasticNet</td>
-          <td><span class="badge linear">Linear</span></td>
-          <td>0.1268 ± 0.0102</td>
-          <td>alpha=0.0005, l1_ratio=0.9, max_iter=5000</td>
-        </tr>
-        <tr>
-          <td>Decision Tree</td>
-          <td><span class="badge linear">Tree</span></td>
-          <td>0.1512 ± 0.0143</td>
-          <td>max_depth=5, min_samples_split=20, min_samples_leaf=10</td>
-        </tr>
+      <tbody id="model-table">
+        <!-- filled by JS -->
       </tbody>
     </table>
 
-    <h3>Model Performance Insights</h3>
-    <div class="grid">
-      <div class="model-card">
-        <h4>🏆 LightGBM (Best)</h4>
-        <div class="metric">0.1055 ± 0.0062</div>
-        <p style="font-size: 13px; margin: 0.5rem 0;">Leaf-wise tree growth strategy outperforms level-wise boosting. Fastest training, lowest memory footprint.</p>
-      </div>
-      <div class="model-card">
-        <h4>🥈 XGBoost</h4>
-        <div class="metric">0.1075 ± 0.0065</div>
-        <p style="font-size: 13px; margin: 0.5rem 0;">Regularization (L1/L2) and better hardware support. Production-grade implementation.</p>
-      </div>
-      <div class="model-card">
-        <h4>📊 Gradient Boosting</h4>
-        <div class="metric">0.1089 ± 0.0068</div>
-        <p style="font-size: 13px; margin: 0.5rem 0;">Sklearn implementation. Sequential residual learning captures complex patterns.</p>
-      </div>
+    <h3>Top 3 Model Highlights</h3>
+    <div class="grid" id="top-model-cards">
+      <!-- filled by JS -->
     </div>
   </div>
 
   <!-- Feature Importance -->
   <div class="section">
     <h2>⭐ Feature Importance Analysis</h2>
-    
-    <h3>Top 10 Features by Model</h3>
+
+    <h3>Top Features by Model</h3>
     <table>
       <thead>
         <tr>
           <th>Rank</th>
-          <th>LightGBM</th>
-          <th>XGBoost</th>
-          <th>Random Forest</th>
-          <th>Common Across Models</th>
+          <th id="fi-col-1">—</th>
+          <th id="fi-col-2">—</th>
+          <th id="fi-col-3">—</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>OverallQual</td>
-          <td>GrLivArea</td>
-          <td>OverallQual</td>
-          <td rowspan="5" style="font-style: italic; color: #667eea;"><strong>OverallQual<br/>GrLivArea<br/>TotalSF</strong></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>GrLivArea</td>
-          <td>OverallQual</td>
-          <td>GrLivArea</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>TotalSF</td>
-          <td>TotalSF</td>
-          <td>TotalSF</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>GarageArea</td>
-          <td>GarageArea</td>
-          <td>GarageArea</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>TotalBath</td>
-          <td>TotalBath</td>
-          <td>TotalBath</td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>HouseAge</td>
-          <td>HouseAge</td>
-          <td>YearBuilt</td>
-          <td rowspan="5">Age & remodeling<br/>factors important</td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td>YearBuilt</td>
-          <td>YearBuilt</td>
-          <td>HouseAge</td>
-        </tr>
-        <tr>
-          <td>8</td>
-          <td>YearRemodAdd</td>
-          <td>YearRemodAdd</td>
-          <td>YearRemodAdd</td>
-        </tr>
-        <tr>
-          <td>9</td>
-          <td>LotArea</td>
-          <td>LotArea</td>
-          <td>LotArea</td>
-        </tr>
-        <tr>
-          <td>10</td>
-          <td>Neighborhood_tgt</td>
-          <td>Neighborhood_tgt</td>
-          <td>GarageCars</td>
-        </tr>
+      <tbody id="feature-importance-table">
+        <!-- filled by JS -->
       </tbody>
     </table>
 
     <h3>Feature Importance Observations</h3>
-    <ul>
-      <li><strong>Structural Features Dominate:</strong> OverallQual, GrLivArea, TotalSF consistently top-ranked (30-40% relative importance)</li>
-      <li><strong>Age Matters:</strong> HouseAge, YearBuilt, YearRemodAdd ranked 6-8, confirming temporal effect on valuation</li>
-      <li><strong>Engineered Features Valuable:</strong> TotalSF (synthetic) ranks 3rd, TotalBath (5th) — validates feature engineering</li>
-      <li><strong>Location Encoded:</strong> Neighborhood (target-encoded) ranks 10th, indicating geographic price variation</li>
-      <li><strong>Garage & Lot Size:</strong> GarageArea (4th), LotArea (9th) confirm external amenities importance</li>
+    <ul id="key-insights-list">
+      <!-- filled by JS -->
     </ul>
   </div>
 
   <!-- Key Findings -->
   <div class="section">
     <h2>💡 Key Findings & Insights</h2>
-    
+
     <h3>Data Quality & Preprocessing</h3>
     <ul>
-      <li><strong>2 outliers removed:</strong> GrLivArea &gt; 4000 sf with SalePrice &lt; $300k (anomalies)</li>
+      <li id="outlier-note">—</li>
       <li><strong>Missing values strategic:</strong> Domain knowledge → 'None' for absent features, 0 for absent areas</li>
-      <li><strong>Target skewness:</strong> Log transformation reduces skew from ~1.88 to ~0.15 (nearly normal)</li>
-      <li><strong>Feature engineering impact:</strong> 14 new features improve ensemble models by 3-5% RMSLE</li>
+      <li><strong>Target skewness:</strong> Log transformation reduces skew to nearly normal distribution</li>
+      <li><strong>Feature engineering impact:</strong> <span id="fe-count">—</span> new features engineered from existing columns</li>
     </ul>
 
     <h3>Model Selection Rationale</h3>
-    <ul>
-      <li><strong>Ensemble > Linear:</strong> Gradient boosting models 13-14% better than Ridge/Lasso (0.1055 vs 0.1243)</li>
-      <li><strong>Captures Non-Linearity:</strong> Random Forest (0.1134) demonstrates threshold effects (e.g., OverallQual ≥ 8 jump)</li>
-      <li><strong>Gradient Boosting Best-in-Class:</strong> Learns residual errors sequentially; LightGBM/XGBoost leverage leaf-wise growth</li>
-      <li><strong>Regularization Important:</strong> L2 (Ridge) handles GarageCars/GarageArea multicollinearity; L1 (Lasso) selects 132/148 features</li>
+    <ul id="model-selection-notes">
+      <!-- filled by JS -->
     </ul>
 
     <h3>Production Deployment</h3>
-    <ul>
-      <li><strong>Model Choice:</strong> LightGBM recommended (RMSLE: ~0.105, fastest training)</li>
-      <li><strong>Ensemble Strategy:</strong> Average predictions from LightGBM + XGBoost for robustness</li>
-      <li><strong>Prediction Post-processing:</strong> Apply <code>expm1(log_prediction)</code> to recover original SalePrice scale</li>
-      <li><strong>Hyperparameter Tuning:</strong> Bayesian optimization can further reduce RMSLE to ~0.10</li>
+    <ul id="recommendations-list">
+      <!-- filled by JS -->
     </ul>
   </div>
 
   <!-- Recommendations -->
   <div class="section">
     <h2>🎯 Recommendations for Improvement</h2>
-    
+
     <h3>Short-term (Quick Wins)</h3>
     <ol>
-      <li><strong>Hyperparameter Tuning:</strong> GridSearch/Bayesian optimization on best 3 models (LightGBM, XGBoost, GradientBoosting)</li>
+      <li><strong>Hyperparameter Tuning:</strong> GridSearch/Bayesian optimization on the best-performing models</li>
       <li><strong>Ensemble Stacking:</strong> Train meta-learner on Level-0 predictions from multiple models</li>
       <li><strong>Feature Interaction Terms:</strong> Add polynomial/interaction features (e.g., OverallQual × GrLivArea)</li>
       <li><strong>Cross-validation Refinement:</strong> Use TimeSeriesSplit if temporal patterns present (YrSold trend)</li>
@@ -566,6 +411,274 @@
     House price prediction using advanced feature engineering and ensemble methods
   </p>
 </footer>
+
+<script>
+// ─────────────────────────────────────────────────────────────────────────────
+// Helpers
+// ─────────────────────────────────────────────────────────────────────────────
+function fmt(mean, std) {
+  const m = typeof mean === 'number' ? mean.toFixed(4) : mean;
+  const s = typeof std  === 'number' ? std.toFixed(4)  : std;
+  return `${m} ± ${s}`;
+}
+
+function hyperStr(hp) {
+  return Object.entries(hp)
+    .map(([k, v]) => `${k}=${v}`)
+    .join(', ');
+}
+
+function badgeClass(type) {
+  const t = (type || '').toLowerCase();
+  if (t === 'ensemble') return 'ensemble';
+  if (t === 'linear')   return 'linear';
+  return 'tree';
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Render missing-value strategy table from handling_missing_values array
+// ─────────────────────────────────────────────────────────────────────────────
+function renderMissingValueTable(strategies) {
+  // Parse the flat string array into structured rows
+  const rows = [
+    {
+      strategy: "Absence = 'None'",
+      interpretation: "No feature → categorical 'None'",
+      key: "Absence features"
+    },
+    {
+      strategy: "Absence = 0",
+      interpretation: "No feature → numeric 0",
+      key: "Zero-filled features"
+    },
+    {
+      strategy: "Domain Logic",
+      interpretation: "GarageYrBlt missing → YearBuilt (no garage)",
+      key: "GarageYrBlt"
+    },
+    {
+      strategy: "Neighborhood Median",
+      interpretation: "Impute with neighborhood-specific median",
+      key: "LotFrontage"
+    },
+    {
+      strategy: "Mode per Category",
+      interpretation: "Fill with most frequent value in group",
+      key: "MSZoning"
+    },
+    {
+      strategy: "Median / Mode",
+      interpretation: "Global imputation for remaining",
+      key: "Remaining"
+    }
+  ];
+
+  const tbody = document.getElementById('missing-value-table');
+  tbody.innerHTML = rows.map(r => {
+    // Find matching string from JSON for the columns cell
+    const match = strategies.find(s => s.includes(r.key)) || '';
+    // Extract column names after the colon
+    const colonIdx = match.indexOf(':');
+    const cols = colonIdx !== -1 ? match.slice(colonIdx + 1).trim() : r.key;
+    return `<tr>
+      <td><strong>${r.strategy}</strong></td>
+      <td>${r.interpretation}</td>
+      <td>${cols}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Render model comparison table (sorted best → worst by RMSLE mean)
+// ─────────────────────────────────────────────────────────────────────────────
+function renderModelTable(models, bestOverall) {
+  // Sort by RMSLE mean ascending
+  const sorted = [...models].sort((a, b) => {
+    const am = parseFloat(a.rmsle_cv.mean);
+    const bm = parseFloat(b.rmsle_cv.mean);
+    return am - bm;
+  });
+
+  const bestRMSLE = parseFloat(sorted[0].rmsle_cv.mean);
+
+  const tbody = document.getElementById('model-table');
+  tbody.innerHTML = sorted.map(m => {
+    const mean = parseFloat(m.rmsle_cv.mean);
+    const isBest = mean === bestRMSLE;
+    const rowClass = isBest ? ' class="highlight"' : '';
+    const bestBadge = isBest ? ' <span class="badge best">BEST</span>' : '';
+    const bc = badgeClass(m.type);
+
+    let hpStr = hyperStr(m.hyperparameters);
+    if (m.features_selected) hpStr += `, features_selected=${m.features_selected}`;
+
+    return `<tr${rowClass}>
+      <td><strong>${m.name}</strong></td>
+      <td><span class="badge ${bc}">${m.type}</span></td>
+      <td><strong>${fmt(m.rmsle_cv.mean, m.rmsle_cv.std)}</strong>${bestBadge}</td>
+      <td>${hpStr}</td>
+    </tr>`;
+  }).join('');
+
+  return sorted;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Top-3 model cards
+// ─────────────────────────────────────────────────────────────────────────────
+const MEDALS = ['🏆', '🥈', '📊'];
+
+function renderTopCards(sorted) {
+  const top3 = sorted.slice(0, 3);
+  const container = document.getElementById('top-model-cards');
+  container.innerHTML = top3.map((m, i) => {
+    const notes = m.training_notes || m.use_case || '';
+    return `<div class="model-card">
+      <h4>${MEDALS[i]} ${m.name}${i === 0 ? ' (Best)' : ''}</h4>
+      <div class="metric">${fmt(m.rmsle_cv.mean, m.rmsle_cv.std)}</div>
+      <p style="font-size:13px;margin:0.5rem 0;">${notes}</p>
+    </div>`;
+  }).join('');
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Feature importance table — use whichever models have importance data
+// ─────────────────────────────────────────────────────────────────────────────
+function renderFeatureImportanceTable(models) {
+  // Prefer models that have a top-10 list (any key matching feature_importance_top*)
+  const withImportance = models.filter(m =>
+    Object.keys(m).some(k => k.startsWith('feature_importance'))
+  );
+
+  // Pick up to 3 for display
+  const cols = withImportance.slice(0, 3);
+  if (cols.length === 0) return;
+
+  // Set column headers
+  cols.forEach((m, i) => {
+    const el = document.getElementById(`fi-col-${i + 1}`);
+    if (el) el.textContent = m.name;
+  });
+  // Hide unused header cells
+  for (let i = cols.length; i < 3; i++) {
+    const el = document.getElementById(`fi-col-${i + 1}`);
+    if (el) el.style.display = 'none';
+  }
+
+  // Find the key with importance data for each model
+  function getImportanceList(m) {
+    const key = Object.keys(m).find(k => k.startsWith('feature_importance'));
+    return key ? m[key] : [];
+  }
+
+  const lists = cols.map(getImportanceList);
+  const maxLen = Math.max(...lists.map(l => l.length));
+
+  const tbody = document.getElementById('feature-importance-table');
+  tbody.innerHTML = Array.from({ length: maxLen }, (_, i) => {
+    const cells = lists.map(l => `<td>${l[i] || '—'}</td>`).join('');
+    return `<tr><td>${i + 1}</td>${cells}</tr>`;
+  }).join('');
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Main render function
+// ─────────────────────────────────────────────────────────────────────────────
+async function init() {
+  let data;
+  try {
+    const res = await fetch('models_results.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    data = await res.json();
+  } catch (err) {
+    document.getElementById('loading-overlay').textContent =
+      `⚠️ Could not load models_results.json: ${err.message}`;
+    return;
+  }
+
+  const ds   = data.dataset;
+  const prep = data.data_preprocessing;
+  const models = data.models;
+  const comp = data.model_comparison;
+
+  // ── Hero ──────────────────────────────────────────────────────────────────
+  document.getElementById('hero-source').textContent = ds.source;
+  document.getElementById('hero-model-count').textContent = models.length;
+  document.getElementById('hero-metric').textContent = ds.evaluation_metric;
+
+  // ── Dataset stat cards ────────────────────────────────────────────────────
+  document.getElementById('stat-train').textContent    = ds.train_size.toLocaleString();
+  document.getElementById('stat-test').textContent     = ds.test_size.toLocaleString();
+  document.getElementById('stat-features').textContent = prep.total_features_after;
+  document.getElementById('stat-transform').textContent= ds.target_transformation;
+
+  // ── Missing value table ───────────────────────────────────────────────────
+  renderMissingValueTable(prep.handling_missing_values);
+
+  // ── Feature engineering list ──────────────────────────────────────────────
+  const feList = document.getElementById('feature-engineering-list');
+  document.getElementById('fe-heading').textContent =
+    `Feature Engineering (${prep.feature_engineering.length} New Features)`;
+  feList.innerHTML = prep.feature_engineering.map(f => {
+    // Bold the formula part (before first space that follows '=')
+    const eqIdx = f.indexOf(' = ');
+    if (eqIdx !== -1) {
+      const name = f.slice(0, eqIdx);
+      const rest = f.slice(eqIdx + 3);
+      return `<li><strong>${name}</strong> = ${rest}</li>`;
+    }
+    return `<li>${f}</li>`;
+  }).join('');
+
+  document.getElementById('fe-count').textContent = prep.feature_engineering.length;
+
+  // ── Transformations ───────────────────────────────────────────────────────
+  const transList = document.getElementById('transformations-list');
+  transList.innerHTML = prep.transformations.map(t => {
+    const colonIdx = t.indexOf(':');
+    if (colonIdx !== -1) {
+      return `<li><strong>${t.slice(0, colonIdx)}</strong>: ${t.slice(colonIdx + 1).trim()}</li>`;
+    }
+    return `<li>${t}</li>`;
+  }).join('');
+
+  // ── Model table ───────────────────────────────────────────────────────────
+  const sorted = renderModelTable(models, comp.best_overall);
+  renderTopCards(sorted);
+
+  // ── Feature importance ────────────────────────────────────────────────────
+  renderFeatureImportanceTable(models);
+
+  // ── Key insights ──────────────────────────────────────────────────────────
+  const insightsList = document.getElementById('key-insights-list');
+  insightsList.innerHTML = (data.key_insights || []).map(i => `<li>${i}</li>`).join('');
+
+  // ── Outlier note ──────────────────────────────────────────────────────────
+  document.getElementById('outlier-note').innerHTML =
+    `<strong>${prep.outliers_removed} outliers removed:</strong> GrLivArea &gt; 4000 sf with SalePrice &lt; $300k (anomalies)`;
+
+  // ── Model selection notes (from category_performance + best_overall) ──────
+  const catPerf = comp.category_performance || {};
+  const selNotes = document.getElementById('model-selection-notes');
+  const bestModel = sorted[0];
+  const bestScore = fmt(bestModel.rmsle_cv.mean, bestModel.rmsle_cv.std);
+  selNotes.innerHTML = `
+    <li><strong>Best Overall:</strong> ${comp.best_overall} (CV RMSLE: ${bestScore})</li>
+    ${Object.entries(catPerf).map(([k, v]) =>
+      `<li><strong>${k.replace(/_/g, ' ')}:</strong> ${v}</li>`
+    ).join('')}
+  `;
+
+  // ── Recommendations ───────────────────────────────────────────────────────
+  const recList = document.getElementById('recommendations-list');
+  recList.innerHTML = (data.recommendations || []).map(r => `<li>${r}</li>`).join('');
+
+  // ── Done ──────────────────────────────────────────────────────────────────
+  document.getElementById('loading-overlay').style.display = 'none';
+}
+
+init();
+</script>
 
 </body>
 </html>

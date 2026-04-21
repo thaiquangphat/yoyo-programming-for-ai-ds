@@ -230,32 +230,15 @@
               <th>RMSLE (CV)</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td><strong>LightGBM</strong></td>
-              <td class="highlight">~0.1055 ± 0.0062</td>
-            </tr>
-            <tr>
-              <td><strong>XGBoost</strong></td>
-              <td class="highlight">~0.1075 ± 0.0065</td>
-            </tr>
-            <tr>
-              <td>Gradient Boosting</td>
-              <td>0.1089 ± 0.0068</td>
-            </tr>
-            <tr>
-              <td>Random Forest</td>
-              <td>0.1134 ± 0.0076</td>
-            </tr>
-            <tr>
-              <td>Ridge Regression</td>
-              <td>0.1243 ± 0.0089</td>
+          <tbody id="tabular-models-tbody">
+            <tr style="text-align: center;">
+              <td colspan="2" style="padding: 1.5rem; color: #999;">Loading tabular models...</td>
             </tr>
           </tbody>
         </table>
         <p style="color: #777; font-size: 12px; margin-top: 1rem;">
-          <strong>Dataset:</strong> 1,458 training samples<br>
-          <strong>Features:</strong> 148 engineered features<br>
+          <strong>Dataset:</strong> <span id="tabular-train-size">—</span> training samples<br>
+          <strong>Features:</strong> <span id="tabular-features-count">—</span> engineered features<br>
           <strong>Task:</strong> House price prediction (RMSLE metric)
         </p>
       </div>
@@ -417,6 +400,66 @@
     Comprehensive analysis of house price prediction and multimodal COCO classification
   </p>
 </footer>
+
+<script>
+// ─────────────────────────────────────────────────────────────────────────────
+// Load Tabular Results from models_results.json
+// ─────────────────────────────────────────────────────────────────────────────
+async function loadTabularResults() {
+  try {
+    const res = await fetch('tabular/models_results.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+
+    // Extract dataset and model info
+    const ds = data.dataset || {};
+    const models = data.models || [];
+
+    // Update dataset stats
+    document.getElementById('tabular-train-size').textContent = 
+      (ds.train_size || 1458).toLocaleString();
+    document.getElementById('tabular-features-count').textContent = 
+      data.data_preprocessing?.total_features_after || 148;
+
+    // Sort models by RMSLE (best first)
+    const sorted = [...models].sort((a, b) => {
+      const am = parseFloat(a.rmsle_cv.mean);
+      const bm = parseFloat(b.rmsle_cv.mean);
+      return am - bm;
+    });
+
+    // Display top 5 models
+    const top5 = sorted.slice(0, 5);
+    const bestRMSLE = parseFloat(sorted[0].rmsle_cv.mean);
+
+    const tbody = document.getElementById('tabular-models-tbody');
+    tbody.innerHTML = top5.map((m, idx) => {
+      const mean = parseFloat(m.rmsle_cv.mean);
+      const std = parseFloat(m.rmsle_cv.std);
+      const isBest = mean === bestRMSLE;
+      const rowClass = isBest ? ' class="highlight"' : '';
+      const badgeHtml = isBest ? ' <span class="badge" style="background:#d4edda;color:#155724;padding:0.3rem 0.8rem;border-radius:20px;font-size:11px;font-weight:600;">BEST</span>' : '';
+      
+      return `<tr${rowClass}>
+        <td><strong>${m.name}</strong></td>
+        <td>${mean.toFixed(4)} ± ${std.toFixed(4)}${badgeHtml}</td>
+      </tr>`;
+    }).join('');
+
+  } catch (err) {
+    console.error('Failed to load tabular results:', err);
+    const tbody = document.getElementById('tabular-models-tbody');
+    tbody.innerHTML = `<tr style="color: #d9534f;">
+      <td colspan="2" style="padding: 1rem; text-align: center;">
+        ⚠️ Could not load models data
+      </td>
+    </tr>`;
+  }
+}
+
+// Load on page ready
+document.addEventListener('DOMContentLoaded', loadTabularResults);
+</script>
 
 </body>
 </html>
