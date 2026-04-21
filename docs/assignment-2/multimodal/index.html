@@ -854,35 +854,6 @@
     </div>
   </div>
 
-  <!-- Recommendations -->
-  <div class="section">
-    <h2>🎯 Recommendations & Future Directions</h2>
-    
-    <h3>Immediate (Production-Ready)</h3>
-    <ol>
-      <li><strong>Deploy:</strong> Learned Fusion MLP model (Micro-F1: 0.5412, Hamming Loss: 0.0312)</li>
-      <li><strong>Confidence Scoring:</strong> Use fusion MLP's softmax probabilities for prediction confidence</li>
-      <li><strong>Uncertainty Quantification:</strong> Ensemble with top-3 models for uncertainty estimates</li>
-      <li><strong>Monitoring:</strong> Track per-category F1 scores for category-specific failures</li>
-    </ol>
-
-    <h3>Short-term (Incremental Improvements)</h3>
-    <ol>
-      <li><strong>Architecture Ensemble:</strong> Add Vision Transformer (ViT), BERT base variants alongside DistilBERT</li>
-      <li><strong>Hyperparameter Tuning:</strong> Grid/Bayesian search on fusion MLP architecture (layer sizes, dropout)</li>
-      <li><strong>Hard Negative Mining:</strong> Focus training on challenging samples (frequent misclassifications)</li>
-      <li><strong>Weighted Fusion:</strong> Learn per-category fusion weights instead of global weights</li>
-    </ol>
-
-    <h3>Long-term (Research Directions)</h3>
-    <ol>
-      <li><strong>Cross-Attention Mechanisms:</strong> Implement self-attention between text and image embeddings</li>
-      <li><strong>Contrastive Learning:</strong> Pre-train on unlabeled COCO data with triplet losses</li>
-      <li><strong>Video Understanding:</strong> Extend to video-question-answering or action recognition (temporal dynamics)</li>
-      <li><strong>Few-Shot Learning:</strong> Transfer learned representations to new categories with minimal examples</li>
-    </ol>
-  </div>
-
 </div>
 
 <footer>

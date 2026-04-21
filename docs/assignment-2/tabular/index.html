@@ -374,35 +374,6 @@
     </ul>
   </div>
 
-  <!-- Recommendations -->
-  <div class="section">
-    <h2>🎯 Recommendations for Improvement</h2>
-
-    <h3>Short-term (Quick Wins)</h3>
-    <ol>
-      <li><strong>Hyperparameter Tuning:</strong> GridSearch/Bayesian optimization on the best-performing models</li>
-      <li><strong>Ensemble Stacking:</strong> Train meta-learner on Level-0 predictions from multiple models</li>
-      <li><strong>Feature Interaction Terms:</strong> Add polynomial/interaction features (e.g., OverallQual × GrLivArea)</li>
-      <li><strong>Cross-validation Refinement:</strong> Use TimeSeriesSplit if temporal patterns present (YrSold trend)</li>
-    </ol>
-
-    <h3>Medium-term (Deeper Analysis)</h3>
-    <ol>
-      <li><strong>Feature Selection:</strong> Use SHAP values to identify truly important features; remove noise</li>
-      <li><strong>Neighborhood Analysis:</strong> Geographic clustering may improve location encoding</li>
-      <li><strong>Seasonal Effects:</strong> Analyze SalePrice by MoSold (month sold) for seasonality</li>
-      <li><strong>Outlier Investigation:</strong> Understand luxury properties (&gt; $500k) separately</li>
-    </ol>
-
-    <h3>Long-term (Production Readiness)</h3>
-    <ol>
-      <li><strong>Monitoring Pipeline:</strong> Track model drift via new data distributions (feature/target)</li>
-      <li><strong>Confidence Intervals:</strong> Provide prediction uncertainty via quantile regression</li>
-      <li><strong>Retraining Schedule:</strong> Monthly/quarterly update with new house sales data</li>
-      <li><strong>API Deployment:</strong> REST API for real-time price predictions with feature validation</li>
-    </ol>
-  </div>
-
 </div>
 
 <footer>
